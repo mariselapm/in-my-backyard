@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In My Backyard</title>
+<meta name="description" content="How your Texas county is doing on power, water and data centers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F6F3; --surface:#FFFFFF; --ink:#1D2B2A; --muted:#566664; --line:#D3DBD7;
+  --sky:#235F7D;
+  --g-a:#1B6E6A; --g-b:#5FA38F; --g-c:#E2B84A; --g-d:#DD7A3A; --g-f:#B5402F; --g-none:#CDD5D1;
+  --display:"Archivo",system-ui,sans-serif; --body:"Public Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body)}
+a{color:var(--sky)}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* header */
+.site-header{border-bottom:1px solid var(--line);background:var(--paper)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.wordmark{font:800 1.35rem/1 var(--display);font-stretch:112%;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.wordmark span{color:var(--g-a)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+nav a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
+nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+nav a:hover:not([aria-current="page"]){background:#E3E9E6}
+
+main{padding:40px 0 72px}
+main:focus{outline:none}
+.home-map svg{max-height:70vh}
+#big-map svg{max-height:80vh;width:auto;max-width:100%;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0}
+h1{font-weight:800;font-stretch:100%;font-size:clamp(2.3rem,6vw,4rem);letter-spacing:-.02em}
+h2{font-weight:750;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em}
+h3{font-weight:700;font-size:1.2rem}
+.lede{font-size:1.15rem;color:var(--muted);max-width:38em;margin:14px 0 0}
+
+/* search */
+.search{margin-top:28px;max-width:560px}
+.search label{display:block;font-weight:600;margin-bottom:8px}
+.search-row{display:flex;gap:8px}
+.search input{flex:1;min-width:0;font:inherit;font-size:1.1rem;padding:14px 16px;border:2px solid var(--ink);border-radius:8px;background:var(--surface);color:var(--ink)}
+.btn{font:700 1rem var(--body);padding:12px 20px;border-radius:8px;border:2px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;text-decoration:none;display:inline-block}
+.btn-quiet{background:transparent;color:var(--ink)}
+.search-msg{margin:10px 0 0;min-height:1.5em;color:var(--muted)}
+.choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.choices button{font:600 .95rem var(--body);padding:8px 12px;border-radius:999px;border:1px solid var(--ink);background:var(--surface);cursor:pointer}
+.try{margin-top:14px;color:var(--muted);font-size:.95rem}
+.try a{font-weight:600}
+
+/* home layout */
+.home-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:860px){.home-grid{grid-template-columns:1fr}}
+.home-map figcaption{font-size:.9rem;color:var(--muted);margin-top:6px}
+
+/* map */
+.map-box{position:relative}
+.map-box svg{width:100%;height:auto;display:block}
+.county{stroke:#fff;stroke-width:.5;cursor:pointer;transition:opacity .12s}
+.county:hover,.county.is-active{stroke:var(--ink);stroke-width:1.6}
+.tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;box-shadow:0 6px 18px rgba(29,43,42,.16);font-size:.9rem;min-width:190px;opacity:0;transform:translateY(4px);transition:opacity .1s,transform .1s;z-index:5}
+.tip.show{opacity:1;transform:none}
+.tip strong{display:block;font:750 1.05rem var(--display);margin-bottom:6px}
+.tip dl{display:grid;grid-template-columns:auto auto;gap:3px 14px;margin:0}
+.tip dt{color:var(--muted)} .tip dd{margin:0;font-weight:700;text-align:right}
+.tip .hint{margin-top:8px;color:var(--muted);font-size:.8rem}
+
+.legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin:14px 0 0;padding:0;list-style:none;font-size:.9rem}
+.legend li{display:flex;align-items:center;gap:6px}
+.swatch{width:16px;height:16px;border-radius:3px;display:inline-block}
+
+.layer-pick{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 8px}
+.layer-pick button{font:600 .95rem var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.layer-pick button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.map-note{color:var(--muted);font-size:.95rem;margin:6px 0 0}
+
+/* grade stamp */
+.grade{font-family:var(--display);font-weight:900;font-stretch:62%;line-height:.82;letter-spacing:-.02em;color:var(--gc,var(--muted))}
+.grade-none{font-weight:700;font-stretch:100%;font-size:1rem!important;line-height:1.3;color:var(--muted)}
+
+/* county report */
+.back{display:inline-block;margin-bottom:18px;font-weight:600}
+.report-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:28px;border-bottom:3px solid var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:6px 24px;margin:14px 0 0;padding:0;list-style:none;color:var(--muted)}
+.facts b{color:var(--ink)}
+.overall{text-align:center}
+.overall .grade{font-size:clamp(6rem,16vw,10rem)}
+.overall p{margin:8px 0 0;font-size:.9rem;color:var(--muted);max-width:14em}
+@media (max-width:600px){.report-head{grid-template-columns:1fr}.overall{text-align:left}}
+
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:0}
+@media (max-width:860px){.cats{grid-template-columns:1fr}}
+.cat{padding:28px 24px 28px 0;border-bottom:1px solid var(--line)}
+.cat+.cat{padding-left:24px;border-left:1px solid var(--line)}
+@media (max-width:860px){.cat,.cat+.cat{padding:24px 0;border-left:0}}
+.cat-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cat .grade{font-size:4.6rem}
+.cat dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:18px 0 0}
+.cat dt{color:var(--muted)} .cat dd{margin:0;font-weight:700;text-align:right}
+.means{margin:18px 0 0;padding:14px 16px;background:var(--surface);border-left:4px solid var(--gc,var(--line));border-radius:0 6px 6px 0}
+.means h4{margin:0 0 4px;font:700 .95rem var(--body)}
+.means p{margin:0}
+.parts{list-style:none;margin:18px 0 0;padding:0}
+.parts li{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.parts .grade{font-size:2.2rem}
+.pending{color:var(--muted);font-size:.95rem;margin:14px 0 0}
+
+.section{margin-top:56px}
+.stories{list-style:none;margin:18px 0 0;padding:0}
+.stories li{padding:16px 0;border-top:1px solid var(--line)}
+.stories a{font:700 1.15rem/1.3 var(--display);text-decoration:none;color:var(--ink)}
+.stories a:hover{text-decoration:underline}
+.stories .meta{color:var(--muted);font-size:.9rem;margin-top:4px}
+.empty{padding:20px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);margin-top:18px}
+
+/* compare */
+.compare-pick{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:22px}
+.compare-pick label{display:flex;flex-direction:column;gap:6px;font-weight:600}
+.compare-pick select{font:inherit;padding:10px 12px;border-radius:8px;border:2px solid var(--ink);background:var(--surface);min-width:200px}
+table.cmp{width:100%;border-collapse:collapse;margin-top:24px;background:var(--surface)}
+.cmp th,.cmp td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}
+.cmp thead th{font:750 1.15rem var(--display)}
+.cmp td .grade{font-size:2.4rem}
+
+/* faq/about */
+.prose{max-width:44em}
+.prose p{margin:12px 0}
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{font:700 1.15rem var(--display);cursor:pointer}
+details p{margin:10px 0 0;max-width:42em}
+
+.site-footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+.loading{color:var(--muted)}
+.error{padding:16px;border-left:4px solid var(--g-f);background:var(--surface)}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="#/">In My <span>Backyard</span></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#/" data-nav="home">Home</a></li>
+      <li><a href="#/map" data-nav="map">Map</a></li>
+      <li><a href="#/compare" data-nav="compare">Compare</a></li>
+      <li><a href="#/faq" data-nav="faq">FAQ</a></li>
+      <li><a href="#/about" data-nav="about">About</a></li>
+    </ul></nav>
+  </div>
+</header>
+<main id="app" class="wrap" tabindex="-1"><p class="loading">Loading Texas counties…</p></main>
+<footer class="site-footer"><div class="wrap">In My Backyard is a student prototype. Grades are drafts while the team adds data. <a href="#/about">How it works</a></div></footer>
+<datalist id="county-list"></datalist>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+/* ============================================================
+   SETTINGS — the team edits this part
+   ============================================================ */
+const CONFIG = {
+  // The spreadsheet the site reads. Later this can be a published Google Sheet link (File > Share > Publish to web > .xlsx).
+  dataUrl: "data/master.xlsx",
+  // Column names in the first tab (matching ignores capitals and anything after the name, e.g. "Population (Census...)").
+  columns: { county: "County", population: "Population", area: "Square Mileage" },
+  // Each category: the column that holds its grade, and the facts to show under it.
+  // A category whose grade column doesn't exist yet shows "Not graded yet".
+  categories: [
+    { key: "power", label: "Power", grade: "Reliability Grade",
+      facts: [ ["Outage events", "Outage Events"], ["Power generated (past year)", "Net Generation"], ["Power plants", "Power Plants"] ] },
+    { key: "water", label: "Water",
+      grade: "Water Grade",
+      parts: [ ["Quality", "Water Quality Grade"], ["Drought", "Drought Grade"], ["Capacity", "Water Capacity Grade"] ] },
+    { key: "datacenters", label: "Data centers", grade: "Data Center Grade",
+      facts: [ ["Data centers", "Data Centers"] ] },
+  ],
+  // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
+  storiesTab: "Stories",
+  // DRAFT plain-language text for each grade. The team should rewrite these.
+  meaning: {
+    power: {
+      A: ["Power here has been among the most reliable in Texas.", "Keep a basic outage kit anyway: flashlights, charged batteries, water."],
+      B: ["Power here is more reliable than most of Texas.", "Outages happen but are less common. Sign up for your utility's outage alerts."],
+      C: ["Power reliability here is about average for Texas.", "Sign up for outage alerts and keep phones charged before storms."],
+      D: ["Power here goes out more often than in most of Texas.", "Plan for outages during storms and heat waves: backup batteries, a cooling plan, and checking on neighbors."],
+      F: ["Power here has been among the least reliable in Texas.", "Expect outages. Make a plan for medical devices, food storage and staying cool or warm, and ask your county about emergency centers."],
+    },
+  },
+};
+
+/* ============================================================
+   Below here: how the site works
+   ============================================================ */
+const GRADE_COLORS = { A: "var(--g-a)", B: "var(--g-b)", C: "var(--g-c)", D: "var(--g-d)", F: "var(--g-f)" };
+const GRADE_HEX = { A: "#1B6E6A", B: "#5FA38F", C: "#E2B84A", D: "#DD7A3A", F: "#B5402F", none: "#CDD5D1" };
+const POINTS = { A: 4, B: 3, C: 2, D: 1, F: 0 };
+const state = { counties: [], byName: new Map(), byFips: new Map(), zips: {}, topo: null, stories: [], layer: "overall" };
+
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const norm = s => String(s || "").toLowerCase().replace(/\s+county$/, "").trim();
+const fmt = v => (typeof v === "number" ? v.toLocaleString("en-US") : (v ?? ""));
+
+function findCol(headers, name) {
+  const n = name.toLowerCase();
+  return headers.find(h => h.toLowerCase() === n) || headers.find(h => h.toLowerCase().startsWith(n));
+}
+function letter(v) { const m = String(v || "").trim().toUpperCase().match(/^[ABCDF]/); return m ? m[0] : null; }
+// Average of grade points -> letter with + or -. A whole number gives a plain letter (one B = "B").
+function toLetterPlusMinus(avg) {
+  const whole = Math.round(avg), diff = avg - whole;
+  const base = ["F", "D", "C", "B", "A"][whole];
+  if (base === "F") return "F";
+  if (diff >= 0.17 && base !== "A") return base + "+";
+  if (diff <= -0.17) return base + "-";
+  return base;
+}
+
+async function load() {
+  const [buf, topo, zips] = await Promise.all([
+    fetch(CONFIG.dataUrl, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("spreadsheet"); return r.arrayBuffer(); }),
+    fetch("data/tx-counties.json").then(r => r.json()),
+    fetch("data/tx-zips.json").then(r => r.json()),
+  ]);
+  state.topo = topo; state.zips = zips;
+  const wb = XLSX.read(buf, { type: "array" });
+  const rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { defval: null });
+  const headers = rows.length ? Object.keys(rows[0]) : [];
+  const col = k => findCol(headers, k);
+  const cCounty = col(CONFIG.columns.county);
+
+  const fipsByName = new Map(topo.objects.counties.geometries.map(g => [norm(g.properties.name), g.id]));
+  for (const r of rows) {
+    const name = r[cCounty]; if (!name || !String(name).trim()) continue;
+    const c = { name: String(name).trim(), population: r[col(CONFIG.columns.population)], area: r[col(CONFIG.columns.area)], cats: {} };
+    c.slug = slug(c.name); c.fips = fipsByName.get(norm(c.name));
+    for (const cat of CONFIG.categories) {
+      const entry = { grade: null, facts: [], parts: [] };
+      const gc = cat.grade && col(cat.grade);
+      if (gc) entry.grade = letter(r[gc]);
+      for (const [label, k] of cat.facts || []) { const fc = col(k); if (fc && r[fc] != null && r[fc] !== "") entry.facts.push([label, r[fc]]); }
+      for (const [label, k] of cat.parts || []) { const pc = col(k); entry.parts.push([label, pc ? letter(r[pc]) : null]); }
+      // a category with sub-parts but no grade of its own: average the parts
+      if (!entry.grade && entry.parts.some(p => p[1])) {
+        const g = entry.parts.filter(p => p[1]).map(p => POINTS[p[1]]);
+        entry.grade = toLetterPlusMinus(g.reduce((a, b) => a + b, 0) / g.length)[0];
+      }
+      c.cats[cat.key] = entry;
+    }
+    const graded = CONFIG.categories.filter(k => c.cats[k.key].grade);
+    c.gradedLabels = graded.map(k => k.label);
+    c.overall = graded.length ? toLetterPlusMinus(graded.reduce((a, k) => a + POINTS[c.cats[k.key].grade], 0) / graded.length) : null;
+    state.counties.push(c); state.byName.set(norm(c.name), c); if (c.fips) state.byFips.set(c.fips, c);
+  }
+  state.counties.sort((a, b) => a.name.localeCompare(b.name));
+  $("#county-list").innerHTML = state.counties.map(c => `<option value="${esc(c.name)} County">`).join("");
+
+  const st = wb.SheetNames.find(n => n.toLowerCase() === CONFIG.storiesTab.toLowerCase());
+  if (st) state.stories = XLSX.utils.sheet_to_json(wb.Sheets[st], { defval: "" }).filter(s => s.Title);
+}
+
+/* ---------- small pieces ---------- */
+function gradeEl(g, cls = "") {
+  if (!g) return `<span class="grade grade-none ${cls}">Not graded yet</span>`;
+  return `<span class="grade ${cls}" style="--gc:${GRADE_COLORS[g[0]]}" aria-label="Grade ${g}">${esc(g)}</span>`;
+}
+function layerGrade(c, layer) {
+  if (!c) return null;
+  return layer === "overall" ? c.overall : c.cats[layer]?.grade;
+}
+
+/* ---------- map ---------- */
+function drawMap(el, { interactive = true, height = 0 } = {}) {
+  const geo = topojson.feature(state.topo, state.topo.objects.counties);
+  const W = 800, H = height || 760;
+  const proj = d3.geoConicEqualArea().parallels([27.5, 35]).rotate([100, 0]).fitSize([W, H], geo);
+  const path = d3.geoPath(proj);
+  el.innerHTML = `<div class="map-box"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Map of Texas counties colored by grade"></svg><div class="tip" role="status"></div></div>`;
+  const svg = d3.select(el).select("svg"), tip = $(".tip", el), box = $(".map-box", el);
+  const paths = svg.append("g").selectAll("path").data(geo.features).join("path")
+    .attr("class", "county").attr("d", path);
+  const paint = () => paths.attr("fill", f => { const g = layerGrade(state.byFips.get(f.id), state.layer); return g ? GRADE_HEX[g[0]] : GRADE_HEX.none; });
+  paint();
+  if (!interactive) { paths.on("click", (e, f) => { const c = state.byFips.get(f.id); if (c) location.hash = `#/county/${c.slug}`; }); return { paint }; }
+
+  const show = (e, f) => {
+    const c = state.byFips.get(f.id); if (!c) return;
+    paths.classed("is-active", d => d === f);
+    const rows = [["Overall", c.overall], ...CONFIG.categories.map(k => [k.label, c.cats[k.key].grade])];
+    tip.innerHTML = `<strong>${esc(c.name)} County</strong><dl>${rows.map(([l, g]) => `<dt>${l}</dt><dd>${g ? esc(g) : "—"}</dd>`).join("")}</dl><div class="hint">Click to see the full report</div>`;
+    const r = box.getBoundingClientRect();
+    let x = e.clientX - r.left + 16, y = e.clientY - r.top + 16;
+    if (x + 220 > r.width) x = e.clientX - r.left - 220;
+    if (y + 190 > r.height) y = e.clientY - r.top - 190;
+    tip.style.left = Math.max(0, x) + "px"; tip.style.top = Math.max(0, y) + "px"; tip.classList.add("show");
+  };
+  paths.on("mousemove", show)
+    .on("mouseleave", () => { tip.classList.remove("show"); paths.classed("is-active", false); })
+    .on("click", (e, f) => { const c = state.byFips.get(f.id); if (c) location.hash = `#/county/${c.slug}`; });
+  return { paint };
+}
+function legendHtml() {
+  return `<ul class="legend">${["A","B","C","D","F"].map(g => `<li><span class="swatch" style="background:${GRADE_HEX[g]}"></span>${g}</li>`).join("")}<li><span class="swatch" style="background:${GRADE_HEX.none}"></span>Not graded yet</li></ul>`;
+}
+
+/* ---------- search ---------- */
+function searchHtml(id = "q") {
+  return `<form class="search" data-search>
+    <label for="${id}">Enter your ZIP code or county</label>
+    <div class="search-row"><input id="${id}" list="county-list" autocomplete="off" inputmode="search" placeholder="78701 or Travis County"><button class="btn" type="submit">See my county</button></div>
+    <p class="search-msg" aria-live="polite"></p><div class="choices"></div></form>`;
+}
+function wireSearch(root) {
+  root.querySelectorAll("[data-search]").forEach(form => {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const v = $("input", form).value.trim(), msg = $(".search-msg", form), ch = $(".choices", form);
+      ch.innerHTML = ""; msg.textContent = "";
+      if (!v) { msg.textContent = "Type a 5-digit ZIP code or a county name."; return; }
+      if (/^\d{5}$/.test(v)) {
+        const list = (state.zips[v] || []).map(f => state.byFips.get(f)).filter(Boolean);
+        if (!list.length) { msg.textContent = `ZIP code ${v} isn't in our Texas list. Check the number, or search by county name.`; return; }
+        if (list.length === 1) { location.hash = `#/county/${list[0].slug}`; return; }
+        msg.textContent = `ZIP code ${v} crosses ${list.length} counties. Pick yours:`;
+        ch.innerHTML = list.map(c => `<button type="button" data-go="${c.slug}">${esc(c.name)} County</button>`).join("");
+        ch.querySelectorAll("button").forEach(b => b.onclick = () => location.hash = `#/county/${b.dataset.go}`);
+        return;
+      }
+      const c = state.byName.get(norm(v)) || state.counties.find(c => norm(c.name).startsWith(norm(v)));
+      if (c) location.hash = `#/county/${c.slug}`;
+      else msg.textContent = `No Texas county matches "${v}". Check the spelling, or try a ZIP code.`;
+    });
+  });
+}
+
+/* ---------- pages ---------- */
+function pageHome() {
+  return `<div class="home-grid">
+    <div>
+      <h1>What's happening in your backyard?</h1>
+      <p class="lede">See how your Texas county is doing on power, water and data centers, what it means for you, and the stories behind it.</p>
+      ${searchHtml()}
+      <p class="try">Or try <a href="#/county/travis">Travis</a>, <a href="#/county/harris">Harris</a>, <a href="#/county/andrews">Andrews</a> or <a href="#/county/el-paso">El Paso</a>.</p>
+    </div>
+    <figure class="home-map" style="margin:0"><div id="home-map"></div><figcaption>Overall grade by county. <a href="#/map">Open the full map</a> to explore.</figcaption></figure>
+  </div>`;
+}
+function afterHome() { drawMap($("#home-map"), { interactive: false }); }
+
+function pageMap() {
+  const layers = [["overall", "Overall"], ...CONFIG.categories.map(k => [k.key, k.label])];
+  return `<h1>Texas, county by county</h1>
+    <p class="lede">Move your cursor over a county to see its grades. Click a county for the full report.</p>
+    <div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
+    <p class="map-note" id="layer-note"></p>
+    <div id="big-map"></div>${legendHtml()}
+    <div style="margin-top:28px">${searchHtml("q2")}</div>`;
+}
+function afterMap() {
+  const m = drawMap($("#big-map"));
+  const note = () => {
+    const graded = state.counties.filter(c => layerGrade(c, state.layer)).length;
+    $("#layer-note").textContent = graded ? `${graded} of ${state.counties.length} counties have a grade for this.` : "No county has a grade for this yet. The team is still adding this data.";
+  };
+  note();
+  document.querySelectorAll("[data-layer]").forEach(b => b.onclick = () => {
+    state.layer = b.dataset.layer;
+    document.querySelectorAll("[data-layer]").forEach(x => x.setAttribute("aria-pressed", x === b));
+    m.paint(); note();
+  });
+}
+
+function catHtml(cat, entry) {
+  const g = entry.grade;
+  let body = "";
+  if (entry.facts.length) body += `<dl>${entry.facts.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(fmt(v))}</dd>`).join("")}</dl>`;
+  if (cat.parts) body += `<ul class="parts">${entry.parts.map(([l, pg]) => `<li><span>${esc(l)}</span>${gradeEl(pg)}</li>`).join("")}</ul>`;
+  const m = g && CONFIG.meaning[cat.key]?.[g];
+  if (m) body += `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>`;
+  if (!g) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
+  return `<section class="cat"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
+}
+function storiesFor(c) {
+  return state.stories.filter(s => { const k = norm(s.County); return k === norm(c.name) || k === "statewide" || k === "texas"; });
+}
+function pageCounty(slugv) {
+  const c = state.counties.find(x => x.slug === slugv);
+  if (!c) return `<h1>County not found</h1><p class="lede">We couldn't find that county. Search for it by name or ZIP code.</p>${searchHtml()}`;
+  const basis = c.overall
+    ? (c.gradedLabels.length === CONFIG.categories.length ? "Overall grade across power, water and data centers" : `Overall grade. Based on ${c.gradedLabels.join(" and ").toLowerCase()} only, until more data is added`)
+    : "No grades yet for this county";
+  const stories = storiesFor(c);
+  return `<a class="back" href="#/map">Back to the map</a>
+    <div class="report-head">
+      <div><h1>${esc(c.name)} County</h1>
+        <ul class="facts">${c.population != null ? `<li><b>${fmt(Math.round(c.population))}</b> people</li>` : ""}${c.area != null ? `<li><b>${fmt(Math.round(c.area))}</b> square miles</li>` : ""}</ul></div>
+      <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${esc(basis)}</p></div>
+    </div>
+    <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key])).join("")}</div>
+    <section class="section"><h2>Top stories this month</h2>
+      ${stories.length ? `<ul class="stories">${stories.map(s => `<li><a href="${esc(s.Link)}" target="_blank" rel="noopener">${esc(s.Title)}</a><div class="meta">${[s.Outlet, s.Topic, s.Date].filter(Boolean).map(esc).join(", ")}</div></li>`).join("")}</ul>`
+        : `<div class="empty">No stories added for ${esc(c.name)} County yet. Stories appear here when the team adds them to the Stories tab of the spreadsheet.</div>`}
+    </section>
+    <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p><a href="#/faq">See all questions</a></p></section>`;
+}
+
+function pageCompare(a, b) {
+  const opts = sel => `<option value="">Choose a county</option>` + state.counties.map(c => `<option value="${c.slug}" ${c.slug === sel ? "selected" : ""}>${esc(c.name)}</option>`).join("");
+  const A = state.counties.find(c => c.slug === a), B = state.counties.find(c => c.slug === b);
+  let table = "";
+  if (A && B) {
+    const rows = [["Overall", A.overall, B.overall], ...CONFIG.categories.map(k => [k.label, A.cats[k.key].grade, B.cats[k.key].grade])];
+    const facts = [["People", fmt(Math.round(A.population || 0)), fmt(Math.round(B.population || 0))], ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
+    table = `<table class="cmp"><thead><tr><th scope="col"><span class="visually-hidden">Measure</span></th><th scope="col"><a href="#/county/${A.slug}">${esc(A.name)}</a></th><th scope="col"><a href="#/county/${B.slug}">${esc(B.name)}</a></th></tr></thead><tbody>
+      ${rows.map(([l, x, y]) => `<tr><th scope="row">${l}</th><td>${gradeEl(x)}</td><td>${gradeEl(y)}</td></tr>`).join("")}
+      ${facts.map(([l, x, y]) => `<tr><th scope="row">${esc(l)}</th><td>${esc(fmt(x ?? "—"))}</td><td>${esc(fmt(y ?? "—"))}</td></tr>`).join("")}</tbody></table>`;
+  }
+  return `<h1>Compare two counties</h1><p class="lede">Put your county next to a neighbor, or next to anywhere in Texas.</p>
+    <div class="compare-pick"><label>First county<select id="ca">${opts(a)}</select></label><label>Second county<select id="cb">${opts(b)}</select></label></div>${table}`;
+}
+function afterCompare() {
+  const go = () => { const a = $("#ca").value, b = $("#cb").value; location.hash = `#/compare/${a}/${b}`; };
+  $("#ca").onchange = go; $("#cb").onchange = go;
+}
+
+function faqItems() {
+  const q = [
+    ["How are the grades decided?", "Each county gets a letter grade from A to F for power, water and data centers, based on the data the team has gathered. The overall grade averages the categories a county has grades for. Right now only power is graded, so the overall grade matches the power grade."],
+    ["Why does my county say “Not graded yet”?", "The team is still collecting water and data center data for all 254 Texas counties. Grades appear as soon as that data is added."],
+    ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. We plan to add water information for every county."],
+    ["What does the power grade measure?", "It reflects how reliable electricity has been in the county, based on outage events. It also shows how much electricity is generated in the county and how many power plants it has."],
+    ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet. Every source will be listed on the About page as the team adds data."],
+  ];
+  return q.map(([s, a]) => `<details><summary>${esc(s)}</summary><p>${esc(a)}</p></details>`);
+}
+function pageFaq() { return `<div class="prose"><h1>Questions</h1><p class="lede">Plain answers about the grades and what they mean for you.</p></div><div style="margin-top:24px">${faqItems().join("")}</div>`; }
+function pageAbout() {
+  return `<div class="prose"><h1>About In My Backyard</h1>
+    <p class="lede">A guide to what's happening with power, water and data centers in every Texas county, and what it means for the people who live there.</p>
+    <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
+    <h2 style="margin-top:32px">Sources</h2>
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Water and data center sources will be listed here as they're added.</p></div>`;
+}
+
+/* ---------- router ---------- */
+function route() {
+  const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
+  const page = parts[0] || "home";
+  const app = $("#app");
+  const pages = {
+    home: [pageHome, afterHome], map: [pageMap, afterMap],
+    county: [() => pageCounty(parts[1])], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
+    faq: [pageFaq], about: [pageAbout],
+  };
+  const [render, after] = pages[page] || pages.home;
+  app.innerHTML = render(); if (after) after(); wireSearch(app);
+  const nav = page === "county" ? "map" : page;
+  document.querySelectorAll("[data-nav]").forEach(a => a.dataset.nav === nav ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  const c = page === "county" && state.counties.find(x => x.slug === parts[1]);
+  document.title = c ? `${c.name} County | In My Backyard` : "In My Backyard";
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", () => { route(); $("#app").focus({ preventScroll: true }); });
+load().then(route).catch(err => {
+  console.error(err);
+  $("#app").innerHTML = `<div class="error"><h2>The data didn't load</h2><p>The site couldn't read <code>${esc(CONFIG.dataUrl)}</code>. If you opened this file by double-clicking it, open it with <b>start.command</b> instead, so the site runs at a local web address.</p></div>`;
+});
+</script>
+</body>
+</html>
