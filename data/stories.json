@@ -1,0 +1,1944 @@
+{
+ "counties": {
+  "Anderson": [],
+  "Andrews": [],
+  "Angelina": [
+   {
+    "title": "Angelina County burn ban extended 90 days",
+    "source": "The Lufkin Daily News",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPME15ZFdnWjItdlhmc3NDSHNXZ2VUbk9XZXc5aVJPSHpGS3Y5TTlCT3RNUldIbXdpMnc3N0dHem5YOTZHU2prY2t6YThnU053VXJhZWtlaHBGZjZEUUFHWFNjNVd5V1FWeFN6eUtMRnNyZ3BPSUFlcFlRdHM3STI2Ukh3cm9VTjUwM1ZtMzJtVm5BcWRuQnl2VC1GSU9OSlR1elBmR3J4RFE4U3ZJQ3c1NEpwaU5OLTNrTzA1Ukp6bVVWc1lBUy1aMTJOdjNCeE0?oc=5",
+    "date": "2026-10-22",
+    "category": "Drought",
+    "local": true
+   },
+   {
+    "title": "Lufkin crews working to repair 16-inch water line break",
+    "source": "cbs19.tv",
+    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNa1pYSmhVTnFIazdVR0g4WHlkSGpRaFgyb0J1akZITTZndmNuVHYxc2EzTkYtbTA4Umd0RjZvdngxRGJ4d1lvX2czS1BKZTZpU2tfeGZZaDRyTHBQaENIc1hoWXBXZ3JMcnV0dWpnd3NRYjFVRS1LclljeTNVWW94Y2tBU0NJOXdsMEVJMUdoMlhVMnBMV3VJUFJGVzRETjRZS3NyN25aMjlMQi1wQjVncUJtQjBFMC0wTm5JZmI0SmRibzQzaThDejZtLXUxdGw0VFpj?oc=5",
+    "date": "2026-11-07",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Angelina County hires legal help for proposed data center road agreement",
+    "source": "KTRE",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYVVlT3IwazNWME9aNnY3UFVCb0p6UVhYM1hLZTFidFczaDZZUENpRFNHU0F5OF9PcmN6ZEotc2I5OWdGeWlaY0FHeHh6ZzA3bVM0UTZZYnJQY1dwSDd4SVJ1eVB2dTI4Umw1NWdHNERHN3hvYXhSQTNGMTZrdEl5LTBORkdMTVVGTVJJYnJFQVZmMktSVURrU3lMSjV1M0RSREVF0gG3AUFVX3lxTFBwTUNrWWJiLWdoSTR0VHFWS3dhVm9JalJ3M1lHenpIVk9mSUxFZzFSTURuanZZa0ZCZ3RVZkUxZmpiQlZkb0EwT2ZoeUo4dGVZcGMxV29XeUJtdk1oS0t6cDZnc3ZBZVNVUE92UGUyMklJbmpqQllvaWJicFpDMEtJQWVvbVpIajJ1TmR0cWx3bVVoXzZHSmx2Zm9DSy1ST0FGWjFyT29seDlrekdISG80NXFpaE5vZw?oc=5",
+    "date": "2026-10-13",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Aransas": [],
+  "Archer": [],
+  "Armstrong": [],
+  "Atascosa": [
+   {
+    "title": "Atascosa County temporarily lifts Burn Ban following recent rainfall",
+    "source": "Pleasanton Express",
+    "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPZXVCWlpVUXZDeWpZbUpEZGNyVlVUeUdFcWY5NVV2SnBNUlpyTXRsNnFtem9VQTV3M1QtOENVZjRKS3JUZlVkWHZtUWlfVk54UjFFOUNGZTZJeFdXbDBvZWlKYUZfWW1DZnlETzU0Sm1ETWRSZjd5andHQTBGUzFvSTVSU3FQRXROalJLT2hHcHV1RENsN01SQm41bklPcFZJc1Zxby1wYmlXbV8wYjl3TlF2WWM4eEtONXg2VFl0d0JVZFkxaG1GdFY5UHR3blB2WDh1QnpaeWJIZWJJSVR2WkdockwwZVpFUndVSDVR?oc=5",
+    "date": "2026-10-15",
+    "category": "Drought",
+    "local": true
+   }
+  ],
+  "Austin": [],
+  "Bailey": [],
+  "Bandera": [],
+  "Bastrop": [
+   {
+    "title": "LightEdge/Lumen-occupied data center in Austin, Texas, up for sale",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVXQ3cS1QY29BdGkydTJHSWp3eDJ3akJfUnZhUlFlTm5DblBfVERrc2N4Z0xHWFVVUENISC1taFAtY3N3emsxemktV2x3RUpQSVVZSkp3NVNMOEY0eWZXUWRjdG1ZU0pjSE16M3Fxdk5VYXZpXzJmOTEtam0wV3oxWFpCRERxcWMyMV9fRXQxa0RodW9CdVRyMVpuTXJTTml3cnVFVDM1a1JxOHM?oc=5",
+    "date": "2026-10-15",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Bastrop County residents urge transparency on proposed data center, gas plant project",
+    "source": "KEYE",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWjhxaGFROU9fbUN4TV9CQTk3TXNLN1pwNm11bDM0QTJ5N2tUcHhYNmxRSG9GaVlib0dCZFBBa1pYczhwamhyRDNHNks4RkhBcGF2eHcwSWdxOEpRZ21CWUpjQXBldnBtaWVReFBNTWhjMzRGY3RfeUxvZ25EU192UmVHQUhJcFEtWU94Uk40NHZBSWE2LW51eGJEcmV4NWlLWEYzTHZNd0dZbjdpVFh1ZmVkdTZ1X2w0?oc=5",
+    "date": "2026-10-12",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Baylor": [],
+  "Bee": [],
+  "Bell": [
+   {
+    "title": "Bell County issues emergency burn ban as wildfire risk rises",
+    "source": "Temple Daily Telegram",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdGhaclRpMDhVQnN0NEcxTDl3YXpGRF9LZnBGd1FMM1BFQ2V0UWhld2JFRzRWNGFNZ2VlUjFyS2ZTV0JDTUw0SXo2ekNXY2FXRXFUN1BFaVQ1dTJiOUFqWUUxLXdzUXlBNS0wbXJrLUN2dTZ4aXBYY21vWjFXMl9GWTQ2ek5QbDlQQ2FYVDl5d1N2c2RqZ1pGSFZFZjVyUQ?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": true
+   },
+   {
+    "title": "Bell County candidates split on school vouchers, data center tax breaks at LULAC forum",
+    "source": "The Killeen Daily Herald",
+    "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQQnR5RGNkSkowa2lSaS1yLVdBRm9rN0VuNkpsUUo4REZCeXdabm5FUWt1SS14QUFSdlNKOUV1VUpwTjNfZG0yYjVyeE05MHFTQ1NpVzhlTWliNkFzVDZ6cGNMUjNxSTg1Si1DcUh2UDBNbThQMkh4ZkYwUVZTbFhubWQwZXNhS3NxSDIyUlMwNDlXbmlFYUo3aE9JQnBVVlM5X0VoNnE1VF9lVE5EMzJuU0dGaEIzUHJJZVRRSzhhSU5FblVJSGNDZC1CcmIzc0JNcXY3TGhmRXhJWE9HYkxoZjVtajVrdE9FV0xCTktKSWlMbDNwMlVj?oc=5",
+    "date": "2026-10-15",
+    "category": "Data centers",
+    "local": true
+   },
+   {
+    "title": "Video: October 11. News Roundup: Business, KPD Man Indicted, Bell County Water, CTC Professor",
+    "source": "The Killeen Daily Herald",
+    "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNRDFwSm1LQlFxc0ZmU3JaZHJWMjZPaENNdWFSMkV0TktVcHhOSFdrMGlMb0t2S0tvRHhjdjF4OXh0RjdqSXlPNlRLTkQwSzRCbG1uOEV0bER4TG8xTy1GbWR5ek10dHoxdVdybkxPTmtTZVlrMFZLeU55Qk1PMk5aYm80VXNKNF9wVDVPbUdyTlJqOXZ1RkJJUDBFQTVxWk45NmxaSi1NdnMxY21lUy0zWDBVYmt6TVFFZ1hqbWxSaFVQLU5yTEVJaXdFWW5WeGdGSWRwZnZJNDdlQlFyeHRTN29sNUl1UVBOYVR4bTRFMGlaQV94Nzllem5R?oc=5",
+    "date": "2026-10-11",
+    "category": "Water",
+    "local": true
+   }
+  ],
+  "Bexar": [
+   {
+    "title": "Opinion: Texas must require data centers to be good neighbors",
+    "source": "San Antonio Express-News",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPT2NzX19NZU1fLXY1RXpaWm52RDg5WFhCZTlSaklzbjBfYlNiYkQ1N3hmbWRqUzQxdXVVb3BrbzlHX3RYMF9kbjFlUHUwWmNscEt6aDJ1QXFGZThpaWd6TWlyLUlrakZpS1hWZWdzQ0JIV1Zoa2t5Y3pvcEk5LW0wc0ZaVXUybXFZQ2tRZFkwa3VfSjRXSXZmRWxyX2lVOEdPVzQyYmVpM3dDMFFRUE80Y0JLaGRVa3F2R3FHMThLYw?oc=5",
+    "date": "2026-11-10",
+    "category": "Data centers",
+    "local": true
+   },
+   {
+    "title": "Bexar County leaders to move DA attorneys, critics claim power grab",
+    "source": "San Antonio Express-News",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPS2dmMlFGV1dYNDRZNGZGamFEN2ItVDVvNng1UmpRU25tTUV4RTJyS0ZCV1Z1cnlpYUdKUDlhVXY2cTYxS21ERm9IZHhLdXNFX3NkcDFsWUpLcFNUZXlKRWo2OWcwY2FNbGRtb1JSOHVWNW0yRXFiZ2FBc2ZkaU5IZkFOZThZNUJqZkZNdFF6QjZxbDk2Z0Nad2RmWVR6OWdrczhoOA?oc=5",
+    "date": "2026-10-30",
+    "category": "Power",
+    "local": true
+   },
+   {
+    "title": "New vehicle emissions inspections aim to improve Bexar County air quality",
+    "source": "KSAT",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPRjdNVTdNaEpBQkdPalpHWUxrSEJZV2ZWanpIdTVQelBOU01randtUTA0b2VpUjQxN040ZUxOMzdsSEk1cTZMSU1oN3AtNndRZTdDbEFuVFhsRWV3V3Q3UklSQXNvcTlZcjExRUM1Z3d1V25wWlI4bFlTa2tBWUVHZGFTNzFiNTFIWkF0TjVqSmtuUmZvMmt2X3l6RlJJQTZmRm1JRUVLMHA3ZmRPbnZjU2cwWHE2U2NH?oc=5",
+    "date": "2026-11-02",
+    "category": "Environment",
+    "local": false
+   }
+  ],
+  "Blanco": [],
+  "Borden": [],
+  "Bosque": [],
+  "Bowie": [
+   {
+    "title": "Bowie County Commissioners Court approves solar farm tax abatement",
+    "source": "Texarkana Gazette",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPSHlfQWtSbmtTY3VxODJ0MXBpM3kxWkZxWjVGLVNuMzB3TFVhVzdXVkEzazNnUW43MFVPTHNXNFpwY3Z4bmFSOFpxbGNRMHZYZ2h1Z0JGVGZOQ0tfM0xIRUxxSERtRFNDVjdKN09PVEx5TEI4ZVhUczBJN0pxWS04Q2c4N3luOVFHXzZxRjJzLXBCSUpPYm1mR29kZHptZTg?oc=5",
+    "date": "2026-10-13",
+    "category": "Power",
+    "local": true
+   },
+   {
+    "title": "Texarkana Water Utilities to roll out My TXK Water portal with hourly usage, leak alerts",
+    "source": "Texarkana Today",
+    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFB1X2wzazhldjRqQUttWURaR0NESW1QQS03Zkg0SmtFa21kMUZMdVNPczVCN0JtQ1Y5Rk9ObUx5RlhZLTV5ZDVMd0h5a1gxMUduS01wNmE5eUktSmFwb2phb0lSNmo4UXlyTEJUTzQ0SW1EZnlIZklzblBaZHc?oc=5",
+    "date": "2026-10-19",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Bowie County approves 10-year tax break for Red Barn Solar, with no buyer yet for the power",
+    "source": "Texarkana Today",
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZjdjYzBfQlRvVmhoa2Z5M0trVjhreVptZEFCYmpCb3ROa3Vmek4zWjlabmlDTXBoUC1vMTdpZmd4YU83Vm91OE9hbm9pSmo1eGg0ajAtTVNweGhnMGV3VGl4YXNMdVR5X3BJa19RdmxYOVVrQjN5UXZsczRLcmtlaExmRQ?oc=5",
+    "date": "2026-10-19",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Boil Water Notice Issued for Shadow Brooke Street Area in Texarkana",
+    "source": "Texarkana Today",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNOGNvNHFGMnExcEdVcFIwX3d0cUxQd2N2Z2tRS1JWRzU1d3RXU00zZW9NY3p1azJMLVNuZkpJWTBoZHEtTXhYb05YU3NDZVVpVDdMS21MTWptWU53MjJpNV9uWXRmTUpZNEpad29Ob3NyLWpfZW5fN0psNGthTGVzYm55QWFiTWNrTXIzVjNHZks?oc=5",
+    "date": "2026-10-14",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Brazoria": [
+   {
+    "title": "Brazoria County burn ban remains strict after garage fire close call",
+    "source": "The Facts",
+    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNT1ltZWlocEFYRjRxVnRpZVIxZ0JqdTNDUUhQZTZKLUJqS2hsbWdxbXJrSUhqY0ROVTU2VFVhLUNJNU4wRDhUalg5VEdER3MyZ3NBQTdla3dualhhbFV6bUlBOVE3Z3VUOTB2SmlXSlJLMW9OOGZ1RGhtYWVWN21DQmxiWi0yMVphbDJpZFFPWUczMlR6d2pxdVZTNk8tR3NQN3hERThlZzhhWXVRa0pVQmZCUEFmV2tmWVpjRDdrT2lfM2FYdnd2bnZBbU9LVHAxbHQ0VzkxbVd0ZW9K?oc=5",
+    "date": "2026-10-26",
+    "category": "Drought",
+    "local": true
+   },
+   {
+    "title": "Brazoria County residents raise concerns over potential data center project",
+    "source": "ABC13 Houston",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxORGVxMUUyVlBoak1HOUx4UUkzVlZiSkFiWVdZMlE4WG1DOXpjczVqdGpQNnd6MXpMakxEb1RjUWRVQ25adkVzWGFJR0Jmc2daZWR1bzFNSjVYZHh1dUFSdEdNd0FpTTVwNHBwemxhaWZTcFNVMDFiUGx6cDBJTUtma2x1SEJZa18yUFVzMnJXNF9aa1p1MVByLTZaREY3cEhNRE5uVzh30gGrAUFVX3lxTE5sOWZRT1MxOGJXYlNKTDhIODg4b2lPMHNtZlNSUWRFcFJGNWtEWlBLY1dqWmpwenFpNjg5R3lTRmkwRTVTQ1hSckJ6aU9aenhxdUZoTFlUMy1oYzQzMndJVEtlaEtrRmhSZmVncFRoS29QZGxVUFRqRTU5NE45Z0lzem56Tll2ak9ycDhDM253cmxYZ3dFVURVQnZDc2o4Wm45MDdFMnRZVFdXTQ?oc=5",
+    "date": "2026-10-25",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Riley Plumbing Urges Brazoria County Homeowners to Test Water for Hardness",
+    "source": "The Courier-Journal",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPN3F2WFhYdTgxdklrNEp3ZndsQWYtSU9oaXB1NjRDeERLMDRMQ1AtZ0doTXpPZWlkRnFaU1FpMkYyVmFBMUJJS2Z2QThWTEk5Nlh1UzJSanl5eGNNMWJkakhWUFhUMllFcGFhVzAtQldrRWxaTjRuLVZaVnJWbkI0VVFfdG1xOFlKM3VhZTlwRVNlRE9BS2ZzVFNsQlUwbEd5ZHdHazJ1OVZMMVpmZ2x1dG1lLWhJWnFlLUlfd09HSTBqUHVTeFpRWEhfTmxjQm8?oc=5",
+    "date": "2026-10-19",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Brazos": [
+   {
+    "title": "Bryan Texas Utilities to replace 50,000 electric meters",
+    "source": "Yahoo",
+    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNTlNDeFQ3NTh0MVlQaU1mRWRQTGJlbHBGUUlObGJ3ZnpvbGpXejRYa19kVXI4VWtIYUQ1ZTU0VjJnRm55WUY5SnpYYmhDcElhNFY2WW1VRjFqcWZ5eWFyUzZHazNVM19ueU1NaTdlSi1CVnBMcHppVmRReDRYdUR1RXh2NGFBMXBnNVhN?oc=5",
+    "date": "2026-10-26",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Paxton says a Brazos County data center got a letter demanding water-use reporting",
+    "source": "KBTX News 3",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPSEVKZ1lvU216TVdXQm44TFk4MnVtbjI3eGM4REVLZ0QwRkQyd1B1S3JPUkRHRFZiTDJORHA2OEhrNUdvS19WVDJrdDBTVEtLYUhqY09wamw2OFhPalJOQkQyRXVvdHMzVURGbDktMldXV1FkRnplVDZxQ2dSM25yeVE2RmI4NUZGNVRxblRXN0dDYUN0b1pnWkhFeTVzdnlXMjhF0gG3AUFVX3lxTE1tNUxBMk9HaENxSlZNM2VWQjVDbHVMWkprNjlJZW5JS0pmWDVCT1RkbTNXNllkSDJJS0RnU215SkdtaERuWjNIRGt6Qmc4cDJ1ODNUT0thSjVaOFVyWGx6TEk1Y0xFOEZmM3g4SGVNUUd3TUgxbjV1UmlSXzNvX0FxangwNElHRmlkaVhDbDI3Yi1ISWlwLUhHa0U5dzZ2Yl9VdU44R0h5eS1ibzJZSWdlQlVERENpTQ?oc=5",
+    "date": "2026-10-23",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Brewster": [
+   {
+    "title": "USDA Invests $1M to Restore Groundwater Production Capacity for City of Alpine, Texas",
+    "source": "USDA (.gov)",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOXEtajZPeWJ1SE4td3N2LTQ2S1dxY3N2aXpMNVJTTUcxZ2FYNzI4T0RXWUpPSjZlWW5uWk9JQUF1Q016cjhZMEMwbnFISjB6azZBUkREZ3JhYi1vV3pWaXRoQk1EamdCWDhDRzBGS3U3b2IxOEIzOHV6RDNCMEh4RndUY1dFdkRjVEVOb2ltbk1kSVd4S2VodUpDU1paU1pZYS1zRkQtck9Ec2FrR3hmSS1XOVlLOEd1Um40?oc=5",
+    "date": "2026-10-29",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Opposition forms to Alpine data center proposal",
+    "source": "Big Bend Sentinel",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcC13cW04WWJRY0lUQ2dnMXdNZE1zbmhxTjZibXViaWczcW0wMFRYcTYxTUMyUy14VHluOEI1R2duNkJ5R2NvQTdyRHhTZUEtS0dXR3NGMnNaM0hNS1ZBVnQ5aXhNZTJjQU1xZTVBSnZuQ0Z0bUo5N05tZlZKclc2c0lFbjByV3FFVU5XVnBNNkg?oc=5",
+    "date": "2026-10-20",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Briscoe": [],
+  "Brooks": [],
+  "Brown": [
+   {
+    "title": "Lifting of burn ban among action taken by Brown County Commissioners Court",
+    "source": "Brownwood News",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTnVvYnhUZlplZjB4amxpVU9VYnhUM2hlVUpDZjBibWFMN3VHUnR5c1VyTy1lc1NQdEtBeTF3Nlg2eVFmMXhLanhxQVJFUVhOLVNhclJfekF3Xy1Ta0JmRFJoMXpGQ0NuMVZpMUx2QWFPbmN6c1E3ajN1Tl9KTTh1elUyOERnOXVfTVM4RDhwS0xGU202bDFfZENYWU9RMmptWXkwUlBDR0FDRFluSlFHcDFNN0dELVU?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Burleson": [],
+  "Burnet": [
+   {
+    "title": "Rainfall prompts lifting of Burnet, Llano county burn bans",
+    "source": "marblefallsmessenger.com",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOa1p0QmpDb0ZYZlctQUVHWjZab2hWdVowazEtMUdhRTBLQVh0S1gwSV82eEVZbDlaYV9YRHNOc0RXcFpjSnVVaG1Sb2xEMWQyS0FNN2lNMHo2YkhqX3c5aHlwbXlUc2VMODFiNlpkV2dRSFdNVVZ4OVZJZzNOWE5hSDJjWnl0aEt3Q182aWczaWY?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Caldwell": [],
+  "Calhoun": [],
+  "Callahan": [],
+  "Cameron": [
+   {
+    "title": "Cameron County Splits 3-1 on $7M Canal Deal Tied to Harlingen Data Center",
+    "source": "Hoodline",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPV0xyQlNza0VVMVhuTEk2R0tHOVBPMk94V1hRN0tydnpNOWI3cnVSSFY1M0NSbEV1S2cyQ0tOMzc0dlR3YXhqMUJvTjVyZ2NYUnJNQ1dCdkMyd3I4UmdnQmpFTERhU2FPNWJ1YkF5b2ZTdFloRDRFRGp2b3FlbVctbGRsVGVSaDZkUTFWaE1HdF9xNnByTklkbGdpWUg4d0NLNHpPQQ?oc=5",
+    "date": "2026-10-21",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Camp": [],
+  "Carson": [
+   {
+    "title": "Texas Panhandle cotton harvest hit by drought, early freeze",
+    "source": "KVII",
+    "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOVVBWVnBDSUg2RU9RQnU4YkZNT2tlbjYzYXpQX3Q5VHNKaEw1Y0ZaLURHLTd5Z3UwN2ZMQjBmS25zcXI5QkpiTUl0MUVzVTdxVFBxSUlzWExPcmZ6R1hlWjV2YUM2X0FaVEJaclM1cWU2YkJIQUpZNjU4Z0hPWThLNlhDUVcxc08tdWttd3JQbDF5OUxRN2Vrem5hc3dybDJaRWx3TnlET1FGZnd2VmRvMmtEaHF4c0NGaXZBeU5LYm1UMTNqamxCSWpjc2l6YV9KQ3I2YVpKNGFFbnpNQmJnY3ZrMHNucER4V2RTWFdGRlg?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Cass": [],
+  "Castro": [
+   {
+    "title": "Castro County residents raise concerns about data centers, water, solar farms at town hall",
+    "source": "KVII",
+    "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNdlVITHo4OGFUVEpybWlLSGtDVGRhZkN1VFlRUWNpZGRSVWxhdmhfa3E5d2pJdFhpZ2t6OEl1ZmtqSVVWc3RhNURWVVZES0x1TmpOTjRDRm5sV0dodm1pWW1xSE9qdll1VFJTS3dGVHZWT041NHdyOEM5c19jWWlWYUZGQVllamIzcllPV21jTThOVDFCdTRJXzhIY1Z1a1BYNTg0ZXRCMEVQMUU1bWdaV0VJZEQ4UzlSM0xYNFZVN3VYd1dvdEpnVk9XQzJ6bmM2SXVURmNKWUNUVWRPTUNFS3lmV2VQUk9PaFZlaktXa0JrY1lIdnVTMm5hQjRoM1FhQUh2bFZ3WjdNaERpVmluTjZB?oc=5",
+    "date": "2026-10-20",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Chambers": [],
+  "Cherokee": [],
+  "Childress": [],
+  "Clay": [
+   {
+    "title": "Ruling favors Clay County landowners opposing reservoir",
+    "source": "Texas Farm Bureau",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQYjg1S05Eck45MEpvd3loQWZFeWZ6aFBnQ0p0OEczVEdHa3VlbzlFUEw1SmljYWcwcmZWU3MxUTdsaEs3emttYkE1aFlOZ2Q1UUFFMWhOaG80NzNjeU1RckI4QlBkOVd5WXlJSDhYMHplUnV5NV9jemZlNzJYX24tdjlJTnkwXzdSUmpnVw?oc=5",
+    "date": "2026-10-15",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Cochran": [],
+  "Coke": [],
+  "Coleman": [],
+  "Collin": [
+   {
+    "title": "Fireworks to lease data center capacity in Dallas, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMWdRZ29jclRLNU1vdUlYejg0MS1SYjVFdS12MXBBWmlMT0o5QUFldUIxRWlQMndXaGh4czBXMDlTMnZibWY0NU15SHZhU0cyekQ2S1A3cUVuVXJEall2VDRtbU9tcXFjQlhHQ2k1TWxYVFdsOVA5bHdRUDdVTkFkQko1LXFtUDZJdkJ1VWpGakJ0RzhHN2ItSkhYS2J6UGZS?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Collingsworth": [],
+  "Colorado": [],
+  "Comal": [
+   {
+    "title": "Comal County workers impacted by July floods eligible for Disaster Unemployment Assistance",
+    "source": "Herald-Zeitung",
+    "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQdXdyS3hCeTZWZnRXMmhLQWxBYUlWUlZ2c1pKS3lNTXdWQVZsVG5UVEFBdHVyamF2YWJyT2xJd0h0Y1BveVRJbnpZT09uWkRoSjRwWDJnNVFGRUl3bkRQZmxiYW1rM3QxVkNUZVJ4QkFmeFN3Uk5rUENsRDNTUm96eEc5YkU4c1l4WVZDTXpjNzlHRHhkLVBFLW05aDZsdU1XTGxIaHhuc1NGTVV2TENsT1VzUkplTjY1ZmdlY1BYSy1TXzNLR1NwSmhhSGZWN0NndThSYzJKM3VCUkVUWG44VWx2VVJxRWJWOVpTQzV6aV9oV19heUR1cDJIczc0Y1ZxeVE?oc=5",
+    "date": "2026-11-09",
+    "category": "Environment",
+    "local": true
+   },
+   {
+    "title": "Comal County Officials Spend Rainy Sunday Extinguishing Rumors of Permanent Burn Ban",
+    "source": "My Canyon Lake",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeFl5Q2IwdFEweWwxeGRtdV9RZldRVks0cTlDX19PRWk4OFpQRTVOa3NRRjltRHdwcXp6b0FPa25OOWRrZkVqbEt1cUN5NHBGNXNVeDBLaUpYVGpsWlBNMUJ6NGVHUmZPUndnMHFnZV9tdzdLQWp1Z1FzRzZwTHN1eFlxNFJNa095OEViRFdVaGNFMTFiTnZZZFpkQkxxd0tucktwai13UGFhak9SYjZz?oc=5",
+    "date": "2026-11-09",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Comal County Lifts Burn Ban for Unincorporated Areas but Warns of Gusty Winds",
+    "source": "My Canyon Lake",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNDlpTmRuek1HS2NaMlBDNksxeFJOTWEwTThhLV9ycjEyZTV6R0lVTkM0amxvU05kUFNVak4waUY5NW1DM2I0YzFQcXhUMDc0MFU5WHV3RnlyX29GcFprZTQ2bkpMQXBHMWxUUHljZF9XSlhnR0FxTUhqdzExYnJuQ2szTV9sREdGOGE3VHR2LVVFZzhFNUtiVVhsS3lvS3FBWUpneC1R?oc=5",
+    "date": "2026-11-02",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Comanche": [
+   {
+    "title": "Comanche County burn ban expires without extension",
+    "source": "Texomashomepage.com",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOUzdmSGpLUmRocjktNFpucFluTlFJb2hDNE1Vb21mUzY1ZEp2VWNsbkd1U0pUelc4VEdFOElGMUN0VTNNbG1Mc3NTOWhOZ1FMM3Uxem1IUGh3Vm5LMmtPdUVEd2JGdHExbFhIS1ZkVy1CQkYxNDNKTGRyV3c5R25lbzUyZ2NYbnNkTE5lVjB4VnVpM0hianlXeWVRSkdMb0ZF0gGmAUFVX3lxTE82cG96Sjl1Tk8xU2dRQ3VFaVRYMS1TRlNzVTdtaHpBUXhyZExNaFhtWjVFX1pNbkNCRnZTOTIyVzRtalVnVlpfbndzUFozTG5heTRoS1NLQU1FeXk4bkJfcGtpYWlsaEQxb2FXZnpjZXhDZjgxNGpNa3hEam5DZ1Q0WmI2OUtyZ1BZWkFPcGp2Y0l3aEZIc01CS3h2NVVkVUFLOU1PclE?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Concho": [],
+  "Cooke": [],
+  "Coryell": [
+   {
+    "title": "Burn ban is back in Coryell County",
+    "source": "Temple Daily Telegram",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTHVvZjdLNGY4bV9MSXRlbmFjQ3Jfbjg1VXVibUxOdEcwVWFmS2JUbURacHVidmJacFNPbzVBclI0NHBtek1fTk5OMUg5Mlo0c09QLVhMcmxUNGtFNmN3eEdPSGt6bFZ1QzZjazhKV20xMF9VcGlSaGktcU1zbXFlOGF1UHk5RHd4WW5RTUxn?oc=5",
+    "date": "2026-10-14",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Cottle": [
+   {
+    "title": "Paducah Water System addresses boil-water advisory post",
+    "source": "WPSD Local 6",
+    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNS3dzMGVxamMxd09Bb3BGSW9UNmlCdVViZi1KUGlrbktoZllBXzJ1SUVoaXdzTU1QaWU5TFI1dDlrT3ZOekk5WTl6ZlpaYS11Sjl2ZkpQX3VjelRTTElzR0xxcjl1aG5kcDJmb0ZXcGl6OERBWjhQMHVPdUY1WmRfN0otcTdJZnBLV0NDazI0RkotN1Y4Nkt2VGliS29UY0F4UC1vRmoxbUoyQWV5MTV6STdJQTRzRDJZYmY5bXFwX1VmOTVjdXNwZ1FReE80VVpLSC1Z?oc=5",
+    "date": "2026-10-13",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "City of Paducah issues boil water notice over E. coli bacteria",
+    "source": "MyHighPlains.com",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQU0gwa19LMnhoT1hKN2lJMGl5VlFXQjNKdmZaUnFINGQwamZGT0hhV0VBX2FsY2hreDVwTV95dUtnblVncXdyUlR1Ml9UMy1ycG1jcTBJYVR4MnA5WGpsdDUxOFBLOFFqNjNQS2ZYN1BWUzhUQXFZN29IYmFqeEtWaHhtWjdKdmRIMThaTjdUeDR1bzZuNEVzd2dlcUxzQTVrbDlRa2FuZUY2X0lJbDI1R3gzSk0tUTJYUjBPUXhR0gHDAUFVX3lxTFA5WUozSllJRUZTbkxlWG1zOHBVQ1h6b0ptX0Nqa3h0UkU2bFhtQmpxOWFTc0Q0ZlZjVG9TeHlyaVB2WXB3bGJvelZxTTlBZEdIaXp1TDRodk1HRG9HREpBUWhqaWd6NVhMSmVfS1JjOVdfZk1YVy14N3B4QnZ4UmJ4dlBvRllRQ1VrSlpRV1c0MkdiZlNJLVQ1Y0s0VW81aXZKeVJHSnJrdVlnbmViR0FvQ2NXbVdodUJjTl9hcnZ1eWVpQQ?oc=5",
+    "date": "2026-10-13",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Crane": [],
+  "Crockett": [],
+  "Crosby": [],
+  "Culberson": [],
+  "Dallam": [],
+  "Dallas": [
+   {
+    "title": "Dallas County has abandoned Sand Branch for decades. Now it must finally deliver clean water",
+    "source": "Dallas Observer",
+    "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQT09qYzF5Y3BlQURSOTJmY0l4QW13cTBSc1dYNnZ1N1ktV1Myb1d5V3RobHFEaHZnTFJOczVGVkJwS2xvQnpaQl9scHRTMExnNXg0TUFTNVFPQklUTFNVcHpsSV9qLWpWYU5YZTdyRmtNeWptZ29yN2s2M2VPT2g3eGFPY3Uwb0FiWGE4YnQya3dBUllRdlVwNnItcTI0Q2djWHhwbHd4Y2JMZ0lDalFWMlJKWkwzcFg2NGtzdE1LYkZJMUk1Rnp4TXBvblRldGFTRk15VjF1QQ?oc=5",
+    "date": "2026-10-29",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Fireworks to lease data center capacity in Dallas, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMWdRZ29jclRLNU1vdUlYejg0MS1SYjVFdS12MXBBWmlMT0o5QUFldUIxRWlQMndXaGh4czBXMDlTMnZibWY0NU15SHZhU0cyekQ2S1A3cUVuVXJEall2VDRtbU9tcXFjQlhHQ2k1TWxYVFdsOVA5bHdRUDdVTkFkQko1LXFtUDZJdkJ1VWpGakJ0RzhHN2ItSkhYS2J6UGZS?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Dawson": [],
+  "DeWitt": [
+   {
+    "title": "DeWitt County burn ban rescinded after nearly three months",
+    "source": "crossroadstoday.com",
+    "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNTDFOei02ZjNuNUlVb2ZDWW9HM2otQWEwbWcyV2NIV2pLeVh2VG10YWZJSDZkS1c5RUIwb0ZRUXpDandnU1BPellITFU4VVVHZW9aZklrN1Y5SHVqOG8tZ25RSExnZlhlei1TdW9nTkUyYl9OQjJEU0ppNnJLWmZMdFlvVldpY1JyVl92RjFBemtJMXlmSE1QSDVZamthZERSSHJnNWEydmZGeG5uZkpRWWtKUzJVb3JncE9MdFRJYnRreDFLRFowaWxrSVNqRm5yZmZXc3RPcmVFQWJpbGktSEtETUFvOGRWblNfWQ?oc=5",
+    "date": "2026-11-09",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Deaf Smith": [
+   {
+    "title": "Hereford plans for future water supply as groundwater becomes more limited",
+    "source": "NewsChannel 10",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQOGltR3BqaXhnVUEwOGY1VkhVeTRIbzViRVBLQUFoLUpUT1lfMjdLdjlSeENOdm9DS2xhQ1N2TVBHNFJWa0NxOXk1RmhQWEkxVXBxYkRnM0FJUnpjbjZJVjAyRzJrQ0ZNRld6YXA3NDN0NFdHQVM1bF9ycm1BNmJVOGdUeTdnU1JWMEhXdmswd1JCSE1wSWZOa1pDVUhiMGxYYXpKekFzVG5fLUVuNUU1U3lGOTZlQTBPUlBtQkREaXBDQdIBwgFBVV95cUxQOGltR3BqaXhnVUEwOGY1VkhVeTRIbzViRVBLQUFoLUpUT1lfMjdLdjlSeENOdm9DS2xhQ1N2TVBHNFJWa0NxOXk1RmhQWEkxVXBxYkRnM0FJUnpjbjZJVjAyRzJrQ0ZNRld6YXA3NDN0NFdHQVM1bF9ycm1BNmJVOGdUeTdnU1JWMEhXdmswd1JCSE1wSWZOa1pDVUhiMGxYYXpKekFzVG5fLUVuNUU1U3lGOTZlQTBPUlBtQkREaXBDQQ?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "State regulators approve almost $316 million transmission line in Deaf Smith County",
+    "source": "NewsChannel 10",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMTduMUxIVG16emFuNGdKMk04aVIzLVdKa1JXWjJRWnBsY0JPb0x5UmtZaW13akJrVU9zdWFaWUU3RXF4NG1xUHVFOEV5a01WSXhPWk1QNEFnb3M2dnllY05mbHVqZ0ZpOHotbmF6S2p1cVpLajJOMXF2TF96TDZfa0JHc1FOVzFCdXVwbmpqVkhOZTlmZk1WNFBLWlphN19pRlFZN3A3cEhJbHNpbEFpOS1qQnl4RmNaY2RRd1F30gHSAUFVX3lxTE9GODFlbHZITkpEeW5JcXZFbmxMSUx6WllmSFRlR1VvNldFZFNfcGhRZlk0WGpGcnV5RDUwcVdjOUw3LWNyQUlNWkR2WUxITXVrQ2hRYm9rek9DT3hsM05nc2Ffa1VBWVcxZnh0Tm03M1d6SGRic0VINHRvU3h6M1B5NzB2ZnR5bjB3eGhnamVhUlE4UWFQZHFHTG5HOWZHb0txaG9BT1V4SE1LeFdHRWdqcHlsTUozVEJvZGlqZU5kV2thUnVxYVE5WF9WYTFkYlp2dw?oc=5",
+    "date": "2026-10-22",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Delta": [],
+  "Denton": [
+   {
+    "title": "Lewisville urges residents to take precautions after 100,000-gallon wastewater spill",
+    "source": "Cross Timbers Gazette",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxONTZGdFZYNVpRcXZZeFpkaXZiN0psaVhpRHcxQl85bDNibjhQTjhVYzNEcXdDc0xvdURlUGMzTWZuMThzX1Y3WUlEa2FFd0JEOTBTczM5SGRzZWV3bkhfaGpaZnlWbTh2cTlnakR2VDZKMTlBUU1UNkhoeUtnaTYzU1hBLTJPY3hTQlhhNU1QdmFxQW84b2pGOE5RTlg3eVVPWHJ5enBPTmRKOERoRjFMNjJXWTNkZEFTbjJTaE1wemdrS2FlanVwRzFSbw?oc=5",
+    "date": "2026-11-06",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Denton’s Core Scientific data center faces TCEQ violations due to air quality emissions",
+    "source": "www.kera.org",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWlQtTUlDUGhNZFhkR0g0dWJveHlKN2ZYdTROWXE1Zmkyb0lNbE1tLWpNRXhWSlZkcFlaaGtTcEVPdTUzcWpMa0d6a0czTTlaQXNVVzltOGIzdlFBYUpqZmNsM1A1WkJTSTdBMEhORGdLVTQwcU9kUUZVV2JMLXl5WmthaWdMTXk0ZDFMdlo4V2habklmYjREemFXRGNFdWE2MnBKTmkxN2hqZVpJcUwzSGl3TGl0VmxfeE9n?oc=5",
+    "date": "2026-11-03",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Fall arrives reluctantly as drought grips Denton County",
+    "source": "Cross Timbers Gazette",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUVhmSVNFMnlzT3RfMlo3cHlTeG56LVJvZ2llRHBPNzU0enl6LTdtT09DQTZ2X3Yxb3FsdFg4MTdGSEp5d1duV1ZvaTJJcTc1MjhCMmdvQW44Znl0aGhIcndDMUc0UTFWUFhJendXcFlVaWRnWTBXMVhtZjZWa0NPVVA2cXRRdE1JY2hXdTFwYVA4TlZtYVBTMGVWcGlrR0VkRXV5OVRB?oc=5",
+    "date": "2026-11-01",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Denton moves closer toward implementing 6-month pause on new data centers",
+    "source": "WFAA",
+    "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPXzNKSzQwYzFLTWpYTEhENUFhSVJ3ZUNTS3IyX05ueEUzR2pBMDRibmRYTDNPNXBwNjA4U2dJWHFzMDk0N2d5d1BjM3p6SHpjVEJGR0ZTOWZhaXRCcXFmSjhWbGoxb19oeXQyYm5SMTVUbnB5NXdKclRLWU56ci11LVNZbWY3MFFyeDM5ZHRKakVWNGV2bzZtYjNVRzExUnNlczN2VU1ldWpvQzdDaDMtbTlDeU1OU0FOdFpuejR6Snd4N0t0d2xsOVRuVUIxVTZ2Rmh6M2NmM2JLa0VZV3N3NHNjeDBkMkx6OXVXWVQzTlg?oc=5",
+    "date": "2026-10-27",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Fireworks to lease data center capacity in Dallas, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMWdRZ29jclRLNU1vdUlYejg0MS1SYjVFdS12MXBBWmlMT0o5QUFldUIxRWlQMndXaGh4czBXMDlTMnZibWY0NU15SHZhU0cyekQ2S1A3cUVuVXJEall2VDRtbU9tcXFjQlhHQ2k1TWxYVFdsOVA5bHdRUDdVTkFkQko1LXFtUDZJdkJ1VWpGakJ0RzhHN2ItSkhYS2J6UGZS?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "West Nile Virus in Denton TX: How to Prevent Standing Water",
+    "source": "The National Law Review",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPOHBRa2JlcmRKbkpxdm1pYXlBY1BocE1EbkpFZ0dld0xRQV9KNlZPZG42N01jTUFfamJhRzhDazhsVlM4TWc4QVJJaWdBaDlvbERoWEhCVHRabmhEY2tNQXlIUlVNZklKcHViWWhzQ2VPaWxJakFaeHdQVDU0T3JXSWZCcUZvUHN4cFlZMk5HOVVYdWFhZ0hF?oc=5",
+    "date": "2026-10-18",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Dickens": [],
+  "Dimmit": [],
+  "Donley": [
+   {
+    "title": "Drought, water quality concerns keep Hedley under boil-water notice",
+    "source": "KVII",
+    "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNcUstWkVwbVhMRU5hVkhzTEU4ZERiN1dqdnhzUzE2OUQ1THRPLTdUT3BfNE9NREhzOEtJdXFhT05zZ0pqcFJ0bUJsRDNsTHZjM2xReGl0dERHQk9wa1EwVUhITTI1Wm5EWmRNUTRKNWxvZEc5ZmdRRUpieXV1QlFoeGdyNS1aNUhWX1RQbENtSXhXMy1aQ0RhbEhWRXJqWWJqTHNtR3o3enVVcXVXdmMwR3VrZnRnVDlMb29tdUV1bVFoZzhId3FwRUQxa0xJa0g0NEdMLWE4OGJsWU02WGc1N1pENGNDQzVtcFlqQWItOUF0VW9FdXJtdUpMcHgzV1QwVE03Tks4VEJtT1oydEFjU1poWll3eTkyZndieEhDdWRfN29HeEtOeHNGajFGUXFYbktNR0ltaDc3c3NVZVFjX1JkSQ?oc=5",
+    "date": "2026-11-09",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Greenbelt Lake drops to 4.3% capacity as Clarendon addresses water quality issues",
+    "source": "NewsChannel 10",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWW8zMkxvTHFZcDcwTzM1UGRpc2RBX1pLNUVNczR3NFVnNkV4UWFDcUFMZ3Y0OEZHVVd2YW91N0xrREJZUTBLNnBTNXZyZWFCeF9DZTljVUxrRHA0dXc1Wk4zdmMwV3J6Z3VyRURmdFhjVlQwakJaUUpTRjJUck1zb1l4QktqQVRnbTAzcTJGSHB2UEdNQUpoWTJMWUl0UGpCZHo4N1ZLeTZPeHUxOE5uR1JZSlk2d9IBygFBVV95cUxQZjBwWldBeDZGVmZLYUxtSE1yUGJ4WG5IV3dzZzlUT1l3R1p4RmVmR0NPY3pLRlNyR1hIUk1QSUpEVnNyN2lPQXBkNUJOakZCT2ZaVDlDQldHMzMtMzRiTEp1VndycHA1R2s4di0waldmUFRZN2tSblF5ajJteG1YZFVKeDVlZWFHU0xNSkJrXzlOYnBQaDhrM201TWlpajJrcm9uOVV0QnVBQVpzOUZYYy1IakRXeDBMTFVFZjlPM19DX0RoalprMkVB?oc=5",
+    "date": "2026-11-05",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Duval": [],
+  "Eastland": [],
+  "Ector": [
+   {
+    "title": "Pierce says water one of biggest issues in City",
+    "source": "Odessa American",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdVE3N1JmUEFmZDlKbHBWdkpnVHBJeVRfei05TVFHb0hYUVhjbnp6VHY5STF0R19UR2NlRzFkUHlLWE8tSEpaVGlOUG9lUUU4LXMwck1XX0ZGd3VncWpKUXRYdlJGMGZHUzVzX3BtQlBYTEx1YnN6N29LT1Fud0NQVS1ya0p3Q3c?oc=5",
+    "date": "2026-10-16",
+    "category": "Water",
+    "local": true
+   },
+   {
+    "title": "Texas Critical Data Center Secures 207 MW Power Deal for Phase 1 in Odessa",
+    "source": "Construction Review",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOVXFkX1RkSTVhX1VvUlp2dUVJcnJlYTFvN3Z5d1JZczlSZDdMQXhuOTFvT0FPZDZYVU1IeU9kV2h4U3BPS0RFcE9selNUTlpSdzAwdUdoZHVKeGE1enVKbERQLVF1STN5eFBkU21rUVZibVQ4LTN2elp4QlBaMXlKd3IzM1ROUGpqTVBYdE55UkJnNWF0R25TeHhkVDB1V2hYVm1HMUJrSFFuMEpnTW5YdC1R?oc=5",
+    "date": "2026-11-06",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Who’s in Control? The Limits of Ector County’s Authority Over New AI Data Centers",
+    "source": "newswest9.com",
+    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMzhxcTlYTVRYTWU3UGJ1NDVNODlVck9jQThTVVhJWi1pMTRUNE9tZXFEMFRlaWt0ekJ6dGk3M09uWm91emZHY0VrSjJmcTdacGRpRk85WGJRUmpDZFJxMDhaSkdSaGNJYkcxcDZOaHNVSzNZQlFkUm8waGlKN1NodmVoX1RqRzJnc2hsRFJDbjVlaFNPcmlBbWNFbFczMzVxSEJRUHFDVVVsclBqOXF3TWNuT3k3d1FKSTdJSmdadGkxUVg3SlZIM0F2Z0JDMzFwbEkyQw?oc=5",
+    "date": "2026-11-05",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Edwards": [],
+  "El Paso": [
+   {
+    "title": "Volunteers, donations needed for victims of flooding near Horizon City",
+    "source": "El Paso Times",
+    "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPa09fR3hXQWp2STNfN1NDOGRWR1V0b2tPT1d1elBLU3F3MXVSS0ZGbUJKTFdOREExRDhDTXNKUmRMaHU2YVBVd0ljMXM0aFc3RFZ2ZzRtNG93c0Y3bHZmUHhlTEFucnNIX20tMHctcnVGOWN6LVQwWVNfSFNfUDYxVjFnWEtnS0p0X25pdVN1WUtmcHlBR3QtVXNSLXl6WW5UVkI0MHpBRXR3SGRNd05EcWNaazFnYXNkM3FRTURZaXo1UktTSXNRTWx6X3JDWWhPWFlYZHdnYWM2UFJ6MjMyT0dydGdTUmpnaERBdUwxT1A3Ml9WWGw1QnI2a3lhcGlzSFlLcV9JNHJHOGM?oc=5",
+    "date": "2026-11-06",
+    "category": "Environment",
+    "local": true
+   },
+   {
+    "title": "Flood disaster declared after storms inundate El Paso, Juárez",
+    "source": "El Paso Times",
+    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNMV90VmR6TnhhX05MUi11YjFEa25lZ2JYMkpOV3dYcHkxMENNajZCRGhoaHRlaDhvVERmM1FOdGRpa3ZqQlJ0S093LUpOYkFYSkxPT1gwb3JoSXRHRkE2YVJydmF0aVlkUjBMdktSZ0dCWklod0pWUVJtbmtFVlhDcjVJdklzNDVXX3o1VHhVOFhDclA1cXVzNVIxRVdHaVhVdVk0RzFaTlhVM1prVGJWWk5SSWhiOWMwNVpKNzQ3bUUtMElQaUk1OE15aGk0cFdmQ0hN?oc=5",
+    "date": "2026-10-28",
+    "category": "Environment",
+    "local": true
+   },
+   {
+    "title": "Far East El Paso County residents weigh in on controversial power line tied to Meta",
+    "source": "KFOX",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeDdYYWxiQ3NybUY4Mm1SbERlQzR6TU8xR0NtX2s3WDBpSUNta0NuWHdSM3lMeDJaWkJ1c3A0ZXB3V2tsNmFHZmVxc05EaWtjN0h1V3QwU1pLYVh6Z2xpdXBoeWMtc0JndXNVNHNFYnQ2dmEyWFIzWERQdEpfWVJpbDN1S3JxemE0b3Nzd0hNeVdFeHAzd2w1TnIwVmpuSDdfWnRQOGRQNFl0aDdLY2FFcFFn?oc=5",
+    "date": "2026-11-06",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "El Paso County couple accused of stealing more than 4 million gallons of water over three years",
+    "source": "KKTV",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOU3NOdmVSWTRaQ21wcXctNUxsYnhpTzhNemlON0wwWTc2ei1rMHhvT0hyd2dFZ19GNDB4TGtfQ3JmTDRfRWVTZE5FYlV1UVpvNzhESFBJSnozUEJmeEs0cmdnZ1VPT1VKOVE5eFJxWGd3NDBmd1NoM1Z2ZUs1VHJtU29NN3RIc3NlMXhFSmFtRm1nTjRDUzNJTXR0V09VR3pCaDFVSW5WNzhhTHhvazJoQUlaRWtJRVQ2SkJJVENnSdIB0wFBVV95cUxPVy04Z2hQdHFVWWxkYlV0STE2X0VPYVJIa2NyZE5qTUZXYXJNLVowMXlKbkVGMWlRazRGTHYyNzdQclNkaEpqYTZSVlVtaGtod0xURFRtNUp4QWpBb3JXVllzU1pkMnBINEpZWnJrOW8ya3hPQ3JxLTRxTGZmdmhzb1RLeXhzU0VzeFdYQkwyajF3RGxMblNtRTRuejd1eDJhZDBCcWRXTkFtVHcwWmFqR2NyM2RhMnY5Qm9DOEFCQWZmeHcxN3p1YlEzQkFSUkVkdTk4?oc=5",
+    "date": "2026-11-06",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "El Paso Water budget choices could raise monthly bills $5 to $7 for upgrades",
+    "source": "KFOX",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZU9KbFVaM29LQm1SNk01aDNoYlNVSjRUalBucVkyTDJEWVlvczFmc1ZsNkIwZTJnRHZGb1owMFBmLXpTMkprOE5QQndJR19vVGR2WmdWOEFnN1RTZkVGb3owRHhCRzRwdE95elBJYmZwSmxLVDBtYm5NVHV2MHhhSHFnUTBtUXQ2UHZtYzI2emNlaXd5RklfM1ZjZHFZUXJEUU9BTWkwbw?oc=5",
+    "date": "2026-11-06",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "ServerDomes breaks ground on domed data center campus outside El Paso, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRVRKX1MzY2VTR0lreEczNHBxTlNvb1hDRmVCa3VrcUMzVHZqdkNxOWljZFF4enFpTEdWZnBPRE0zWDlQOHNXRTJYbDlueDBfVTcxNHpoSS1KMjNwaXlJbkhFMVVBVTZueXN0N2lRRi1vSHA2WlBEczRJLWNVekQ4QXNBVXJCeEc0djZ3TU43Rll2MkRsV2pSNG9uUzRYNFRlYU8xX3VIZnNJclZkOXZNRW1MY3ZwVnFTYU5N?oc=5",
+    "date": "2026-11-02",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "El Paso County officials to brief Tuesday on Horizon City flooding",
+    "source": "KFOX",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbDZiTXJCakx6OU5SSVprZW9MQmF6OVlUTG5melU4T0JRQmZUZ0MycDJiX3A3bS1NTGl6ZUtURk9Gd3NSUS1PNmlXTUswRWZLS1ljaHpqVHRXSDRCS0g5RDM5RWIwZ29nd0pUTWt1cFNORlI4SkloQVpmZGJXa0ktMHJKUm55QlUwd1hPVHdHZ041a0N4QU1Rd2xONm0?oc=5",
+    "date": "2026-10-27",
+    "category": "Environment",
+    "local": false
+   },
+   {
+    "title": "Nearly 16,000 El Paso Electric customers lose power amid strong winds",
+    "source": "KFOX",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPd2V3Q0pGZjctdjJvVXhuNnhMYVZwMWhQdXVMNHQ4TXJuelFPSUU3NWtrajBwSzZ1ZjJXM004Mkc1X0l4VGlhOFdKeHFfdUd5NW93VjlwWTZZcExPR3ppaHBXNGJwMzlGOW8zV3VBdTBPNlQ3bVMyTDV3WlhfcURqQTFfSUhsdi1rN3VKMHUzYldqcnpRYUpyMWhXV1hlajQ?oc=5",
+    "date": "2026-10-15",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Ellis": [],
+  "Erath": [
+   {
+    "title": "Recent rain prompts Erath County officials to lift burn ban.",
+    "source": "Beneath the Surface News | Stephenville",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPRlpJeUpiOGI3MGFsQzNRNWpvOE5BYk4ycWFEYXJjRzFjdDlrcER2d2pjNEczUU9ESFhwcnJ3a2FBZ1hKN1BOeEFfZkNVQ0dINV9JMF8yc09Ya0xIek9ZcnJ4QlRTVU5TaFVBT25ZYWszcVgzTnI2YktyazlsMC1TRUppUThjZ1pkcTVaMlRuS09TYUlxRVZRTkZIVlh4WEhPbWxxZg?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Falls": [],
+  "Fannin": [],
+  "Fayette": [
+   {
+    "title": "Fayette County Puts the Burn Ban Back On",
+    "source": "The Fayette County Record",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1FR0lvVzlTOTFORWVRR1kwcWdya1FBdWtLQkJlVWVlVE93OWdmN2Y4M3YtbEhCMERid2xWb2xlUW5OVGNEajlUeFVXSWViT1kxbzZvMmE5a05mWERtU3ZyblZRUjhVblo0a0FhUlVjaGZFc01fZDExNk8xLXZpWG8?oc=5",
+    "date": "2026-10-26",
+    "category": "Drought",
+    "local": true
+   },
+   {
+    "title": "Upsides to the Winchester Data Center",
+    "source": "The Fayette County Record",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9rVjI3ZDVENHAyalhuYXhsNG5BaGxtMkkya2I4R1FYWlNkdV9reC1tVGdoR3doTUdGMW1OT3dYWVVvUW9HQmM1azdIVlNIRGYybUMxNFY1YUFCX2NJZDJjNGJpelZKSlBad2luZC0za3ZVOWhUOXFMWks2RzFzakk?oc=5",
+    "date": "2026-10-22",
+    "category": "Data centers",
+    "local": true
+   },
+   {
+    "title": "Data Center Opposition Returns to Courthouse",
+    "source": "The Fayette County Record",
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWWRXNDlXM2ZCN2RvNXFEbEprZVVmZDE1Q1JfRldidlNlRHZTdmdVY2dJeUR1b05KV05oT2Q0YmMyOWhiUElvTTZlY0tiX2M3bmpHVVVqYzVnelRXMHpKVTVoeW5ELTJaNHI1R3o2VW5OZ2VRRHktMmV6emVvYnJhRjJlNW9mcnhuUFE?oc=5",
+    "date": "2026-10-12",
+    "category": "Data centers",
+    "local": true
+   }
+  ],
+  "Fisher": [
+   {
+    "title": "Heavy rain floods Rotan streets as drivers face road closures",
+    "source": "KTXS",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOakthY2VqSERSQkRIVkFfVVJ5cmh4VmdRNVllQy1CS0dDOVZjNTMwUkI2YlVxUkhtak9IazctdzlJdmhMakFnanQ3bXJXeG1KUlp2RzVZblRUQVJ6ZWx1UE1yQnRRUGVYN2V4OHo4d2VQNmpObjRDS1B3c0c3VGdsWXBBRGFXY2dIN2lWUEFWdjJVenc?oc=5",
+    "date": "2026-10-15",
+    "category": "Environment",
+    "local": false
+   }
+  ],
+  "Floyd": [],
+  "Foard": [],
+  "Fort Bend": [],
+  "Franklin": [],
+  "Freestone": [],
+  "Frio": [],
+  "Gaines": [],
+  "Galveston": [
+   {
+    "title": "League City moves to regulate data center development",
+    "source": "The Daily News | Texas' Oldest Newspaper",
+    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcDl1V0JkSjVHU0xtSjFtN04wZjZ4Q2NzazBQM0ZKN1E3Z0dsSU5vTHIxV0p3STBsZjl6WlNFWVpsSGtuM3Nwci1QNmF5LTlXTGkwM3YwU0x0NkxnYzlfdERBZHVtMDhicUs4WFEzRnBsY09FWDVGdy1fa2twNzlrTk0zM1oyVEUwcE9yOTVaZ20zZmlPOU12R3RnSXM1VU1jcFJzU1hlNWlXcklHQUI1Ym9haUlaVnUyVGhGY3pJMWtOR29GcTFoNU1fNkJFZw?oc=5",
+    "date": "2026-10-25",
+    "category": "Data centers",
+    "local": true
+   }
+  ],
+  "Garza": [],
+  "Gillespie": [],
+  "Glasscock": [],
+  "Goliad": [
+   {
+    "title": "Goliad groundwater district seeks applicants for board vacancy",
+    "source": "SouthTexasNews.com",
+    "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNTGVrcVM0VF9NN2E2SzViZExTeHU1OUtKU01HLV9uVFpsRzljWHh2Njc1aGZwVWxpTWgtOXhYakVmVXdIVWlYaUVkRDNuWkpEWWdwV2NGSk5HdnRCak1lLVE4MFkwaFYzLW5pVnNIMHUwbmVPV0hWRHFoR3FQcFIxUndyaEZ0U1MtZTdwSzFfLVBqc2tRSmw5RDg0Z1FIcGxsV0lWS1EyS2NKTEV1NmRDV1NXc0MtUm1mZHFiN21taVVoMWxmOU1xN3hpdExGelV5Y090WXhaUkVULWNTc0RWeEpCZzloZGtMdURZZTJYTmRfQjBQQTcw?oc=5",
+    "date": "2026-11-03",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Gonzales": [],
+  "Gray": [],
+  "Grayson": [],
+  "Gregg": [],
+  "Grimes": [
+   {
+    "title": "In Grimes County, Texas, a 2,770 acre reservoir cooled a 470 megawatt coal plant for decades, and then access for the anglers who fished it was shut down",
+    "source": "Energies Media",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE10bWJNQ1B6b1MxWHRXandhZjk3cGlMWXMtSDVFelpNSXJhWXB5N25ncTE2bjJhUVMwbWRLUnlBZVBHb1lQQVRmdUZDbEhaQk1ITlFTNnQtVTctVWZ2WVpMV21udGY5TVRiNDV5YkZseDdYXzQ?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Guadalupe": [],
+  "Hale": [
+   {
+    "title": "Hale County shapes long-term plan for flood control projects",
+    "source": "Plainview Herald",
+    "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQSzZMWldRbnh6VGVBa2tmWkc5ZmpOaUJreFpkZHc0NFpPMWJIVTVqVXl5N1NvN2hlLWk0VkpGQVF5Q3RpRVVBalktSXVxSG5zaEVWa25IREZLRVRLVjFrUFQ2QUZsM1YyeVE4dEdrTFFXUVlDTHI2ODB0a3VJTTBSMzZ3?oc=5",
+    "date": "2026-11-06",
+    "category": "Environment",
+    "local": true
+   }
+  ],
+  "Hall": [
+   {
+    "title": "QTS and Lancium agreement to fund Turkey roads, utilities and water tower work to 2032",
+    "source": "KVII",
+    "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOR055cHlTYzM0TXRCZl9vWWNndTZnUWx3OXh3V1lGNGk4U2pnTW5oVVc5cGlwNWZjRXEzLTJxQTU1eW5DTlIxTWlFaXFmcjNVYW8wRm9YYXNHVEpwRWowbVY3RGpPa1hJTzB6QjE3ZTdqbkFXZE56dU5vOEV6akxJb1ZLOE10WkMzUTlNeDJwbmpFMmRJczZLY0lBTnFqSGJvekMtZG9ud1JUV0pndUR1dVZ5b2lWckVoS1FudFlzUmlZTVhNSFhFOUZ4NmxFNTF6aExSOU5LZlV2RlMwSDhDSU1jVHBnU2JmOUZ6LXJsT3R0dXl0TXJYWnFMMA?oc=5",
+    "date": "2026-10-14",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Hamilton": [
+   {
+    "title": "Hamilton County invests over $100K in McDonald Farm water upgrades amid jobs push",
+    "source": "wtvcfox",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPR04wUlFFOHgwX1BOdmE3N29nNUhacUhJUk1GemtGNDVIVjJhS1lfaGdnQ0lCX08ycVpIaEg3alNWWXJhRVlxcFlqeV84Vm83U3RIUkdwOTFCTVNCY3J1aWpfS1Y3NGVTYjVRR0FGek1aaXJ2em04elJIZl9JVlNXaFZ1V211R3RRN3Q5RWQ3VmRxdFNIWVZ2NXdtZTFRNDhKX253cWVXem90N19fQW9sTV90cE9RbHZ4OFE?oc=5",
+    "date": "2026-10-28",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Firefighters battle wildfire in Hamilton County",
+    "source": "NEWS10 ABC",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNREdkcFFHTzJudmVMSmFady1JczlLMzlZZEVSUkRRLUJpX2pWY21EVUFHTVdHNm41anJqSVpFVHNKZHI4OHd1M3ZqNmlERnhzcmZMaF81Vm50aDV4OVVOdWpmTU5fVHlTajhadURzU19JV1d2amNYY09RTU1jOFQycHpobXpGelk4ektqbHdXOA?oc=5",
+    "date": "2026-10-26",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Boil Water Advisory Issued for a Portion of the City of Syracuse, Hamilton County",
+    "source": "KDHE.ks.gov",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBTdDFpbHl4T1Z6bkJqam1RTWtVa3RfUzBQQURjQWRJbjRjbEJYRXdjSEV5Yngzd3VkaGtSYVBsVm5jamh4MGZJal9UV1NpUUFrbHhXVkNtUUlPaVVlTzJQSg?oc=5",
+    "date": "2026-10-14",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Hansford": [],
+  "Hardeman": [
+   {
+    "title": "Application filed for $8bn data center project in Quanah, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQM2hsc1NSd0JtMjRmRjhiNmhMSC1iazFqRGZScTVfTDB6UlFvbUF1Tk5kU216cTRfZk42Vm5tcXZPYzhpbW56WWJib0ZFWUpLOGt6cDRiYmRwU091WWhPT1I3WlNYUEJiZDR2blRyY3dnMEZrTVhzdmhwQUU2cWJXU1phbTFOb1E2emR5Y2drOGU4Y3Rta190N0NmM3hsbURxeW5HVVF3QTE?oc=5",
+    "date": "2026-11-10",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "$8 Billion Clocktower Data Center Planned in Quanah, Texas",
+    "source": "Hoodline",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUkREQkNaRVVpa01SYzNoTEtMQ1NVaWVwMVJjdGRPNkx6Vlo3QmRtM2FoQkZEMENUV2NzejdEanVsdGVBN3dVVVo4YjFuSk9RUjNKanUwSkEwMml6TGpEdVhZWE55MkF3VUJEUTVkR3l1SlhuYmhTWFdYN0lqMGRWQjhSQnNLZHFEZWxuRlMwSQ?oc=5",
+    "date": "2026-11-09",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "City of Quanah lifts boil water notice for parts of city",
+    "source": "MyHighPlains.com",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOMmpTR2Zja2VJODhiVVlWZTN6bjAxeE0yeGJpNXJkMDVjSVk4ZWV4ZF9zQWRaVjNDQ1gtV1NBOXpRZGJtSUpLcUFJVXYtTjF4b1VNRG93S2JZakY4ZzRxMmJ4eWdDLURNYjY5R0JFMWtvXzlpbGQtTkFGbWF0eFpka3hmUk5Sc3N4Sm1QSER3VDhxcUtZTTBpWDROYVRWZUwtR1Z5bndla1FBd21FcmFqbVdRYzNtWGtvSGfSAb8BQVVfeXFMTWMwSzdDYTdYVnRpT1ZqbWJlc3dfM2g1aF9JN2ZmWHQ3YzNIMlF0TzlWX2kwc2ppY3FKeVVTNmF2LWtIMzVLeVBscm5DRGVKQlM1Rmh4WmdPMF9sWF9lVXNIZndVMnVzQ1NCcWltVVFxeXdVUGo4Y2EtQ2g4Zk5HQmRONS1KSVlaYm5WbjhGclBxZVN6aGhqUHJXbUxtZ3o1Z0R3b1NNVS12LXhhSXUxS3ZUYnJLeDNjNXFDY2VWQ2M?oc=5",
+    "date": "2026-10-22",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Hardin": [],
+  "Harris": [
+   {
+    "title": "Harris County has 46 data centers and limited power to regulate them. Here’s what could change",
+    "source": "Click2Houston",
+    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOMno4aE5kTXFFc2Vmb3oyVFJhTUNMbWIyQmN0SUFuYTREOWQyWm15MUZlaHV5ZmcxNU5zNERHNGoycm5UZmZtSFRTaTgyZEg2MFlCMGpnSTVFVXRZa2pjU0R6REgzZTlKOUkyR05PMkxEYVFRN3VSUkEtWG5DYXViS2Fhd2ZuSGtjTXdGMVVzd2FiUDNjcl9LSVlWQ0ppRkJoZjlweXhQNUxTbENCbmZ2RWxwOHBnWlBkbVdSRXdyUFdNNTZxT2FOdXF0Zk5ldHpEQ0NhaU1zMGhvQlBLWGc?oc=5",
+    "date": "2026-10-16",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "AG Ken Paxton targets Texas data centers over water use, including developments in Harris County",
+    "source": "Click2Houston",
+    "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxObkMxNzZrZXBpLXY5V1NtcDVUR3FZWkpkdGhEY1VvTnAzVkpkMzJpbF80Xy1NdXBaYkp6WVgxRXNCNWlYWE03SUUtRFd3Z2dfTHl4NkE1WU0zakt5b195aXJ3dWF1eV9JZnR4a1ExUDRTNEJHYTFTWVd2STFDaUUyNF9mQTcyd2YzeGl5cDNMekZsWmNTVU50eU5WWHFtaHBqeGtVbmduaFBWTG5IYmRSU19DV1ZXX0lZNUhVcDhPYm9mZkhTbXBsMlVqcjVkamlCWUV1N2hMLUZMT3Z6eTUyLWJn?oc=5",
+    "date": "2026-10-15",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Harrison": [],
+  "Hartley": [],
+  "Haskell": [],
+  "Hays": [
+   {
+    "title": "Expanded water resources, roundabouts: Check out 6 recent Hays County area government updates",
+    "source": "Community Impact",
+    "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNTjRqdHdwbUptTmtsMzNYMUdVb3hGM0lmQlNhMmtNMHBEQXBuUnFMc29rM2ZaX3NIZEk0UW03M3RNSzhkTTJaY3Y5aVh0Q0c1QWVQeGdQUDM1VjVSN0c2UnBrYU9ULTJEdUZsQWgyY25xQ3BUVUZNYmlXNTRrNkxqVEpOZEROMU91MmZQd25OcHpqelJWaWhBYVpKZHRfUS05Z21tNzBFalA2M25NVkhYUERvMl96QW5hVC1zUUpyS0ktZGI3b0FlX0k4QkFhQ0dtUVdQR3ItbElHSF9hU0hTWTNLLWFwWjg?oc=5",
+    "date": "2026-10-30",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Water, public safety and road improvements take center stage in Hays County commissioners races",
+    "source": "KUT",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNY0RRd0QwVEZpYk1EVkxqOU1zOFJSUDJ4SjNLRkVoRllRSERqOHY0SUFxbGxwQ2Y3QkRSMVUwNzBaMjRIUlB0RUFLR0ZQSk96eDBBclhFSk40R0hsV2ZpRVlxQkw4ZlpZLUc5Sy1xVlJPT01SVjBTamtLdmlNZktEdDJ4cFVSSk1nUkRjRkNFZ0pIelpaTGQ0LUtqTEhvYW5WZVhuV2RVYUJLTVk?oc=5",
+    "date": "2026-10-23",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Hemphill": [],
+  "Henderson": [],
+  "Hidalgo": [],
+  "Hill": [
+   {
+    "title": "Proposed HILCO Water System Sale Draws Local Opposition",
+    "source": "Hillsboro Reporter",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOQkJPbF94MnVNaXVtRjk2U0FHQkhYSXB5dGx0WVVZTGhHbXREcno4OFFWdWJJM2JMZVFRNUtRZjh2a01WYlFqcWJHM19aSHQtX2IyOVplZTBhelUtRTBzT0JmVVQ3WkJPV1oxY1VhZ2VQQk83Tm16Q1UtWnBoUlBGUGNLQ0IzZ3lhVl9Id1VRaC1JOWNYOUxKVW0wRXE2M0s1?oc=5",
+    "date": "2026-10-22",
+    "category": "Water",
+    "local": true
+   }
+  ],
+  "Hockley": [],
+  "Hood": [
+   {
+    "title": "Hood County rejects data center settlement offer, permit appeal",
+    "source": "SouthTexasNews.com",
+    "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNTXNzek9vWDk1cEc0NUZzY0gzR0EwVmh0VE5qYzV2elhlcmp5WDYzT3M4dUdQS1NvMEQ3WmE0NS1oR1g2eElKODFZaHhPUFVIZEtNWjNTSXRzVGJzaXRaeVZkbUMwZGNUN0VIWk44S3pSWjV2X2h1cmNZTE9tZERyc1lDWEgtT1BrdU0wUzhvSTFaaFpBZ1NNNlBqeThsMVFlTzZObVhDRGR0eDdkWDZiMkkxUGt1ek82WDlialBEUXlwWmZJcHpTMmNBM09fVjNacTBmT05uMXhodzU1cTQwT1hhQzBnTnhGdDQ4cnFVTVAxZjUzQllWWQ?oc=5",
+    "date": "2026-10-16",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Hood County data center sees another setback after officials vote against the project",
+    "source": "WFAA",
+    "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOSnNmSFpVLTZpZ1Z2TDgzdlV6dDFZR0I4ejBKYkZoZkwzb3VCNkgzNUNmb2N0NU1TSmpXNFhpckVMSnJyN1Voby1uNF85NkxKcUFvckx3V0xHdGFhNnpqMGgwM2V6cnJIUV80ZDk5NnJvNGFLazhfQmliMGU5ZVFreHhsbEJycTR3bktLRlNZQ29PLXNlUWMwNHdJS3NhVU1NMmVKcFBDZmF0cXJHdWlpN0NINW5qSml1cm1qb2ZnMjJMbFdFbGJDY1lXUlRUM09nYlhiOWttanpvV3FlQ0QtUFVad0VPVThuenBXQ3ZSVUl0YkFna0Rv?oc=5",
+    "date": "2026-10-14",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Hood County, Denton face growing pushback over data center development",
+    "source": "WFAA",
+    "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPYU9Wd2NaUnE1RGs1ZGwzOFE4WFJwa29oOXF1VGtqQ2hQU2ZscXJNaGJxaFVpUVpzbXRCMHlFUFlUOWczT3ZBQXlHUEVZX1lSbHY4Y1d4OG9EdW9uS1hKZ1hyLUx6b0tIYW1SNnNmYU04ZlhFbzQ5Z1k2VHVsc0tsTlNNQWVTSGRLVDZ0dDY4NTl2MUlMSlpTOUJMVEFkb1dObFZQeGhFR1VwRU9wRE85amtJU1hlLUJuRGxoSGxyUXNEOGZlVnpldXB4R0pqWlM2NDA4LVBMbC1fbmttTFFLazNCM2REU0daeWtnMw?oc=5",
+    "date": "2026-10-13",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Hopkins": [],
+  "Houston": [],
+  "Howard": [],
+  "Hudspeth": [
+   {
+    "title": "Hudspeth County residents demand answers on $15B data center's noise, water and power",
+    "source": "KDBC",
+    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQYzBGeHpoMklTZ2UyTHVqeUJDWS1ZZllmUmhhQmdnU0FpVzBGYmRXNUx6azFycVdnUHFEcE9TeXhlZkhfdFJvcmZNOVBHQm9KQWVMcWlUcm5nUjlpbVJUTVZ6NkxCWkZ3S1B5Zk95ZFlPNlJQbHY4R3FyWUVyRHZrcV9mUjBtcFN1Y0tZZmR0a1k4bHV3bTJIMjhjTncycFNKWjljbTdQQWRaT2o0OTdabTlfT1NCTi1sSTFxUmt1Z1BLRkFlOFctOVM1dG9Ec19xNXJr?oc=5",
+    "date": "2026-11-06",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "ServerDome Global meets with Hudspeth County residents about data center",
+    "source": "KVIA",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdDE5WnlrNWVQTjBuY2gyel9RcXhiX3I5VUJpU3ZvQ082bl8tOEhSR1ZWN3ZaME5rN0NxeWRzTTJKdEpxZVJYLXlScS1CbFlzMkN5UVZyamlLNnFGdVhiRTdOOTZkQ2x6d3J6UjZOc1g2Q29ZVUxGUk5CZTliYWFZZldJcm9mb0g0ZHZhRw?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "CEO of Hudspeth County data center apologizes for lack of community notice, clarifies project details",
+    "source": "KTSM 9 News",
+    "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQQmdaOXoxMkFzdWxVUTQ3NHVzVFVFU0N6ZUNPSzBPVkhlRm1sSF8yWUF3bnRXQmstTFVaUXNlcjRwZTAybFdidzVKZlJ0YVBDVGQ1NEh2ZVMtMzhELTNpZmV3VkZWdjlfZ2pnb1d5aEU0RzJQZWZlcDc2ZW9qbmFobXlEQjJCYzhWeHlFekRZMXI1Y1BuUzhOblVwM014bU1YWFNXVjVqQVZiZkc3WGp3Rkc0UWJZUVpkQ2xIdXpHejhkZUpYT3NwSXJFZjQyNk91bXhqUGpXUU1oR0XSAeABQVVfeXFMTzhZamZhN19aM3VEM0dHLUNfS1BqWHNreDlJT2MtbE9tN3lYV3pRQzJhUGtKMURBYlZHQ1pweERHTXFDWHduS0ZJR25xYWFUZ0xXbXdLc2RNdGM5N2xZWkNvUi1jd2pFZXNUM2c2Qmd1VDY0TXd3SWNGQ05hU0tFT3F1LXpzZC1odHp4dHVUNTJrcWVOY0tseExlMDFDTVVyTjB3QkNyT0R4d2R4SnNtaUpjMzdUTy1Ra1RvMkJPdkJlaGwwQXVXZ1BlVmpkak4xZUJXTVM0d3Jfbmp5Ukw3Mmo?oc=5",
+    "date": "2026-10-12",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Hunt": [
+   {
+    "title": "Water distribution improvements to impact traffic",
+    "source": "Herald-Banner",
+    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQS1l0eV9EdlkzRzh5dDhUYVR0N2ZGTndwbVVFTG50SmlENTJRbTZDOWlMbFI2MGowWks5LUp4ZE0tTkV0UzJTOFVmWUxEYmw3eE1JVk41czJneHAycGYwOWZNNDlLMm82SUZNWVg3T0FHZ1RrWjV6R0tZbUhkNk9NZU00cjhaamt4bjZ6ODhkd0lfeTJ2WFNKT0x2emcyT0dyLUpPUFVwMkJRaTcxLVZDOFV1VGRQaWloOXNPTkNQc1JMUzhJYjZLcDE2bUVnZU5POWEtaWh4RnFQT2xj?oc=5",
+    "date": "2026-11-07",
+    "category": "Water",
+    "local": true
+   },
+   {
+    "title": "City Council moves forward with multiple water infrastructure projects",
+    "source": "Herald-Banner",
+    "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNVVNEV0dNdWw1RGdYRGZDMmVWTmRSLTRyZEFoMy11ejFYZjRmVV9IRExQdlowa21MbUg4dU1mREpzQkd1XzVtcFlXS2J2eEttdmhFM3hDZndCbDEyZVlRMFFMM2U0R0dTVUl0WnRVN3RNNGcyNEE1OHlCcTVFYUtnVkdZRVVRbTV1d2NXNUJOeHpRaURTUnpnSEllSlVjcHNjN1phakIzYmlnU0JDRkd3dEJLOU1TT0tXRUxBMWJvX3VtS25DMk8yZThwdGVpc3J2UzgtN0lVZ1NDM0dMQWgzQWV1eUFjWVBWQmpSajBtMHdmM2J1QVNvNw?oc=5",
+    "date": "2026-11-02",
+    "category": "Water",
+    "local": true
+   }
+  ],
+  "Hutchinson": [],
+  "Irion": [],
+  "Jack": [],
+  "Jackson": [],
+  "Jasper": [
+   {
+    "title": "Jasper County Commissioners Extend Burn Ban as Drought Conditions Persist",
+    "source": "easttexasbanner.com",
+    "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxQalNkNlhZd0cxZE9EQzA0UG8zcldQNHdfbFdiUzdlbDVmek9nM3RDRXUtVndhYmI5NDJuR1lwaXh0UnIxa3g2RUdBcFRBbzlhSkJDMDRnSjYyREs1SktvVGp0al9kVGYzdXRTemtNTWNLSzZwRTRWSlJNZ0xudVhPcmVYOWo2Y2JnazRvUU1qVG1CRWVJUWRFUUFUUlRkZU5oUlZMenpnNGltVjBQU3RQS3hLYTFlSkwtaTRTUVhUeVlCRUlaVkxnTDk1X2tkODhtbjlrUmxMWG5qTTZfVDJ3YmlRR21hakZmbnktWEw4MWJWLVJKbFg5MWNpWUNtZw?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Jeff Davis": [],
+  "Jefferson": [
+   {
+    "title": "Burn Ban Issued for Jefferson County",
+    "source": "Port Arthur News",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE90RUhSZzh3RHRGTFB1OW1DakdSRGJTN0lVODUxQ3lKLUZRbFFSU19iYXRHSElQbEJzMmlCbHF1MW14YlNBeDJqRlJLRmZkZDVROW5uS0tsU19YNDNRRzNQNUlyMUNiUng5aFBMNktzaHdqckJBakE?oc=5",
+    "date": "2026-10-22",
+    "category": "Drought",
+    "local": true
+   },
+   {
+    "title": "Valero restarts units at Port Arthur, Texas refinery after outage last week",
+    "source": "Quantum Commodity Intelligence",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPUHhyWnFiemZ0WUFYZm5uU01LSDVDRVdiSWhQOGhWZGxTYTBrcGtoWmJzYjBNTk1icE1XUlFDV2RUUEdGSkNhVTA0V21Cd0ZqMGE0eThVeGFDR2RyYW5vblNQUVlRcVlsblE0ZG5OQlJqaFlaSTlLNk9HWlZ6aDhTeVZJWHc4ODJnd2NjTHNRQlZmVmlmOGZwc2RiOVhTeVhzNlZhZnFRUEdDSUtDUXRlOXZtWkliSWxF?oc=5",
+    "date": "2026-10-28",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Jim Hogg": [],
+  "Jim Wells": [
+   {
+    "title": "Heavy rain floods Jim Wells County highways, stranding Premont neighbors and raising mosquito concerns",
+    "source": "KRIS 6 News Corpus Christi",
+    "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQeVlqRTVHbTZJYTBXMWJ4NzhCWUFVN3hWcERqd0lWM0FUQ1pPMTVlakZwV09pVFQzRGdOWHVGZ05qMlpWckttNUhhbF9oczh6djRWc3Y5MmxyWkdYcFU5Y1dxSTFZSGswbEJQTy1xSEZHVXlTY2lyWXQ2U0I1NFdpS3F2N2pYYkpnelpiTmJLMHJfSUd1OGFJYk9Wa1E0eEw1cDRkTUdyaXUzUlNRRU1IY3VoR1lGS2kyZFo1Z3lDcENuSVI3VEdwOEs0ZVJYN2tSY2ZnRER1RHkzNldmRjNkU19zbUo4SHlxR0tfV21QaUVzM2lJZ092NXBpaTdCMnBWNWJ0SloyWllrbmZYaXFKVnp6LWs?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Crews rescue people stranded by floodwaters near Alice",
+    "source": "kiiitv.com",
+    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQYzdoemJLbnRvYkozQmlTdjRNY2ZoM3BzQ1BRWTdacDVhaF9vYnJsOVQycGZRR0ZyQ0w5dkUxc09DbzhOMWszSTlhNnJmX1c0ZVhITE1LTk5TTVBiZllIc1dmNVR3VXJWQVlZNmFPc3p6MEliTXJWbk9GcXRPSkVxV0s4ejVXR2NFZ25XczVxVFFqdEZwRVFxckNRNEwxeGFZV0pXZlF1bzVLTXZkNW9MS3FQTDc2NkZLeU1ydkEwS2dvR1l3UU5OdTE2R0ZwZkNq?oc=5",
+    "date": "2026-11-09",
+    "category": "Environment",
+    "local": false
+   }
+  ],
+  "Johnson": [],
+  "Jones": [
+   {
+    "title": "A Look into US$15 Billion Crusoe AI Data Center Campus in Abilene, Texas",
+    "source": "Construction Review",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQX3lKS19ZMFhGMVdWbmVzc2xER3lNQ1dJa25NZTdXdHJfRl9IRTN6SndiSjhWemc1LVRwcURmejF6dDZlc3ptNlVVU3hfamRhYmJ4UUkyRVQteWltNEZETlZpdW9aOU9kY3Z3OS1LX1l6OUZRWVE0SDc1Nmt3SjY1YzZSZTB2X3d5cmlFSlVuMV9VM0pwc0NySERhMUp5ejN2?oc=5",
+    "date": "2026-10-28",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "What Effingham County can expect if AI data center comes to town: Lessons from Abilene, Texas",
+    "source": "WTOC",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNV1p4clFkRTZXVHZXZlFNUXlqNE5XaHE4WDBIMm1oUlYySmRKS0F6dW1yZlN2OVlfbldTUlRCSzBoemVFbmgxalFWUndZb2Q2UDV4MzlMM3FvQXJ1aFRxSkRxMTEzZ3BOYUo1RVNrME1rc3BGOGVHd3d5aHBxWG4zTmJUYmxOWWFkbUpGQzltOWxMeW94TUxRcFFvcWFKSUw0WTl4bHlxQm8teGkyWlVKRFhvZGI5Y2M?oc=5",
+    "date": "2026-10-21",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Karnes": [],
+  "Kaufman": [
+   {
+    "title": "Fireworks to lease data center capacity in Dallas, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMWdRZ29jclRLNU1vdUlYejg0MS1SYjVFdS12MXBBWmlMT0o5QUFldUIxRWlQMndXaGh4czBXMDlTMnZibWY0NU15SHZhU0cyekQ2S1A3cUVuVXJEall2VDRtbU9tcXFjQlhHQ2k1TWxYVFdsOVA5bHdRUDdVTkFkQko1LXFtUDZJdkJ1VWpGakJ0RzhHN2ItSkhYS2J6UGZS?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Go Green Restoration Expands to Dallas, Texas, Offering Mold Removal and Water Damage Restoration",
+    "source": "mykxlg.com",
+    "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQeks5ZlA4eWNvSDJ3c0xqeFQxR213am42VFg5T2NZUHMxbUt5V01FNks0RzhBOGdWV01MaUxYc1BYenpCQW5LcUdkYkdYWE1QRjg2Z3F4c0hwWWxkLVc0ZGhTbDNMM1NPZ0JXTTBuZnh3cUlPZTRoTl9IYkwwSTlPMGlkNXBxSlluRHRveFU1dXpzM3JBdV81ZHdzaVVTamRsa3ZZMVYzaFlwdXNWOFZfcWtSQ25LZTMyQ0J4VkM3dVc1bUlUeGUxVUdvRGp2el9ybDlnSGlCWnRxZzEtZTE5VjIydUx6TE9tcmU5bFZGbXg0TUwxWjJFRU9QMGZZeUJHVjJkSmdOaXJ6V2d4Rmp4bGtxQlllMEdKYTh3cE9BcElYekRKQWc?oc=5",
+    "date": "2026-10-10",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Kendall": [],
+  "Kenedy": [],
+  "Kent": [],
+  "Kerr": [
+   {
+    "title": "Shut down since 2025 flood, Kerr County bridge finally open again",
+    "source": "San Antonio Express-News",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOb21MVnR5bXpkVTlUMkNocTdQeXhlYnZTOVRURWFIQ2JJTFFBT0VyUkVXWVhtcE8yeVotSmwzYjlsbU1Fak5fTERLSV9zaEVwZzAtaUlybE1odUpNUDdDeFhuVGpvWFpSTmF0V3N2VXU2LTBGYXV2Uk9FZUw5bG1abTM2Nm5MTjQ2SFhUODJORi1YQlFhOGRDeXpSMHhYMFZKN1FZNmJiZWVCUQ?oc=5",
+    "date": "2026-11-06",
+    "category": "Environment",
+    "local": false
+   },
+   {
+    "title": "Kerr County flood survivors decry FEMA individual assistance denial",
+    "source": "DailyTimes.com",
+    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQeTc3MEl3QkQ1NWo5a0dsXy1fOWxBcDlWZWF0VjgzbWVJY0lxZTlwamljWm1tNUUtcndWdWtkVGhOUlV1N1dZS0s2bVF5dDhqYkxEMElod0VjVlJudzB3NVZZM0VFV0h6UU1EZzAyZVZRRGR0LV8yOWE2NzQ0NVFkaE13V3dhUFNQS1V6eWNQTnJIdVZERi1TLUFLRFdGS1N2UXF4X1Q0MV84a3gwSEhSb2RudFZYWVNFVlQwaklJS0VERkhjUURBYWZ3TTFzamE3ai1qd3dyMUZoVTlmV0E?oc=5",
+    "date": "2026-11-02",
+    "category": "Environment",
+    "local": false
+   },
+   {
+    "title": "Cooper Academy students honor Kerr County flood victims with heartfelt Día de los Muertos tribute",
+    "source": "KSAT",
+    "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOMHlRallFLVRnb0oyRkowNTRSQkJ2UWo3U1czM2pHMl9XcUh4ajJsbUpVSG84bEpiZzl2c2dNdHRjZVFtTHJfMTdxandUNVplU3ZvNU5XN2J1OUxNcktLcHptbzhLbEpsaFNXdndVTVVvVGpvZFJ5Z21taG41dTVnejhBRVdLU1I1dWNLbnhma1BDb1lQekNpWWY0T09kRkZuX3VodDd0amxEVmM0Z0ItR2RuM1hRV2lPMHVJZ3MzXzkydE56RG4tNkhfdTV1bjh4U2E4TTM2aW4?oc=5",
+    "date": "2026-10-22",
+    "category": "Environment",
+    "local": false
+   }
+  ],
+  "Kimble": [],
+  "King": [],
+  "Kinney": [],
+  "Kleberg": [
+   {
+    "title": "After days of rain, where does Corpus Christi's water supply stand?",
+    "source": "KRIS 6 News Corpus Christi",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcDA1NGl1djJTejk4dWI3aDh4V3g5X3k2Q3AzRy1ub290YzgxS2FPMEs3MEZVNlo4dk5HT1JabTZMOW1SM1JMeDVZcGJKeTUxRzMySDlrNlc5dGFyUFRVRWhBeHdCNnBwNHNBV2FkRlE3Q0gyaHllc09xcFdSTzRZVm5GRGppcTNqS2tDRmdDZERYRGhFcWVPN2tDMy1HQWw5?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Corpus Christi voters approve Prop B, setting up changes to industrial water surcharge program",
+    "source": "kiiitv.com",
+    "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOdkc0Q281eG1IX085YkxFbUYxbWs5TWxtWlFqMWYybjhEVnM3MUs1bGd6eUVPaERqNmtrN0d4bDBUX0dhNjFoWndacjdEZmFfWkRCcjMxNXJVVXBvNnpZWlF6cVp5ZkJmeVhZVnppdTZkMWdoYkd4NFR1aGdLczRVajNsZFZUS2dvXzdBOWZvYmtaMUQ2UUpFSERHY1FDZnVTdktXM0tYaW5XNzdjZWJpZW8tcFNCNXV2cElIbUV1ZkxyM09EaVB5Q3lyY0lwYU5JOE1sTzN6cktfdU94c3NyUEF6TmNwY21LUkRYLUwzX0xJZFltcG9taw?oc=5",
+    "date": "2026-11-05",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Water issues and national concerns drive Corpus Christi voters to polls on final midterm election day",
+    "source": "KRIS 6 News Corpus Christi",
+    "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOMUFPYm55eGFoTnVhams5ZWNISFc2TkNoZW5ib3IwalBOMzBxUm01eURsdDdDLTJLd2Z1YUdLaGtKR1pkLVFlei1hcmxqNWtxWnpObDl3RmtBb29XNUFUSkxzbFNfTjR5c2Q0c2JYWFY0N0tKak0xMnJyQVZnVmliN0RuZFhxX1IydUdudmItUHIxdk9GVmhkTGFVTmQ3QkhFenMtZ0pReVdteVZWdGhwLXNnNnVEejd1STFJX19fWDFjczZXNk5XWDctQjVtc1VjSFpSRHhjX3RlRkNQX3pkQXhoQUs0M2NHUklKbDNQa3c4T0xMNjZUd3ZHSGpwWUU2XzFaLTdoOA?oc=5",
+    "date": "2026-11-04",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Knox": [],
+  "La Salle": [],
+  "Lamar": [
+   {
+    "title": "City of Paris mailing letters to some water customers as part of EPA mandate",
+    "source": "MyParisTexas",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNY0tLQjVqdzF1blA3ZEhMLU9hYUo0Tk5odmZLdVZHRkVyZjlsemx4bXlpREl2RFhwd21vOS1fWngxc3EzYU9oaUgzZ29WMnoteFBWNnFaUEgyMTRjZEFEVXB5ZXlKOW13bXFObEdZNmVuZDltZWF3VkNCT1c1TmdTVi0xSDRMU255TW4tMmoxNWx6WUo4M1A4aEJHUE9jVEpFMGs2Yg?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Lamb": [],
+  "Lampasas": [
+   {
+    "title": "Copperas Cove elementary school students dismissed early due to power issue on Tuesday morning",
+    "source": "KXXV",
+    "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQZk9mTGcwTVhmNDViM2FjMGZ3NjV6bGdGZlpXWnVteXVfX0RqdDczTUtkMEVFa1MwY1FETTJCUUtVazB2ZlJncXhjWFI2UU16R2lsczBPblU1QnljakNrSnl5VW03aU5uVG5BTEZLbmxUT216MXdGdEE3RV9kdEpOdTR1NkRFeWxLZnJVLW1JYzM0MkdETVVlaUFfMDlKelJYbV9KeUNTRVBnYVB2OUxMSi00SFhEWHVkZ0NQODVkYXhaZ0FhV0xFWGJyb2U4WjQ4OVpQb0xPM0JaYWdoOG4zbVJIdWRNOHpoeDJvTUliRDRNY2tOci1TWk1iYnRHZjZxTGlFZENPaFJ5UXVWRHc?oc=5",
+    "date": "2026-10-13",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Lavaca": [],
+  "Lee": [
+   {
+    "title": "Rodent activity, no water close Lee restaurant, food truck; 12 perfect",
+    "source": "The News-Press",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPLWp3VDJqU1k5Vnl0bU5xUGZyQWNRdmlnY3hDV2JzNFBPMUJmN0FhREJRNTR5em9PVm5mbUhkMzdRUGYzRHMyY3dRam1yTVdSTm1CSUFQSWJxU3ZWbzhLX2RLWlRtNjVYS2dzemxwRXNpNVZKTGZMWERxZ0ZCXzNBVlMtRFhidHF0ajE2UTc2azFPOEZOcFRBTXlHMGxhcE1Ecm54dTV5Qkg2b3RuTUtHOWtEc3RQTnBpRXdWRHJvX0FQd3hDVFVKNnhkQjN0emc?oc=5",
+    "date": "2026-11-10",
+    "category": "Water",
+    "local": true
+   }
+  ],
+  "Leon": [],
+  "Liberty": [
+   {
+    "title": "Developer: No data center coming to Raywood",
+    "source": "Liberty Vindicator",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQWk1yaEJQWjRTNTdFYzFnYUJDdTdFb0FuN1lsbEpaNUpucWdpRjhyd0VUX2hRbENjT1ZyenJJQzIzcXYxQl9CaEhLY1ZHanR3enFWblhpZnNMekpfdmdoTXhRRFUzRWdCT0E4aWNwVC1lWnB5LWlSb1lBQTl3dFZYZ0JHbjhCMWxGX1lCMU93?oc=5",
+    "date": "2026-10-22",
+    "category": "Data centers",
+    "local": true
+   }
+  ],
+  "Limestone": [],
+  "Lipscomb": [],
+  "Live Oak": [],
+  "Llano": [
+   {
+    "title": "Rainfall prompts lifting of Burnet, Llano county burn bans",
+    "source": "marblefallsmessenger.com",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOa1p0QmpDb0ZYZlctQUVHWjZab2hWdVowazEtMUdhRTBLQVh0S1gwSV82eEVZbDlaYV9YRHNOc0RXcFpjSnVVaG1Sb2xEMWQyS0FNN2lNMHo2YkhqX3c5aHlwbXlUc2VMODFiNlpkV2dRSFdNVVZ4OVZJZzNOWE5hSDJjWnl0aEt3Q182aWczaWY?oc=5",
+    "date": "2026-10-19",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Loving": [],
+  "Lubbock": [
+   {
+    "title": "Lubbock, Texas, starts data center pause as Gov. Abbott blocks new permits pending audit",
+    "source": "Yahoo",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQSEJrck5oZUJKd0ZKZ3o5RWVZaE5aN0IzZkU5NFppRkF0dHhNUE1odVNhTTRxMGtIb2p0b29qSDZEZXp0dWFQZjRORmozeTMxT2YyQ2VDZURYZGZaelRHenE4U2N4T2dyRzVFNXhsQ2tTd19NeUR1RXhwZU1HUk5OZHlUSkhLTXVTNW1vaG90Zw?oc=5",
+    "date": "2026-10-16",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Lynn": [],
+  "Madison": [],
+  "Marion": [],
+  "Martin": [],
+  "Mason": [
+   {
+    "title": "Public hearing input used in Mason County data center state waters permit decision",
+    "source": "WCHS",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0VWU08wMTlSQnVnSkRDY05penhteWc4MUFNbXh2Z0tGaDZsbWlOWVdSbVlhQ1h3RkdXcFM3SDZYS0NHNktIT2ctbUx4TWdmRnpHSDF5eG9xUjVYNTBJQlZaajl5NU9fbTlSeFkyN2VodTl2NU1kaTZmSzZ5eVR6cGhmTWQzUEIzOU9tQjJ1Q1NVUFJfaXRyaFN4S2hHdGtELWlxSlBQWE9rMlMyWEdfeEFB?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "High Impact data center construction looms over Mason County statehouse race",
+    "source": "WOWK 13 News",
+    "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOMlBrUkRFdHF4RTdFUUFFclNGMUhZdlMwYTUzc1JtZHBKeU1nUnlQTF9RaHU0NzRiNnJET1hEQld5NEVaOVFRYmhVVU4zRjJBQUswbFhVaksxNlIyNjlVdG8wZU9TTXRtMXJoRnVGUjY0TTVnbW9nUmFvYllvaEZMZ2gwVWh5RERuQWVfTWI1Q1Bfa0QwWnE0R0ZOd1NYemxBZE52MjRqSDJ6c19FQWpGd2NvbVNqeGRKbmNkZHhVY1pESTVMUUVaRTBDaGFaaWtE0gHWAUFVX3lxTFA2MHNadXJjR3ZWR0pZNEs4TzYtNVp1R29MOVIwbmVoSkF1S3R6VlpXS2RrVVhRdTJOc0dsVzB5OU5nOGVzek1pUVZoOWJGZlVNeEZvdVlVSzJmNXNkQnVLY1ZfekhCY3d2bW1kUTBlcTBKdEhQbXN4QXhqMzdVMUk3aFU0MXNkNjRrUk1jNkdnUFByUDR1cGhJY0EtZXR1NFhWbWxIdHhpZ1lVb0IwQjdfTm9sYjFwMy10SEhIR2tVOHNzY1VwMmpoLVBzTTQ2d2lyejZ0SXc?oc=5",
+    "date": "2026-10-22",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "DEP permit bids detail significant Mason County data center environmental impacts",
+    "source": "herald-dispatch.com",
+    "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPb0hNR3MzUHlJdlVwM1d4ZHo5LXRNNlRhQ2hCSk9xbG5qbW9vbGhJRzNIVnE2bWwtNnU1Wk5hZUVpcWJIVUJsdF9sRmJwU01QTGZubkMyOFF1YWtKSnd3MlE5Y0FncTFqalh0TmNRWExiMUpkdzRrQTNPd3VROFpaSzZhd0tTcEZRWEhnNEFfaF9uWkkzbUtILVZEaVlhUmtUbTdBNjY2Z04wRF9SMDJ2bkZ0X3NSRXJqdjhOZHJiOFh3WUZCNk5ZZEY5QlJWVDhSeE1UUnB3QlZaVlRnNllvdEY0dFltX1NJM3QxZnlMV2h0d284NEFIcW5uNDI?oc=5",
+    "date": "2026-10-21",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "WVDEP holds meeting on air quality concerns surrounding proposed Mason County microgrid",
+    "source": "WOWK 13 News",
+    "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPN0trc2NWQVVITlFnaWd6SFJBVW4zbHpxTDJjOXJzam9sbjkzYS1rXzhmQnhFaVJ6V25UaDloVHk4bGdxeXVwNW5ZQlJjbkpoNVo2aWxFRVJ2c0RGUzBMeFQyeU9ZblRFRzVNUDFlZV9vRkVEdHRhUVZTbkF1SEpHU0ludU9ZemJJS0dhZ2YwV1kxcFM1MXpaS2Vwd1VLZzluTWstdzdYSVM4VWRROFUyR2JWN3p0S1prSEhodzZjVFdzQy0waEtndmVHR3c3b2dVN08tRmJHR0tXcDM3REUw0gHkAUFVX3lxTE1WTFNoSU1KV1B6UXBvV3EycTdreklIRFpqTjBUMkRhc2djODEwaFB0WmliMktNOGQ3ZnVRTWVPVTRCLXM0Rzk1S1R0eFNNVzZMWDhpU2dBVGQtWWVnSlF2NnZ6OElFMC1sS2xkcEpyelJoM2RsLXJjaWhBQlpkdXJkclpZSmp3OHVRZXlROVVzLUdKdUFHWnpOSzNHN3VmU3doTTRKbkdXdWRqQTdMY0xvUHR0aDNiRmxucHJxWEh0WEprMGo0MC1kejE0eWc3M0l2OGl5NE9NOEQwYlczbWZpRlN6Zg?oc=5",
+    "date": "2026-10-20",
+    "category": "Environment",
+    "local": false
+   }
+  ],
+  "Matagorda": [
+   {
+    "title": "Matagorda County reinstates burn ban as dry conditions persist",
+    "source": "The Bay City Tribune",
+    "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOMjE5V2lnenJfcko4TUtZY3FhMmU2Tl9VYmxwWUs3azFzNWpRMTAwRk52TVRMREtqMFFBWVdGUm1qak5Dd2U3aUx1bkpnMm9UQ09UMXJmUDhJQlN5SzdreHg2UTF3N1gxWlVaYThxajBEZS1Eb3hvQ0pIMmxBS2ZITzNDb0hXeDBBZk1PbXFoVUJqbi1ObzRTOV9pbkIyMUZaZnp3dUlYcF9MTkVBd0ZKYjA0TkhiVnhEVFR4cmY4aWFyT0NQM3pMN0Z5NHEtUlllc3ZkZ29FdURIZUox?oc=5",
+    "date": "2026-10-23",
+    "category": "Drought",
+    "local": true
+   }
+  ],
+  "Maverick": [],
+  "McCulloch": [],
+  "McLennan": [],
+  "McMullen": [],
+  "Medina": [],
+  "Menard": [],
+  "Midland": [
+   {
+    "title": "Midland County Utility District regrouping on water distribution plans after bond failure",
+    "source": "Yahoo",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNRzU4SWc5YXBrVXJRMEZzQTVYRDQ0ZHc4aGpBeDRsS19vTzFsMnVVcnRLbk5mUHRVNUVXa3o5TjA3TVFONDhiWDlkdFpTb2YzVS0tUDJYWnF6WUh6N2tHZU1RS3NRMUY0TWJNdWljeE0zaU1oMXkyVnVrNm9KUDZSeE5HRE9sc25HeEhrRFBCWHFFd1phUTNDQmZpLW0?oc=5",
+    "date": "2026-11-10",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Rainfall leads to lifting of Midland County burn ban",
+    "source": "Yourbasin",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4ybnlNR09tN2ZWSFM0Ui0xX0NkTE1ySE01aUZtNlVteXRwSElEME1POG9WdmpCYnBVcG15UzJPQUhEVHVmQUNrTkRPWUNkS2tVWGp6dmtsTzdwZUNSUGp2WVVoaDdzUThMNDBULU5n0gFzQVVfeXFMTk1pbE93RTBtejgya1dMVGdub2pfbWdpVlVIX2pBWWN5LVFvdVRzYktkd2xEdThsSXpEZFYtb2VaY0tKazJQMlJMZC1KdU41WXhWTlhQRjY5Yl9aMTI5WVRONE9UY2RnSzZIVm9qRVlLcnVHdw?oc=5",
+    "date": "2026-11-05",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Midland County landowner dreads toll of proposed ITC power line",
+    "source": "Midland Daily News",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZWlJaGFjZE1DNEhkVDl5X1Mta0p2N1BDeHFwLWNPNi1XdDVmTUl6elJnVjFQMHdNRFdhaVJDMFFuMC1aNUZFX1pRUWJnbHU1emVlQ0VYRk9BNmNsVXQ5Z0JrODY2TkloWlVWcXVEVm5wSno4OUo4TVRrUXFGMW5yeA?oc=5",
+    "date": "2026-11-03",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Here's a list of roads closed for flooding across Midland County",
+    "source": "newswest9.com",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNejdfMjU1T0g5ZXE0NTlNaTBFRzJWRUU2X2ppM0VYT05MQlVTQW9ZR2dYdkRCQkNkYV9yTnpwVGlEc1pIQWlkN1ZWaWFOSkJubmhGU0hmeDFleFBBNmFrNTJjd3E5eUZVZEVmcnRNT2Q2ZFRkMHZuMGh4Zm52UkRjSHI0RGZKSXpjN25feW5Mc21BOEZ2Sm8yZWhTc01KRkZyQ1ZzNHViUmxZNzEyN25wVTlLRmh1V1NfcXVXNg?oc=5",
+    "date": "2026-10-30",
+    "category": "Environment",
+    "local": false
+   },
+   {
+    "title": "Midland fire crews respond to 71 high-water calls during flash flooding",
+    "source": "CBS7",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRFZUUVpVRmhyNU1jaHFSR3hiWlVSUUh0VE1NR09kWTVWR1IwNllCSGJvd2RySFZtMXI1RDdYNGk5MHc3YUdwU3JmUEgzTmlia1lldGZLa3VwRzcySUdnanBLZEx0bXN1MTJZM1pWUnVRcFU5dVFiTXk3Q1ltY1Zxb2I2SnUtYTF3WWtvRjJ0bzZXX2lkc2RWRDd2SzNRUUJsMUhXMnp2c2NObTVs0gHAAUFVX3lxTE9VVWhEV0RjYUtocGE4dzc1eEhwQWFUaEo1NEtBc1pSUi1DdnEwOUdOUUxtemxtRzRra0EyVnp3TXdEOURacmJWQ2hyUm55WXB5TEtxZnBzXzByQ05hNE1PbHNvMHNXTi1lMk5xZjNOdmxRcm1SOFpfLTZIOFdLQllIV1FjcGtsbVd4OW1CMDlKbjFXYldDUXBaZ2dzNG9NdXNyd3BvYkxPRU1uU2VpWDVMeXBOOVhENHlUak1MX3cyTw?oc=5",
+    "date": "2026-10-16",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Milam": [],
+  "Mills": [],
+  "Mitchell": [],
+  "Montague": [],
+  "Montgomery": [
+   {
+    "title": "Montgomery County approves new data center zoning rules after residents call for pause",
+    "source": "WZTV",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVi10V1dCdVBXdHVLdlNWV0Q5WnVLTGhlekNMSm45eUFtUUVjX1hsMFFJVzNmT2JQQlN3ZkdBbi1LM0ZVX3JHSUZRMEhYc045RTRHSFZDUXUxenpLMHdVTmlPZy0zamNjVDdTZG5udGdaRGtQSUdCSVZrVHVtVWJJZ2JGSzlQUTd1QU5JdE1kZTBYV1pKS3Y1ZXJjY01fOVgwT0QzMXd4QWszcnBRT0xVVDhpcE02Zw?oc=5",
+    "date": "2026-11-10",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Montgomery County water officials say data centers aren’t likely to target county for development",
+    "source": "Community Impact",
+    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNYWd0LVVvMVdNS2tiMlRBQlE4SnZiRDJxRHZWU1lDbGxwNHZYYlBzdEpmOFlTdWZYWko4cmZ6azVqSkNwMlozWUhYT1dFMmJlZng0MV9FbWNDREJLS0h4cFpzNUdPbDdoRkpjQ2JjWFBYc2dST0JQdV9rUmtuc3I1aGVTdUp3VmRMSGE5ZVYtY1pRQXZMbFlBMGN2bEFtV0NySTk1OVA1YjRqSVlGSm82b3NZNmZoZzVIMVJYdmNTeEcyeTk0Z09JRFZINFZfQXB5YWFSMHhCYmxKNzZpcDJRS0NwVVd0ZXluOEtZ?oc=5",
+    "date": "2026-10-30",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Montgomery County among others impacted by Texas phone outage",
+    "source": "FOX 26 Houston",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE56Smh6SFN2amVGaWk2OE5xY0E5akxtcHQ3ckhQX1o1bEs2a0dHcUNYT1ZqdHBySGlMdGVraEVmMWlMdDdXTV9TQ2FwSGdsR0F4eEYzN0E2RDJpUE9Hc2VqS3h1aEtxd9IBa0FVX3lxTFA3cUdsZGtaN2hROElVZWd4MUNoR054R0NMeEJYWXJqaERHUHJzM2RITDV0UEhRZGlsNHZEOHFEbWxIM25IVm03S3BQZENvSlU0dkF0R09jZll4ZU5mTTRBUUN6bEN5Q2QyckNz?oc=5",
+    "date": "2026-10-29",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Montgomery County voters weigh in on Texas data center boom",
+    "source": "Click2Houston",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOeEc3STZVTUFFNHlSN3lpbHVQWWZ6VTY5WU5kRFF2MUtlZ0tGRWxKSGdvLWE5WGNTbVVvOEJIbFcwUkdVdWNHN2hZZU10X2xtUHNudkxDSm5FdVVoOUMyNlVaQmEwcG1wNXJXTFRQZnpaem9SVUhoWG1YS1lRMGl1N0QyS0t4LTc1bEpueEtjZkZjbk1QTU5Gc0dfbTBVSGo5NUlSekQwSFNlcUpFN1RYOUhB?oc=5",
+    "date": "2026-10-28",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Water valve installations to impact traffic in Montgomery County this week",
+    "source": "WHIO TV",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQYjRTWXM2T2xXZEFxQjNJZXp6SGdGSTNSVS1yNnJxWXZuTXVDSGZ0US0wXzRJc1dqSmdYUklua3ZCVDdBMlZGa0tYcUNCZ3JJdTdfQktwWUpXWXh2QTRiUnNvTEhXMkt5VE02Vl9XNTNUYWpmcVNfd0lHbjNJS0RraER4bTBYY0JmS18wMGdQQjVHWDlhd3dqLXJIWlFyaTA3U0hyX2lKbXNWMERQNWdKbkEzT1RLUm16MHhkVE9YV2ZWNlFvM3FF0gHbAUFVX3lxTFBaTndLaFRSUkg0cWIwQ0ZfSW9UbXdDT1N5OUUyRm5qaWRGcUxHbEJHZUZycDE2MWl4R0F4SWdLWVNDU2QyZjAyNkYycEFKbENZM3pHTm03WlBmUDZ1UzJaVFNjNWxTRDVobFdaanpxZTdKR3N2MmRlejVnSlJ0SmxJV0t6VWVYb1VrQ3J5bEwyZ25FcVdiMDdfbXFQRHNRUVlKaTdBWExuS2F1aFZXaFVUa21OTF91UVdxdl9ubG9Id3ZWaFhDbF81a0J5UE01TGZBVUx3d1pydk1sWQ?oc=5",
+    "date": "2026-10-25",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Montgomery County road reopens after dump truck tangles power lines",
+    "source": "WSFA",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPLVhqcUlzUWdfTE41cDkyRGFTeGZBV1VtS2s3U1FDUWRpbXNzSFk0NW5VX1Y1aC1rbTRZeS02WnpaUDllNVVGN005VXpaWVM2QkVycmhpNy15elZnZmcxcE1Walg5dm5SSmdXX2pmdVhPS3RrTXZlakFaTkdMenVBOVFwNDF2OGpZczFSZno4eXppbXJRS2ZmdmRBbWtacU5jM3fSAbYBQVVfeXFMT0FwbG1jaEdnLXFZa3JiTDRLd2lrY2NGU2NqeGE5T1Y4amF2YlpFNjhfNlNfeFJyS3VmT28zemp0TEZmcV91eV9KTjRJS1c0M0dIMDYwZlhKNXF0YXpNT3c2WlZhWUpiQkhkVlhtRWZ3Z3o3MWo4cjJrV2doRm4wZTEyRTE2dDNlbFlJOEJjQklDOEloSHZkb190UmhqbmFGejJGZUtCTnItNUQtbk9MNDVxaFl3Mmc?oc=5",
+    "date": "2026-10-21",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "WSSC Water plant outage under review by Montgomery County Council",
+    "source": "FOX 5 DC",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZ1JFcTlHNGRKYjYtRkd2TzVKV3hQZEN1U1FYVTl4OFMtbFNueUpoZlFLc0x2OWFQSmpWeVhPdjV1ZWh3cVI1QmpqTFhoZ3M1VkJIM0hxUUlsVWdicGdqQVpRZ2dIa2phNjVJN0gzQ1FfQU1iT2ZmdVI5UGFfQzM2Q2pLcE1PQmhaMjB5X3NKTTdhTHct?oc=5",
+    "date": "2026-10-12",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Moore": [],
+  "Morris": [],
+  "Motley": [],
+  "Nacogdoches": [
+   {
+    "title": "Poultry operation wants to pump 1 billion gallons from aquifer in Nacogdoches County",
+    "source": "dailysentinel.com",
+    "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNRmlNazhYX3dlc25VNGdTUTNTMVpVenFsekNINFFpcTJJUURkNVFoYmNLN2pYOE00SWJIRjA2aUtzX3B0M2RDWTJkUV9OTl9wNllBbVhqTnY0OHdmLVVvVlMtWTF0Q3Nnc1pET0xNMWtmUGFFUk92X1VCSi1IVjFEUEdZWVpCTlFFcG44blhjSS1rWHF3eEk5UENFeVc1Z3BkcGZja3ZyYkNja1laYjdNUnkwTTAwOUx5Nl9WMUJ1enVSNlQzYVBXNlJCV0NKMnhUWmQ3RFA2azdtRTA1dTRnYjZXbk9BU044ZzNtS1Brc1loSEU5LV9xaUxrOHI4dlV5YVNnNV93?oc=5",
+    "date": "2026-11-06",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Nacogdoches County burn ban is back on",
+    "source": "dailysentinel.com",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQT2g1M3Z6VlI2R1dYZzlxTkhNX2tuc2VfZHJMejBOZk1iYWY1TWR0dk01SVl3MG9pazduTTVmNGlraFlCLWJoWTFoanJHbEFxVmJueGRtQnd6b0h6Z1dFVnpjWFBiYWtXeWhOb2t2S2RQUktHOFBZWW1BWHFFV2dmVnVYYkhkbnVmUktHN2hKYnRPYjV4VDI1ZzlFMUdSa0ljSWxSM1JfV25GMW9ITXlVUTU4OUE0TkFTMUFnRndDNGFnUjVzMXJaZw?oc=5",
+    "date": "2026-10-27",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Swift WSC rescinds boil water notice for affected Nacogdoches County residents",
+    "source": "KTRE",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZU5iZmR5MHpob3BqQ1gtSVZzU3V4MjFrWlhZb0lPRkdYb3dXMWVHTU9yZV9rUWdmMGYzQ3BUbnNULXAtaC1VMTNUTmZDU2xKVVBsRHBBeFV2SkI0c3d6Ym56U0o4TTBJTWJ6Q1FxZkNzZkRLNWRGV1RZd2ZER1RXM2FqZ2w?oc=5",
+    "date": "2026-10-20",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Navarro": [],
+  "Newton": [
+   {
+    "title": "Opposition hardens against proposed transmission line in Newton County",
+    "source": "The Joplin Globe",
+    "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOTDk3MHlqbkFseS1QZGdKeTdWNjRtQ1FaeDBMN3VXb3oxeE12Xy1XV1NvbVlqRzBfcXNWRWZkN3dvWDVaMWpnTUVBbWYyeVVCQVZ6YWJkaTRRcmowRkRjUmNCakI4ZFJRdHpJNC1NdWQ1eGFtUXlmZGVpeHJERC1OZXpVVC13NlE5V1duREFQMnMwXzZacXNWdHkxTEtnUW00amY1Wmhib0Y1MlZnNUxlaFJYN3BPSGo2VEJaNG1XSHBhM05OUUoxV2lwTFBpT3E0RmFoYU55bzlEUUl6NllfUGtkcW1KZXB1?oc=5",
+    "date": "2026-10-22",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Jasper and Newton burn bans take effect as fire risk grows",
+    "source": "Beaumont Enterprise",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUWF6N1NpdVlhLUVyM3M3djVzck1HVm9FUDVSZl95WDNfbWVwSElrNUdSdzBTaDNyQVJDM1djZlJfRHRidjZmUXFVTDVJVFdqWXJ3elhvUVZPN0V4bUJ3ajluVlpyTnZUc0tETkFnU3ZRY01rbklrQXRaOXVrZTljeGhLN2RMLXl1Q0RTZA?oc=5",
+    "date": "2026-10-20",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Newton County Extends Burn Ban Into November Amid Continued Wildfire Threat",
+    "source": "easttexasbanner.com",
+    "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxNdThGTUFLWlRlelIxeTBkNWVhbkJHQ2xwbmdQYndZTHVTTWprX3F5MGFPemlMRTJydEdUdFNnNzVqZS1hakNPV1NEV0JqMWlrRU8xVUlMdnl1eXoteV9xOThSOXp1ZlAtSmstb3l3TjQ1RUdfV0RENHR4MnBSZHdQM2c0QVdUVjlPSWRaUkljTHlFelVRa2JJdEVWdG1LLWpEcUhybW9jaUttb21ld2JHT2g2MkRsVXAzdUU3ZEVFVFFabHVVaGNqWWp4UGtsNmFfSTlZcV9QS0pFc0p0ZmtidHMteUQzOU9CdnBKcGlxS3pYZ1NyR0ZWVGhkV0hKVzh6?oc=5",
+    "date": "2026-10-13",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Nolan": [],
+  "Nueces": [
+   {
+    "title": "See video of Beacon Point data center construction in Nueces County",
+    "source": "Corpus Christi Caller-Times",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOZjBtY04yVUJxRkc4OXlmWlhpQnh3RjhaeGw5V2pPZTNNWkRwTTBSemhlWDQ5TF9TMHZXZVFXMVpkcTlId2ZkSHFpdXEyOG0xUWVuMlVueEx3eUswdG80eFZOY01ZQlVWMUsyU2hDQ1dweXZzRFJIVWhkMHBaV2dpY0ZjVnN2OFFFaHVxV1phLVhNckZnTV9aem92UmFEbGdEaTRta1BBbWxsOUFTd2ZXSGJwQUEwVXBxVDN6bjRPVQ?oc=5",
+    "date": "2026-10-16",
+    "category": "Data centers",
+    "local": true
+   },
+   {
+    "title": "Data center growth tops list of priorities for Hernandez in Nueces County",
+    "source": "kiiitv.com",
+    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNdWRpS0MzNmlyVW55VzhRV0xfQzJNV3FHMEJPOTl2aFEyOU9sTHA2VEF2WkVTcU8wNmthLUFCWEJDU0lScmh6NkhmWmtkbUZGWFp1V1VRZUZfSDNYYmh1OU5sa0w5VmhwazNTamRsaFZPNnBDWjFXOUp3V3hSd21oWXl3VDVrakc4QVJ1dzRfeU85UmNQc2JMNldnNTIzMGs5RzUxOGZJcWF3UkoxcHZQWTZ4dDF1cEo1Y1NoUFVpZmpTX2UybGhGYjRuSHd3STgyaHhGcGx6cUJGajhUbTdpdW5qRnB3Q2RJUXc?oc=5",
+    "date": "2026-11-10",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Ochiltree": [],
+  "Oldham": [],
+  "Orange": [
+   {
+    "title": "High Tides To Hit Orange County This Week, Triggering Flood Advisory",
+    "source": "Patch",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOU3YtOHNMc2g5WTgxUXBaUHFKeGpSN1hhbHc4a2VDbkFrN1BpOU9LbHBsYWNGWk5MU3VKT25XbDdHUlJqQkNZYlpreHA2ZWpNM0NfSTI0VzZEY08ySFZtYzBleG5MZGM4VW0yTHJDR1hJZG1kLWZZYnJ0bTZfWmZ3M1hZbzk5Qjd3NjhzR1FGRG96VWowVHJwdjhZZ3hoc3ZGaTFuStIBwAFBVV95cUxPVERlZ0M3YXdKNHAyOHBqZFBrdzFBNjV3UHJtSm1mOUR5OERlUGdaQXM2Ym54bXk2Z1RGV0JaTXFRdENraWR3TXpoalo2RXIzWWR6MjA3MnlOODBPT2x5YnVMeXJHUEZiTTNOQzZjb3dmR1BZVlowWDlQVjFJbTRTejZOTnFXenQ2ZXRiNEloM1FCbG5QU0ZQTEZUMnBVbW5CMnhqLUx3ZE5VNGpLQkhWRFlqb2N4b09oNnNLc0JEUGo?oc=5",
+    "date": "2026-11-09",
+    "category": "Environment",
+    "local": false
+   },
+   {
+    "title": "Orange County Landfills Resume Operations After Strike and Wildfire Challenges",
+    "source": "Fullerton Observer",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPeUp0WHhCYzE3N1NFYnNvSVhod0ZRSnNwU0k1VUYxdnJ4VURJZXpKRDkzeVFQLTFIcHRVLWk1SThlOWNIMkVmcmk1UnpYVXo0UUxJemtENVNqR1V3TlpFWHYzbVUxbE1iZzVYWnRPY0FqTTFyU1BnLTRIWXU3emZxVXNOalFtSXRGbHk2ZlBqWXVCQWRqd0czUjNxRFJDbGNXcFVzT3NXZG1mYmVrcUlnS0dKYU4wV1FNaHoxNg?oc=5",
+    "date": "2026-10-23",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Norte Fire update: Orange County wildfire explodes to 465 acres, at least 6 homes burned",
+    "source": "KTLA",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQeWdhNERqMWJ6ZFd0Zll2RXltREt2Y3p6a2VrUk1yMnJoemhNSmhoc0w5V1lpYjJJNTRDUlVpTkZTd2Zpa3ZtSUFNR3lDZjJoQWViY3hLMGt0dGM3cTRUdXA0SzNYd0NHNXNyQ1NJMDVHZ2VBVVdKVlJxNjQ0b29ZTVByQ05xZW1JNndyRVE0UmRQLWhPRU5NVkFxNjltS09oSFJLSE1LM0JVcENNMzhNT0o1ajVjV3Y1MjR3?oc=5",
+    "date": "2026-10-16",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Palo Pinto": [],
+  "Panola": [
+   {
+    "title": "Deadwood public water system boil water notice rescinded",
+    "source": "Panola Watchman | Carthage, TX",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQX1JFb1NITFRmbUJIaWJvYVpxaEV6N2NlMmtLRG5wdzFuNC01M3JhekNHSnA4azZtd0RJVXBkTUZKNG0tYlFMVWRLMDYxU0R0Z29OT0tqMHJKTEdCOWI0M3ZyeHlXdEpnRWJlQ2U2UGdtMnZDWnBOSjF2MUplaG5yY1NSQnpLZVVwNUlSYnUzY1hjSkE4VEluSG5Xbw?oc=5",
+    "date": "2026-10-26",
+    "category": "Water",
+    "local": true
+   }
+  ],
+  "Parker": [],
+  "Parmer": [
+   {
+    "title": "Farwell issues Stage 3 water restrictions, banning all outdoor watering",
+    "source": "KVII",
+    "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOMVhrdXdQT2RzYVZ4QkdMb21FaTBnMEZIY2JtWUVDT0RLRU1oZlNKNjU5SzY5MEhicko2bVZKUG16REtrd0FxMGpXVGFXcnZoazJreUFvaVdyYW5FcFVNeWdSUHBYZmtubjZGTm11RjkzVkF4Y1VyNVF0OUNFbVdLOWtBajFlcGdURXVkd3JQRWRpMnRTQkhtcFFOazJWdHg2eTVEUnpmSHE0M0l1NURrM2NqT1p6WG41dWViZHdaM0w5cklneFFBYTJBUXNqMU5aTUNXU0hzYkFjOXdObGxwVndyQXdFdWREZkw1cURDaDZvSXBvY2I1QjEyYlAxaDdWRmRocXZPbV8?oc=5",
+    "date": "2026-11-06",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Pecos": [
+   {
+    "title": "Armadillo Hotel Group Expands Into Fort Stockton to Support Data Center Growth",
+    "source": "El Paso Times",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQcjZuOGFvSDlQMzh4TjVsUkxEZlN4ajBHYlhTLUpoQ1lDRnRIOFZ1aUF6X2tqSTV5dHBPUkZ6aV9yc0RfYlZwZHpZNkRyZHRzV050RTNtbDNsVDgzUWx4WkFQSFBLX0tMdUtjbU85TEFyNi1jTmxnY2g3SkVsTUt5Wncyalk3VTh4NW4zVUdBS2dqUEdSVXdMT3dhSHNiSFlTR0p0cmNHc3lDSkVSOUFsbGYzN0ZtcXFhMC05b3JqRi1RelpYcFplc2Y2RGRMQ0U?oc=5",
+    "date": "2026-10-24",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Polk": [],
+  "Potter": [
+   {
+    "title": "Amarillo's battle over water and data centers: 'We believe God entrusted us with this land to take care of it'",
+    "source": "Le Monde.fr",
+    "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOWTF5TG0yR0NZdDg4LTZGNW9Cc190WGVOLWpybFg1ekM4TjhpRnFtMUctUnFGUTFjX0V2UFpSWjZUZHJBX3pZdjEzU2Z3eVlzYWN5Ni1HX3NTWHg3d1ZmWkFkckpGSHV4Z3BkRVhpTkZYVW5tb3gxbHZ0TmdXYW5IUXJaVWZxdEl6MGEycTJGRENPeVpnM3JaQm1kY1pVZEFnMWJoX0UwMUY5S0VmOTVBdm9uRXZSdGFNSnROVkVRNHZ2UXNwMXViUXRydFAwbTRfa2VLazJUVDh1aEMxWVNaQ2J3WmRNcG9oendNSFpCRTFqNTRZRFl2ZkhiVHZTNHNnVVNjeWlpRUpHUWw5dFE?oc=5",
+    "date": "2026-10-29",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Project Matador: Fermi America’s Planned 11-GW Power Campus in Amarillo, Texas",
+    "source": "Construction Review",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVndsMnZmWUFpcXJLc2Jhc0Z1LV9YckZJSmVzRlpiWkw2S0ZyNUNFRGJmX1M0dlFqUnF0WktQeG5vazNBamJDVmkwNng0TDk4a0wwZHd0Sks0XzN1dnhFeGpQQkttbjkxRm01c0RqNW95NkhBYVRHTlBQS1pWckhwekxXelh3bDdkdU9UNjAzQmYyUVU1QjgyMG9oVzNKeXVtSW5FZVJTQQ?oc=5",
+    "date": "2026-10-29",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Presidio": [
+   {
+    "title": "Shafter Mine Wastewater Permit Meeting Set for Presidio, Texas",
+    "source": "Hoodline",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPeUZDSEFhY0RIMU9sYnQ4a2pyRDhUVzV2eVc5TDNsdktfdlhJSUFoVl9GWks2UlA5YzdVdzc4ZDdaLUtRZ0JDLVFTUXhoenJTdGtWNmdNTEhyeXpZdGRUQUVLTGdmSnR1SzE5MWlWRTJvMEpBc2NpbDlPUS00elpEY1E0SnF1VmJLOWl6d0FTdVVwMTg5RlIzeEdwUXRCOGtEbXNr?oc=5",
+    "date": "2026-10-23",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Rains": [],
+  "Randall": [
+   {
+    "title": "Amarillo's battle over water and data centers: 'We believe God entrusted us with this land to take care of it'",
+    "source": "Le Monde.fr",
+    "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOWTF5TG0yR0NZdDg4LTZGNW9Cc190WGVOLWpybFg1ekM4TjhpRnFtMUctUnFGUTFjX0V2UFpSWjZUZHJBX3pZdjEzU2Z3eVlzYWN5Ni1HX3NTWHg3d1ZmWkFkckpGSHV4Z3BkRVhpTkZYVW5tb3gxbHZ0TmdXYW5IUXJaVWZxdEl6MGEycTJGRENPeVpnM3JaQm1kY1pVZEFnMWJoX0UwMUY5S0VmOTVBdm9uRXZSdGFNSnROVkVRNHZ2UXNwMXViUXRydFAwbTRfa2VLazJUVDh1aEMxWVNaQ2J3WmRNcG9oendNSFpCRTFqNTRZRFl2ZkhiVHZTNHNnVVNjeWlpRUpHUWw5dFE?oc=5",
+    "date": "2026-10-29",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Project Matador: Fermi America’s Planned 11-GW Power Campus in Amarillo, Texas",
+    "source": "Construction Review",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQVndsMnZmWUFpcXJLc2Jhc0Z1LV9YckZJSmVzRlpiWkw2S0ZyNUNFRGJmX1M0dlFqUnF0WktQeG5vazNBamJDVmkwNng0TDk4a0wwZHd0Sks0XzN1dnhFeGpQQkttbjkxRm01c0RqNW95NkhBYVRHTlBQS1pWckhwekxXelh3bDdkdU9UNjAzQmYyUVU1QjgyMG9oVzNKeXVtSW5FZVJTQQ?oc=5",
+    "date": "2026-10-29",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Reagan": [],
+  "Real": [],
+  "Red River": [],
+  "Reeves": [
+   {
+    "title": "Pecos residents may experience low water pressure",
+    "source": "CBS7",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbHlHeEgzR2lmOGRZend0Q282YlFKNjc0NFhHd1RydmtPal9jeER6MnA4bnY5OU1kOG5ucmtYU09UNy1pb183Z2tTOG1ELUhWWGc2LTFEd2hYTkNyZmNRcjl3azRyQUwzNmczekJuZVp4bzVHalBWODdtT2xJcnZfaFJDUWFMSG5yZUxwUFdWT3RYaEnSAacBQVVfeXFMUHY2Vlk2RmRrNGo0UDNzejlwMUVCdmdGYlJZa3lCUTEta0lRajFDYmwwTVlRLUI2N1lYZEluZHJMR2NfOXIyX2drOWxnWWcyamt6STFFeFNSMWpkSDhycVhfR2h4Q0FmbDk2WXFDRVdKZ1l5djJiem9zVVF0RjRYTHY3a3NoSDdpMUphMWJnM3NlSkdid1RfTVRETEJYNWJGTHRrbTJqT2M?oc=5",
+    "date": "2026-10-20",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Refugio": [
+   {
+    "title": "Refugio County extends burn ban through Nov. 10",
+    "source": "SouthTexasNews.com",
+    "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNdEthV25rNkJveFhIa1RBaUNRc2xaazVjR0FSQUtLNXREem45RTF0bnFvYXUxanRod01wVDlEeGRhaWY0MGFNYWtBcWxHWjZVZ1NtbElCaVJWa3JGVkZZQVlKRXVSc0l5aHM5N09aV0thUV9Zc3YzUDNzSG1iNUZ5dWxDOVdrenE0TEh4WXJXeFZNRmRIeTdoSjZ4M2xBbzYzSzRPMlJhcElxQjAtR3JGMXlfajdLcDFULXJMY3JaQ1YtQnJ2U2tKZjliaHU3QW5OM05nTW1RRzRXMHVsOUdOa3R3?oc=5",
+    "date": "2026-10-27",
+    "category": "Drought",
+    "local": false
+   },
+   {
+    "title": "Refugio council approves $1.6M tax levy, pay raises, groundwater monitoring",
+    "source": "SouthTexasNews.com",
+    "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPazBrMjB3d1ZYLVdlU0xCT0IxdEg3cHlhWGowWGxkVlVBWFgydUw5YXgwZzVSakF3RHV4S0htb0tKcXZGSHhPR3ozb2s1a2ItNEx5RnNWQV93alVsSHExM1BJY19lYUNRVUp1QV9SSmV3RzhkYTlZX0h1QzgwcFdDNkViem1IanI5WGxPbUloMEFjMWdkQVBxV0ZqaG0tX1A5ZHA2NWhpbmxRTXkwcExYdnNRSlJqY1J5ZFoyR0xUT0g2bVZ2SkdhTGxMaFN2dk1rZ1N3ZDFEMlcyRjg3QzRIRGV6M1VlNlhMNDRPLUZ6QmdReDJ1RUcyeHRHT091TkRUS0ltSg?oc=5",
+    "date": "2026-10-21",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Refugio Groundwater Conservation District seeks 152 additional monitoring wells",
+    "source": "SouthTexasNews.com",
+    "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxOd2gydmx5WkxNU3JwU3pNMXpTZEU0Tmp2NXZfck1ocG9TX2JITmR4aEM1MWpmczh4RGFBQ0laMVgxNjFNVER3c0JRY25iaG1YZWFndGJfY1lCNmIxLU02VkhGWnE2cjBOSDBhLWxHR3VQRXBqUGNaMVQ3dmdTQUF1WnVIT2tPVWhPQzFMMTlycWNtZURGWnlSUTlmUnpLUE1ReWlLcTFxQUpzeGVCM2ZudFNTanlDekFqQTROdng3d1Z2WFo4Sk03TC1ZUmdNWHRjRE95Z1ZtR1IwRXlVMUNaVmtERXl5Y2FRcHdoNTBQT3dZZ012MDZZRFVlZkNYZGZFaUFLc0x4S1dBTVZCVHc?oc=5",
+    "date": "2026-10-13",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Roberts": [],
+  "Robertson": [],
+  "Rockwall": [
+   {
+    "title": "Fireworks to lease data center capacity in Dallas, Texas",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMWdRZ29jclRLNU1vdUlYejg0MS1SYjVFdS12MXBBWmlMT0o5QUFldUIxRWlQMndXaGh4czBXMDlTMnZibWY0NU15SHZhU0cyekQ2S1A3cUVuVXJEall2VDRtbU9tcXFjQlhHQ2k1TWxYVFdsOVA5bHdRUDdVTkFkQko1LXFtUDZJdkJ1VWpGakJ0RzhHN2ItSkhYS2J6UGZS?oc=5",
+    "date": "2026-10-26",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Go Green Restoration Expands to Dallas, Texas, Offering Mold Removal and Water Damage Restoration",
+    "source": "mykxlg.com",
+    "url": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQeks5ZlA4eWNvSDJ3c0xqeFQxR213am42VFg5T2NZUHMxbUt5V01FNks0RzhBOGdWV01MaUxYc1BYenpCQW5LcUdkYkdYWE1QRjg2Z3F4c0hwWWxkLVc0ZGhTbDNMM1NPZ0JXTTBuZnh3cUlPZTRoTl9IYkwwSTlPMGlkNXBxSlluRHRveFU1dXpzM3JBdV81ZHdzaVVTamRsa3ZZMVYzaFlwdXNWOFZfcWtSQ25LZTMyQ0J4VkM3dVc1bUlUeGUxVUdvRGp2el9ybDlnSGlCWnRxZzEtZTE5VjIydUx6TE9tcmU5bFZGbXg0TUwxWjJFRU9QMGZZeUJHVjJkSmdOaXJ6V2d4Rmp4bGtxQlllMEdKYTh3cE9BcElYekRKQWc?oc=5",
+    "date": "2026-10-10",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Runnels": [],
+  "Rusk": [
+   {
+    "title": "Rusk County lifts burn ban",
+    "source": "The Henderson News",
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9vUUpmeWlWdXJBME5lYjFpekVFeFJBZEI5d1BqMTNsUGJxZktGUnIxc25XbGdlaG1ERGJhcy1UbjlYcFgxMmttZlU4b1dWSUZiNUprajcxZWNwMHc0ajNISjIwNFJDZlFVOExHb291NHpSNUMyN0E?oc=5",
+    "date": "2026-11-03",
+    "category": "Drought",
+    "local": true
+   }
+  ],
+  "Sabine": [],
+  "San Augustine": [],
+  "San Jacinto": [],
+  "San Patricio": [
+   {
+    "title": "City of Corpus Christi approves deal for two San Patricio County wells",
+    "source": "kiiitv.com",
+    "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNM1RzWTIxWmhBbXl1N1dzcEt4bVhtSWQ3OFBOTmJlTWpFczBOUEtXMXhfSHY5endDdnpIUHdCVkh2ZUxONC1vN2JTbDdGWWx0Q00zM3drTnNrMkw4Ukt3V1Jya0NWVFBrd0VQUkhtVDJlRG16VVVIMGpVMWpKRTBDMWxKV2tselRsMDdOWGhQVnUtd3V1TTlnZnE1MWl1dmxfS3NDQUEtWFluZHFhV0dGRzV6TXRNcnlvMlZMYjBERHpPLXpxTXU1ZUFZbVZubElBS2RkSmo3ZE9QOVlOd2dEQ3dkNXVTMDEt?oc=5",
+    "date": "2026-10-27",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Ingleside approves water re-use MOU with Chemours",
+    "source": "SouthTexasNews.com",
+    "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOVzJhd295QUNxbEtMc1plZ2N4ZVZyLXlhaFh1bVJCY0JIaXAxSzJ2emRGdHU4Y2l4Y0x5TVg0bkhKdk5uNTBxT1h4WEdMYmxGdGEwVmxON3hYR2k4LTlWTDg2NWFhV3gya0tQTHVPRzh4RVdEY0lLd2xRRFpWQkxRZGZpNWFQeE52VV9oWjFZZDJCU3pvZFJMR1NMZk4zZ3BmcjdSZjZIeVRpNnhsYnhPSm5mVHY1LUFKSndRZ2ZBdEpVTjA3M3BGblRlQUkxMWhIeldzcjNYc1BpUnVtbzhqYzdFdHo?oc=5",
+    "date": "2026-10-15",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "San Saba": [],
+  "Schleicher": [],
+  "Scurry": [],
+  "Shackelford": [],
+  "Shelby": [],
+  "Sherman": [],
+  "Smith": [],
+  "Somervell": [
+   {
+    "title": "Amazon’s New Glen Rose Data Center Project Promises Jobs and Community Benefits",
+    "source": "Small Business Trends",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQemdkQ3RFNEk3Y01iMFV0cEZveWVJVTR0Qk1EWVlqLUxMMjN1dTdHSkZXR19UbHVqLWVCMnloX0JKaWw5YUpfVlg0LU90eHVTc3JSSWtwZFpUaERWRlpNSGxoWUlZMmNCUDdSUHJYZjJzUGtaWGF3aEVZeGhFOXRBaGgzcHNveW5yTW1QcWxqWnV5ZnF4Rl83UDMtbHRiemN1Q1pYOURkOHdtQQ?oc=5",
+    "date": "2026-11-08",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Amazon plans data center campus near Glen Rose on Vistra land beside Comanche Peak",
+    "source": "Crypto Briefing",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE4tUmhnN3gyV0d5VWR0ZTF6cDJOMm9wQ1FSTXpyTXVSWEJmeWJvaUh2OE9XenNmd29aZ29IUTZoNEEtcjZkc0pXUTFzeTJ3RHhDZUI1Vzhqa0d3Zm1MZlc5MV9CZk1NVERleW9qSmVQVHFDWTVBYVNsQUd3?oc=5",
+    "date": "2026-11-05",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Starr": [
+   {
+    "title": "USDA Invests $781,000 to Improve Water Supply Infrastructure in Starr County, Texas",
+    "source": "USDA (.gov)",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQUDhicWYwVHhJazZ4OEI2N0Z5NWJPRk1EX0FqT0RGTzE0dXhXa09aQUk5dVhwck1ydjdHYWVGbHJNTnVvOHJyN1Y2bUt3NldYRm5kTzRIbWwzWmxvMWhiQThWb0pCZW1LcElNelFaS3FJMENvNjZRVGVUdUNSTmdrVkduTC1DcEQ5bjNWZzVzSDV3c2MzSFB4QkoxdjhFQzVQZnI4X2ZwR2U3MXJuTjlBVTQ0NThHcUZ2X04zcQ?oc=5",
+    "date": "2026-10-29",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Stephens": [],
+  "Sterling": [],
+  "Stonewall": [],
+  "Sutton": [],
+  "Swisher": [],
+  "Tarrant": [
+   {
+    "title": "Keller announces settlement agreement over proposed Westlake data center",
+    "source": "WFAA",
+    "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQQlk4b3FhR3g0eUgybU5JZGZqa1BQQTlaX1JYMkVlRkpWU0VVc2pneWF2ZUFhaHJuV2NFUzNjVFpvdHJDVTY3QzlPZFJNdUtSWjlNWEhoWllKOVU3QmZEN1o3bXZkRkNuQ1hNSWdsUDA0OVF5dE1YbGpEY3dZNEpQeVRrVWIxRTBfTjF3NGtDLThDOGpmWFlsR0pNamU0YTJJSDI5TjZlejJyX05fcVdZZGlobE55Z25MX0JmNTBiMVhSS195YWpzT0Y4MXlCZ19RUlVXY1pISW1kVGVEek5PT09CQmgzRG9IdWtoc0R3aDYzLWpmRXdBcmx1VFQ?oc=5",
+    "date": "2026-11-06",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "‘People power’ drove Tarrant County’s historic blue flip, Democrats say after midterms",
+    "source": "Fort Worth Report",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZFNtb1pMdWNQaE5xSTV4bWN0NlhCbzRWemdqcG05QmpHMXZMZUpXbUR1NUJ3dDBXTHp5OUlTWGRsV2dMODhCNUYtelpMS3RWY3doUE9TakJjeWV0cGhaM3hHNTBrUlNFUXllRnRHQVhMdGFyUmd4WUFUTDl2b0x5S2UtN3F3c2x5dDNpckJmSmtPa2Mzc0RzcGJsOWYtd1Nucm8xTGxlTFM4Y2ZYUHp2NS1xT1N4RGRHSjhlZzI2bw?oc=5",
+    "date": "2026-11-04",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Tarrant County Data Center Rules Debate, Texas Legislature 2027",
+    "source": "Hoodline",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaG9fX2EwSUpLWjdKcVAxYS01RzlZYU9jeXo4Sk1yeVJZZmxGU1gzTklNa0JNcWgySVc3MkFOMUluQnZLc0g2Q0VzRGIwZ1lzWUN6dUdmN0kydmN6dHZFanV0blJ0S1d0c09HX21ZZ3FDdzBLUzRKOTFPRkVvRE5XY3VUblFXalpPLUhDdGVvLUxpQnctdmNfVHZiZVNlTldxaDAxOTNR?oc=5",
+    "date": "2026-10-23",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Med Students Power Vaccine Distribution in Tarrant County with TMA Grants",
+    "source": "Texas Medical Association",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9wVlhOUDRhaVNJVHZQSVhtMHhuV25TV2t5SmM4dGsxWndtYUt6WnR4VUxEUEY0TGNkTUJ5ZjN3bHZHNHRVQmhDSHBTQ3RZS2tRRS1EblB4cjhlZkJwd2RMRU05elFPQzQ?oc=5",
+    "date": "2026-10-16",
+    "category": "Power",
+    "local": false
+   }
+  ],
+  "Taylor": [
+   {
+    "title": "A Look into US$15 Billion Crusoe AI Data Center Campus in Abilene, Texas",
+    "source": "Construction Review",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQX3lKS19ZMFhGMVdWbmVzc2xER3lNQ1dJa25NZTdXdHJfRl9IRTN6SndiSjhWemc1LVRwcURmejF6dDZlc3ptNlVVU3hfamRhYmJ4UUkyRVQteWltNEZETlZpdW9aOU9kY3Z3OS1LX1l6OUZRWVE0SDc1Nmt3SjY1YzZSZTB2X3d5cmlFSlVuMV9VM0pwc0NySERhMUp5ejN2?oc=5",
+    "date": "2026-10-28",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "What Effingham County can expect if AI data center comes to town: Lessons from Abilene, Texas",
+    "source": "WTOC",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNV1p4clFkRTZXVHZXZlFNUXlqNE5XaHE4WDBIMm1oUlYySmRKS0F6dW1yZlN2OVlfbldTUlRCSzBoemVFbmgxalFWUndZb2Q2UDV4MzlMM3FvQXJ1aFRxSkRxMTEzZ3BOYUo1RVNrME1rc3BGOGVHd3d5aHBxWG4zTmJUYmxOWWFkbUpGQzltOWxMeW94TUxRcFFvcWFKSUw0WTl4bHlxQm8teGkyWlVKRFhvZGI5Y2M?oc=5",
+    "date": "2026-10-21",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Terrell": [],
+  "Terry": [],
+  "Throckmorton": [],
+  "Titus": [],
+  "Tom Green": [
+   {
+    "title": "Abbott halts permit reviews for a proposed Tom Green County data center",
+    "source": "ConchoValleyHomepage.com",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORkNJTWRHaEJwdGZRN3lpQzBocjVJYlM1b0xabS1EREtQOFhXbTdHTHZzOUpJUVRodjM2WE14UzByeGhEMm9COW84Q0t4UkJDN29FUzV0VXRfNzY3TmEwWHg3elEwWWhUYVhBUG5NMjlTNHRUWFFPQUxZNjAzWDNrY2JnUTU4QmQtdGNyVkRuV1R1NU04bWxWbF9hTFhsOHRsSEJKNmg4X3NvM3dERFlmZTEtcnRQSzRnQnY4dtIBwgFBVV95cUxPdDRSVkp1UDRuaWxGbWJnX2ZyaDJKU2dRRlE2SE1kYmNUOVFWb2VGd0hpeFE3Mms0U2FDcGJIS3RFVFJLVGV4VV93QjBNaFV6T3dJS1dMbnMxcWxwUTBhaFdIeFhzZEZZeDlOck1RMmw1RFFXWTVmZTlpNEY0aDR3Z18yenF6RXdnc2h6TldjSVRCUzJKQ3RrRjFkMWVwZmZZRjctMVBWX1dfX3hfenkzWDdRaEZOMEhOajJKaE9ZYmNtZw?oc=5",
+    "date": "2026-10-23",
+    "category": "Data centers",
+    "local": false
+   },
+   {
+    "title": "Paxton Issues Water-Use Letters to Data Centers in Tom Green County and Across Texas",
+    "source": "San Angelo LIVE!",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQZjhuZ0RXTEttSlctRHFVOThrU3VkdEVtb3cyTTJxOVdieXVIMjBqVkRQM3ZXQUhtZ0dSNHN2ZTlGMUpZdUZpUUxId1drUkxzTEJKUkdUQ2hvX1dVSHRPY0toaUNNSDZxbVdET1pGV3lROHh4YlpRbm1RaXJMNzQtdUpnak5vU2xZbjA5UldDZms4SHVKM0x3VEVLQ0pHWEg4M1Iwb1I1V3NWU084TzV2TWVvWHFLTXpJNUVSSjdYTGkyRDZjeGlWSlZoaw?oc=5",
+    "date": "2026-10-15",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Travis": [
+   {
+    "title": "Eastern Travis County could face nearly 5 billion-gallon water shortage by 2080",
+    "source": "KXAN Austin",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPbHItRmVUQW15eVlYcXpqYXRzZmhzVXNkTHpvSF9OMFVLS0ROYlJyaUxhUHhiZXlXZXVKek9MR2dtX1ljYWljTi1QM2t2X3k3ZzNvUHM5NXhxd04tcGVnMU5KU3F0ZWZTOXlQNUthX3BLeW9HYnBpQlBGWE5sSkhETjZVaDhQTUNHd3dRc1dLTmJtSzg2TWd1T2E1OFBxQk53MEpyZ0JPVmY5Yl8wUDl5cUp4TFpZakw1ZjJ0UVZ1amwxXzBU0gHKAUFVX3lxTE1kU2dSNjJTTXJuV25Pb0Z6d1JoYTFwQnoyc25fVDBtS3FhMzFZZHBTdHZnMjE1bEQydVB4VkpFR1lzSmRzZGJNOVFDZTRjc0U4Tmxyc3kzWHhhc01yTDJBQmw3R2ZiVFg2dTJCRWJFVzVkd3dNQjQ3RUlkeTFNRXM4Zzk2Q1VXNTJiNTdiS2VfcFRacjlCUE5abDhZcC1odXhwam1USDhjc3d6RjgtOGsxdG4weHNYZTlDakZCbVg2SDBRUXJSMzdGdkE?oc=5",
+    "date": "2026-11-10",
+    "category": "Water",
+    "local": false
+   },
+   {
+    "title": "Burn ban lifted in unincorporated Travis County",
+    "source": "Community Impact",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUGlmSUxPMDREb0RLdkZoWkhsbzZsajJNZzh5d0RlbzhuTXlyUHFIdXZWbkFSbVozbFJyMzlybXdnaHZhOFI0TkR1b1pETFZsaU41RFBxUjA5cDYzUzRSS3JEOV8zR3phMkkwb2ZmMG55MHUxNjU4aFZiRGpVWldpcFFoaWlrLUVGWXhQTEZDWGtyaXhxR2x6STVzcUhvajlvdnlLTg?oc=5",
+    "date": "2026-11-07",
+    "category": "Drought",
+    "local": false
+   }
+  ],
+  "Trinity": [],
+  "Tyler": [],
+  "Upshur": [],
+  "Upton": [],
+  "Uvalde": [
+   {
+    "title": "Commissioners to consider flood mitigation, road repairs",
+    "source": "Uvalde Leader News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOeUh5bFJqb2pTUjFlU2Z4VkJoMFRmeC1MRlVyb2pNSXBqY1F3ay1JcjFiclRLd0NBRXAxY0d2VW16VlNCX1F4VUc2Y1lVZEVwNnVVVjRoNjZrMUM0Um81elNUcXh2MlhfS2Q2SDJCMElzeDRFQTJQSlcxd2h1YXVJekR5X2FzWUhPNUFlaGNTdlRXQTNubTJkRGpFZWs0dHM?oc=5",
+    "date": "2026-11-06",
+    "category": "Environment",
+    "local": true
+   },
+   {
+    "title": "FEMA denies individual flood aid for Uvalde County residents",
+    "source": "Uvalde Leader News",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNGVFbEJOdTlqWEo3SU14Yl83bGJjcEV4YU9WdFh3UXNXMUxVbTdRMlNSYXhhUzFvVVlZTlpWN2NUTjd3cE1jZEpMem56SkUwbXhQc3UxWDRqQm9zZWF4cGc4X3R5eVdlZkN3TmNRcnJ5R1FqRE9GY0xyZHhOVFhoQmo1SDJIaEo0cENJM2VjNVFKNmFkUFYycFUyMHZLSUQzRWRTdDRR?oc=5",
+    "date": "2026-10-21",
+    "category": "Environment",
+    "local": true
+   },
+   {
+    "title": "Uvalde Water District Warns of 765-kV Line’s Potential ‘Catastrophic Effect’ on Aquifers",
+    "source": "Texas Scorecard",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaDVEODc1d0R5YlpJSzgwZXZleHNSb2VJZE9mXzRPMnVOLVIzQml4eWRsMmN2WENNS0d5RFhnT3JLb0lqRy1UMjRBNzZtWTl5b1REQ2RYU0Q4SUkwZnVLZTNiMG56MEtyWUZSTTc3aWRzRFh3UVIzaFQ0MXcxU29PSGxSSlIxTGJPamUwTTlaSWgyWS1uV29pZUg0YUNvb1RJaFJ3YnFnblFJZ19nY3R1ZUxFOElXTkg0dmpV?oc=5",
+    "date": "2026-10-16",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Val Verde": [
+   {
+    "title": "Compare Del Rio Electricity from 5.7¢ (October 29)",
+    "source": "Electric Choice",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9rbEN5MUU4bDJrM1JibVpQc1JIMlFtaEhsZnZNdXdYVHBsTkdJbWtHY2FkMWR6NERjUXlrd0U3ZXpNbWUxVnBOM3owYVVpYzJGb2o4REkzaElWM3Vac19GSS1MTFRUSW53UFdibXhJYTVma21NY1FwTzFsVThhQQ?oc=5",
+    "date": "2026-10-29",
+    "category": "Power",
+    "local": false
+   },
+   {
+    "title": "Val Verde County, Texas: Flash flood warning until 1:30 a.m. CDT",
+    "source": "cedarnews.net",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTGltLWJ1SU5XV1BFSjZWRklOTVJnU3B2Nk1IZHczOHduMk95RDBsTFhLN05Eem1jUDVUZlZzOG02QXpYcHlJQ1ZyVFlFSm82YndfVWh1NjJmR1pDTmlxZHA3aTdheVROLUpXV2F6UkNPSG1wSldMQzFMSzBTRDNiUEUxQk9QM25aTzN3YWFTaXhrLVNLLXZwUFR6bW5NZjV3UHpN?oc=5",
+    "date": "2026-10-16",
+    "category": "Environment",
+    "local": false
+   }
+  ],
+  "Van Zandt": [],
+  "Victoria": [
+   {
+    "title": "Victoria County commissioners hear data center support, approve wind bond",
+    "source": "The Victoria Advocate",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNZ0lZeWNhdkNkWWlOZExXZlBSc0dwS2lPX1laMTVXeXFrTDNuNTdOaENrWm82bjVrNnpLYlQzc0lXTVdPUUFfQW8td2k2cHpHWjVwa3MzSlNFdUh5VXhpeVlfYkNBaUNuREt2dGJVblBVVEJYcW5vdm9GMWgzYzFYOG9kelIzejl2OExTaWZJeFQtUHk1OEZXVHBFeklxdVJpVklybkV5UjA3LU1wQlVsZVBEOA?oc=5",
+    "date": "2026-10-19",
+    "category": "Data centers",
+    "local": true
+   }
+  ],
+  "Walker": [],
+  "Waller": [],
+  "Ward": [],
+  "Washington": [
+   {
+    "title": "Brenham, Texas, Boil-Water Notice Remains in Effect After Water Service Restored",
+    "source": "cedarnews.net",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNcmFxX2FDckpoUXk4RWJvTjFZQXA3a2liZUNpa08wVnpKOUJvZEtJTEhxSHdLeUNkNVRxNmZSa3ZGbGN2RTF5OU4zdXdUOWhaVzJRMktEcVBiT09IcXppVkxpakhWNjVlTlJDVjdMaXdkc0ZfX19hNERMWFYyUUZpOGwxRTRyQTZFQzJVUFZEOTlyWGNLeFl1OUZPVHNCOS1aaXg4WGVTdFJuNXVBaDlNcV9ha0luWlcyWmtz?oc=5",
+    "date": "2026-11-08",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Webb": [
+   {
+    "title": "Water line break closes area near International, Orange Blossom and Shiloh",
+    "source": "Laredo Morning Times",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQZUg3dEhMZlF0bF9zMnI4N0xzbEhST1dURWY5bktDMnV4bjM3TkF5SlN0Z3RGNzhldzJDSkdyLXRXR2I0TEtzU3czTkphYzA2aTk5MnFHT2owWUl6MUpiTnRSUUxhN3JBbWwwejJvTUxRMmxsb0RXaDlHOWNrWGVnNUZUXzlRYUpxYkNQcnkzbml4ZTBaTS0taUFqNWJuNUxsNGRz?oc=5",
+    "date": "2026-11-07",
+    "category": "Water",
+    "local": true
+   },
+   {
+    "title": "Laredo Utilities Department announces 2 planned water outages",
+    "source": "KGNS",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcmFnMkpmb2liM2tnb2R3QktkVU5RaDZxY2VKdDhsSEh4VFRYQUhxUDlyMGpJUFhBYl9nS0pZQ1RoUUpwX0xWa3Q4MXZWYlRlczEtMGhSR19zVDZ4a0tKNnB2T2NYWDJBTTJuZ1dLdERYTjBESUQwd1ZFTnpPUjZ4Z19SdHBqbWE4clA4bXdqOGFIamFkTUZ4alBHRW80MEtETUZOLW1vSUgzOE9n0gGsAUFVX3lxTE1yYWcySmZvaWIza2dvZHdCS2RVTlFoNnFjZUp0OGxISHhUVFhBSHFQOXIwaklQWEFiX2dLSllDVGhRSnBfTFZrdDgxdlZiVGVzMS0waFJHX3NUNnhrS0o2cHZPY1hYMkFNMm5nV0t0RFhOMERJRDB3VkVOek9SNnhnX1J0cGptYThyUDhtd2o4YUhqYWRNRnhqUEdFbzQwS0RNRk4tbW9JSDM4T2c?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Wharton": [],
+  "Wheeler": [],
+  "Wichita": [],
+  "Wilbarger": [
+   {
+    "title": "Google holds open house for Wilbarger County data center project",
+    "source": "News Channel 6 | Wichita Falls, TX",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPLXJXS0YzY2psZHR4NVctQ1k4SDNmQ2NJeGYyRm5ybGhiVVpCcjVzcW92RHFtQ3hEcEhiRFA4X09FX0xLYU1sRXhtdFBCRDlMMW1QLWIzN29leUdlQjB3TURqRTI2eUE0MHRGMkxLcWMxekFRR3NCbGVzcXhGMjZ2T3B3eDRvdDVlVUwzTUdJd1pHSVlHb2FwSm1pQUh3QUFDbUpzUTY5bw?oc=5",
+    "date": "2026-10-14",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Willacy": [],
+  "Williamson": [
+   {
+    "title": "LightEdge/Lumen-occupied data center in Austin, Texas, up for sale",
+    "source": "Data Center Dynamics",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVXQ3cS1QY29BdGkydTJHSWp3eDJ3akJfUnZhUlFlTm5DblBfVERrc2N4Z0xHWFVVUENISC1taFAtY3N3emsxemktV2x3RUpQSVVZSkp3NVNMOEY0eWZXUWRjdG1ZU0pjSE16M3Fxdk5VYXZpXzJmOTEtam0wV3oxWFpCRERxcWMyMV9fRXQxa0RodW9CdVRyMVpuTXJTTml3cnVFVDM1a1JxOHM?oc=5",
+    "date": "2026-10-15",
+    "category": "Data centers",
+    "local": false
+   }
+  ],
+  "Wilson": [
+   {
+    "title": "County: Water over road closes Zuehl Crossing to traffic",
+    "source": "Wilson County News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOUkthaktBT3p6ak5oU1dtWTJEQWNDQlNDLWRESk1yelV4OWZOdkg1eW9ObGl6SV9Rck5mQm9SamNSQnBtWXJkZ2NsandMcDJNNW9vQ3lOUFZONXNWd0JQQ1FHTFZtM19mU2tWMTF1M1lONDFiWFFhaTU4UUs4bmprR1pWR1ZJZm9QSUUwQkhVaGNsU0ExWi1Ga21VbkgyOGs?oc=5",
+    "date": "2026-11-10",
+    "category": "Water",
+    "local": true
+   },
+   {
+    "title": "Evergreen Underground Water Conservation District",
+    "source": "Wilson County News",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPcnUzc0taRkY4SzdwczVuaHNOZnpzeWFPN2thRC15NXJsazB0V0J4SV9adVR4NXNZU1B5Q0pZSzN0OHgzckstaGZsckFKTFlIV1paUFNZU3hSUGJnVUpwcnExWEtuN0c2eThPWW1qeVpHdzA2U3BBWHdFZWUwd2VWaFRYYUhqemFJSjNDRk5uV2J2c0VTT3laV2JGbXJtRUc0V2d3?oc=5",
+    "date": "2026-11-09",
+    "category": "Water",
+    "local": true
+   },
+   {
+    "title": "TIGERS POWER PAST EAGLES, 46-7",
+    "source": "Wilson County News",
+    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5xWE11N09fNzFicUo4U1BfT01walh6UVU4ZGJacVJLMkN1aVg2WWVzZnVLa0kyQnFxYW4zTHZINTJOTUZqWTE3VWJiczF3QXFablB3M3NVV1ZLcHFyMjU2MUU1eFNRNHowRV9ybXlKWlRkUWxNRXZqalZIQ20?oc=5",
+    "date": "2026-11-04",
+    "category": "Power",
+    "local": true
+   },
+   {
+    "title": "Floresville Electric Light and Power System meeting",
+    "source": "Wilson County News",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNc3JoRWhvdnhrZDcyai1zR1VkZ0pmYThHa0dqQ0VKM251bjJILUpRWi16N3BuRlJQTFJMbC0zV2RVUGMxTnYtdmFjcGdadHpwVVVfb1pOLTlPZjdKSHluTkRMWDhhR3lmTFpLcWQxWTBnWWkzcE9xZUlkWWdvZUF0c3dvWGlCWndaVUhQdGpQVzVQbnVBVmltb3NkSHMwZ3o4dHBvaVhXYw?oc=5",
+    "date": "2026-10-23",
+    "category": "Power",
+    "local": true
+   },
+   {
+    "title": "Freeman honored for 30 years of soil, water conservation service",
+    "source": "Wilson County News",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOWGRabnFyczdFbUZJWm1CR0ZHNTZrd2hvT000Z1ZhUXdpWmZfMm92U1ZGbjBLNnR5al9GNVVNZDJPOWkxZEpORzRpV3dSamJxX0lhN2dFdC10Z0x5aUp2c3djN2RzTzVXcGh6dFdQUkV0cmtCTEpzVnpXc1lXMUEwN1pqNnU1ak1rUi1EcUdOWXM2Rzlkc0dOTVJaU2F5bmFGSTZpOHdnaWRXQQ?oc=5",
+    "date": "2026-10-20",
+    "category": "Water",
+    "local": true
+   }
+  ],
+  "Winkler": [],
+  "Wise": [],
+  "Wood": [
+   {
+    "title": "Quitman FFA students debate groundwater issues before Wood County commissioners",
+    "source": "KLTV.com",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxON3NVUjdXWU5xWTlfZl91NEd2Z0E0ekc4VWRQQzFrVk8xdHpIQ1lsZkdJZHJtY3haVTB4WERxRjVjOXB1Y3dRN0lEWm1rUzhUZ0k3MXdKYlZPeERCdHVrSGN1UEZaVE5QMUxxQXJERFNXOG5qNW1EeVN1Qi1rTk0xUXRaVFdjbU91c2FjNVJvYk9HU05YcWxNa3VrS0tEaUZza1QwNHI0TEt1bGl4N2xYejdB0gHGAUFVX3lxTE4wbnpjMDdpbkhXOUNVRjlFcWZOZGF5VE91b2NrdUVtWWFMblB3NWt3TU5oX0NaSnRrUkhIZTBBeHFuT2FmdHBWUDJzSi1fdTc1X0o1QzVPeFk0ZlpXWGxaVTZWQUQybkdOZUhSZmlZcUNNb2tWSmprQmR2YktZSlpJVHhLbE5BWWphNFhTZDdOdVEyVmxzaHd1cVZLQ2ZtSWFCcm5JVXFhek5mcnhVYWpPNUl4c3lCR3VXTHhsUkpQYWNVZDFlUQ?oc=5",
+    "date": "2026-10-28",
+    "category": "Water",
+    "local": false
+   }
+  ],
+  "Yoakum": [],
+  "Young": [
+   {
+    "title": "Graham Crafts Agreement with Data Center Developer",
+    "source": "Olney Enterprise |",
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQbGZUNUdmN01saTVBVEVoWDU2TWZaYlFqdEF3X1IxYWVreXhKeE1GaV92VERKd3M5R21jS3RCaWJBZHZhN1h2ZVJjNEtqb01DekJjcG9rNmJmT0JlNHhRX2d2N3N0U1FaenB0TzNoUXZVemY2Z3I2NHlnR3pCSVBuRWwtdnU4cUJvZkE?oc=5",
+    "date": "2026-11-05",
+    "category": "Data centers",
+    "local": true
+   },
+   {
+    "title": "Olney Welcomes Project Saltworks Data Center",
+    "source": "Olney Enterprise |",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNdmhGYlRHemlqSE5ZRVhTNGdfVDR2ZGN5RExYX3BYTlYtanBOZGNtelVJRFNNM3p3TldINGJaMjZYNHZrdmVrNzhEa0QyRllqakNQRmJuVnVtYTB5dHRSNVpveFJEWjdiNklyNlgwSUN3OTE3UGFTUGR2aVlqcWIyc0RyT3N1bU5oODZWb19qRQ?oc=5",
+    "date": "2026-11-02",
+    "category": "Data centers",
+    "local": true
+   },
+   {
+    "title": "Graham Seeks Data Center Safeguards After County Abatement Talks Collapse",
+    "source": "Olney Enterprise |",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTlFLMzVObTlzZkJaYjB0LWZBbFVLRml1emduRFdJOEdwS3FjeFRzeHFMOWhxVU9kNkR3bjZJVGFVOGNzcE5hVjFJZWRaNzZvTVlIRFdtdDdUV3NhM2NfQVZ3VnY4SHhKbGNteWZzZWxYNzNtNzFqWEl1MGlyQ3ZWVC14R1hWLXBPQ3h6bHFmWkZjMHNFdEY1MHUyZ3VNVG5FYllUM0Z3dUVJVFF0Q3c5aExzWlRLdw?oc=5",
+    "date": "2026-10-22",
+    "category": "Data centers",
+    "local": true
+   }
+  ],
+  "Zapata": [],
+  "Zavala": []
+ },
+ "statewide": [
+  {
+   "title": "New Texas Agriculture Commissioner promises data center impact studies on day one",
+   "source": "www.kera.org",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxONkNVQzNjRGZwbE5VU01qX1BFeklTdHdXYjBKaHVVeUYyeDBiS2doZXh0c3B6ZGZQdHcyNXE1OHBndV8wTkZpdk5zUE4yTmtPZVNEU3ZTUjVDOUlyTXNvZWs2MXJlcTJ1WnRyVkk5MlFiOWZxNzdGRW9SdW9WdF9PSGJUSQ?oc=5",
+   "date": "2026-11-10",
+   "category": "Data centers",
+   "local": false
+  },
+  {
+   "title": "‘I hate the way they are taking advantage of Texas’: Incoming Texas Governor warns AI firms that the data center free-for-all is over",
+   "source": "TechRadar",
+   "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxOQTZtNHBlb1RmaTgzbmhVZzJSN0IycFVsVnMxb2hqQ0NCVzBqb2NTT2lfTzltVG5EY2xkUW1rSGs1LUpHZlQyU0tZY2s5bDJ0QlZwekVsMjZfbGRNOHdCTkIxTXVvLWNiVS1EUTZWNjFyY3NFeVhGcVA2cW9sc3o4N3lKNms4eVUzd29WVkRzMEd0ek5xUS1QNC02djBrNDBySThrSEJyMXRrcUw4VE00ejRBX25iMmd3MVVaSFc0X1NqRmNlZDc3Y3U3TWNrVEIwVmZ1c2xnejN4NkVScllEWndIOGdBVG5sV2xuTUlNRVJQWFJDVXZob0JfRjBIRDY0M0hhMlJNdnpIRW5i?oc=5",
+   "date": "2026-11-10",
+   "category": "Data centers",
+   "local": false
+  },
+  {
+   "title": "Will 'super El Niño' be a Texas drought killer? Forecasts waiver",
+   "source": "MySA",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOVTRhVVRueWZzMmNLWWVPNWV1SmduNllsRGdnOEtBNmx5SnNuSjFMSHhKcmVUeWRFN1kyRzFFenB2aUJaMGNma0hWVjVYVWU4NTJVckRBNEZNN0xFVU40NGRaOTNoamVtZzRvNTk5VWdkTEx2TkVZbU9Yd2NQV012OEJJOG5CbXZMRFE?oc=5",
+   "date": "2026-11-10",
+   "category": "Drought",
+   "local": false
+  },
+  {
+   "title": "ERCOT Expands Batch Verification, Audit to Medium Loads",
+   "source": "RTO Insider",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTW1KTEpyMXowOGRvWEhoUG1QSmMzN2p0S3pmSEk1U1owTm1FYUh6S1FJb0std19rUXFYUmRfSHZuZG5NY2RiOXlMbDB0cWlKcGJHRXRSSzdTdGdPLWxhMmtZZVV0RUE5QzRUSWJzdFBrRjBLM2JPMVZROWxZN05TTk1MaUozVGNMMkx3amJxYw?oc=5",
+   "date": "2026-11-09",
+   "category": "Power",
+   "local": false
+  },
+  {
+   "title": "What the Texas blue wave could mean for state environmental, oil and gas agencies",
+   "source": "KERA News Breakthroughs",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNNHV4LTVUTGRtazBraGMtanlMWGtmMkhvaFZQZkdKVzVlM195ajVMZy1yTjNKV1hoek5XYlY5Ny1PbDk5YnY1WUxJb2Uwbk54T2ZXMERkNVpUV3E0cEFfRWpNaHJQcm01bkhSWmJpNkN6MFNldjcxLVh0bnBVOXp4NG9YWGYzX3ZkbFdBc0pLXzZOeGF2dnhqVUlSQUFCeHhnVV9NRFhQaGU?oc=5",
+   "date": "2026-11-09",
+   "category": "Environment",
+   "local": false
+  },
+  {
+   "title": "With Batch Zero Paused, ERCOT Refines Planning Process",
+   "source": "RTO Insider",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZGtfMlpWQm5zd29lMXV2VGZWbEQzV2tjUFU1eEpHN3ZfUkhHUklXWHdBSHBXWlVMUGF1TjMzX0ptNGhMZUhseW8tR29OaWRqTkU1dVJvbVFpbzlwSklseWZoeFE4R0JHX1VuX3djTGZtbFVlVXpwOGxHOFRDSVlRLXpiSXdtejVVUV9SX1R5aXYtQQ?oc=5",
+   "date": "2026-11-08",
+   "category": "Power",
+   "local": false
+  },
+  {
+   "title": "Democratic Sweep in Texas Could Usher in Environmental Reforms",
+   "source": "Mother Jones",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOaElKaGotWVlnSzFXWC1LclhZYmdGVVNqWEl3ZzJkOUxwaGNwMklDWE1nc0VnMXAtNFlYaGRvc1hUaFJLRlVpc0RmUUt2Sk9lYi1URnZLVlpmd3YxZndGY2swVUYyX01sWWlfcmJ1QjRyVEhLQmhQanZfRS04TDdyU2lySzJ3QmVxU2FLSWlDX3ZSQlpKWUdxSF9PYmRpLV9vYzVSYVh5Z2RiVHVzZ2dsbUpPYTNvNzRCblNvTk1kc0hVTXI5V3VURmVlWWliaGlUZUtBdA?oc=5",
+   "date": "2026-11-06",
+   "category": "Environment",
+   "local": false
+  },
+  {
+   "title": "Burn ban update in Southeast Texas",
+   "source": "Beaumont Examiner |",
+   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvcGF2LUpINHM4blRmMGVkNDVJNXN2MVhtTHRwOU85OXVPbUdQTFhHdWZqaTAyd3V3MUIzZ29zQ3RiaC1oeXlnb1pwU1E4UXFubFliOUJ1dUJha0dyWl9UdVcyTVNueHVKeHIzaEdqNzZzUQ?oc=5",
+   "date": "2026-11-05",
+   "category": "Drought",
+   "local": false
+  },
+  {
+   "title": "North Texas water district considers buying water from Arkansas lake",
+   "source": "Dallas News",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxONDZja1Z1eEFyVklaMUxNaU9HOGlfQ2VQR0NmWU95YjZWanNPSDFTcDhnOEpaUGVtSnpWN0otM3N3aC1jMUg2UmFwa1VOemJ6N2NGS1c2YVdyYmh2dXFyWTVJYXpLZmpPbWh0dzBmSXl1Q2V4MG9SZkJSRS1kOVJEa0pNMExIMmpldi1aMjh5RkNKNE5WUGxGakJ5Vk9NS1czQzU1MTh2N1ZtNU5DRWs1Y0VuYzY?oc=5",
+   "date": "2026-11-02",
+   "category": "Water",
+   "local": false
+  },
+  {
+   "title": "USDA Invests $781,000 to Improve Water Supply Infrastructure in Starr County, Texas",
+   "source": "USDA (.gov)",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQUDhicWYwVHhJazZ4OEI2N0Z5NWJPRk1EX0FqT0RGTzE0dXhXa09aQUk5dVhwck1ydjdHYWVGbHJNTnVvOHJyN1Y2bUt3NldYRm5kTzRIbWwzWmxvMWhiQThWb0pCZW1LcElNelFaS3FJMENvNjZRVGVUdUNSTmdrVkduTC1DcEQ5bjNWZzVzSDV3c2MzSFB4QkoxdjhFQzVQZnI4X2ZwR2U3MXJuTjlBVTQ0NThHcUZ2X04zcQ?oc=5",
+   "date": "2026-10-29",
+   "category": "Water",
+   "local": false
+  }
+ ],
+ "updated": "2026-11-10"
+}

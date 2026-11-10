@@ -1,0 +1,2514 @@
+{
+ "Brooks": [
+  {
+   "name": "Falfurrias Facts",
+   "city": "Falfurrias"
+  }
+ ],
+ "Hopkins": [
+  {
+   "name": "Sulphur Springs News-Telegram",
+   "city": "Sulphur Springs"
+  }
+ ],
+ "Medina": [
+  {
+   "name": "Hart Beat",
+   "city": "San Antonio"
+  },
+  {
+   "name": "Hondo Anvil Herald",
+   "city": "Hondo"
+  },
+  {
+   "name": "San Antonio Business Journal",
+   "city": "San Antonio"
+  },
+  {
+   "name": "San Antonio Express-News",
+   "city": "San Antonio"
+  },
+  {
+   "name": "The Devine News",
+   "city": "Devine"
+  }
+ ],
+ "Montgomery": [
+  {
+   "name": "Daily Court Review",
+   "city": "Houston"
+  },
+  {
+   "name": "Houston Business Journal",
+   "city": "Houston"
+  },
+  {
+   "name": "Houston Chronicle",
+   "city": "Houston"
+  },
+  {
+   "name": "Jewish Herald-Voice",
+   "city": "Houston"
+  },
+  {
+   "name": "The Courier",
+   "city": "Conroe"
+  }
+ ],
+ "Sabine": [
+  {
+   "name": "Sabine County Reporter",
+   "city": "Hemphill"
+  }
+ ],
+ "Sherman": [
+  {
+   "name": "Sherman County Gazette",
+   "city": "Stratford"
+  }
+ ],
+ "Swisher": [
+  {
+   "name": "Swisher County News",
+   "city": "Tulia"
+  }
+ ],
+ "Haskell": [
+  {
+   "name": "Stamford American",
+   "city": "Stamford"
+  },
+  {
+   "name": "The Stamford Star",
+   "city": "Stamford"
+  }
+ ],
+ "Webb": [
+  {
+   "name": "Laredo Morning Times",
+   "city": "Laredo"
+  }
+ ],
+ "Jefferson": [
+  {
+   "name": "The Beaumont Enterprise",
+   "city": "Beaumont"
+  },
+  {
+   "name": "The Port Arthur News",
+   "city": "Port Arthur"
+  }
+ ],
+ "Jasper": [
+  {
+   "name": "The East Texas Banner",
+   "city": "Kirbyville"
+  },
+  {
+   "name": "The Jasper Newsboy",
+   "city": "Jasper"
+  }
+ ],
+ "Austin": [
+  {
+   "name": "New Ulm Enterprise",
+   "city": "New Ulm"
+  },
+  {
+   "name": "The Bellville Times",
+   "city": "Bellville"
+  },
+  {
+   "name": "The Sealy News",
+   "city": "Sealy"
+  }
+ ],
+ "Hudspeth": [
+  {
+   "name": "Hudspeth County Herald",
+   "city": "Fort Hancock"
+  }
+ ],
+ "Winkler": [
+  {
+   "name": "The Monahans News",
+   "city": "Monahans"
+  }
+ ],
+ "Kerr": [
+  {
+   "name": "Hill Country Community Journal",
+   "city": "Kerrville"
+  },
+  {
+   "name": "Kerrville Daily Times",
+   "city": "Kerrville"
+  },
+  {
+   "name": "West Kerr Current",
+   "city": "Ingram"
+  }
+ ],
+ "Stonewall": [],
+ "Anderson": [
+  {
+   "name": "Palestine Herald-Press",
+   "city": "Palestine"
+  }
+ ],
+ "Sutton": [
+  {
+   "name": "Devil’s River News",
+   "city": "Sonora"
+  }
+ ],
+ "Leon": [
+  {
+   "name": "Buffalo Express",
+   "city": "Buffalo"
+  },
+  {
+   "name": "Centerville News",
+   "city": "Centerville"
+  },
+  {
+   "name": "The Normangee Star",
+   "city": "Normangee"
+  }
+ ],
+ "Comal": [
+  {
+   "name": "Hart Beat",
+   "city": "San Antonio"
+  },
+  {
+   "name": "New Braunfels Herald-Zeitung",
+   "city": "New Braunfels"
+  },
+  {
+   "name": "San Antonio Business Journal",
+   "city": "San Antonio"
+  },
+  {
+   "name": "San Antonio Express-News",
+   "city": "San Antonio"
+  }
+ ],
+ "Glasscock": [],
+ "Shackelford": [
+  {
+   "name": "Albany News",
+   "city": "Albany"
+  }
+ ],
+ "Gaines": [
+  {
+   "name": "Denver City Press",
+   "city": "Denver City"
+  },
+  {
+   "name": "Seminole Sentinel",
+   "city": "Seminole"
+  }
+ ],
+ "Travis": [
+  {
+   "name": "Austin American-Statesman",
+   "city": "Austin"
+  },
+  {
+   "name": "Austin Business Journal",
+   "city": "Austin"
+  },
+  {
+   "name": "Elgin Courier",
+   "city": "Elgin"
+  },
+  {
+   "name": "Hill Country News Weekender",
+   "city": "Cedar Park"
+  },
+  {
+   "name": "Lake Travis View",
+   "city": "Lakeway"
+  },
+  {
+   "name": "Round Rock Leader",
+   "city": "Round Rock"
+  },
+  {
+   "name": "West Austin News",
+   "city": "Austin"
+  }
+ ],
+ "Parmer": [
+  {
+   "name": "Friona Star",
+   "city": "Friona"
+  },
+  {
+   "name": "State Line Tribune",
+   "city": "Farwell"
+  }
+ ],
+ "Collin": [
+  {
+   "name": "Celina Record",
+   "city": "Celina"
+  },
+  {
+   "name": "Collin County Commercial Record",
+   "city": "McKinney"
+  },
+  {
+   "name": "Daily Commercial Record",
+   "city": "Dallas"
+  },
+  {
+   "name": "Dallas Business Journal",
+   "city": "Dallas"
+  },
+  {
+   "name": "Murphy Monitor",
+   "city": "Murphy"
+  },
+  {
+   "name": "Royse City Herald Banner",
+   "city": "Royse City"
+  },
+  {
+   "name": "Texas Jewish Post",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Examiner",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Morning News",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Farmersville Times",
+   "city": "Farmersville"
+  },
+  {
+   "name": "The Princeton Herald",
+   "city": "Princeton"
+  },
+  {
+   "name": "The Sachse News",
+   "city": "Sachse"
+  },
+  {
+   "name": "The Wylie News",
+   "city": "Wylie"
+  },
+  {
+   "name": "Van Alstyne Leader",
+   "city": "Van Alstyne"
+  }
+ ],
+ "Harrison": [
+  {
+   "name": "Longview News-Journal",
+   "city": "Longview"
+  },
+  {
+   "name": "Marshall News Messenger",
+   "city": "Marshall"
+  }
+ ],
+ "Hamilton": [
+  {
+   "name": "Hamilton Herald-News",
+   "city": "Hamilton"
+  },
+  {
+   "name": "Hico News Review",
+   "city": "Hico"
+  }
+ ],
+ "Martin": [
+  {
+   "name": "Greenwood Ranger",
+   "city": "Midland"
+  },
+  {
+   "name": "Martin County Messenger",
+   "city": "Stanton"
+  },
+  {
+   "name": "Midland Reporter-Telegram",
+   "city": "Midland"
+  }
+ ],
+ "Roberts": [
+  {
+   "name": "The Miami Chief",
+   "city": "Miami"
+  }
+ ],
+ "Archer": [
+  {
+   "name": "Archer County News",
+   "city": "Archer City"
+  }
+ ],
+ "Jackson": [
+  {
+   "name": "Jackson County Herald-Tribune",
+   "city": "Edna"
+  }
+ ],
+ "Dallas": [
+  {
+   "name": "Daily Commercial Record",
+   "city": "Dallas"
+  },
+  {
+   "name": "Dallas Business Journal",
+   "city": "Dallas"
+  },
+  {
+   "name": "Focus Daily News",
+   "city": "DeSoto"
+  },
+  {
+   "name": "Texas Jewish Post",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Examiner",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Morning News",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Ellis County Press",
+   "city": "Ferris"
+  },
+  {
+   "name": "The Irving Rambler",
+   "city": "Irving"
+  },
+  {
+   "name": "The Sachse News",
+   "city": "Sachse"
+  },
+  {
+   "name": "The Wylie News",
+   "city": "Wylie"
+  }
+ ],
+ "Palo Pinto": [
+  {
+   "name": "Palo Pinto Press",
+   "city": "Mineral Wells"
+  }
+ ],
+ "Goliad": [
+  {
+   "name": "Goliad Advance-Guard",
+   "city": "Goliad"
+  }
+ ],
+ "Borden": [
+  {
+   "name": "Borden Star",
+   "city": "Gail"
+  }
+ ],
+ "Karnes": [
+  {
+   "name": "The Karnes Countywide",
+   "city": "Karnes City"
+  }
+ ],
+ "Bexar": [
+  {
+   "name": "Hart Beat",
+   "city": "San Antonio"
+  },
+  {
+   "name": "San Antonio Business Journal",
+   "city": "San Antonio"
+  },
+  {
+   "name": "San Antonio Express-News",
+   "city": "San Antonio"
+  }
+ ],
+ "Concho": [
+  {
+   "name": "Eden Echo",
+   "city": "Eden"
+  },
+  {
+   "name": "The Concho Herald",
+   "city": "Paint Rock"
+  }
+ ],
+ "Hemphill": [
+  {
+   "name": "The Canadian Record",
+   "city": "Canadian"
+  }
+ ],
+ "Kenedy": [],
+ "Runnels": [
+  {
+   "name": "Miles Messenger",
+   "city": "Miles"
+  },
+  {
+   "name": "Runnels County Register",
+   "city": "Ballinger"
+  },
+  {
+   "name": "The Rowena Press",
+   "city": "Rowena"
+  }
+ ],
+ "Presidio": [
+  {
+   "name": "The Big Bend Sentinel",
+   "city": "Marfa"
+  },
+  {
+   "name": "The International",
+   "city": "Presidio"
+  }
+ ],
+ "San Patricio": [
+  {
+   "name": "Aransas Pass Progress",
+   "city": "Aransas Pass"
+  },
+  {
+   "name": "Coastal Bend Legal & Business News",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Corpus Christi Caller-Times",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Ingleside Index",
+   "city": "Ingleside"
+  },
+  {
+   "name": "The News of San Patricio",
+   "city": "Portland"
+  }
+ ],
+ "Wharton": [
+  {
+   "name": "El Campo Leader-News",
+   "city": "El Campo"
+  },
+  {
+   "name": "Wharton Journal-Spectator",
+   "city": "Wharton"
+  }
+ ],
+ "Crosby": [
+  {
+   "name": "Crosby County News",
+   "city": "Ralls"
+  }
+ ],
+ "Pecos": [
+  {
+   "name": "Fort Stockton Pioneer",
+   "city": "Fort Stockton"
+  }
+ ],
+ "Limestone": [
+  {
+   "name": "Groesbeck Journal",
+   "city": "Groesbeck"
+  },
+  {
+   "name": "The Mexia News",
+   "city": "Mexia"
+  }
+ ],
+ "Donley": [
+  {
+   "name": "Clarendon Enterprise",
+   "city": "Clarendon"
+  }
+ ],
+ "Colorado": [
+  {
+   "name": "Colorado County Citizen",
+   "city": "Columbus"
+  },
+  {
+   "name": "The Banner Press Newspaper",
+   "city": "Columbus"
+  },
+  {
+   "name": "Weimar Mercury",
+   "city": "Weimar"
+  }
+ ],
+ "Robertson": [
+  {
+   "name": "Franklin News Weekly",
+   "city": "Franklin"
+  },
+  {
+   "name": "Robertson County News",
+   "city": "Hearne"
+  }
+ ],
+ "Hunt": [
+  {
+   "name": "Herald-Banner",
+   "city": "Greenville"
+  },
+  {
+   "name": "Royse City Herald Banner",
+   "city": "Royse City"
+  }
+ ],
+ "Taylor": [
+  {
+   "name": "Abilene Reporter-News",
+   "city": "Abilene"
+  }
+ ],
+ "Ochiltree": [
+  {
+   "name": "Booker News",
+   "city": "Booker"
+  },
+  {
+   "name": "Perryton Herald",
+   "city": "Perryton"
+  }
+ ],
+ "Dallam": [
+  {
+   "name": "The Dalhart Texan",
+   "city": "Dalhart"
+  }
+ ],
+ "Comanche": [
+  {
+   "name": "De Leon Free Press",
+   "city": "De Leon"
+  },
+  {
+   "name": "The Comanche Chief",
+   "city": "Comanche"
+  }
+ ],
+ "Trinity": [
+  {
+   "name": "Trinity County News-Standard",
+   "city": "Groveton"
+  }
+ ],
+ "Bosque": [
+  {
+   "name": "Meridian Tribune",
+   "city": "Meridian"
+  },
+  {
+   "name": "The Clifton Record",
+   "city": "Clifton"
+  },
+  {
+   "name": "Valley Mills Progress",
+   "city": "Valley Mills"
+  }
+ ],
+ "La Salle": [],
+ "Fannin": [
+  {
+   "name": "The Leonard Graphic",
+   "city": "Leonard"
+  },
+  {
+   "name": "The Whitewright Sun",
+   "city": "Whitewright"
+  }
+ ],
+ "Live Oak": [
+  {
+   "name": "The Progress",
+   "city": "Three Rivers"
+  }
+ ],
+ "Hutchinson": [
+  {
+   "name": "Borger News-Herald",
+   "city": "Borger"
+  },
+  {
+   "name": "The Eagle Press",
+   "city": "Fritch"
+  }
+ ],
+ "Denton": [
+  {
+   "name": "Celina Record",
+   "city": "Celina"
+  },
+  {
+   "name": "Commercial Recorder",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Daily Commercial Record",
+   "city": "Dallas"
+  },
+  {
+   "name": "Dallas Business Journal",
+   "city": "Dallas"
+  },
+  {
+   "name": "Denton Record-Chronicle",
+   "city": "Denton"
+  },
+  {
+   "name": "Fort Worth Business Press",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Star-Telegram",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Pilot Point Post-Signal",
+   "city": "Pilot Point"
+  },
+  {
+   "name": "Tarrant County Commercial Record",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Texas Jewish Post",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Examiner",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Morning News",
+   "city": "Dallas"
+  }
+ ],
+ "Gonzales": [
+  {
+   "name": "Gonzales Inquirer",
+   "city": "Gonzales"
+  }
+ ],
+ "Fort Bend": [
+  {
+   "name": "Daily Court Review",
+   "city": "Houston"
+  },
+  {
+   "name": "Fort Bend Herald",
+   "city": "Rosenberg"
+  },
+  {
+   "name": "Hometown Journal",
+   "city": "Needville"
+  },
+  {
+   "name": "Houston Business Journal",
+   "city": "Houston"
+  },
+  {
+   "name": "Houston Chronicle",
+   "city": "Houston"
+  },
+  {
+   "name": "Jewish Herald-Voice",
+   "city": "Houston"
+  },
+  {
+   "name": "Katy Times",
+   "city": "Katy"
+  },
+  {
+   "name": "Pearland Reporter News",
+   "city": "Pearland"
+  }
+ ],
+ "Madison": [
+  {
+   "name": "Madisonville Meteor",
+   "city": "Madisonville"
+  },
+  {
+   "name": "The Normangee Star",
+   "city": "Normangee"
+  }
+ ],
+ "Briscoe": [
+  {
+   "name": "Caprock Courier",
+   "city": "Silverton"
+  },
+  {
+   "name": "Valley Tribune",
+   "city": "Quitaque"
+  }
+ ],
+ "Orange": [
+  {
+   "name": "The Orange Leader",
+   "city": "Orange"
+  },
+  {
+   "name": "The Port Arthur News",
+   "city": "Port Arthur"
+  },
+  {
+   "name": "Vidor Vidorian",
+   "city": "Vidor"
+  }
+ ],
+ "Upshur": [
+  {
+   "name": "Big Sandy-Hawkins Journal",
+   "city": "Big Sandy"
+  },
+  {
+   "name": "Gilmer Mirror",
+   "city": "Gilmer"
+  },
+  {
+   "name": "Gladewater Mirror",
+   "city": "Gladewater"
+  }
+ ],
+ "Red River": [],
+ "Waller": [
+  {
+   "name": "Daily Court Review",
+   "city": "Houston"
+  },
+  {
+   "name": "Houston Business Journal",
+   "city": "Houston"
+  },
+  {
+   "name": "Houston Chronicle",
+   "city": "Houston"
+  },
+  {
+   "name": "Jewish Herald-Voice",
+   "city": "Houston"
+  },
+  {
+   "name": "Katy Times",
+   "city": "Katy"
+  },
+  {
+   "name": "Waller County Express",
+   "city": "Hempstead"
+  }
+ ],
+ "Wise": [
+  {
+   "name": "Commercial Recorder",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Business Press",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Star-Telegram",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Springtown Epigraph",
+   "city": "Springtown"
+  },
+  {
+   "name": "Tarrant County Commercial Record",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Wise County Messenger",
+   "city": "Decatur"
+  }
+ ],
+ "Andrews": [
+  {
+   "name": "Andrews County News",
+   "city": "Andrews"
+  }
+ ],
+ "Bandera": [
+  {
+   "name": "Bandera Bulletin",
+   "city": "Bandera"
+  }
+ ],
+ "Erath": [
+  {
+   "name": "Hico News Review",
+   "city": "Hico"
+  },
+  {
+   "name": "Stephenville Empire-Tribune",
+   "city": "Stephenville"
+  },
+  {
+   "name": "The Dublin Citizen",
+   "city": "Dublin"
+  }
+ ],
+ "Kaufman": [
+  {
+   "name": "Daily Commercial Record",
+   "city": "Dallas"
+  },
+  {
+   "name": "Dallas Business Journal",
+   "city": "Dallas"
+  },
+  {
+   "name": "Forney Messenger",
+   "city": "Forney"
+  },
+  {
+   "name": "Texas Jewish Post",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Examiner",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Morning News",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Kaufman Herald",
+   "city": "Kaufman"
+  },
+  {
+   "name": "The Monitor",
+   "city": "Mabank"
+  },
+  {
+   "name": "The Terrell Tribune",
+   "city": "Terrell"
+  }
+ ],
+ "Loving": [],
+ "Panola": [
+  {
+   "name": "The Panola Watchman",
+   "city": "Carthage"
+  }
+ ],
+ "Guadalupe": [
+  {
+   "name": "Luling Newsboy and Signal",
+   "city": "Luling"
+  },
+  {
+   "name": "New Braunfels Herald-Zeitung",
+   "city": "New Braunfels"
+  },
+  {
+   "name": "San Marcos Daily Record",
+   "city": "San Marcos"
+  },
+  {
+   "name": "Seguin Gazette",
+   "city": "Seguin"
+  }
+ ],
+ "Lipscomb": [
+  {
+   "name": "Booker News",
+   "city": "Booker"
+  }
+ ],
+ "Grayson": [
+  {
+   "name": "Herald Democrat",
+   "city": "Sherman"
+  },
+  {
+   "name": "Pilot Point Post-Signal",
+   "city": "Pilot Point"
+  },
+  {
+   "name": "The Whitewright Sun",
+   "city": "Whitewright"
+  },
+  {
+   "name": "Van Alstyne Leader",
+   "city": "Van Alstyne"
+  },
+  {
+   "name": "Whitesboro News-Record",
+   "city": "Whitesboro"
+  }
+ ],
+ "Smith": [
+  {
+   "name": "Lindale News",
+   "city": "Lindale"
+  },
+  {
+   "name": "Tyler Morning Telegraph",
+   "city": "Tyler"
+  }
+ ],
+ "Mason": [
+  {
+   "name": "Mason County News",
+   "city": "Mason"
+  }
+ ],
+ "Fisher": [
+  {
+   "name": "Double Mountain Chronicle",
+   "city": "Rotan"
+  },
+  {
+   "name": "The Hamlin Herald",
+   "city": "Hamlin"
+  }
+ ],
+ "Kent": [],
+ "Tyler": [
+  {
+   "name": "Tyler County Booster",
+   "city": "Woodville"
+  }
+ ],
+ "Rusk": [
+  {
+   "name": "Kilgore News Herald",
+   "city": "Kilgore"
+  },
+  {
+   "name": "The Henderson News",
+   "city": "Henderson"
+  }
+ ],
+ "Cottle": [
+  {
+   "name": "Paducah Post",
+   "city": "Paducah"
+  }
+ ],
+ "Calhoun": [
+  {
+   "name": "Port Lavaca Wave",
+   "city": "Port Lavaca"
+  }
+ ],
+ "Liberty": [
+  {
+   "name": "The Vindicator",
+   "city": "Liberty"
+  }
+ ],
+ "Tom Green": [
+  {
+   "name": "San Angelo Standard-Times",
+   "city": "San Angelo"
+  }
+ ],
+ "Llano": [
+  {
+   "name": "The Llano News",
+   "city": "Llano"
+  }
+ ],
+ "Jim Wells": [
+  {
+   "name": "Alice Echo-News Journal",
+   "city": "Alice"
+  }
+ ],
+ "Childress": [
+  {
+   "name": "The Red River Sun",
+   "city": "Childress"
+  }
+ ],
+ "Nueces": [
+  {
+   "name": "Aransas Pass Progress",
+   "city": "Aransas Pass"
+  },
+  {
+   "name": "Coastal Bend Legal & Business News",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Corpus Christi Caller-Times",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Ingleside Index",
+   "city": "Ingleside"
+  },
+  {
+   "name": "Port Aransas South Jetty",
+   "city": "Port Aransas"
+  },
+  {
+   "name": "The News of San Patricio",
+   "city": "Portland"
+  }
+ ],
+ "Yoakum": [
+  {
+   "name": "Denver City Press",
+   "city": "Denver City"
+  }
+ ],
+ "Chambers": [
+  {
+   "name": "Baytown Sun",
+   "city": "Baytown"
+  },
+  {
+   "name": "The Hometown Press",
+   "city": "Winnie"
+  },
+  {
+   "name": "The Post Newspaper",
+   "city": "Texas City"
+  },
+  {
+   "name": "The Progress",
+   "city": "Anahuac"
+  },
+  {
+   "name": "The Seabreeze Beacon",
+   "city": "Winnie"
+  }
+ ],
+ "Cameron": [
+  {
+   "name": "Port Isabel / South Padre Press",
+   "city": "Port Isabel"
+  },
+  {
+   "name": "San Benito News",
+   "city": "San Benito"
+  },
+  {
+   "name": "The Brownsville Herald",
+   "city": "Brownsville"
+  },
+  {
+   "name": "Valley Morning Star",
+   "city": "Harlingen"
+  }
+ ],
+ "Deaf Smith": [
+  {
+   "name": "Hereford Brand",
+   "city": "Hereford"
+  }
+ ],
+ "Duval": [],
+ "Wheeler": [
+  {
+   "name": "County Star-News",
+   "city": "Shamrock"
+  },
+  {
+   "name": "The Wheeler Times",
+   "city": "Wheeler"
+  }
+ ],
+ "Milam": [
+  {
+   "name": "Rockdale Reporter",
+   "city": "Rockdale"
+  },
+  {
+   "name": "The Cameron Herald",
+   "city": "Cameron"
+  }
+ ],
+ "Zavala": [
+  {
+   "name": "Zavala County Sentinel",
+   "city": "Crystal City"
+  }
+ ],
+ "Reeves": [
+  {
+   "name": "Lindsay Letter",
+   "city": "Lindsay"
+  },
+  {
+   "name": "Pecos Enterprise",
+   "city": "Pecos"
+  }
+ ],
+ "Brewster": [
+  {
+   "name": "Alpine Avalanche",
+   "city": "Alpine"
+  }
+ ],
+ "Potter": [
+  {
+   "name": "Amarillo Globe-News",
+   "city": "Amarillo"
+  }
+ ],
+ "Foard": [
+  {
+   "name": "Foard County News",
+   "city": "Crowell"
+  }
+ ],
+ "Shelby": [
+  {
+   "name": "The Light and Champion",
+   "city": "Center"
+  }
+ ],
+ "Knox": [
+  {
+   "name": "The Knox County News-Courier",
+   "city": "Munday"
+  }
+ ],
+ "Oldham": [
+  {
+   "name": "Vega Enterprise",
+   "city": "Vega"
+  }
+ ],
+ "Wichita": [
+  {
+   "name": "Burkburnett Informer Star",
+   "city": "Burkburnett"
+  },
+  {
+   "name": "Electra Star-News",
+   "city": "Electra"
+  },
+  {
+   "name": "Times Record News",
+   "city": "Wichita Falls"
+  }
+ ],
+ "Lamar": [
+  {
+   "name": "Roxton Progress",
+   "city": "Roxton"
+  },
+  {
+   "name": "The Paris News",
+   "city": "Paris"
+  }
+ ],
+ "Bowie": [
+  {
+   "name": "Bowie County Citizens Tribune",
+   "city": "New Boston"
+  },
+  {
+   "name": "Texarkana Gazette",
+   "city": "Texarkana"
+  }
+ ],
+ "Crane": [
+  {
+   "name": "Crane News",
+   "city": "Crane"
+  }
+ ],
+ "Burnet": [
+  {
+   "name": "Burnet Bulletin",
+   "city": "Burnet"
+  },
+  {
+   "name": "Citizens Gazette",
+   "city": "Burnet"
+  },
+  {
+   "name": "The Highlander",
+   "city": "Marble Falls"
+  }
+ ],
+ "DeWitt": [
+  {
+   "name": "The Cuero Record",
+   "city": "Cuero"
+  },
+  {
+   "name": "Yoakum Herald-Times",
+   "city": "Yoakum"
+  }
+ ],
+ "Hays": [
+  {
+   "name": "Austin American-Statesman",
+   "city": "Austin"
+  },
+  {
+   "name": "Austin Business Journal",
+   "city": "Austin"
+  },
+  {
+   "name": "Hays Free Press",
+   "city": "Kyle"
+  },
+  {
+   "name": "News-Dispatch",
+   "city": "Dripping Springs"
+  },
+  {
+   "name": "San Marcos Daily Record",
+   "city": "San Marcos"
+  },
+  {
+   "name": "West Austin News",
+   "city": "Austin"
+  },
+  {
+   "name": "Wimberley View",
+   "city": "Wimberley"
+  }
+ ],
+ "Houston": [
+  {
+   "name": "Houston County Courier",
+   "city": "Crockett"
+  },
+  {
+   "name": "The Messenger",
+   "city": "Grapeland"
+  }
+ ],
+ "Moore": [
+  {
+   "name": "Moore County News-Press",
+   "city": "Dumas"
+  },
+  {
+   "name": "The Eagle Press",
+   "city": "Fritch"
+  }
+ ],
+ "Wilbarger": [
+  {
+   "name": "Vernon Daily Record",
+   "city": "Vernon"
+  }
+ ],
+ "Wood": [
+  {
+   "name": "Winnsboro News",
+   "city": "Winnsboro"
+  },
+  {
+   "name": "Wood County Monitor",
+   "city": "Mineola"
+  }
+ ],
+ "Washington": [
+  {
+   "name": "Brenham Banner-Press",
+   "city": "Brenham"
+  }
+ ],
+ "Carson": [
+  {
+   "name": "Panhandle Herald/White Deer News",
+   "city": "Panhandle"
+  },
+  {
+   "name": "The Groom News",
+   "city": "Groom"
+  }
+ ],
+ "Rockwall": [
+  {
+   "name": "Daily Commercial Record",
+   "city": "Dallas"
+  },
+  {
+   "name": "Dallas Business Journal",
+   "city": "Dallas"
+  },
+  {
+   "name": "Royse City Herald Banner",
+   "city": "Royse City"
+  },
+  {
+   "name": "Texas Jewish Post",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Examiner",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Dallas Morning News",
+   "city": "Dallas"
+  },
+  {
+   "name": "The Wylie News",
+   "city": "Wylie"
+  }
+ ],
+ "Cherokee": [
+  {
+   "name": "Cherokeean Herald",
+   "city": "Rusk"
+  },
+  {
+   "name": "Jacksonville Progress",
+   "city": "Jacksonville"
+  }
+ ],
+ "Bailey": [
+  {
+   "name": "Muleshoe Journal",
+   "city": "Muleshoe"
+  }
+ ],
+ "Edwards": [],
+ "McMullen": [],
+ "Callahan": [
+  {
+   "name": "Baird Banner",
+   "city": "Baird"
+  },
+  {
+   "name": "Clyde Journal",
+   "city": "Clyde"
+  },
+  {
+   "name": "Cross Plains Review",
+   "city": "Cross Plains"
+  }
+ ],
+ "Midland": [
+  {
+   "name": "Greenwood Ranger",
+   "city": "Midland"
+  },
+  {
+   "name": "Midland Reporter-Telegram",
+   "city": "Midland"
+  },
+  {
+   "name": "Odessa American",
+   "city": "Odessa"
+  }
+ ],
+ "Bee": [
+  {
+   "name": "Beeville Bee-Picayune",
+   "city": "Beeville"
+  }
+ ],
+ "Willacy": [
+  {
+   "name": "Raymondville Chronicle & Willacy Co. News",
+   "city": "Raymondville"
+  }
+ ],
+ "Eastland": [
+  {
+   "name": "Eastland County Today",
+   "city": "Eastland"
+  }
+ ],
+ "McLennan": [
+  {
+   "name": "McGregor Mirror & Crawford Sun",
+   "city": "McGregor"
+  },
+  {
+   "name": "Riesel Rustler",
+   "city": "Riesel"
+  },
+  {
+   "name": "The West News",
+   "city": "West"
+  },
+  {
+   "name": "Valley Mills Progress",
+   "city": "Valley Mills"
+  },
+  {
+   "name": "Waco Tribune-Herald",
+   "city": "Waco"
+  }
+ ],
+ "Hartley": [
+  {
+   "name": "The Dalhart Texan",
+   "city": "Dalhart"
+  }
+ ],
+ "Kendall": [
+  {
+   "name": "Boerne Star",
+   "city": "Boerne"
+  },
+  {
+   "name": "The Comfort News",
+   "city": "Comfort"
+  }
+ ],
+ "Marion": [
+  {
+   "name": "Jefferson Jimplecute",
+   "city": "Jefferson"
+  }
+ ],
+ "Gregg": [
+  {
+   "name": "Gladewater Mirror",
+   "city": "Gladewater"
+  },
+  {
+   "name": "Kilgore News Herald",
+   "city": "Kilgore"
+  },
+  {
+   "name": "Longview News-Journal",
+   "city": "Longview"
+  },
+  {
+   "name": "White Oak Independent",
+   "city": "White Oak"
+  }
+ ],
+ "Mills": [
+  {
+   "name": "Goldthwaite Eagle",
+   "city": "Goldthwaite"
+  }
+ ],
+ "San Jacinto": [
+  {
+   "name": "San Jacinto News-Times",
+   "city": "Shepherd"
+  }
+ ],
+ "Harris": [
+  {
+   "name": "Bay Area Observer",
+   "city": "La Porte"
+  },
+  {
+   "name": "Baytown Sun",
+   "city": "Baytown"
+  },
+  {
+   "name": "Daily Court Review",
+   "city": "Houston"
+  },
+  {
+   "name": "Friendswood Reporter News",
+   "city": "Friendswood"
+  },
+  {
+   "name": "Highlands Star / Crosby Courier",
+   "city": "Highlands"
+  },
+  {
+   "name": "Houston Business Journal",
+   "city": "Houston"
+  },
+  {
+   "name": "Houston Chronicle",
+   "city": "Houston"
+  },
+  {
+   "name": "Jewish Herald-Voice",
+   "city": "Houston"
+  },
+  {
+   "name": "Katy Times",
+   "city": "Katy"
+  },
+  {
+   "name": "Pearland Reporter News",
+   "city": "Pearland"
+  }
+ ],
+ "Navarro": [
+  {
+   "name": "Corsicana Daily Sun",
+   "city": "Corsicana"
+  }
+ ],
+ "Jack": [
+  {
+   "name": "Jacksboro Herald-Gazette",
+   "city": "Jacksboro"
+  }
+ ],
+ "Mitchell": [
+  {
+   "name": "Colorado City Record",
+   "city": "Colorado City"
+  }
+ ],
+ "Lampasas": [
+  {
+   "name": "Copperas Cove Leader-Press",
+   "city": "Copperas Cove"
+  },
+  {
+   "name": "Lampasas Dispatch Record",
+   "city": "Lampasas"
+  }
+ ],
+ "Falls": [
+  {
+   "name": "The Marlin Democrat",
+   "city": "Marlin"
+  }
+ ],
+ "Lamb": [
+  {
+   "name": "The Lamb County Leader-News",
+   "city": "Littlefield"
+  }
+ ],
+ "Hockley": [
+  {
+   "name": "Levelland & Hockley County News-Press",
+   "city": "Levelland"
+  }
+ ],
+ "Cass": [
+  {
+   "name": "Cass County Citizens Journal-Sun",
+   "city": "Atlanta"
+  }
+ ],
+ "Franklin": [
+  {
+   "name": "Winnsboro News",
+   "city": "Winnsboro"
+  }
+ ],
+ "Coleman": [
+  {
+   "name": "Coleman Chronicle & Democrat-Voice",
+   "city": "Coleman"
+  }
+ ],
+ "Jones": [
+  {
+   "name": "Abilene Reporter-News",
+   "city": "Abilene"
+  },
+  {
+   "name": "Stamford American",
+   "city": "Stamford"
+  },
+  {
+   "name": "The Hamlin Herald",
+   "city": "Hamlin"
+  },
+  {
+   "name": "The Stamford Star",
+   "city": "Stamford"
+  },
+  {
+   "name": "Western Observer",
+   "city": "Anson"
+  }
+ ],
+ "Garza": [
+  {
+   "name": "The Post Dispatch",
+   "city": "Post"
+  }
+ ],
+ "Irion": [],
+ "King": [],
+ "Lubbock": [
+  {
+   "name": "Abernathy Advocate",
+   "city": "Abernathy"
+  },
+  {
+   "name": "Idalou Beacon",
+   "city": "Idalou"
+  },
+  {
+   "name": "Lubbock Avalanche-Journal",
+   "city": "Lubbock"
+  },
+  {
+   "name": "The Slatonite",
+   "city": "Slaton"
+  }
+ ],
+ "Coryell": [
+  {
+   "name": "Copperas Cove Leader-Press",
+   "city": "Copperas Cove"
+  },
+  {
+   "name": "Gatesville Messenger",
+   "city": "Gatesville"
+  },
+  {
+   "name": "McGregor Mirror & Crawford Sun",
+   "city": "McGregor"
+  }
+ ],
+ "Gray": [
+  {
+   "name": "The Pampa News",
+   "city": "Pampa"
+  }
+ ],
+ "Hall": [],
+ "Terry": [
+  {
+   "name": "Brownfield News",
+   "city": "Brownfield"
+  }
+ ],
+ "Kleberg": [
+  {
+   "name": "Coastal Bend Legal & Business News",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Corpus Christi Caller-Times",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Kingsville Record",
+   "city": "Kingsville"
+  }
+ ],
+ "Refugio": [
+  {
+   "name": "Refugio County Press",
+   "city": "Refugio"
+  }
+ ],
+ "Hale": [
+  {
+   "name": "Abernathy Advocate",
+   "city": "Abernathy"
+  },
+  {
+   "name": "Plainview Herald",
+   "city": "Plainview"
+  }
+ ],
+ "Hansford": [
+  {
+   "name": "The Hansford County Reporter-Statesman",
+   "city": "Spearman"
+  }
+ ],
+ "Brown": [
+  {
+   "name": "Brownwood Bulletin",
+   "city": "Brownwood"
+  }
+ ],
+ "Bastrop": [
+  {
+   "name": "Austin American-Statesman",
+   "city": "Austin"
+  },
+  {
+   "name": "Austin Business Journal",
+   "city": "Austin"
+  },
+  {
+   "name": "Bastrop Advertiser",
+   "city": "Bastrop"
+  },
+  {
+   "name": "Elgin Courier",
+   "city": "Elgin"
+  },
+  {
+   "name": "Smithville Times",
+   "city": "Smithville"
+  },
+  {
+   "name": "West Austin News",
+   "city": "Austin"
+  }
+ ],
+ "Motley": [],
+ "Aransas": [
+  {
+   "name": "Aransas Pass Progress",
+   "city": "Aransas Pass"
+  },
+  {
+   "name": "Coastal Bend Legal & Business News",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "Corpus Christi Caller-Times",
+   "city": "Corpus Christi"
+  },
+  {
+   "name": "The Rockport Pilot",
+   "city": "Rockport"
+  }
+ ],
+ "Jim Hogg": [
+  {
+   "name": "The Enterprise",
+   "city": "Hebbronville"
+  }
+ ],
+ "Schleicher": [
+  {
+   "name": "Eldorado Success",
+   "city": "Eldorado"
+  }
+ ],
+ "Freestone": [
+  {
+   "name": "Freestone County Recorder-Chronicle",
+   "city": "Fairfield"
+  },
+  {
+   "name": "Freestone County Times",
+   "city": "Fairfield"
+  }
+ ],
+ "Ward": [
+  {
+   "name": "The Monahans News",
+   "city": "Monahans"
+  }
+ ],
+ "Atascosa": [
+  {
+   "name": "Pleasanton Express",
+   "city": "Pleasanton"
+  }
+ ],
+ "Cooke": [
+  {
+   "name": "Gainesville Daily Register",
+   "city": "Gainesville"
+  },
+  {
+   "name": "Lindsay Letter",
+   "city": "Lindsay"
+  },
+  {
+   "name": "Muenster Enterprise",
+   "city": "Muenster"
+  },
+  {
+   "name": "Pilot Point Post-Signal",
+   "city": "Pilot Point"
+  }
+ ],
+ "Nolan": [
+  {
+   "name": "Sweetwater Reporter",
+   "city": "Sweetwater"
+  }
+ ],
+ "Reagan": [
+  {
+   "name": "Big Lake Wildcat",
+   "city": "Big Lake"
+  }
+ ],
+ "Polk": [
+  {
+   "name": "Polk County Enterprise",
+   "city": "Livingston"
+  }
+ ],
+ "San Augustine": [
+  {
+   "name": "San Augustine Tribune",
+   "city": "San Augustine"
+  }
+ ],
+ "Lynn": [
+  {
+   "name": "Lynn County News",
+   "city": "Tahoka"
+  },
+  {
+   "name": "O’Donnell Index-Press",
+   "city": "O'Donnell"
+  }
+ ],
+ "Somervell": [
+  {
+   "name": "Glen Rose Reporter",
+   "city": "Glen Rose"
+  }
+ ],
+ "Rains": [
+  {
+   "name": "Rains County Leader",
+   "city": "Emory"
+  }
+ ],
+ "Fayette": [
+  {
+   "name": "Schulenburg Sticker",
+   "city": "Schulenburg"
+  },
+  {
+   "name": "The Fayette County Record",
+   "city": "La Grange"
+  },
+  {
+   "name": "The Flatonia Argus",
+   "city": "Flatonia"
+  }
+ ],
+ "Scurry": [
+  {
+   "name": "The Snyder News",
+   "city": "Snyder"
+  }
+ ],
+ "Victoria": [
+  {
+   "name": "Victoria Advocate",
+   "city": "Victoria"
+  }
+ ],
+ "Brazos": [
+  {
+   "name": "Navasota Examiner",
+   "city": "Navasota"
+  },
+  {
+   "name": "The Eagle",
+   "city": "Bryan"
+  }
+ ],
+ "Caldwell": [
+  {
+   "name": "Lockhart Post-Register",
+   "city": "Lockhart"
+  },
+  {
+   "name": "Luling Newsboy and Signal",
+   "city": "Luling"
+  },
+  {
+   "name": "San Marcos Daily Record",
+   "city": "San Marcos"
+  }
+ ],
+ "Van Zandt": [
+  {
+   "name": "Canton Herald",
+   "city": "Canton"
+  },
+  {
+   "name": "Grand Saline Sun",
+   "city": "Grand Saline"
+  },
+  {
+   "name": "Van Zandt News",
+   "city": "Canton"
+  },
+  {
+   "name": "Wills Point Chronicle",
+   "city": "Wills Point"
+  }
+ ],
+ "Culberson": [
+  {
+   "name": "The Van Horn Advocate",
+   "city": "Van Horn"
+  }
+ ],
+ "Menard": [
+  {
+   "name": "Menard News and Messenger",
+   "city": "Menard"
+  }
+ ],
+ "Montague": [
+  {
+   "name": "Nocona News",
+   "city": "Nocona"
+  },
+  {
+   "name": "The Bowie News",
+   "city": "Bowie"
+  }
+ ],
+ "Matagorda": [
+  {
+   "name": "Palacios Beacon",
+   "city": "Palacios"
+  },
+  {
+   "name": "The Bay City Tribune",
+   "city": "Bay City"
+  }
+ ],
+ "Jeff Davis": [
+  {
+   "name": "Jeff Davis County Mountain Dispatch",
+   "city": "Fort Davis"
+  }
+ ],
+ "Cochran": [],
+ "Baylor": [
+  {
+   "name": "Baylor County Banner",
+   "city": "Seymour"
+  }
+ ],
+ "Lee": [
+  {
+   "name": "Giddings Times & News",
+   "city": "Giddings"
+  },
+  {
+   "name": "Lexington Leader",
+   "city": "Lexington"
+  }
+ ],
+ "Galveston": [
+  {
+   "name": "Friendswood Reporter News",
+   "city": "Friendswood"
+  },
+  {
+   "name": "The Daily News",
+   "city": "Galveston"
+  },
+  {
+   "name": "The Post Newspaper",
+   "city": "Texas City"
+  }
+ ],
+ "Wilson": [
+  {
+   "name": "La Vernia News",
+   "city": "La Vernia"
+  },
+  {
+   "name": "Wilson County News",
+   "city": "Floresville"
+  }
+ ],
+ "Blanco": [
+  {
+   "name": "Blanco County News",
+   "city": "Blanco"
+  },
+  {
+   "name": "Johnson City Record-Courier",
+   "city": "Johnson City"
+  }
+ ],
+ "Hood": [
+  {
+   "name": "Hood County News",
+   "city": "Granbury"
+  }
+ ],
+ "Sterling": [],
+ "Lavaca": [
+  {
+   "name": "Hallettsville Tribune-Herald",
+   "city": "Hallettsville"
+  },
+  {
+   "name": "Moulton Eagle",
+   "city": "Moulton"
+  },
+  {
+   "name": "The Shiner Gazette",
+   "city": "Shiner"
+  },
+  {
+   "name": "Yoakum Herald-Times",
+   "city": "Yoakum"
+  }
+ ],
+ "Johnson": [
+  {
+   "name": "Cleburne Times-Review",
+   "city": "Cleburne"
+  },
+  {
+   "name": "Commercial Recorder",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Business Press",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Star-Telegram",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Tarrant County Commercial Record",
+   "city": "Fort Worth"
+  }
+ ],
+ "Dawson": [
+  {
+   "name": "Lamesa Press Reporter",
+   "city": "Lamesa"
+  },
+  {
+   "name": "O’Donnell Index-Press",
+   "city": "O'Donnell"
+  }
+ ],
+ "Coke": [
+  {
+   "name": "Observer/Enterprise",
+   "city": "Robert Lee"
+  }
+ ],
+ "Brazoria": [
+  {
+   "name": "Alvin Sun & Advertiser",
+   "city": "Alvin"
+  },
+  {
+   "name": "Pearland Reporter News",
+   "city": "Pearland"
+  },
+  {
+   "name": "The Facts",
+   "city": "Clute"
+  }
+ ],
+ "Ector": [
+  {
+   "name": "Odessa American",
+   "city": "Odessa"
+  }
+ ],
+ "Starr": [],
+ "Throckmorton": [
+  {
+   "name": "Throckmorton Tribune",
+   "city": "Throckmorton"
+  }
+ ],
+ "Tarrant": [
+  {
+   "name": "Azle News",
+   "city": "Azle"
+  },
+  {
+   "name": "Commercial Recorder",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Business Press",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Star-Telegram",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Tarrant County Commercial Record",
+   "city": "Fort Worth"
+  }
+ ],
+ "Uvalde": [
+  {
+   "name": "Uvalde Leader-News",
+   "city": "Uvalde"
+  }
+ ],
+ "Zapata": [
+  {
+   "name": "Zapata County News",
+   "city": "Zapata"
+  }
+ ],
+ "Burleson": [
+  {
+   "name": "Burleson County Tribune",
+   "city": "Caldwell"
+  }
+ ],
+ "Hardin": [
+  {
+   "name": "The Bee",
+   "city": "Silsbee"
+  }
+ ],
+ "Bell": [
+  {
+   "name": "Copperas Cove Leader-Press",
+   "city": "Copperas Cove"
+  },
+  {
+   "name": "Killeen Daily Herald",
+   "city": "Killeen"
+  },
+  {
+   "name": "Salado Village Voice",
+   "city": "Salado"
+  },
+  {
+   "name": "Temple Daily Telegram",
+   "city": "Temple"
+  },
+  {
+   "name": "The Belton Journal",
+   "city": "Belton"
+  },
+  {
+   "name": "Tribune Progress",
+   "city": "Bartlett"
+  }
+ ],
+ "Castro": [
+  {
+   "name": "The Castro County News",
+   "city": "Dimmitt"
+  }
+ ],
+ "Parker": [
+  {
+   "name": "Azle News",
+   "city": "Azle"
+  },
+  {
+   "name": "Commercial Recorder",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Business Press",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Fort Worth Star-Telegram",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "Palo Pinto Press",
+   "city": "Mineral Wells"
+  },
+  {
+   "name": "Springtown Epigraph",
+   "city": "Springtown"
+  },
+  {
+   "name": "Tarrant County Commercial Record",
+   "city": "Fort Worth"
+  },
+  {
+   "name": "The Community News",
+   "city": "Aledo"
+  },
+  {
+   "name": "Weatherford Democrat",
+   "city": "Weatherford"
+  }
+ ],
+ "Randall": [
+  {
+   "name": "Amarillo Globe-News",
+   "city": "Amarillo"
+  },
+  {
+   "name": "The Canyon News",
+   "city": "Canyon"
+  }
+ ],
+ "Stephens": [
+  {
+   "name": "Breckenridge American",
+   "city": "Breckenridge"
+  }
+ ],
+ "Hardeman": [
+  {
+   "name": "Quanah Tribune-Chief",
+   "city": "Quanah"
+  }
+ ],
+ "Morris": [
+  {
+   "name": "The Monitor",
+   "city": "Naples"
+  }
+ ],
+ "McCulloch": [
+  {
+   "name": "Brady Standard-Herald",
+   "city": "Brady"
+  }
+ ],
+ "Val Verde": [],
+ "Henderson": [
+  {
+   "name": "Athens Daily Review",
+   "city": "Athens"
+  },
+  {
+   "name": "The Monitor",
+   "city": "Mabank"
+  }
+ ],
+ "Upton": [],
+ "Howard": [
+  {
+   "name": "Big Spring Herald",
+   "city": "Big Spring"
+  }
+ ],
+ "Nacogdoches": [
+  {
+   "name": "The Daily Sentinel",
+   "city": "Nacogdoches"
+  }
+ ],
+ "Hidalgo": [
+  {
+   "name": "Progress Times",
+   "city": "Mission"
+  },
+  {
+   "name": "The Advance News Journal",
+   "city": "Pharr"
+  },
+  {
+   "name": "The Mercedes Enterprise",
+   "city": "Mercedes"
+  },
+  {
+   "name": "The Monitor",
+   "city": "McAllen"
+  }
+ ],
+ "Walker": [
+  {
+   "name": "The Huntsville Item",
+   "city": "Huntsville"
+  }
+ ],
+ "Dickens": [
+  {
+   "name": "The Texas Spur",
+   "city": "Spur"
+  }
+ ],
+ "Camp": [],
+ "Williamson": [
+  {
+   "name": "Austin American-Statesman",
+   "city": "Austin"
+  },
+  {
+   "name": "Austin Business Journal",
+   "city": "Austin"
+  },
+  {
+   "name": "Hill Country News Weekender",
+   "city": "Cedar Park"
+  },
+  {
+   "name": "Round Rock Leader",
+   "city": "Round Rock"
+  },
+  {
+   "name": "Sunday Sun",
+   "city": "Georgetown"
+  },
+  {
+   "name": "Taylor Press",
+   "city": "Taylor"
+  },
+  {
+   "name": "Tribune Progress",
+   "city": "Bartlett"
+  },
+  {
+   "name": "West Austin News",
+   "city": "Austin"
+  },
+  {
+   "name": "Williamson County Sun",
+   "city": "Georgetown"
+  }
+ ],
+ "Grimes": [
+  {
+   "name": "Navasota Examiner",
+   "city": "Navasota"
+  }
+ ],
+ "Crockett": [
+  {
+   "name": "Ozona Stockman",
+   "city": "Ozona"
+  }
+ ],
+ "Hill": [
+  {
+   "name": "Hillsboro Reporter",
+   "city": "Hillsboro"
+  }
+ ],
+ "Kimble": [
+  {
+   "name": "Junction Eagle",
+   "city": "Junction"
+  }
+ ],
+ "Maverick": [],
+ "Real": [],
+ "Newton": [
+  {
+   "name": "Newton County News",
+   "city": "Newton"
+  }
+ ],
+ "Clay": [
+  {
+   "name": "Clay County Leader",
+   "city": "Henrietta"
+  }
+ ],
+ "Gillespie": [
+  {
+   "name": "Fredericksburg Standard-Radio Post",
+   "city": "Fredericksburg"
+  }
+ ],
+ "Terrell": [],
+ "Ellis": [
+  {
+   "name": "Midlothian Mirror",
+   "city": "Midlothian"
+  },
+  {
+   "name": "The Ellis County Press",
+   "city": "Ferris"
+  },
+  {
+   "name": "The Ennis News",
+   "city": "Ennis"
+  },
+  {
+   "name": "The Waxahachie Sun",
+   "city": "Waxahachie"
+  },
+  {
+   "name": "Waxahachie Daily Light",
+   "city": "Waxahachie"
+  }
+ ],
+ "Angelina": [
+  {
+   "name": "Lufkin Daily News",
+   "city": "Lufkin"
+  },
+  {
+   "name": "The Free Press",
+   "city": "Diboll"
+  }
+ ],
+ "Frio": [
+  {
+   "name": "Frio-Nueces Current",
+   "city": "Pearsall"
+  }
+ ],
+ "San Saba": [
+  {
+   "name": "San Saba News & Star",
+   "city": "San Saba"
+  }
+ ],
+ "Titus": [
+  {
+   "name": "Mount Pleasant Tribune",
+   "city": "Mount Pleasant"
+  }
+ ],
+ "Young": [
+  {
+   "name": "Olney Enterprise",
+   "city": "Olney"
+  },
+  {
+   "name": "The Graham Leader",
+   "city": "Graham"
+  }
+ ],
+ "Armstrong": [
+  {
+   "name": "The Claude News",
+   "city": "Claude"
+  }
+ ],
+ "Delta": [
+  {
+   "name": "Cooper Review",
+   "city": "Cooper"
+  }
+ ],
+ "Dimmit": [
+  {
+   "name": "Carrizo Springs Javelin",
+   "city": "Carrizo Springs"
+  }
+ ],
+ "Floyd": [
+  {
+   "name": "Floyd County Hesperian-Beacon",
+   "city": "Floydada"
+  }
+ ],
+ "Kinney": [
+  {
+   "name": "Kinney County Post",
+   "city": "Brackettville"
+  }
+ ],
+ "Collingsworth": [],
+ "El Paso": [
+  {
+   "name": "El Paso Times",
+   "city": "El Paso"
+  }
+ ]
+}

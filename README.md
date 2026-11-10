@@ -25,6 +25,15 @@ When a grade column is added, that category shows up on the map, the county page
 
 **Optional "Stories" tab** for the "Top stories this month" section. It has the columns `County`, `Title`, `Outlet`, `Link`, `Date` and `Topic`. Put `Statewide` as the county for a story that should show on every county page.
 
+## Top stories (found automatically)
+Run `python3 scripts/fetch_stories.py` from this folder (about 10 minutes). It refreshes:
+- `data/stories.json`: up to 8 stories from the last 30 days per county, each tagged Power, Water, Drought, Data centers or Environment, with the county's own newspapers first. Also includes statewide stories.
+- `data/outlets.json`: local newspapers for each county (Texas Press Association 2023 directory via Wikipedia, matched to counties with Census data).
+
+To refresh just a few counties: `python3 scripts/fetch_stories.py Travis Hood`.
+To leave out a bad source, add its name to `SKIP_SOURCES` near the top of the script.
+Counties with few stories also show stories from neighboring counties and from across Texas.
+
 ## Changing the wording
 Open `index.html`. The `CONFIG` section at the top of the script holds the column names, and the draft "What this means for you" text for each grade. Edit the text there.
 

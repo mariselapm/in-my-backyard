@@ -119,6 +119,14 @@ h3{font-weight:700;font-size:1.2rem}
 .stories a:hover{text-decoration:underline}
 .stories .meta{color:var(--muted);font-size:.9rem;margin-top:4px}
 .empty{padding:20px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);margin-top:18px}
+.tags{display:flex;gap:6px;margin-bottom:6px}
+.tag{font-size:.78rem;font-weight:600;padding:2px 8px;border-radius:4px;background:#E3E9E6;color:var(--ink)}
+.tag-local{background:var(--g-a);color:#fff}
+h3.sub{margin-top:32px;font-size:1.1rem;color:var(--muted)}
+.more-news{margin-top:28px;padding-top:18px;border-top:3px solid var(--ink);font-size:.95rem}
+.more-news p{margin:6px 0}
+.filter-empty{color:var(--muted)}
+.locate{margin-top:10px;background:none;border:0;padding:0;font:600 .95rem var(--body);color:var(--sky);text-decoration:underline;cursor:pointer}
 
 /* compare */
 .compare-pick{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:22px}
@@ -268,6 +276,14 @@ async function load() {
 
   const st = wb.SheetNames.find(n => n.toLowerCase() === CONFIG.storiesTab.toLowerCase());
   if (st) state.stories = XLSX.utils.sheet_to_json(wb.Sheets[st], { defval: "" }).filter(s => s.Title);
+
+  // Neighboring counties (for "nearby" stories)
+  const geoms = topo.objects.counties.geometries, nb = topojson.neighbors(geoms);
+  state.neighbors = new Map(geoms.map((g, i) => [g.id, nb[i].map(j => geoms[j].id)]));
+
+  // Found stories and local outlets (made by scripts/fetch_stories.py). The site still works without them.
+  const opt = u => fetch(u, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
+  [state.news, state.outlets] = await Promise.all([opt("data/stories.json"), opt("data/outlets.json")]);
 }
 
 /* ---------- small pieces ---------- */
@@ -319,10 +335,23 @@ function searchHtml(id = "q") {
   return `<form class="search" data-search>
     <label for="${id}">Enter your ZIP code or county</label>
     <div class="search-row"><input id="${id}" list="county-list" autocomplete="off" inputmode="search" placeholder="78701 or Travis County"><button class="btn" type="submit">See my county</button></div>
+    <button type="button" class="locate">Use my location</button>
     <p class="search-msg" aria-live="polite"></p><div class="choices"></div></form>`;
 }
 function wireSearch(root) {
   root.querySelectorAll("[data-search]").forEach(form => {
+    $(".locate", form).onclick = () => {
+      const msg = $(".search-msg", form);
+      if (!navigator.geolocation) { msg.textContent = "Your browser can't share your location. Type your ZIP code instead."; return; }
+      msg.textContent = "Finding your county…";
+      navigator.geolocation.getCurrentPosition(pos => {
+        const pt = [pos.coords.longitude, pos.coords.latitude];
+        const f = topojson.feature(state.topo, state.topo.objects.counties).features.find(f => d3.geoContains(f, pt));
+        const c = f && state.byFips.get(f.id);
+        if (c) location.hash = `#/county/${c.slug}`;
+        else msg.textContent = "Your location looks like it's outside Texas. Type a Texas ZIP code or county instead.";
+      }, () => { msg.textContent = "We couldn't get your location. Type your ZIP code instead."; }, { timeout: 10000 });
+    };
     form.addEventListener("submit", e => {
       e.preventDefault();
       const v = $("input", form).value.trim(), msg = $(".search-msg", form), ch = $(".choices", form);
@@ -391,8 +420,60 @@ function catHtml(cat, entry) {
   if (!g) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
   return `<section class="cat"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
 }
+const STORY_CATS = ["Power", "Water", "Drought", "Data centers", "Environment"];
+// Team-picked stories (spreadsheet "Stories" tab) come first, then found stories for the county.
 function storiesFor(c) {
-  return state.stories.filter(s => { const k = norm(s.County); return k === norm(c.name) || k === "statewide" || k === "texas"; });
+  const picked = state.stories.filter(s => norm(s.County) === norm(c.name))
+    .map(s => ({ title: s.Title, url: s.Link, source: s.Outlet, date: s.Date, category: s.Topic || "", picked: true }));
+  const found = state.news?.counties?.[c.name] || [];
+  const nearby = [];
+  if (picked.length + found.length < 4) {
+    for (const f of state.neighbors.get(c.fips) || []) {
+      const n = state.byFips.get(f);
+      for (const s of state.news?.counties?.[n?.name] || []) nearby.push({ ...s, from: n.name });
+    }
+    nearby.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  }
+  const statewide = state.stories.filter(s => ["statewide", "texas"].includes(norm(s.County)))
+    .map(s => ({ title: s.Title, url: s.Link, source: s.Outlet, date: s.Date, category: s.Topic || "", picked: true }))
+    .concat(state.news?.statewide || []);
+  return { mine: picked.concat(found), nearby: nearby.slice(0, 5), statewide: statewide.slice(0, 6) };
+}
+function niceDate(d) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || "");
+  return m ? new Date(+m[1], m[2] - 1, +m[3]).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : (d || "");
+}
+function storyLi(s) {
+  const tags = [s.category && `<span class="tag">${esc(s.category)}</span>`, s.local && `<span class="tag tag-local">Local outlet</span>`, s.picked && `<span class="tag tag-local">Team pick</span>`].filter(Boolean).join("");
+  const meta = [s.source, niceDate(s.date), s.from && `${s.from} County`].filter(Boolean).map(esc).join(", ");
+  return `<li data-cat="${esc(s.category)}"><div class="tags">${tags}</div><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a><div class="meta">${meta}</div></li>`;
+}
+function storiesSection(c) {
+  const { mine, nearby, statewide } = storiesFor(c);
+  const used = new Set([...mine, ...nearby, ...statewide].map(s => s.category).filter(Boolean));
+  const chips = STORY_CATS.filter(k => used.has(k));
+  const outlets = state.outlets?.[c.name] || [];
+  return `<section class="section" id="stories"><h2>Top stories this month</h2>
+    <p class="lede" style="font-size:1rem">News about power, water, drought, data centers and the environment in and around ${esc(c.name)} County.${state.news?.updated ? ` Updated ${esc(niceDate(state.news.updated))}.` : ""}</p>
+    ${chips.length > 1 ? `<div class="layer-pick" role="group" aria-label="Show stories about"><button type="button" data-cat="all" aria-pressed="true">All</button>${chips.map(k => `<button type="button" data-cat="${esc(k)}" aria-pressed="false">${esc(k)}</button>`).join("")}</div>` : ""}
+    ${mine.length ? `<ul class="stories">${mine.map(storyLi).join("")}</ul>`
+      : `<div class="empty">We didn't find stories about these topics in ${esc(c.name)} County this month.${nearby.length ? " Here's what's happening nearby." : ""}</div>`}
+    ${nearby.length ? `<h3 class="sub">Nearby counties</h3><ul class="stories">${nearby.map(storyLi).join("")}</ul>` : ""}
+    ${statewide.length ? `<h3 class="sub">Across Texas</h3><ul class="stories">${statewide.map(storyLi).join("")}</ul>` : ""}
+    <p class="filter-empty" hidden>No stories on this topic this month.</p>
+    <div class="more-news">
+      ${outlets.length ? `<p><b>Local newspapers:</b> ${outlets.map(o => `${esc(o.name)} (${esc(o.city)})`).join(", ")}</p>` : `<p>We don't know of a local newspaper based in ${esc(c.name)} County.</p>`}
+    </div></section>`;
+}
+function wireStoryFilter(root) {
+  const btns = root.querySelectorAll("#stories [data-cat]"); if (!btns.length) return;
+  btns.forEach(b => b.onclick = () => {
+    btns.forEach(x => x.setAttribute("aria-pressed", x === b));
+    let shown = 0;
+    root.querySelectorAll("#stories li[data-cat]").forEach(li => { const on = b.dataset.cat === "all" || li.dataset.cat === b.dataset.cat; li.hidden = !on; shown += on; });
+    root.querySelectorAll("#stories h3.sub").forEach(h => { const ul = h.nextElementSibling; h.hidden = ![...ul.children].some(li => !li.hidden); });
+    $("#stories .filter-empty").hidden = shown > 0;
+  });
 }
 function pageCounty(slugv) {
   const c = state.counties.find(x => x.slug === slugv);
@@ -400,7 +481,6 @@ function pageCounty(slugv) {
   const basis = c.overall
     ? (c.gradedLabels.length === CONFIG.categories.length ? "Overall grade across power, water and data centers" : `Overall grade. Based on ${c.gradedLabels.join(" and ").toLowerCase()} only, until more data is added`)
     : "No grades yet for this county";
-  const stories = storiesFor(c);
   return `<a class="back" href="#/map">Back to the map</a>
     <div class="report-head">
       <div><h1>${esc(c.name)} County</h1>
@@ -408,10 +488,7 @@ function pageCounty(slugv) {
       <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${esc(basis)}</p></div>
     </div>
     <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key])).join("")}</div>
-    <section class="section"><h2>Top stories this month</h2>
-      ${stories.length ? `<ul class="stories">${stories.map(s => `<li><a href="${esc(s.Link)}" target="_blank" rel="noopener">${esc(s.Title)}</a><div class="meta">${[s.Outlet, s.Topic, s.Date].filter(Boolean).map(esc).join(", ")}</div></li>`).join("")}</ul>`
-        : `<div class="empty">No stories added for ${esc(c.name)} County yet. Stories appear here when the team adds them to the Stories tab of the spreadsheet.</div>`}
-    </section>
+    ${storiesSection(c)}
     <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p><a href="#/faq">See all questions</a></p></section>`;
 }
 
@@ -450,7 +527,9 @@ function pageAbout() {
     <p class="lede">A guide to what's happening with power, water and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
     <h2 style="margin-top:32px">Sources</h2>
-    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Water and data center sources will be listed here as they're added.</p></div>`;
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Water and data center sources will be listed here as they're added.</p>
+    <h2 style="margin-top:32px">How we pick stories</h2>
+    <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
 }
 
 /* ---------- router ---------- */
@@ -460,7 +539,7 @@ function route() {
   const app = $("#app");
   const pages = {
     home: [pageHome, afterHome], map: [pageMap, afterMap],
-    county: [() => pageCounty(parts[1])], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
+    county: [() => pageCounty(parts[1]), () => wireStoryFilter($("#app"))], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
     faq: [pageFaq], about: [pageAbout],
   };
   const [render, after] = pages[page] || pages.home;
