@@ -128,31 +128,42 @@ h3.sub{margin-top:32px;font-size:1.1rem;color:var(--muted)}
 .filter-empty{color:var(--muted)}
 .locate{margin-top:10px;background:none;border:0;padding:0;font:600 .95rem var(--body);color:var(--sky);text-decoration:underline;cursor:pointer}
 
-/* speak up: public meetings */
-.jump{margin-top:16px;display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:2px solid var(--ink);border-radius:8px;background:var(--surface);font:600 .95rem var(--body);color:var(--ink);cursor:pointer;text-align:left}
-.jump b{font-weight:700}
-.jump:hover{background:#E3E9E6}
-.speak{--band:#1D2B2A;--band-2:#283A38;--band-line:#3C514E;--band-text:#EAF0ED;--band-muted:#B5C4BF;--band-link:#9FD8C9;
-  background:var(--band);color:var(--band-text);margin-top:56px;padding:44px 0 48px;border-radius:12px;scroll-margin-top:16px}
-.speak .inner{padding:0 32px}
-@media (max-width:600px){.speak .inner{padding:0 18px}}
-.speak h2{color:#fff}
-.speak .lede{color:var(--band-muted);font-size:1.05rem}
-.speak a{color:var(--band-link)}
-.speak :focus-visible{outline-color:var(--band-link)}
-.bodies{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px}
-.body{background:var(--band-2);border:1px solid var(--band-line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
-.body .kind{font-size:.85rem;color:var(--band-muted);margin:0 0 4px}
-.body h3{color:#fff;font-size:1.2rem}
-.body .decides{color:var(--band-muted);font-size:.92rem;margin:8px 0 0}
-.body dl{margin:16px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.95rem}
-.body dt{color:var(--band-muted)} .body dd{margin:0}
-.body .next{display:inline-block;margin-top:2px;padding:2px 8px;border-radius:4px;background:var(--g-c);color:var(--ink);font-weight:700;font-size:.88rem}
-.body .links{margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;font-weight:600;font-size:.95rem}
-.how{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding-top:24px;border-top:1px solid var(--band-line)}
-.how h3{color:#fff;font-size:1rem;margin-bottom:4px}
-.how p{margin:0;color:var(--band-muted);font-size:.93rem}
-.speak .fine{margin:24px 0 0;color:var(--band-muted);font-size:.88rem}
+/* speak up: side panel with public meetings (map colors) */
+.jump{margin-top:16px;display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:2px solid var(--g-a);border-radius:8px;background:var(--surface);font:600 .95rem var(--body);color:var(--g-a);cursor:pointer;text-align:left}
+.jump b{font-weight:700;color:var(--ink)}
+.jump .pin{width:10px;height:10px;border-radius:50%;background:var(--g-a);flex:none}
+.jump:hover{background:#E6F0EC}
+.drawer{position:fixed;inset:0;z-index:50;display:flex;justify-content:flex-end}
+.drawer[hidden]{display:none}
+.drawer .scrim{position:absolute;inset:0;background:rgba(29,43,42,.35);opacity:0;transition:opacity .2s}
+.drawer .panel{position:relative;width:min(560px,100%);height:100%;overflow-y:auto;background:var(--paper);box-shadow:-12px 0 32px rgba(29,43,42,.18);transform:translateX(100%);transition:transform .25s ease-out;outline:none}
+.drawer.open .scrim{opacity:1}
+.drawer.open .panel{transform:none}
+.panel-head{position:sticky;top:0;z-index:1;background:var(--g-a);color:#fff;padding:22px 24px 20px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.panel-head h2{color:#fff;font-size:1.6rem}
+.panel-head p{margin:6px 0 0;color:#D7EAE3;font-size:.95rem}
+.panel-close{flex:none;font:700 1rem var(--body);background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);border-radius:8px;padding:6px 12px;cursor:pointer}
+.panel-close:hover{background:rgba(255,255,255,.12)}
+.panel-head :focus-visible{outline-color:#fff}
+.panel-body{padding:20px 24px 40px}
+.panel-body .lede{font-size:1rem;margin:0}
+.bodies{display:flex;flex-direction:column;gap:14px;margin-top:20px}
+.body{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--kc,var(--g-a));border-radius:8px;padding:18px 18px 16px}
+.body.k-court{--kc:var(--g-a)} .body.k-city{--kc:var(--g-b)} .body.k-water{--kc:var(--sky)}
+.body .kind{font-size:.85rem;font-weight:600;color:var(--kc);margin:0 0 2px}
+.body h3{font-size:1.15rem}
+.body .decides{color:var(--muted);font-size:.92rem;margin:6px 0 0}
+.body dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.95rem}
+.body dt{color:var(--muted)} .body dd{margin:0}
+.body .next{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:4px;background:var(--g-c);color:var(--ink);font-weight:700;font-size:.88rem}
+.body .links{padding-top:14px;display:flex;flex-wrap:wrap;gap:8px 16px;font-weight:600;font-size:.95rem}
+.how{margin-top:28px;padding-top:20px;border-top:3px solid var(--ink)}
+.how h3{font-size:1.1rem;margin-bottom:10px}
+.how ol{margin:0;padding-left:1.2em}
+.how li{margin:0 0 10px;color:var(--muted)} .how li b{color:var(--ink)}
+.panel .fine{margin:18px 0 0;color:var(--muted);font-size:.88rem}
+body.drawer-open{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.drawer .panel,.drawer .scrim{transition:none}}
 
 /* compare */
 .compare-pick{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:22px}
@@ -575,41 +586,64 @@ function bodyCard(m) {
     site && agenda && site !== agenda ? `<a href="${esc(site)}" target="_blank" rel="noopener">Main website</a>` : "",
   ].filter(Boolean).join("");
   const covers = m.Covers && !/^whole county$/i.test(m.Covers) ? `<dt>Covers</dt><dd>${esc(m.Covers)}</dd>` : "";
-  return `<article class="body">
+  return `<article class="body ${KIND_CLASS(t)}">
     <p class="kind">${esc(type)}</p><h3>${esc(m.Name)}</h3>
     ${CONFIG.bodyDecides[t] ? `<p class="decides">${esc(CONFIG.bodyDecides[t])}</p>` : ""}
     <dl><dt>When</dt><dd>${when}</dd>${m.Where ? `<dt>Where</dt><dd>${esc(m.Where)}</dd>` : ""}${covers}</dl>
     <div class="links">${links}</div></article>`;
 }
-function speakUpSection(c) {
+const KIND_CLASS = t => /court/.test(t) ? "k-court" : /city/.test(t) ? "k-city" : "k-water";
+function speakUpPanel(c) {
   const list = meetingsFor(c);
   if (!list.length) return "";
   const hasCity = list.some(m => /city council/i.test(m.Type));
-  return `<section class="speak" id="speak-up" tabindex="-1"><div class="inner">
-    <h2>Where to speak up</h2>
-    <p class="lede">Decisions about power, water and land in ${esc(c.name)} County get made at these public meetings. Anyone can attend, and Texas law lets you speak about any item on the agenda.</p>
-    <div class="bodies">${list.map(bodyCard).join("")}</div>
-    ${hasCity ? "" : `<p class="fine">The county seat isn't an incorporated city, so it has no city council. The commissioners court is the main local government here.</p>`}
-    <div class="how">
-      <div><h3>Find the agenda</h3><p>Agendas are posted at least 72 hours before each meeting. Look for the item about the issue you care about.</p></div>
-      <div><h3>Sign up to speak</h3><p>Most meetings ask you to fill out a short card or sign-up sheet before public comment starts. Some also take comments online or by email.</p></div>
-      <div><h3>Keep it short</h3><p>Speakers usually get about three minutes. Say where you live, what you're seeing, and what you want them to do.</p></div>
-    </div>
-    <p class="fine">Meeting times come from official websites and can change, especially around holidays. Confirm on the agenda before you go.</p>
-  </div></section>`;
+  return `<div class="drawer" id="speak-up" hidden>
+    <div class="scrim" data-close></div>
+    <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="speak-title" tabindex="-1">
+      <div class="panel-head"><div><h2 id="speak-title">Where to speak up</h2><p>Public meetings in ${esc(c.name)} County</p></div>
+        <button type="button" class="panel-close" data-close>Close</button></div>
+      <div class="panel-body">
+        <p class="lede">Decisions about power, water and land here get made at these meetings. Anyone can attend, and Texas law lets you speak about any item on the agenda.</p>
+        <div class="bodies">${list.map(bodyCard).join("")}</div>
+        ${hasCity ? "" : `<p class="fine">The county seat isn't an incorporated city, so it has no city council. The commissioners court is the main local government here.</p>`}
+        <div class="how"><h3>How to speak at a meeting</h3><ol>
+          <li><b>Find the agenda.</b> It's posted at least 72 hours before the meeting. Look for the item about your issue.</li>
+          <li><b>Sign up to speak.</b> Most meetings ask you to fill out a short card or sign-up sheet before public comment. Some also take comments online or by email.</li>
+          <li><b>Keep it short.</b> Speakers usually get about three minutes. Say where you live, what you're seeing, and what you want them to do.</li>
+        </ol></div>
+        <p class="fine">Meeting times come from official websites and can change, especially around holidays. Confirm on the agenda before you go.</p>
+      </div>
+    </aside></div>`;
 }
 function jumpHtml(c) {
   if (!meetingsFor(c).length) return "";
   const s = soonestMeeting(c);
-  const label = s ? `Next public meeting: <b>${esc(longDate(s.d))}</b>, ${esc(s.m.Name)}` : `Where to speak up in ${esc(c.name)} County`;
-  return `<button type="button" class="jump" data-jump="#speak-up"><span>${label}</span><span aria-hidden="true">↓</span></button>`;
+  const label = s ? `Where to speak up. Next meeting: <b>${esc(longDate(s.d))}</b>` : `Where to speak up in ${esc(c.name)} County`;
+  return `<button type="button" class="jump" data-open="#speak-up" aria-haspopup="dialog"><span class="pin" aria-hidden="true"></span><span>${label}</span></button>`;
 }
-function wireJump(root) {
-  root.querySelectorAll("[data-jump]").forEach(b => b.onclick = () => {
-    const t = $(b.dataset.jump);
-    t.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    t.focus({ preventScroll: true });
-  });
+function wirePanel(root) {
+  const btn = root.querySelector("[data-open]"); if (!btn) return;
+  const d = $(btn.dataset.open), panel = $(".panel", d);
+  const close = () => {
+    d.classList.remove("open"); document.body.classList.remove("drawer-open");
+    document.removeEventListener("keydown", onKey);
+    setTimeout(() => { d.hidden = true; }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 250);
+    btn.focus();
+  };
+  const onKey = e => {
+    if (e.key === "Escape") return close();
+    if (e.key !== "Tab") return;
+    const f = [...panel.querySelectorAll("a[href],button")];
+    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f.at(-1).focus(); }
+    else if (!e.shiftKey && document.activeElement === f.at(-1)) { e.preventDefault(); f[0].focus(); }
+  };
+  btn.onclick = () => {
+    d.hidden = false; document.body.classList.add("drawer-open");
+    requestAnimationFrame(() => d.classList.add("open"));
+    panel.scrollTop = 0; panel.focus();
+    document.addEventListener("keydown", onKey);
+  };
+  d.querySelectorAll("[data-close]").forEach(x => x.onclick = close);
 }
 
 function pageCounty(slugv) {
@@ -626,7 +660,7 @@ function pageCounty(slugv) {
       <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${esc(basis)}</p></div>
     </div>
     <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key])).join("")}</div>
-    ${speakUpSection(c)}
+    ${speakUpPanel(c)}
     ${storiesSection(c)}
     <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p><a href="#/faq">See all questions</a></p></section>`;
 }
@@ -679,7 +713,7 @@ function route() {
   const app = $("#app");
   const pages = {
     home: [pageHome, afterHome], map: [pageMap, afterMap],
-    county: [() => pageCounty(parts[1]), () => { wireStoryFilter($("#app")); wireJump($("#app")); }], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
+    county: [() => pageCounty(parts[1]), () => { wireStoryFilter($("#app")); wirePanel($("#app")); }], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
     faq: [pageFaq], about: [pageAbout],
   };
   const [render, after] = pages[page] || pages.home;
@@ -688,6 +722,7 @@ function route() {
   document.querySelectorAll("[data-nav]").forEach(a => a.dataset.nav === nav ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
   const c = page === "county" && state.counties.find(x => x.slug === parts[1]);
   document.title = c ? `${c.name} County | In My Backyard` : "In My Backyard";
+  document.body.classList.remove("drawer-open");
   window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", () => { route(); $("#app").focus({ preventScroll: true }); });
