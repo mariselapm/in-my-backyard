@@ -34,22 +34,6 @@ To refresh just a few counties: `python3 scripts/fetch_stories.py Travis Hood`.
 To leave out a bad source, add its name to `SKIP_SOURCES` near the top of the script.
 Counties with few stories also show stories from neighboring counties and from across Texas.
 
-## Where to speak up (public meetings)
-Each county page has a "Where to speak up" section, and a button at the top that jumps to it and shows the next meeting date. It reads **`data/meetings.xlsx`** (a separate file, so replacing `master.xlsx` doesn't erase it). One row per public body:
-
-| Column | What goes in it |
-|---|---|
-| `County` | County name without "County" |
-| `Type` | `Commissioners court`, `City council`, `Groundwater district` or `Subsidence district` (any other type works too, e.g. a second city or a river authority) |
-| `Name` | e.g. `Palestine City Council` |
-| `Schedule` | Written like `2nd and 4th Monday of the month, 9 a.m.` or `Every Tuesday, 9 a.m.` The site works out the next meeting date from this. Leave blank if unknown. |
-| `Where` | Room and address |
-| `Agenda link`, `Website` | Where agendas are posted, and the main site |
-| `Covers` | For districts: how much of the county they cover |
-| `Checked by` | Initials of the teammate who confirmed the row on the official site |
-
-The first version (Nov. 12, 2026) lists 254 commissioners courts, 238 county-seat city councils (16 county seats aren't incorporated cities), and 202 groundwater and subsidence district rows. Schedules were found on official websites for 47 courts and 23 councils; the rest say "Check the agenda page" until the team fills them in. Websites came from Wikidata; districts from the Texas Water Development Board's district list and its 2019 district map.
-
 ## Changing the wording
 Open `index.html`. The `CONFIG` section at the top of the script holds the column names, and the draft "What this means for you" text for each grade. Edit the text there.
 

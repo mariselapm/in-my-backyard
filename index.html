@@ -128,32 +128,6 @@ h3.sub{margin-top:32px;font-size:1.1rem;color:var(--muted)}
 .filter-empty{color:var(--muted)}
 .locate{margin-top:10px;background:none;border:0;padding:0;font:600 .95rem var(--body);color:var(--sky);text-decoration:underline;cursor:pointer}
 
-/* speak up: public meetings */
-.jump{margin-top:16px;display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border:2px solid var(--ink);border-radius:8px;background:var(--surface);font:600 .95rem var(--body);color:var(--ink);cursor:pointer;text-align:left}
-.jump b{font-weight:700}
-.jump:hover{background:#E3E9E6}
-.speak{--band:#1D2B2A;--band-2:#283A38;--band-line:#3C514E;--band-text:#EAF0ED;--band-muted:#B5C4BF;--band-link:#9FD8C9;
-  background:var(--band);color:var(--band-text);margin-top:56px;padding:44px 0 48px;border-radius:12px;scroll-margin-top:16px}
-.speak .inner{padding:0 32px}
-@media (max-width:600px){.speak .inner{padding:0 18px}}
-.speak h2{color:#fff}
-.speak .lede{color:var(--band-muted);font-size:1.05rem}
-.speak a{color:var(--band-link)}
-.speak :focus-visible{outline-color:var(--band-link)}
-.bodies{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px}
-.body{background:var(--band-2);border:1px solid var(--band-line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
-.body .kind{font-size:.85rem;color:var(--band-muted);margin:0 0 4px}
-.body h3{color:#fff;font-size:1.2rem}
-.body .decides{color:var(--band-muted);font-size:.92rem;margin:8px 0 0}
-.body dl{margin:16px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.95rem}
-.body dt{color:var(--band-muted)} .body dd{margin:0}
-.body .next{display:inline-block;margin-top:2px;padding:2px 8px;border-radius:4px;background:var(--g-c);color:var(--ink);font-weight:700;font-size:.88rem}
-.body .links{margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:8px 16px;font-weight:600;font-size:.95rem}
-.how{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding-top:24px;border-top:1px solid var(--band-line)}
-.how h3{color:#fff;font-size:1rem;margin-bottom:4px}
-.how p{margin:0;color:var(--band-muted);font-size:.93rem}
-.speak .fine{margin:24px 0 0;color:var(--band-muted);font-size:.88rem}
-
 /* compare */
 .compare-pick{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:22px}
 .compare-pick label{display:flex;flex-direction:column;gap:6px;font-weight:600}
@@ -220,15 +194,6 @@ const CONFIG = {
   ],
   // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
   storiesTab: "Stories",
-  // Public meetings for the "Where to speak up" section. One row per body: County, Type, Name, Schedule, Where, Agenda link, Website, Covers.
-  meetingsUrl: "data/meetings.xlsx",
-  // What each kind of body decides, shown under its name.
-  bodyDecides: {
-    "commissioners court": "Runs county government: the budget, county roads, burn bans, emergency plans and tax breaks for big projects like data centers and power plants outside city limits.",
-    "city council": "Runs the city: zoning and new development inside city limits, and water and power rates where the city runs those utilities.",
-    "groundwater district": "Permits water wells and sets how much groundwater can be pumped. Large pumping permits get a public hearing where residents can comment.",
-    "subsidence district": "Limits groundwater pumping so the land doesn't sink, and issues well permits.",
-  },
   // DRAFT plain-language text for each grade. The team should rewrite these.
   meaning: {
     power: {
@@ -318,19 +283,7 @@ async function load() {
 
   // Found stories and local outlets (made by scripts/fetch_stories.py). The site still works without them.
   const opt = u => fetch(u, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
-  const optXlsx = u => fetch(u, { cache: "no-store" }).then(r => r.ok ? r.arrayBuffer() : null).catch(() => null);
-  let mbuf;
-  [state.news, state.outlets, mbuf] = await Promise.all([opt("data/stories.json"), opt("data/outlets.json"), optXlsx(CONFIG.meetingsUrl)]);
-  state.meetings = new Map();
-  if (mbuf) {
-    const mwb = XLSX.read(mbuf, { type: "array" });
-    for (const m of XLSX.utils.sheet_to_json(mwb.Sheets[mwb.SheetNames[0]], { defval: "" })) {
-      if (!m.County || !m.Name) continue;
-      const k = norm(m.County);
-      if (!state.meetings.has(k)) state.meetings.set(k, []);
-      state.meetings.get(k).push(m);
-    }
-  }
+  [state.news, state.outlets] = await Promise.all([opt("data/stories.json"), opt("data/outlets.json")]);
 }
 
 /* ---------- small pieces ---------- */
@@ -425,7 +378,7 @@ function pageHome() {
   return `<div class="home-grid">
     <div>
       <h1>What's happening in your backyard?</h1>
-      <p class="lede">See how your Texas county is doing on power, water and data centers, what it means for you, the stories behind it, and where to speak up.</p>
+      <p class="lede">See how your Texas county is doing on power, water and data centers, what it means for you, and the stories behind it.</p>
       ${searchHtml()}
       <p class="try">Or try <a href="#/county/travis">Travis</a>, <a href="#/county/harris">Harris</a>, <a href="#/county/andrews">Andrews</a> or <a href="#/county/el-paso">El Paso</a>.</p>
     </div>
@@ -522,96 +475,6 @@ function wireStoryFilter(root) {
     $("#stories .filter-empty").hidden = shown > 0;
   });
 }
-/* ---------- where to speak up: public meetings ---------- */
-const DAYNAMES = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-const WEEKWORDS = { "1st": 1, first: 1, "2nd": 2, second: 2, "3rd": 3, third: 3, "4th": 4, fourth: 4, last: 5 };
-// Next date from a schedule like "2nd and 4th Monday of the month, 9 a.m." or "Every Tuesday". Returns null when it can't tell.
-function nextMeeting(schedule, from = new Date()) {
-  const s = String(schedule || "").toLowerCase();
-  const dm = s.match(/\b(monday|tuesday|wednesday|thursday|friday)/); if (!dm || /every other|other week|biweekly/.test(s)) return null;
-  const dow = DAYNAMES.indexOf(dm[1]);
-  const today = new Date(from.getFullYear(), from.getMonth(), from.getDate());
-  if (/\bevery\b/.test(s.slice(0, dm.index))) {
-    const d = new Date(today); d.setDate(d.getDate() + ((dow - d.getDay() + 7) % 7)); return d;
-  }
-  const weeks = [...s.slice(0, dm.index).matchAll(/\b(1st|2nd|3rd|4th|first|second|third|fourth|last)\b/g)].map(m => WEEKWORDS[m[1]]);
-  if (!weeks.length) return null;
-  const dates = [];
-  for (let add = 0; add < 3; add++) {
-    const y = today.getFullYear(), mo = today.getMonth() + add;
-    const first = new Date(y, mo, 1), offset = (dow - first.getDay() + 7) % 7;
-    for (const w of weeks) {
-      let d = new Date(y, mo, 1 + offset + (w === 5 ? 4 : w - 1) * 7);
-      if (w === 5 && d.getMonth() !== new Date(y, mo, 1).getMonth()) d.setDate(d.getDate() - 7);
-      if (d.getMonth() === new Date(y, mo, 1).getMonth() && d >= today) dates.push(d);
-    }
-  }
-  return dates.sort((a, b) => a - b)[0] || null;
-}
-const longDate = d => {
-  const t = new Date(), s = d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
-  return d.toDateString() === t.toDateString() ? `Today, ${s}` : s;
-};
-const searchLink = q => `https://www.google.com/search?q=${encodeURIComponent(q)}`;
-const TYPE_ORDER = ["commissioners court", "city council", "groundwater district", "subsidence district"];
-function meetingsFor(c) {
-  return (state.meetings?.get(norm(c.name)) || []).slice()
-    .sort((a, b) => (TYPE_ORDER.indexOf(String(a.Type).toLowerCase()) + 1 || 9) - (TYPE_ORDER.indexOf(String(b.Type).toLowerCase()) + 1 || 9));
-}
-// The soonest meeting we can work out, for the link at the top of the page.
-function soonestMeeting(c) {
-  return meetingsFor(c).map(m => ({ m, d: nextMeeting(m.Schedule) })).filter(x => x.d).sort((a, b) => a.d - b.d)[0] || null;
-}
-function bodyCard(m) {
-  const type = String(m.Type || "").trim(), t = type.toLowerCase();
-  const next = nextMeeting(m.Schedule);
-  const when = m.Schedule
-    ? `${esc(m.Schedule)}${next ? `<br><span class="next">Next: ${esc(longDate(next))}</span>` : ""}`
-    : (t.includes("district") ? "Check the district's website for board meetings and permit hearings." : "Check the agenda page. Agendas are posted at least 72 hours before each meeting.");
-  const agenda = m["Agenda link"] || m.Website, site = m.Website;
-  const links = [
-    agenda ? `<a href="${esc(agenda)}" target="_blank" rel="noopener">${t.includes("district") ? "Visit the website" : "See agendas"}</a>`
-           : `<a href="${esc(searchLink(m.Name + " agenda"))}" target="_blank" rel="noopener">Search for agendas</a>`,
-    site && agenda && site !== agenda ? `<a href="${esc(site)}" target="_blank" rel="noopener">Main website</a>` : "",
-  ].filter(Boolean).join("");
-  const covers = m.Covers && !/^whole county$/i.test(m.Covers) ? `<dt>Covers</dt><dd>${esc(m.Covers)}</dd>` : "";
-  return `<article class="body">
-    <p class="kind">${esc(type)}</p><h3>${esc(m.Name)}</h3>
-    ${CONFIG.bodyDecides[t] ? `<p class="decides">${esc(CONFIG.bodyDecides[t])}</p>` : ""}
-    <dl><dt>When</dt><dd>${when}</dd>${m.Where ? `<dt>Where</dt><dd>${esc(m.Where)}</dd>` : ""}${covers}</dl>
-    <div class="links">${links}</div></article>`;
-}
-function speakUpSection(c) {
-  const list = meetingsFor(c);
-  if (!list.length) return "";
-  const hasCity = list.some(m => /city council/i.test(m.Type));
-  return `<section class="speak" id="speak-up" tabindex="-1"><div class="inner">
-    <h2>Where to speak up</h2>
-    <p class="lede">Decisions about power, water and land in ${esc(c.name)} County get made at these public meetings. Anyone can attend, and Texas law lets you speak about any item on the agenda.</p>
-    <div class="bodies">${list.map(bodyCard).join("")}</div>
-    ${hasCity ? "" : `<p class="fine">The county seat isn't an incorporated city, so it has no city council. The commissioners court is the main local government here.</p>`}
-    <div class="how">
-      <div><h3>Find the agenda</h3><p>Agendas are posted at least 72 hours before each meeting. Look for the item about the issue you care about.</p></div>
-      <div><h3>Sign up to speak</h3><p>Most meetings ask you to fill out a short card or sign-up sheet before public comment starts. Some also take comments online or by email.</p></div>
-      <div><h3>Keep it short</h3><p>Speakers usually get about three minutes. Say where you live, what you're seeing, and what you want them to do.</p></div>
-    </div>
-    <p class="fine">Meeting times come from official websites and can change, especially around holidays. Confirm on the agenda before you go.</p>
-  </div></section>`;
-}
-function jumpHtml(c) {
-  if (!meetingsFor(c).length) return "";
-  const s = soonestMeeting(c);
-  const label = s ? `Next public meeting: <b>${esc(longDate(s.d))}</b>, ${esc(s.m.Name)}` : `Where to speak up in ${esc(c.name)} County`;
-  return `<button type="button" class="jump" data-jump="#speak-up"><span>${label}</span><span aria-hidden="true">↓</span></button>`;
-}
-function wireJump(root) {
-  root.querySelectorAll("[data-jump]").forEach(b => b.onclick = () => {
-    const t = $(b.dataset.jump);
-    t.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
-    t.focus({ preventScroll: true });
-  });
-}
-
 function pageCounty(slugv) {
   const c = state.counties.find(x => x.slug === slugv);
   if (!c) return `<h1>County not found</h1><p class="lede">We couldn't find that county. Search for it by name or ZIP code.</p>${searchHtml()}`;
@@ -621,12 +484,10 @@ function pageCounty(slugv) {
   return `<a class="back" href="#/map">Back to the map</a>
     <div class="report-head">
       <div><h1>${esc(c.name)} County</h1>
-        <ul class="facts">${c.population != null ? `<li><b>${fmt(Math.round(c.population))}</b> people</li>` : ""}${c.area != null ? `<li><b>${fmt(Math.round(c.area))}</b> square miles</li>` : ""}</ul>
-        ${jumpHtml(c)}</div>
+        <ul class="facts">${c.population != null ? `<li><b>${fmt(Math.round(c.population))}</b> people</li>` : ""}${c.area != null ? `<li><b>${fmt(Math.round(c.area))}</b> square miles</li>` : ""}</ul></div>
       <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${esc(basis)}</p></div>
     </div>
     <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key])).join("")}</div>
-    ${speakUpSection(c)}
     ${storiesSection(c)}
     <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p><a href="#/faq">See all questions</a></p></section>`;
 }
@@ -656,7 +517,6 @@ function faqItems() {
     ["Why does my county say “Not graded yet”?", "The team is still collecting water and data center data for all 254 Texas counties. Grades appear as soon as that data is added."],
     ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. We plan to add water information for every county."],
     ["What does the power grade measure?", "It reflects how reliable electricity has been in the county, based on outage events. It also shows how much electricity is generated in the county and how many power plants it has."],
-    ["What can I do about what I see here?", "Go to a public meeting. Each county page has a \u201cWhere to speak up\u201d section listing your commissioners court, your county seat\u2019s city council and any groundwater district, with when they meet and where to find agendas. Texas law lets anyone speak about an item on the agenda."],
     ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet. Every source will be listed on the About page as the team adds data."],
   ];
   return q.map(([s, a]) => `<details><summary>${esc(s)}</summary><p>${esc(a)}</p></details>`);
@@ -667,7 +527,7 @@ function pageAbout() {
     <p class="lede">A guide to what's happening with power, water and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
     <h2 style="margin-top:32px">Sources</h2>
-    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Water and data center sources will be listed here as they're added.</p>
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Water and data center sources will be listed here as they're added.</p>
     <h2 style="margin-top:32px">How we pick stories</h2>
     <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
 }
@@ -679,7 +539,7 @@ function route() {
   const app = $("#app");
   const pages = {
     home: [pageHome, afterHome], map: [pageMap, afterMap],
-    county: [() => pageCounty(parts[1]), () => { wireStoryFilter($("#app")); wireJump($("#app")); }], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
+    county: [() => pageCounty(parts[1]), () => wireStoryFilter($("#app"))], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
     faq: [pageFaq], about: [pageAbout],
   };
   const [render, after] = pages[page] || pages.home;
