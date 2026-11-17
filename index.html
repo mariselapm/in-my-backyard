@@ -162,16 +162,14 @@ h3{font-weight:700;font-size:1.2rem}
 .tags{display:flex;gap:6px;margin-bottom:6px}
 .tag{font-size:.78rem;font-weight:600;padding:2px 8px;border-radius:4px;background:#E3E9E6;color:var(--ink)}
 .tag-local{background:var(--g-a);color:#fff}
-.more-news{margin-top:28px;padding-top:18px;border-top:3px solid var(--ink);font-size:.95rem}
-.more-news p{margin:6px 0}
 .filter-empty{color:var(--muted)}
 .locate{margin-top:10px;background:none;border:0;padding:0;font:600 .95rem var(--body);color:var(--sky);text-decoration:underline;cursor:pointer}
 
 /* speak up: side panel with public meetings (map colors) */
-.jump{margin-top:18px;display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid #D9DFDC;border-radius:8px;background:#ECEFED;font:600 .95rem var(--body);color:var(--ink);cursor:pointer;text-align:left}
+.jump{margin-top:18px;display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid #F2CFB7;border-radius:8px;background:#FCEDE3;font:600 .95rem var(--body);color:var(--ink);cursor:pointer;text-align:left}
 .jump b{font-weight:700;color:var(--ink)}
 .jump .pin{width:10px;height:10px;border-radius:50%;background:var(--g-a);flex:none}
-.jump:hover{background:#E2E7E4}
+.jump:hover{background:#F8DFCD}
 .drawer{position:fixed;inset:0;z-index:50;display:flex;justify-content:flex-end}
 .drawer[hidden]{display:none}
 .drawer .scrim{position:absolute;inset:0;background:rgba(29,43,42,.35);opacity:0;transition:opacity .2s}
@@ -653,7 +651,6 @@ function storyLi(s, cls = "") {
 }
 function storiesSection(c) {
   const { mine, local, statewide } = storiesFor(c);
-  const outlets = state.outlets?.[c.name] || [];
   const [lead, ...rest] = local;
   const note = !mine.length ? `<div class="empty">We didn't find stories about these topics in ${esc(c.name)} County this month.${local.length ? " Here's what's happening in nearby counties." : ""}</div>` : "";
   return `<section class="section" id="stories"><h2 class="ruled">Top stories this month</h2>
@@ -666,9 +663,7 @@ function storiesSection(c) {
       </div>
       ${statewide.length ? `<aside class="news-side"><h3>Across Texas</h3><ol class="stories">${statewide.map(s => storyLi(s)).join("")}</ol></aside>` : ""}
     </div>
-    <div class="more-news">
-      ${outlets.length ? `<p><b>Local newspapers:</b> ${outlets.map(o => `${esc(o.name)} (${esc(o.city)})`).join(", ")}</p>` : `<p>We don't know of a local newspaper based in ${esc(c.name)} County.</p>`}
-    </div></section>`;
+    </section>`;
 }
 function wireStoryFilter(root) {
   const btns = root.querySelectorAll("#stories [data-cat]"); if (!btns.length) return;
