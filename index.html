@@ -253,6 +253,17 @@ table.cmp{width:100%;border-collapse:collapse;margin-top:24px;background:var(--s
 .cmp thead th{font:750 1.15rem var(--display)}
 .cmp td .grade{font-size:2.4rem}
 
+/* data centers 101 */
+.guides h2.ruled{padding-bottom:12px;border-bottom:1px dotted var(--ink)}
+.guide-list{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.guide-list li{padding:18px 0;border-bottom:1px solid var(--line)}
+.guide-list a{font:700 1.08rem/1.3 var(--display);color:var(--ink);text-decoration:none}
+.guide-list a:hover{text-decoration:underline}
+.guide-list .ext{font-size:.8em;margin-left:3px;color:var(--g-a)}
+.guide-list p{margin:6px 0;color:var(--ink)}
+.guide-list .meta{color:var(--muted);font-size:.86rem}
+.guide-type{display:block;margin-bottom:4px;font:800 .72rem var(--display);letter-spacing:.08em;text-transform:uppercase;color:#B85A1E}
+@media (max-width:640px){.guide-list{grid-template-columns:1fr}}
 /* faq/about */
 .see-all a{color:var(--ink);text-decoration:none;font-weight:600}
 .see-all a:hover{text-decoration:underline}
@@ -280,6 +291,7 @@ details p{margin:10px 0 0;max-width:42em}
       <li><a href="#/" data-nav="home">Home</a></li>
       <li><a href="#/map" data-nav="map">Map</a></li>
       <li><a href="#/compare" data-nav="compare">Compare</a></li>
+      <li><a href="#/learn" data-nav="learn">Data centers 101</a></li>
       <li><a href="#/faq" data-nav="faq">FAQ</a></li>
       <li><a href="#/about" data-nav="about">About</a></li>
     </ul></nav>
@@ -326,6 +338,45 @@ const CONFIG = {
     grades: ["A", "B", "C", "D", "F", "F"] },
   // Where to send readers in counties with no data center information yet
   moreDataCentersUrl: "https://www.texastribune.org/2026/09/02/texas-data-center-information-lookups/",
+  // "Data centers 101" page: outside guides we link to (we didn't write them). Summaries are ours.
+  // type: what kind of source it is, so readers can weigh it.
+  guides: [
+    { group: "Start here", items: [
+      { title: "Hundreds of data centers are coming to Texas. Here's what you need to know.", url: "https://www.texastribune.org/2026/06/26/texas-data-center-guide-what-you-need-to-know/",
+        source: "The Texas Tribune", date: "June 26, 2026", type: "News",
+        about: "What a data center is, why it needs so much power and water, and how the state, cities and counties are responding." },
+      { title: "WTF are data centers, and why is everyone fighting about them?", url: "https://technical.ly/civics/what-are-data-centers-explainer/",
+        source: "Technical.ly", date: "Updated Oct. 2025", type: "News",
+        about: "A plain-language national primer: what happens inside a data center, how it connects to AI, and what living near one is like." },
+      { title: "Data Centers and Their Energy Consumption: Frequently Asked Questions", url: "https://www.everycrsreport.com/files/2025-08-26_R48646_58c77a3e81a7a1da98ac2fa060810b6f89634f08.html",
+        source: "Congressional Research Service", date: "Aug. 26, 2025", type: "Government",
+        about: "Nonpartisan answers for Congress: how much electricity U.S. data centers use, why cooling matters and who regulates them." },
+    ] },
+    { group: "Power and your electric bill", items: [
+      { title: "Data centers are coming to Texas. What could it mean for your electric bill, water and neighborhood?", url: "https://www.click2houston.com/news/local/2026/09/09/data-centers-are-coming-to-texas-what-could-they-mean-for-your-electric-bill-water-and-neighborhood/",
+        source: "KPRC Click2Houston", date: "Sept. 11, 2026", type: "News",
+        about: "Who pays for new power lines, whether the grid can keep up and who to contact about a proposed site near you." },
+      { title: "Data centers use lots of water and power, but Texas officials don't know exactly how much", url: "https://www.kut.org/energy-environment/2026-08-05/texas-data-centers-water-power-energy-use-environment",
+        source: "KUT, Austin's NPR station", date: "Aug. 5, 2026", type: "News",
+        about: "How ERCOT is handling the rush of data centers asking to connect to the grid, and why the state has limited numbers on their use." },
+    ] },
+    { group: "Water", items: [
+      { title: "Thirsty Data: The Hidden Water and Energy Costs of Texas' Data Center Boom", url: "https://harcresearch.org/news/thirsty-data-the-hidden-water-and-energy-costs-of-texas-data-center-boom/",
+        source: "Houston Advanced Research Center", date: "Jan. 21, 2026", type: "Research nonprofit, recommends policy changes",
+        about: "Texas estimates of how much water data centers use now and could use by 2030, and why the state water plan doesn't count them yet." },
+      { title: "Power, Heat, and Intelligence: AI Data Centers Explained", url: "https://huggingface.co/blog/sasha/ai-data-centers-explained",
+        source: "Hugging Face blog (AI researchers)", date: "Nov. 5, 2025", type: "Researchers' explainer",
+        about: "Where a data center's water goes: cooling on site, the power plants that supply it and the factories that make its chips." },
+    ] },
+    { group: "Living near one and having a say", items: [
+      { title: "Texas data centers are booming. Who is watching out for homeowners?", url: "https://www.click2houston.com/news/local/2026/09/09/texas-data-centers-are-booming-who-is-watching-out-for-homeowners/",
+        source: "KPRC Click2Houston", date: "Sept. 11, 2026", type: "News",
+        about: "A Brazoria County family's fight over noise from a nearby site, and which state rules do and don't protect neighbors." },
+      { title: "Policy tools for data centers: the basics", url: "https://celp.psu.edu/data-center-policy-tools/",
+        source: "Penn State Center for Energy Law and Policy", date: "Sept. 4, 2026", type: "University",
+        about: "The local effects people raise (rates, noise, light, air, heat) and which federal, state and local bodies can act on each." },
+    ] },
+  ],
   // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
   storiesTab: "Stories",
   // Public meetings for the "Speak to Your Representatives" panel. One row per body: County, Type, Name, Schedule, Where, Agenda link, Website, Covers.
@@ -1011,6 +1062,16 @@ function faqItems() {
   return q.map(([s, a]) => `<details><summary>${esc(s)}</summary>${body(a)}</details>`);
 }
 function pageFaq() { return `<div class="prose"><h1>Questions</h1><p class="lede">Plain answers about the grades and what they mean for you.</p></div><div style="margin-top:24px">${faqItems().join("")}</div>`; }
+function pageLearn() {
+  return `<div class="prose"><h1>Data centers 101</h1>
+    <p class="lede">What data centers are, why they need so much power and water, and what they can mean for the people who live near them. These are guides from newsrooms, researchers and government that we found useful. We didn't write them, and the summaries are ours.</p></div>
+    ${CONFIG.guides.map(g => `<section class="section guides"><h2 class="ruled">${esc(g.group)}</h2><ul class="guide-list">${g.items.map(x => `<li>
+      <span class="guide-type">${esc(x.type)}</span>
+      <a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}<span class="ext" aria-hidden="true">↗</span></a>
+      <p>${esc(x.about)}</p>
+      <div class="meta">${esc(x.source)} · ${esc(x.date)}</div></li>`).join("")}</ul></section>`).join("")}
+    <section class="section"><p class="see-all">Want to know about data centers in your county? <a href="#/map">Find your county on the map</a>. Each county page lists the data centers in our list and links to the Texas Tribune's search tool.</p></section>`;
+}
 function pageAbout() {
   return `<div class="prose"><h1>About In My Backyard</h1>
     <p class="lede">A guide to what's happening with power, drought and data centers in every Texas county, and what it means for the people who live there.</p>
@@ -1029,7 +1090,7 @@ function route() {
   const pages = {
     home: [pageHome, afterHome], map: [pageMap, afterMap],
     county: [() => pageCounty(parts[1]), () => { wireStoryFilter($("#app")); wirePanel($("#app")); }], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
-    faq: [pageFaq], about: [pageAbout],
+    faq: [pageFaq], about: [pageAbout], learn: [pageLearn],
   };
   const [render, after] = pages[page] || pages.home;
   app.innerHTML = render(); if (after) after(); wireSearch(app);
