@@ -252,6 +252,8 @@ table.cmp{width:100%;border-collapse:collapse;margin-top:24px;background:var(--s
 .cmp td .grade{font-size:2.4rem}
 
 /* faq/about */
+.see-all a{color:var(--ink);text-decoration:none;font-weight:600}
+.see-all a:hover{text-decoration:underline}
 .faq-list{margin:6px 0 12px;padding-left:20px}
 .faq-list li{margin:4px 0}
 .prose{max-width:44em}
@@ -963,7 +965,7 @@ function pageCounty(slugv) {
     <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key], c)).join("")}</div>
     ${speakUpPanel(c)}
     ${storiesSection(c)}
-    <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p><a href="#/faq">See all questions</a></p></section>`;
+    <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p class="see-all"><a href="#/faq">See all questions</a></p></section>`;
 }
 
 function pageCompare(a, b) {
