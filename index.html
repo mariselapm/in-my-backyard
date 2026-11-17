@@ -82,7 +82,9 @@ h3{font-weight:700;font-size:1.2rem}
 .legend li{display:flex;align-items:center;gap:6px}
 .swatch{width:16px;height:16px;border-radius:3px;display:inline-block}
 
-.layer-pick{display:flex;flex-wrap:wrap;gap:6px;margin:22px 0 8px}
+.layer-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 16px;margin:22px 0 8px}
+.layer-pick{display:flex;flex-wrap:wrap;gap:6px}
+.layer-row .map-note{flex:1 1 260px;margin:0;padding-left:16px;border-left:1px solid var(--line);max-width:44em}
 .layer-pick button{font:600 .95rem var(--body);padding:8px 14px;border-radius:999px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
 .layer-pick button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .map-note{color:var(--muted);font-size:.95rem;margin:6px 0 0}
@@ -642,8 +644,8 @@ function pageMap() {
   const layers = [["overall", "Overall"], ...CONFIG.categories.map(k => [k.key, k.label])];
   return `<h1>Texas, county by county</h1>
     <p class="lede">Move your cursor over a county to see its grades. Click a county for the full report.</p>
-    <div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
-    <p class="map-note" id="layer-note"></p>
+    <div class="layer-row"><div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
+    <p class="map-note" id="layer-note"></p></div>
     <div id="big-map"></div><div id="map-legend">${legendHtml()}</div>
     ${state.dcCampuses.length ? `<ul class="legend"><li><span class="dot dot-operating"></span>Data center, operating</li><li><span class="dot dot-coming"></span>Data center, planned or being built</li><li style="color:var(--muted)">Bigger dot = more power. ${dcCoverage()}</li></ul>` : ""}
     <div style="margin-top:28px">${searchHtml("q2")}</div>`;
