@@ -166,10 +166,9 @@ h3{font-weight:700;font-size:1.2rem}
 .locate{margin-top:10px;background:none;border:0;padding:0;font:600 .95rem var(--body);color:var(--sky);text-decoration:underline;cursor:pointer}
 
 /* speak up: side panel with public meetings (map colors) */
-.jump{margin-top:18px;display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid #F2CFB7;border-radius:8px;background:#FCEDE3;font:600 .95rem var(--body);color:var(--ink);cursor:pointer;text-align:left}
+.jump{margin-top:18px;display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid #C96A2C;border-radius:8px;background:var(--g-d);font:600 .95rem var(--body);color:var(--ink);cursor:pointer;text-align:left}
 .jump b{font-weight:700;color:var(--ink)}
-.jump .pin{width:10px;height:10px;border-radius:50%;background:var(--g-a);flex:none}
-.jump:hover{background:#F8DFCD}
+.jump:hover{background:#CF6C2E}
 .drawer{position:fixed;inset:0;z-index:50;display:flex;justify-content:flex-end}
 .drawer[hidden]{display:none}
 .drawer .scrim{position:absolute;inset:0;background:rgba(29,43,42,.35);opacity:0;transition:opacity .2s}
@@ -761,7 +760,7 @@ function jumpHtml(c) {
   if (!meetingsFor(c).length) return "";
   const s = soonestMeeting(c);
   const label = s ? `Speak to Your Representatives. Next meeting: <b>${esc(longDate(s.d))}</b>` : `Speak to Your Representatives`;
-  return `<button type="button" class="jump" data-open="#speak-up" aria-haspopup="dialog"><span class="pin" aria-hidden="true"></span><span>${label}</span></button>`;
+  return `<button type="button" class="jump" data-open="#speak-up" aria-haspopup="dialog"><span>${label}</span></button>`;
 }
 function wirePanel(root) {
   const btn = root.querySelector("[data-open]"); if (!btn) return;
