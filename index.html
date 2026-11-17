@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>In My Backyard</title>
-<meta name="description" content="How your Texas county is doing on power, water and data centers.">
+<meta name="description" content="How your Texas county is doing on power, drought and data centers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -101,7 +101,7 @@ h3{font-weight:700;font-size:1.2rem}
 @media (max-width:860px){.cats{grid-template-columns:1fr}}
 .cat{padding:24px;border-radius:12px;background:var(--cat-bg,var(--surface));border:1px solid var(--cat-line,var(--line))}
 .cat-power{--cat-bg:#FBF3DC;--cat-line:#EFDDA8}
-.cat-water{--cat-bg:#E7F1EC;--cat-line:#C7DFD4}
+.cat-drought{--cat-bg:#E7F1EC;--cat-line:#C7DFD4}
 .cat-datacenters{--cat-bg:#FCEDE3;--cat-line:#F2CFB7}
 @media (max-width:860px){.cat{padding:20px}}
 .cat-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
@@ -127,6 +127,21 @@ h3{font-weight:700;font-size:1.2rem}
 .dc-dot{stroke:var(--ink);stroke-width:1.5;cursor:pointer}
 .dc-dot.is-operating{fill:var(--ink)} .dc-dot.is-coming{fill:#fff}
 .dc-dot:hover{stroke-width:3}
+.dr-tag{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.92rem;white-space:nowrap}
+.dr-tag::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--dc);border:1px solid rgba(0,0,0,.15)}
+.drought{margin-top:20px}
+.drought .dr-now{margin:0 0 8px}
+.drought .dr-now .dr-tag{font:750 1.2rem var(--display)}
+.drought .dr-now .dr-tag::before{width:16px;height:16px}
+.drought h4{margin:0 0 4px;font:700 .95rem var(--display)}
+.drought p{margin:0;font-size:.95rem}
+.dr-bar{display:flex;height:14px;margin:12px 0 10px;border-radius:4px;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.dr-bar span{display:block;height:100%}
+.dr-key{list-style:none;margin:0;padding:0;font-size:.88rem}
+.dr-key li{display:flex;align-items:center;gap:8px;padding:2px 0}
+.dr-key b{margin-left:auto}
+.dr-key .swatch{width:12px;height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.15)}
+.drought .dr-src{margin-top:10px;font-size:.82rem;color:var(--muted)}
 .legend .dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
 .legend .dot-coming{background:#fff} .legend .dot-operating{background:var(--ink)}
 
@@ -259,9 +274,7 @@ const CONFIG = {
   categories: [
     { key: "power", label: "Power", grade: "Reliability Grade",
       facts: [ ["Outage events", "Outage Events"], ["Power generated (past year)", "Net Generation"], ["Power plants", "Power Plants"] ] },
-    { key: "water", label: "Water",
-      grade: "Water Grade",
-      parts: [ ["Quality", "Water Quality Grade"], ["Drought", "Drought Grade"], ["Capacity", "Water Capacity Grade"] ] },
+    { key: "drought", label: "Drought", grade: "Drought Grade" },
     { key: "datacenters", label: "Data centers", grade: "Data Center Grade",
       facts: [ ["Data centers", "Data Centers"] ] },
   ],
@@ -273,6 +286,9 @@ const CONFIG = {
                mw: "total_facility_capacity_mw", investment: "estimated_investment_usd", county: "county",
                lat: "latitude", lon: "longitude", sources: ["source_1", "source_2", "source_3"] },
   },
+  // Drought status: any tab whose name contains "drought" (U.S. Drought Monitor county statistics).
+  // One row per county with the percent of land in D0 or worse, D1 or worse, ... D4.
+  drought: { tabMatch: "drought", columns: { county: "County", date: "MapDate", levels: ["D0", "D1", "D2", "D3", "D4"] } },
   // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
   storiesTab: "Stories",
   // Public meetings for the "Speak to Your Representatives" panel. One row per body: County, Type, Name, Schedule, Where, Agenda link, Website, Covers.
@@ -399,6 +415,21 @@ async function load() {
   }
   for (const c of state.counties) c.cats.datacenters.campuses = state.dcCampuses.filter(cp => norm(cp.county) === norm(c.name));
 
+  // Drought status per county (cumulative percents: D1 = share of land in moderate drought or worse)
+  const dtab = wb.SheetNames.find(n => n.toLowerCase().includes(CONFIG.drought.tabMatch));
+  state.droughtDate = null;
+  if (dtab) {
+    const drows = XLSX.utils.sheet_to_json(wb.Sheets[dtab], { defval: null });
+    const dh = drows.length ? Object.keys(drows[0]) : [], dcol = k => findCol(dh, k), K = CONFIG.drought.columns;
+    for (const r of drows) {
+      const c = state.byName.get(norm(r[dcol(K.county)])); if (!c) continue;
+      const cum = [100, ...K.levels.map(l => Math.max(0, Math.min(100, +r[dcol(l)] || 0)))];
+      c.drought = { cum, level: Math.max(...cum.map((v, i) => v >= 50 ? i : 0)), worst: Math.max(...cum.map((v, i) => v >= 1 ? i : 0)) };
+      const m = /^(\d{4})(\d{2})(\d{2})$/.exec(String(Math.round(+r[dcol(K.date)] || 0)));
+      if (m && !state.droughtDate) state.droughtDate = new Date(+m[1], m[2] - 1, +m[3]);
+    }
+  }
+
   const st = wb.SheetNames.find(n => n.toLowerCase() === CONFIG.storiesTab.toLowerCase());
   if (st) state.stories = XLSX.utils.sheet_to_json(wb.Sheets[st], { defval: "" }).filter(s => s.Title);
 
@@ -443,14 +474,18 @@ function drawMap(el, { interactive = true, height = 0 } = {}) {
   const svg = d3.select(el).select("svg"), tip = $(".tip", el), box = $(".map-box", el);
   const paths = svg.append("g").selectAll("path").data(geo.features).join("path")
     .attr("class", "county").attr("d", path);
-  const paint = () => paths.attr("fill", f => { const g = layerGrade(state.byFips.get(f.id), state.layer); return g ? GRADE_HEX[g[0]] : GRADE_HEX.none; });
+  const paint = () => paths.attr("fill", f => {
+    const c = state.byFips.get(f.id);
+    if (state.layer === "drought") return c?.drought ? DROUGHT[c.drought.level].color : GRADE_HEX.none;
+    const g = layerGrade(c, state.layer); return g ? GRADE_HEX[g[0]] : GRADE_HEX.none;
+  });
   paint();
   if (!interactive) { paths.on("click", (e, f) => { const c = state.byFips.get(f.id); if (c) location.hash = `#/county/${c.slug}`; }); return { paint }; }
 
   const show = (e, f) => {
     const c = state.byFips.get(f.id); if (!c) return;
     paths.classed("is-active", d => d === f);
-    const rows = [["Overall", c.overall], ...CONFIG.categories.map(k => [k.label, c.cats[k.key].grade])];
+    const rows = [["Overall", c.overall], ...CONFIG.categories.map(k => [k.label, k.key === "drought" && !c.cats[k.key].grade && c.drought ? DROUGHT[c.drought.level].label : c.cats[k.key].grade])];
     tip.innerHTML = `<strong>${esc(c.name)} County</strong><dl>${rows.map(([l, g]) => `<dt>${l}</dt><dd>${g ? esc(g) : "—"}</dd>`).join("")}</dl><div class="hint">Click to see the full report</div>`;
     const r = box.getBoundingClientRect();
     let x = e.clientX - r.left + 16, y = e.clientY - r.top + 16;
@@ -483,6 +518,7 @@ function drawMap(el, { interactive = true, height = 0 } = {}) {
   return { paint };
 }
 function legendHtml() {
+  if (state.layer === "drought") return `<ul class="legend">${DROUGHT.map(d => `<li><span class="swatch" style="background:${d.color}"></span>${d.label}</li>`).join("")}</ul>`;
   return `<ul class="legend">${["A","B","C","D","F"].map(g => `<li><span class="swatch" style="background:${GRADE_HEX[g]}"></span>${g}</li>`).join("")}<li><span class="swatch" style="background:${GRADE_HEX.none}"></span>Not graded yet</li></ul>`;
 }
 
@@ -534,7 +570,7 @@ function pageHome() {
   return `<div class="home-grid">
     <div>
       <h1>What's happening in your backyard?</h1>
-      <p class="lede">See how your Texas county is doing on power, water and data centers, what it means for you, the stories behind it, and where to speak up.</p>
+      <p class="lede">See how your Texas county is doing on power, drought and data centers, what it means for you, the stories behind it, and where to speak up.</p>
       ${searchHtml()}
       <p class="try">Or try <a href="#/county/travis">Travis</a>, <a href="#/county/harris">Harris</a>, <a href="#/county/andrews">Andrews</a> or <a href="#/county/el-paso">El Paso</a>.</p>
     </div>
@@ -549,13 +585,15 @@ function pageMap() {
     <p class="lede">Move your cursor over a county to see its grades. Click a county for the full report.</p>
     <div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
     <p class="map-note" id="layer-note"></p>
-    <div id="big-map"></div>${legendHtml()}
+    <div id="big-map"></div><div id="map-legend">${legendHtml()}</div>
     ${state.dcCampuses.length ? `<ul class="legend"><li><span class="dot dot-operating"></span>Data center, operating</li><li><span class="dot dot-coming"></span>Data center, planned or being built</li><li style="color:var(--muted)">Bigger dot = more power. ${dcCoverage()}</li></ul>` : ""}
     <div style="margin-top:28px">${searchHtml("q2")}</div>`;
 }
 function afterMap() {
   const m = drawMap($("#big-map"));
   const note = () => {
+    $("#map-legend").innerHTML = legendHtml();
+    if (state.layer === "drought") { $("#layer-note").textContent = `Drought level that covers at least half of each county. U.S. Drought Monitor, week of ${droughtWeek()}. Not graded yet.`; return; }
     const graded = state.counties.filter(c => layerGrade(c, state.layer)).length;
     $("#layer-note").textContent = graded ? `${graded} of ${state.counties.length} counties have a grade for this.` : "No county has a grade for this yet. The team is still adding this data.";
   };
@@ -605,15 +643,39 @@ function dcBody(campuses) {
     <p class="pending">${dcCoverage()}</p>`;
 }
 
-function catHtml(cat, entry) {
+/* ---------- drought ---------- */
+const DROUGHT = [
+  { label: "No drought", color: "#DDE5E1" }, { label: "Abnormally dry", color: "#F1DF9C" },
+  { label: "Moderate drought", color: "#E2B84A" }, { label: "Severe drought", color: "#DD7A3A" },
+  { label: "Extreme drought", color: "#B5402F" }, { label: "Exceptional drought", color: "#6E1F17" },
+];
+const droughtWeek = () => state.droughtDate ? state.droughtDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "";
+const pctText = v => v >= 99.5 ? "All" : v < 1 ? "Less than 1%" : `${Math.round(v)}%`;
+function droughtTag(d) { return d ? `<span class="dr-tag" style="--dc:${DROUGHT[d.level].color}">${esc(DROUGHT[d.level].label)}</span>` : gradeEl(null); }
+function droughtBody(d) {
+  const share = d.cum.map((v, i) => Math.max(0, v - (d.cum[i + 1] ?? 0)));
+  const lvl = DROUGHT[d.level].label.toLowerCase();
+  let say = d.level === 0
+    ? (d.worst ? `Most of the county is not in drought. ${pctText(d.cum[1])} of it is abnormally dry or worse.` : "The county is not in drought right now.")
+    : `${pctText(d.cum[d.level])} of the county is in ${d.level === 1 ? "abnormally dry conditions" : lvl} or worse.`;
+  if (d.worst > d.level && d.level > 0) say += ` ${pctText(d.cum[d.worst])} is in ${DROUGHT[d.worst].label.toLowerCase()}${d.worst < 5 ? " or worse" : ""}.`;
+  return `<div class="drought"><p class="dr-now">${droughtTag(d)}</p><p>${esc(say)}</p>
+    <div class="dr-bar" role="img" aria-label="Share of the county at each drought level">${share.map((v, i) => v > 0 ? `<span style="width:${v}%;background:${DROUGHT[i].color}"></span>` : "").join("")}</div>
+    <ul class="dr-key">${share.map((v, i) => v >= 1 ? `<li><span class="swatch" style="background:${DROUGHT[i].color}"></span>${esc(DROUGHT[i].label)} <b>${Math.round(v)}%</b></li>` : "").join("")}</ul>
+    <p class="dr-src">U.S. Drought Monitor, week of ${esc(droughtWeek())}. Not graded yet.</p></div>`;
+}
+
+function catHtml(cat, entry, c) {
   const g = entry.grade;
+  const dr = cat.key === "drought" && c?.drought;
   let body = "";
   if (entry.facts.length) body += `<dl>${entry.facts.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(fmt(v))}</dd>`).join("")}</dl>`;
-  if (cat.parts) body += `<ul class="parts">${entry.parts.map(([l, pg]) => `<li><span>${esc(l)}</span>${gradeEl(pg)}</li>`).join("")}</ul>`;
+  if (cat.parts) body += `<ul class="parts">${entry.parts.map(([l, pg]) => `<li><span>${esc(l)}</span>${dr && !pg && l === "Drought" ? droughtTag(dr) : gradeEl(pg)}</li>`).join("")}</ul>`;
   const m = g && CONFIG.meaning[cat.key]?.[g];
   if (m) body += `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>`;
+  if (dr) body += droughtBody(dr);
   if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses);
-  else if (!g) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
+  else if (!g && !dr) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
   return `<section class="cat cat-${cat.key}"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
 }
 const STORY_CATS = ["Power", "Water", "Drought", "Data centers", "Environment"];
@@ -791,7 +853,7 @@ function pageCounty(slugv) {
   const c = state.counties.find(x => x.slug === slugv);
   if (!c) return `<h1>County not found</h1><p class="lede">We couldn't find that county. Search for it by name or ZIP code.</p>${searchHtml()}`;
   const basis = c.overall
-    ? (c.gradedLabels.length === CONFIG.categories.length ? "Overall grade across power, water and data centers" : `Overall grade. Based on ${c.gradedLabels.join(" and ").toLowerCase()} only, until more data is added`)
+    ? (c.gradedLabels.length === CONFIG.categories.length ? "Overall grade across power, drought and data centers" : `Overall grade. Based on ${c.gradedLabels.join(" and ").toLowerCase()} only, until more data is added`)
     : "No grades yet for this county";
   return `<a class="back" href="#/map">Back to the map</a>
     <div class="report-head">
@@ -800,7 +862,7 @@ function pageCounty(slugv) {
         ${jumpHtml(c)}</div>
       <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${esc(basis)}</p></div>
     </div>
-    <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key])).join("")}</div>
+    <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key], c)).join("")}</div>
     ${speakUpPanel(c)}
     ${storiesSection(c)}
     <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p><a href="#/faq">See all questions</a></p></section>`;
@@ -816,7 +878,7 @@ function pageCompare(a, b) {
     const facts = [["People", fmt(Math.round(A.population || 0)), fmt(Math.round(B.population || 0))],
       ...(state.dcSites.length ? [["Data center buildings in our list", dcCount(A), dcCount(B)]] : []), ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
     table = `<table class="cmp"><thead><tr><th scope="col"><span class="visually-hidden">Measure</span></th><th scope="col"><a href="#/county/${A.slug}">${esc(A.name)}</a></th><th scope="col"><a href="#/county/${B.slug}">${esc(B.name)}</a></th></tr></thead><tbody>
-      ${rows.map(([l, x, y]) => `<tr><th scope="row">${l}</th><td>${gradeEl(x)}</td><td>${gradeEl(y)}</td></tr>`).join("")}
+      ${rows.map(([l, x, y]) => l === "Drought" && !x && !y && state.droughtDate ? `<tr><th scope="row">Drought (week of ${esc(droughtWeek())})</th><td>${droughtTag(A.drought)}</td><td>${droughtTag(B.drought)}</td></tr>` : `<tr><th scope="row">${l}</th><td>${gradeEl(x)}</td><td>${gradeEl(y)}</td></tr>`).join("")}
       ${facts.map(([l, x, y]) => `<tr><th scope="row">${esc(l)}</th><td>${esc(fmt(x ?? "—"))}</td><td>${esc(fmt(y ?? "—"))}</td></tr>`).join("")}</tbody></table>`;
   }
   return `<h1>Compare two counties</h1><p class="lede">Put your county next to a neighbor, or next to anywhere in Texas.</p>
@@ -829,9 +891,9 @@ function afterCompare() {
 
 function faqItems() {
   const q = [
-    ["How are the grades decided?", "Each county gets a letter grade from A to F for power, water and data centers, based on the data the team has gathered. The overall grade averages the categories a county has grades for. Right now only power is graded, so the overall grade matches the power grade."],
-    ["Why does my county say “Not graded yet”?", "The team is still collecting water and data center data for all 254 Texas counties. Grades appear as soon as that data is added."],
-    ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. We plan to add water information for every county."],
+    ["How are the grades decided?", "Each county gets a letter grade from A to F for power, drought and data centers, based on the data the team has gathered. The overall grade averages the categories a county has grades for. Right now only power is graded, so the overall grade matches the power grade."],
+    ["Why does my county say “Not graded yet”?", "The team is still deciding how to grade drought and data centers. Until then, each county page shows its current drought status and the data centers in our list. Grades appear as soon as they are added."],
+    ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. Each county page shows its current drought level, one of the things that can push rates up."],
     ["What does the power grade measure?", "It reflects how reliable electricity has been in the county, based on outage events. It also shows how much electricity is generated in the county and how many power plants it has."],
     ["What can I do about what I see here?", "Go to a public meeting. Each county page has a \u201cSpeak to Your Representatives\u201d button listing your commissioners court, your county seat\u2019s city council and any groundwater district, with when they meet and where to find agendas. Texas law lets anyone speak about an item on the agenda."],
     ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet. Every source will be listed on the About page as the team adds data."],
@@ -841,10 +903,10 @@ function faqItems() {
 function pageFaq() { return `<div class="prose"><h1>Questions</h1><p class="lede">Plain answers about the grades and what they mean for you.</p></div><div style="margin-top:24px">${faqItems().join("")}</div>`; }
 function pageAbout() {
   return `<div class="prose"><h1>About In My Backyard</h1>
-    <p class="lede">A guide to what's happening with power, water and data centers in every Texas county, and what it means for the people who live there.</p>
+    <p class="lede">A guide to what's happening with power, drought and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
     <h2 style="margin-top:32px">Sources</h2>
-    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Water sources will be listed here as they're added.</p>
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Drought: U.S. Drought Monitor county statistics (National Drought Mitigation Center, USDA and NOAA), updated weekly; a county's status is the worst drought level covering at least half of it. Drought isn't graded yet.</p>
     <h2 style="margin-top:32px">How we pick stories</h2>
     <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
 }
