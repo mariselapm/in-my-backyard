@@ -101,6 +101,8 @@ h3{font-weight:700;font-size:1.2rem}
 .overall{text-align:center}
 .overall .grade{font-size:clamp(4.5rem,11vw,7rem)}
 .overall p{margin:8px 0 0;font-size:.9rem;color:var(--muted);max-width:14em}
+.overall p b{display:block;color:var(--ink);font-weight:700}
+.overall .basis{display:block;margin-top:4px}
 @media (max-width:600px){.report-head{grid-template-columns:1fr}.overall{text-align:left}}
 
 .cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
@@ -942,14 +944,14 @@ function pageCounty(slugv) {
   const c = state.counties.find(x => x.slug === slugv);
   if (!c) return `<h1>County not found</h1><p class="lede">We couldn't find that county. Search for it by name or ZIP code.</p>${searchHtml()}`;
   const basis = c.overall
-    ? (c.gradedLabels.length === CONFIG.categories.length ? "Overall grade across power, drought and data centers" : `Overall grade. Based on ${c.gradedLabels.join(" and ").toLowerCase()} only, until more data is added`)
+    ? (c.gradedLabels.length === CONFIG.categories.length ? "Overall grade|Across power, drought and data centers" : `Overall grade|Based on ${c.gradedLabels.join(" and ").toLowerCase()} only, until more data is added.`)
     : "No grades yet for this county";
   return `<a class="back" href="#/map">Back to the map</a>
     <div class="report-head">
       <div><h1>${esc(c.name)} County</h1>
         <ul class="facts">${c.population != null ? `<li><b>${fmt(Math.round(c.population))}</b> people</li>` : ""}${c.area != null ? `<li><b>${fmt(Math.round(c.area))}</b> square miles</li>` : ""}</ul>
         ${jumpHtml(c)}</div>
-      <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${esc(basis)}</p></div>
+      <div class="overall">${c.overall ? gradeEl(c.overall) : gradeEl(null)}<p>${basis.split("|").map((t, i) => i ? `<span class="basis">${esc(t)}</span>` : `<b>${esc(t)}</b>`).join("")}</p></div>
     </div>
     <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key], c)).join("")}</div>
     ${speakUpPanel(c)}
