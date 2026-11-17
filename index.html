@@ -1064,7 +1064,7 @@ function faqItems() {
 function pageFaq() { return `<div class="prose"><h1>Questions</h1><p class="lede">Plain answers about the grades and what they mean for you.</p></div><div style="margin-top:24px">${faqItems().join("")}</div>`; }
 function pageLearn() {
   return `<div class="prose"><h1>Data centers 101</h1>
-    <p class="lede">What data centers are, why they need so much power and water, and what they can mean for the people who live near them. These are guides from newsrooms, researchers and government that we found useful. We didn't write them, and the summaries are ours.</p></div>
+    <p class="lede">What data centers are, why they need so much power and water, and what they can mean for the people who live near them. These are guides from newsrooms, researchers and government that we found useful.</p></div>
     ${CONFIG.guides.map(g => `<section class="section guides"><h2 class="ruled">${esc(g.group)}</h2><ul class="guide-list">${g.items.map(x => `<li>
       <span class="guide-type">${esc(x.type)}</span>
       <a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}<span class="ext" aria-hidden="true">↗</span></a>
