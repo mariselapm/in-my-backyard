@@ -111,6 +111,20 @@ h3{font-weight:700;font-size:1.2rem}
 .parts li{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
 .parts .grade{font-size:2.2rem}
 .pending{color:var(--muted);font-size:.95rem;margin:14px 0 0}
+.dc-none{margin:18px 0 0;font-weight:700}
+.dc-list{list-style:none;margin:16px 0 0;padding:0}
+.dc-list li{padding:12px 0;border-top:1px solid var(--line)}
+.dc-list h4{margin:0;font:750 1.05rem var(--display)}
+.dc-list p{margin:4px 0 0;font-size:.92rem}
+.dc-status{color:var(--ink)} .dc-src{color:var(--muted)}
+.dc-list .dc-phases{list-style:disc;margin:2px 0 6px;padding-left:20px}
+.dc-list .dc-phases li{padding:2px 0;border:0;font-size:.92rem}
+.dc-src a{color:var(--muted)}
+.dc-dot{stroke:var(--ink);stroke-width:1.5;cursor:pointer}
+.dc-dot.is-operating{fill:var(--ink)} .dc-dot.is-coming{fill:#fff}
+.dc-dot:hover{stroke-width:3}
+.legend .dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.legend .dot-coming{background:#fff} .legend .dot-operating{background:var(--ink)}
 
 .section{margin-top:56px}
 .stories{list-style:none;margin:18px 0 0;padding:0}
@@ -229,9 +243,17 @@ const CONFIG = {
     { key: "datacenters", label: "Data centers", grade: "Data Center Grade",
       facts: [ ["Data centers", "Data Centers"] ] },
   ],
+  // Data center sites: any tab whose name contains "data center" (e.g. "meta data center").
+  // One row per building. New rows or new companies show up on the site automatically.
+  dataCenters: {
+    tabMatch: "data center",
+    columns: { name: "project_name", developer: "developer", status: "status", year: "operating_year",
+               mw: "total_facility_capacity_mw", investment: "estimated_investment_usd", county: "county",
+               lat: "latitude", lon: "longitude", sources: ["source_1", "source_2", "source_3"] },
+  },
   // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
   storiesTab: "Stories",
-  // Public meetings for the "Where to speak up" section. One row per body: County, Type, Name, Schedule, Where, Agenda link, Website, Covers.
+  // Public meetings for the "Speak to Your Representatives" panel. One row per body: County, Type, Name, Schedule, Where, Agenda link, Website, Covers.
   meetingsUrl: "data/meetings.xlsx",
   // What each kind of body decides, shown under its name.
   bodyDecides: {
@@ -320,6 +342,41 @@ async function load() {
   state.counties.sort((a, b) => a.name.localeCompare(b.name));
   $("#county-list").innerHTML = state.counties.map(c => `<option value="${esc(c.name)} County">`).join("");
 
+  // Data center sites, grouped into campuses ("Meta El Paso - Building 3" -> campus "Meta El Paso")
+  state.dcSites = []; state.dcCampuses = [];
+  for (const tab of wb.SheetNames.filter(n => n.toLowerCase().includes(CONFIG.dataCenters.tabMatch))) {
+    const drows = XLSX.utils.sheet_to_json(wb.Sheets[tab], { defval: null });
+    const dh = drows.length ? Object.keys(drows[0]) : [], dcol = k => findCol(dh, k), K = CONFIG.dataCenters.columns;
+    for (const r of drows) {
+      const get = k => { const c = dcol(k); return c ? r[c] : null; };
+      const name = get(K.name), county = get(K.county); if (!name || !county) continue;
+      state.dcSites.push({
+        name: String(name).trim(), campus: String(name).split(/\s+[-–]\s+/)[0].trim(),
+        developer: get(K.developer) || "", status: String(get(K.status) || "Unknown").trim(),
+        year: get(K.year) ? Math.round(+get(K.year)) : null, mw: +get(K.mw) || 0, investment: +get(K.investment) || 0,
+        county: String(county).trim(), lat: +get(K.lat), lon: +get(K.lon),
+        sources: K.sources.map(get).filter(s => s && /^https?:/.test(s)),
+      });
+    }
+  }
+  const campusMap = new Map();
+  for (const s of state.dcSites) {
+    const k = norm(s.county) + "|" + s.campus;
+    if (!campusMap.has(k)) campusMap.set(k, { name: s.campus, county: s.county, developer: s.developer, sites: [] });
+    campusMap.get(k).sites.push(s);
+  }
+  for (const cp of campusMap.values()) {
+    const pts = cp.sites.filter(s => isFinite(s.lat) && isFinite(s.lon) && s.lat && s.lon);
+    cp.lat = pts.length ? pts.reduce((a, s) => a + s.lat, 0) / pts.length : null;
+    cp.lon = pts.length ? pts.reduce((a, s) => a + s.lon, 0) / pts.length : null;
+    cp.mw = cp.sites.reduce((a, s) => a + s.mw, 0);
+    cp.investment = cp.sites.reduce((a, s) => a + s.investment, 0);
+    cp.operating = cp.sites.some(s => /operat/i.test(s.status));
+    cp.sources = [...new Set(cp.sites.flatMap(s => s.sources))];
+    state.dcCampuses.push(cp);
+  }
+  for (const c of state.counties) c.cats.datacenters.campuses = state.dcCampuses.filter(cp => norm(cp.county) === norm(c.name));
+
   const st = wb.SheetNames.find(n => n.toLowerCase() === CONFIG.storiesTab.toLowerCase());
   if (st) state.stories = XLSX.utils.sheet_to_json(wb.Sheets[st], { defval: "" }).filter(s => s.Title);
 
@@ -382,6 +439,25 @@ function drawMap(el, { interactive = true, height = 0 } = {}) {
   paths.on("mousemove", show)
     .on("mouseleave", () => { tip.classList.remove("show"); paths.classed("is-active", false); })
     .on("click", (e, f) => { const c = state.byFips.get(f.id); if (c) location.hash = `#/county/${c.slug}`; });
+
+  // Data center dots: one per campus, sized by power use. Filled = operating, hollow = not open yet.
+  const camps = state.dcCampuses.filter(cp => cp.lat != null);
+  const maxMw = d3.max(camps, cp => cp.mw) || 1;
+  const rScale = d3.scaleSqrt().domain([0, maxMw]).range([4, 13]);
+  svg.append("g").selectAll("circle").data(camps.sort((a, b) => b.mw - a.mw)).join("circle")
+    .attr("class", cp => `dc-dot ${cp.operating ? "is-operating" : "is-coming"}`)
+    .attr("cx", cp => proj([cp.lon, cp.lat])[0]).attr("cy", cp => proj([cp.lon, cp.lat])[1]).attr("r", cp => rScale(cp.mw))
+    .on("mousemove", (e, cp) => {
+      paths.classed("is-active", false);
+      tip.innerHTML = `<strong>${esc(cp.name)}</strong><div>${esc(cp.county)} County</div><div style="margin-top:6px">${cp.sites.length} ${cp.sites.length === 1 ? "building" : "buildings"}:<br>${statusLine(cp.sites).join("<br>")}</div><div style="margin-top:4px">${mwText(cp.mw)}</div><div class="hint">Click to see the county report</div>`;
+      const r = box.getBoundingClientRect();
+      let x = e.clientX - r.left + 16, y = e.clientY - r.top + 16;
+      if (x + 240 > r.width) x = e.clientX - r.left - 240;
+      if (y + 160 > r.height) y = e.clientY - r.top - 160;
+      tip.style.left = Math.max(0, x) + "px"; tip.style.top = Math.max(0, y) + "px"; tip.classList.add("show");
+    })
+    .on("mouseleave", () => tip.classList.remove("show"))
+    .on("click", (e, cp) => { const c = state.byName.get(norm(cp.county)); if (c) location.hash = `#/county/${c.slug}`; });
   return { paint };
 }
 function legendHtml() {
@@ -452,6 +528,7 @@ function pageMap() {
     <div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
     <p class="map-note" id="layer-note"></p>
     <div id="big-map"></div>${legendHtml()}
+    ${state.dcCampuses.length ? `<ul class="legend"><li><span class="dot dot-operating"></span>Data center, operating</li><li><span class="dot dot-coming"></span>Data center, planned or being built</li><li style="color:var(--muted)">Bigger dot = more power. ${dcCoverage()}</li></ul>` : ""}
     <div style="margin-top:28px">${searchHtml("q2")}</div>`;
 }
 function afterMap() {
@@ -468,6 +545,44 @@ function afterMap() {
   });
 }
 
+/* ---------- data centers ---------- */
+const money = v => v >= 1e9 ? `$${(v / 1e9).toFixed(v >= 1e10 ? 0 : 1)} billion` : v >= 1e6 ? `$${Math.round(v / 1e6)} million` : v ? `$${fmt(Math.round(v))}` : "";
+const mwText = v => `${fmt(Math.round(v))} MW`;
+function dcCoverage() {
+  const devs = [...new Set(state.dcSites.map(s => s.developer).filter(Boolean))];
+  const nCounties = new Set(state.dcSites.map(s => norm(s.county))).size;
+  const who = devs.length === 1 ? `${devs[0]}'s` : devs.length <= 3 ? devs.join(", ") : `${devs.length} companies'`;
+  return `Our list covers only ${esc(who)} Texas sites so far (${state.dcSites.length} buildings in ${nCounties} ${nCounties === 1 ? "county" : "counties"}). The team is adding other companies and creating a grading system.`;
+}
+// One entry per status, e.g. ["3 under construction | Opening 2027", "7 planned | Opening 2028"]
+function statusLine(sites) {
+  const by = new Map();
+  for (const s of sites) { const k = s.status.toLowerCase(); if (!by.has(k)) by.set(k, { label: s.status, n: 0, years: new Set() }); const b = by.get(k); b.n++; if (s.year) b.years.add(s.year); }
+  const order = ["operating", "under construction", "planned"];
+  return [...by.entries()].sort((a, b) => (order.indexOf(a[0]) + 1 || 9) - (order.indexOf(b[0]) + 1 || 9)).map(([k, b]) => {
+    const ys = [...b.years].sort(), yr = ys.length ? (ys.length === 1 ? ys[0] : `${ys[0]}–${ys[ys.length - 1]}`) : "";
+    const when = yr ? (k === "operating" ? ` | Since ${yr}` : ` | Opening ${yr}`) : "";
+    return `${b.n} ${esc(b.label.toLowerCase())}${when}`;
+  });
+}
+function dcBody(campuses) {
+  if (!state.dcSites.length) return `<p class="pending">The team is still gathering data center data for this county.</p>`;
+  if (!campuses.length) return `<p class="dc-none">No data centers in our list yet.</p><p class="pending">${dcCoverage()}</p>`;
+  const nb = campuses.reduce((a, cp) => a + cp.sites.length, 0), mw = campuses.reduce((a, cp) => a + cp.mw, 0);
+  const inv = campuses.reduce((a, cp) => a + cp.investment, 0);
+  // "Projected" when any building isn't open yet; plain labels when everything is already operating.
+  const proj = campuses.some(cp => cp.sites.some(s => !/operat/i.test(s.status)));
+  const L = t => proj ? `Projected ${t}` : t[0].toUpperCase() + t.slice(1);
+  return `<dl><dt>${L("buildings")}</dt><dd>${nb}</dd><dt>${L("energy use")}</dt><dd>${mwText(mw)}</dd>${inv ? `<dt>${L("investment")}</dt><dd>${money(inv)}</dd>` : ""}</dl>
+    <ul class="dc-list">${campuses.map(cp => `<li>
+      <h4>${esc(cp.name)}</h4>
+      <p class="dc-status">${cp.sites.length} ${cp.sites.length === 1 ? "building" : "buildings"}:</p>
+      <ul class="dc-phases">${statusLine(cp.sites).map(t => `<li>${t}</li>`).join("")}</ul>
+      ${cp.sources.length ? `<p class="dc-src">Sources: ${(() => { const seen = {}; return cp.sources.map(u => { const h = new URL(u).hostname.replace(/^www\./, ""); seen[h] = (seen[h] || 0) + 1; return `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(h)}${seen[h] > 1 ? ` (${seen[h]})` : ""}</a>`; }).join(", "); })()}</p>` : ""}
+    </li>`).join("")}</ul>
+    <p class="pending">${dcCoverage()}</p>`;
+}
+
 function catHtml(cat, entry) {
   const g = entry.grade;
   let body = "";
@@ -475,7 +590,8 @@ function catHtml(cat, entry) {
   if (cat.parts) body += `<ul class="parts">${entry.parts.map(([l, pg]) => `<li><span>${esc(l)}</span>${gradeEl(pg)}</li>`).join("")}</ul>`;
   const m = g && CONFIG.meaning[cat.key]?.[g];
   if (m) body += `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>`;
-  if (!g) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
+  if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses);
+  else if (!g) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
   return `<section class="cat"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
 }
 const STORY_CATS = ["Power", "Water", "Drought", "Data centers", "Environment"];
@@ -600,7 +716,7 @@ function speakUpPanel(c) {
   return `<div class="drawer" id="speak-up" hidden>
     <div class="scrim" data-close></div>
     <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="speak-title" tabindex="-1">
-      <div class="panel-head"><div><h2 id="speak-title">Where to speak up</h2><p>Public meetings in ${esc(c.name)} County</p></div>
+      <div class="panel-head"><div><h2 id="speak-title">Speak to Your Representatives</h2><p>Public meetings in ${esc(c.name)} County</p></div>
         <button type="button" class="panel-close" data-close>Close</button></div>
       <div class="panel-body">
         <p class="lede">Decisions about power, water and land here get made at these meetings. Anyone can attend, and Texas law lets you speak about any item on the agenda.</p>
@@ -618,7 +734,7 @@ function speakUpPanel(c) {
 function jumpHtml(c) {
   if (!meetingsFor(c).length) return "";
   const s = soonestMeeting(c);
-  const label = s ? `Where to speak up. Next meeting: <b>${esc(longDate(s.d))}</b>` : `Where to speak up in ${esc(c.name)} County`;
+  const label = s ? `Speak to Your Representatives. Next meeting: <b>${esc(longDate(s.d))}</b>` : `Speak to Your Representatives`;
   return `<button type="button" class="jump" data-open="#speak-up" aria-haspopup="dialog"><span class="pin" aria-hidden="true"></span><span>${label}</span></button>`;
 }
 function wirePanel(root) {
@@ -671,7 +787,9 @@ function pageCompare(a, b) {
   let table = "";
   if (A && B) {
     const rows = [["Overall", A.overall, B.overall], ...CONFIG.categories.map(k => [k.label, A.cats[k.key].grade, B.cats[k.key].grade])];
-    const facts = [["People", fmt(Math.round(A.population || 0)), fmt(Math.round(B.population || 0))], ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
+    const dcCount = X => (X.cats.datacenters.campuses || []).reduce((a, cp) => a + cp.sites.length, 0);
+    const facts = [["People", fmt(Math.round(A.population || 0)), fmt(Math.round(B.population || 0))],
+      ...(state.dcSites.length ? [["Data center buildings in our list", dcCount(A), dcCount(B)]] : []), ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
     table = `<table class="cmp"><thead><tr><th scope="col"><span class="visually-hidden">Measure</span></th><th scope="col"><a href="#/county/${A.slug}">${esc(A.name)}</a></th><th scope="col"><a href="#/county/${B.slug}">${esc(B.name)}</a></th></tr></thead><tbody>
       ${rows.map(([l, x, y]) => `<tr><th scope="row">${l}</th><td>${gradeEl(x)}</td><td>${gradeEl(y)}</td></tr>`).join("")}
       ${facts.map(([l, x, y]) => `<tr><th scope="row">${esc(l)}</th><td>${esc(fmt(x ?? "—"))}</td><td>${esc(fmt(y ?? "—"))}</td></tr>`).join("")}</tbody></table>`;
@@ -690,7 +808,7 @@ function faqItems() {
     ["Why does my county say “Not graded yet”?", "The team is still collecting water and data center data for all 254 Texas counties. Grades appear as soon as that data is added."],
     ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. We plan to add water information for every county."],
     ["What does the power grade measure?", "It reflects how reliable electricity has been in the county, based on outage events. It also shows how much electricity is generated in the county and how many power plants it has."],
-    ["What can I do about what I see here?", "Go to a public meeting. Each county page has a \u201cWhere to speak up\u201d section listing your commissioners court, your county seat\u2019s city council and any groundwater district, with when they meet and where to find agendas. Texas law lets anyone speak about an item on the agenda."],
+    ["What can I do about what I see here?", "Go to a public meeting. Each county page has a \u201cSpeak to Your Representatives\u201d button listing your commissioners court, your county seat\u2019s city council and any groundwater district, with when they meet and where to find agendas. Texas law lets anyone speak about an item on the agenda."],
     ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet. Every source will be listed on the About page as the team adds data."],
   ];
   return q.map(([s, a]) => `<details><summary>${esc(s)}</summary><p>${esc(a)}</p></details>`);
@@ -701,7 +819,7 @@ function pageAbout() {
     <p class="lede">A guide to what's happening with power, water and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
     <h2 style="margin-top:32px">Sources</h2>
-    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Water and data center sources will be listed here as they're added.</p>
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Water sources will be listed here as they're added.</p>
     <h2 style="margin-top:32px">How we pick stories</h2>
     <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
 }

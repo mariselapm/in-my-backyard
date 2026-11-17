@@ -35,7 +35,7 @@ To leave out a bad source, add its name to `SKIP_SOURCES` near the top of the sc
 Counties with few stories also show stories from neighboring counties and from across Texas.
 
 ## Where to speak up (public meetings)
-Each county page has a "Where to speak up" section, and a button at the top that jumps to it and shows the next meeting date. It reads **`data/meetings.xlsx`** (a separate file, so replacing `master.xlsx` doesn't erase it). One row per public body:
+Each county page has a "Speak to Your Representatives" button near the top that opens a side panel and shows the next meeting date. It reads **`data/meetings.xlsx`** (a separate file, so replacing `master.xlsx` doesn't erase it). One row per public body:
 
 | Column | What goes in it |
 |---|---|
