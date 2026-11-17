@@ -662,12 +662,7 @@ function statusLine(sites) {
 }
 function dcBody(campuses, c) {
   if (!state.dcSites.length) return `<p class="pending">The team is still gathering data center data for this county.</p>`;
-  if (!campuses.length) {
-    const q = c ? `${c.name} County, TX` : "";
-    return `<p class="dc-none">No data centers in our list yet.</p>
-    <p class="dc-lookup">Look up data centers near you in the <a class="tt-search"${q ? ` data-q="${esc(q)}"` : ""} href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Texas Tribune's search tool<span class="ext" aria-hidden="true">↗</span></a> instead.</p>
-    ${q ? `<p class="tt-hint" role="status">We copied “${esc(q)}” for you. Paste it into the Tribune's search bar.</p>` : ""}`;
-  }
+  if (!campuses.length) return `<p class="dc-none">No data centers in our list yet.</p>${ttLookup(c, "Look up data centers near you in the", " instead.")}`;
   const nb = campuses.reduce((a, cp) => a + cp.sites.length, 0), mw = campuses.reduce((a, cp) => a + cp.mw, 0);
   const inv = campuses.reduce((a, cp) => a + cp.investment, 0);
   // "Projected" when any building isn't open yet; plain labels when everything is already operating.
@@ -680,7 +675,14 @@ function dcBody(campuses, c) {
       <ul class="dc-phases">${statusLine(cp.sites).map(t => `<li>${t}</li>`).join("")}</ul>
       ${cp.sources.length ? `<p class="dc-src">Sources: ${(() => { const seen = {}; return cp.sources.map(u => { const h = new URL(u).hostname.replace(/^www\./, ""); seen[h] = (seen[h] || 0) + 1; return `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(h)}${seen[h] > 1 ? ` (${seen[h]})` : ""}</a>`; }).join(", "); })()}</p>` : ""}
     </li>`).join("")}</ul>
-    <p class="pending">${dcCoverage()}</p>`;
+    <p class="pending">${dcCoverage()}</p>
+    ${ttLookup(c, "Find more data centers near you in the", ".")}`;
+}
+// Link to the Texas Tribune's lookup; clicking copies "<County> County, TX" to paste into their search bar.
+function ttLookup(c, before, after) {
+  const q = c ? `${c.name} County, TX` : "";
+  return `<p class="dc-lookup">${before} <a class="tt-search"${q ? ` data-q="${esc(q)}"` : ""} href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Texas Tribune's search tool<span class="ext" aria-hidden="true">↗</span></a>${after}</p>
+    ${q ? `<p class="tt-hint" role="status">We copied “${esc(q)}” for you. Paste it into the Tribune's search bar.</p>` : ""}`;
 }
 
 /* ---------- drought ---------- */
