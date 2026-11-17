@@ -122,6 +122,8 @@ h3{font-weight:700;font-size:1.2rem}
 .parts .grade{font-size:2.2rem}
 .pending{color:var(--muted);font-size:.95rem;margin:14px 0 0}
 .dc-none{margin:18px 0 0;font-weight:700}
+.tt-hint{color:var(--muted);font-size:.85rem;margin:8px 0 0}
+.tt-hint.copied{color:var(--g-a);font-weight:600}
 .dc-list{list-style:none;margin:16px 0 0;padding:0}
 .dc-list li{padding:12px 0;border-top:1px solid var(--line)}
 .dc-list h4{margin:0;font:750 1.05rem var(--display)}
@@ -651,10 +653,17 @@ function statusLine(sites) {
     return `${b.n} ${esc(b.label.toLowerCase())}${when}`;
   });
 }
-function dcBody(campuses) {
+function dcBody(campuses, c) {
   if (!state.dcSites.length) return `<p class="pending">The team is still gathering data center data for this county.</p>`;
-  if (!campuses.length) return `<p class="dc-none">No data centers in our list yet.</p>
-    <p class="pending">We don't have data center information for this county yet. <a href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Look up data centers near you in the Texas Tribune's search tool</a>.</p>`;
+  if (!campuses.length) {
+    const q = c ? `${c.name} County, TX` : "";
+    const link = q
+      ? `<a class="tt-search" data-q="${esc(q)}" href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Search “${esc(q)}” in the Texas Tribune's data center tool</a>`
+      : `<a href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Look up data centers near you in the Texas Tribune's search tool</a>`;
+    return `<p class="dc-none">No data centers in our list yet.</p>
+    <p class="pending">We don't have data center information for this county yet. ${link}.</p>
+    ${q ? `<p class="tt-hint" role="status">Clicking the link copies “${esc(q)}” so you can paste it into the Tribune's search box.</p>` : ""}`;
+  }
   const nb = campuses.reduce((a, cp) => a + cp.sites.length, 0), mw = campuses.reduce((a, cp) => a + cp.mw, 0);
   const inv = campuses.reduce((a, cp) => a + cp.investment, 0);
   // "Projected" when any building isn't open yet; plain labels when everything is already operating.
@@ -701,7 +710,7 @@ function catHtml(cat, entry, c) {
   const m = g && CONFIG.meaning[cat.key]?.[g];
   if (m) body += `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>`;
   if (dr) body += droughtBody(dr);
-  if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses);
+  if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses, c);
   else if (!g && !dr) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
   return `<section class="cat cat-${cat.key}"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
 }
@@ -961,6 +970,14 @@ window.addEventListener("hashchange", () => { route(); $("#app").focus({ prevent
 load().then(route).catch(err => {
   console.error(err);
   $("#app").innerHTML = `<div class="error"><h2>The data didn't load</h2><p>The site couldn't read <code>${esc(CONFIG.dataUrl)}</code>. If you opened this file by double-clicking it, open it with <b>start.command</b> instead, so the site runs at a local web address.</p></div>`;
+});
+
+// Tribune search: copy the county name before the link opens, since their tool can't take a place in its link.
+document.addEventListener("click", e => {
+  const a = e.target.closest("a.tt-search"); if (!a) return;
+  const q = a.dataset.q, hint = a.closest("p")?.nextElementSibling;
+  const done = ok => { if (hint && hint.classList.contains("tt-hint")) { hint.textContent = ok ? `Copied “${q}”. Paste it into the Tribune's search box (Cmd+V or Ctrl+V).` : `Type “${q}” into the Tribune's search box.`; hint.classList.toggle("copied", ok); } };
+  try { navigator.clipboard.writeText(q).then(() => done(true), () => done(false)); } catch { done(false); }
 });
 </script>
 </body>
