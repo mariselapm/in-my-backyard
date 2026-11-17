@@ -17,7 +17,7 @@
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body)}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:clip}
 a{color:var(--sky)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:2px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
@@ -35,7 +35,8 @@ nav a:hover:not([aria-current="page"]){background:#E3E9E6}
 main.wrap{padding-top:28px;padding-bottom:72px}
 main:focus{outline:none}
 .home-map svg{max-height:70vh}
-#big-map svg{max-height:80vh;width:auto;max-width:100%;margin:0 auto}
+#big-map{width:100vw;margin-left:calc(50% - 50vw);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#big-map svg{width:100%;height:auto}
 h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0}
 h1{font-weight:800;font-stretch:100%;font-size:clamp(2.3rem,6vw,4rem);letter-spacing:-.02em}
 h2{font-weight:750;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.01em}
@@ -63,7 +64,12 @@ h3{font-weight:700;font-size:1.2rem}
 /* map */
 .map-box{position:relative}
 .map-box svg{width:100%;height:auto;display:block}
-.around path{fill:#E1E5E2;stroke:#F7F8F6;stroke-width:1.2}
+.map-box .sea{fill:#FAFBFA}
+.around path{fill:#ECEFEC;stroke:#CDD5D1;stroke-width:.8}
+.cities{pointer-events:none}
+.cities circle{fill:var(--ink)}
+.cities text{font:600 14px var(--body);fill:var(--ink);paint-order:stroke;stroke:rgba(255,255,255,.85);stroke-width:3px;stroke-linejoin:round}
+.home-map .cities text{font-size:15px}
 .county{stroke:#fff;stroke-width:.5;cursor:pointer;transition:opacity .12s}
 .county:hover,.county.is-active{stroke:var(--ink);stroke-width:1.6}
 .tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;box-shadow:0 6px 18px rgba(29,43,42,.16);font-size:.9rem;min-width:190px;opacity:0;transform:translateY(4px);transition:opacity .1s,transform .1s;z-index:5}
@@ -470,19 +476,17 @@ function layerGrade(c, layer) {
 /* ---------- map ---------- */
 function drawMap(el, { interactive = true, height = 0 } = {}) {
   const geo = topojson.feature(state.topo, state.topo.objects.counties);
-  const W = interactive ? 1000 : 800, H = height || 760, pad = interactive ? 28 : 12;
+  // The big map stretches across the whole page; its drawing gets wider (not taller) on wide screens
+  const H = height || 760, shownH = Math.min(760, innerHeight * 0.8);
+  const W = interactive ? Math.round(Math.max(800, Math.min(1800, H * el.clientWidth / shownH))) : 800, pad = interactive ? 28 : 12;
   const proj = d3.geoConicEqualArea().parallels([27.5, 35]).rotate([100, 0]).fitExtent([[pad, pad], [W - pad, H - pad]], geo);
   const path = d3.geoPath(proj);
   el.innerHTML = `<div class="map-box"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Map of Texas counties colored by grade"></svg><div class="tip" role="status"></div></div>`;
   const svg = d3.select(el).select("svg"), tip = $(".tip", el), box = $(".map-box", el);
-  if (state.around) {
-    // Fade the neighbors out toward the edges so the map has no hard box around it
-    const mid = `fade-${Math.random().toString(36).slice(2, 8)}`;
-    svg.append("defs").html(`<radialGradient id="${mid}-g" cx="50%" cy="50%" r="58%"><stop offset="70%" stop-color="#fff"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
-      <mask id="${mid}"><rect width="${W}" height="${H}" fill="url(#${mid}-g)"/></mask>`);
-    svg.append("g").attr("class", "around").attr("aria-hidden", "true").attr("mask", `url(#${mid})`)
-      .selectAll("path").data(state.around.features).join("path").attr("d", path);
-  }
+  // Background like a reference map: light sea, neighboring states and Mexico in flat gray with thin borders
+  svg.append("rect").attr("class", "sea").attr("width", W).attr("height", H);
+  if (state.around) svg.append("g").attr("class", "around").attr("aria-hidden", "true")
+    .selectAll("path").data(state.around.features).join("path").attr("d", path);
   const paths = svg.append("g").selectAll("path").data(geo.features).join("path")
     .attr("class", "county").attr("d", path);
   const paint = () => paths.attr("fill", f => {
@@ -508,6 +512,12 @@ function drawMap(el, { interactive = true, height = 0 } = {}) {
     .on("mouseleave", () => { tip.classList.remove("show"); paths.classed("is-active", false); })
     .on("click", (e, f) => { const c = state.byFips.get(f.id); if (c) location.hash = `#/county/${c.slug}`; });
 
+  // City labels to help people find their area
+  const cities = svg.append("g").attr("class", "cities").attr("aria-hidden", "true")
+    .selectAll("g").data(CITIES).join("g").attr("transform", d => `translate(${proj([d[1], d[2]])})`);
+  cities.append("circle").attr("r", 2.2);
+  cities.append("text").attr("x", 5).attr("y", d => d[3] || 4).text(d => d[0]);
+
   // Data center dots: one per campus, sized by power use. Filled = operating, hollow = not open yet.
   const camps = state.dcCampuses.filter(cp => cp.lat != null);
   const maxMw = d3.max(camps, cp => cp.mw) || 1;
@@ -528,6 +538,9 @@ function drawMap(el, { interactive = true, height = 0 } = {}) {
     .on("click", (e, cp) => { const c = state.byName.get(norm(cp.county)); if (c) location.hash = `#/county/${c.slug}`; });
   return { paint };
 }
+const CITIES = [["El Paso", -106.485, 31.759, 18], ["Amarillo", -101.831, 35.222], ["Lubbock", -101.855, 33.578], ["Midland", -102.078, 31.997],
+  ["Abilene", -99.733, 32.449], ["Dallas", -96.797, 32.777], ["Austin", -97.743, 30.267], ["San Antonio", -98.494, 29.424],
+  ["Houston", -95.369, 29.760], ["Corpus Christi", -97.396, 27.800], ["Laredo", -99.507, 27.506]];
 function legendHtml() {
   if (state.layer === "drought") return `<ul class="legend">${DROUGHT.map(d => `<li><span class="swatch" style="background:${d.color}"></span>${d.label}</li>`).join("")}</ul>`;
   return `<ul class="legend">${["A","B","C","D","F"].map(g => `<li><span class="swatch" style="background:${GRADE_HEX[g]}"></span>${g}</li>`).join("")}<li><span class="swatch" style="background:${GRADE_HEX.none}"></span>Not graded yet</li></ul>`;
