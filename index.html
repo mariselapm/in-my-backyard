@@ -149,6 +149,14 @@ h3{font-weight:700;font-size:1.2rem}
 .dr-key .swatch{width:12px;height:12px;border-radius:3px;border:1px solid rgba(0,0,0,.15)}
 .drought .dr-src{margin-top:10px;font-size:.82rem;color:var(--muted)}
 .legend .dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.osm-dot{fill:#56635E;stroke:#fff;stroke-width:1.2;cursor:pointer}
+.osm-dot:hover{fill:var(--ink)}
+.legend .dot-osm{width:8px;height:8px;background:#56635E;border-color:#56635E}
+.dc-osm{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.dc-osm:first-child{margin-top:0;padding-top:0;border-top:0}
+.dc-osm .dc-phases{list-style:disc;margin:4px 0 6px;padding-left:20px;font-size:.92rem}
+.dc-osm h4{margin:0;font:750 1.05rem var(--display)}
+.dc-osm p{margin:4px 0 0;font-size:.92rem}
 .legend .dot-coming{background:#fff} .legend .dot-operating{background:var(--ink)}
 
 .section{margin-top:56px}
@@ -295,6 +303,10 @@ const CONFIG = {
   // Drought status: any tab whose name contains "drought" (U.S. Drought Monitor county statistics).
   // One row per county with the percent of land in D0 or worse, D1 or worse, ... D4.
   drought: { tabMatch: "drought", columns: { county: "County", date: "MapDate", levels: ["D0", "D1", "D2", "D3", "D4"] } },
+  // Data centers mapped by volunteers in OpenStreetMap. Refresh with: python3 scripts/fetch_osm_datacenters.py
+  osmDataCenters: "data/osm-datacenters.json",
+  // Where to send readers in counties with no data center information yet
+  moreDataCentersUrl: "https://www.texastribune.org/2026/09/02/texas-data-center-information-lookups/",
   // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
   storiesTab: "Stories",
   // Public meetings for the "Speak to Your Representatives" panel. One row per body: County, Type, Name, Schedule, Where, Agenda link, Website, Covers.
@@ -449,7 +461,17 @@ async function load() {
   const opt = u => fetch(u, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
   const optXlsx = u => fetch(u, { cache: "no-store" }).then(r => r.ok ? r.arrayBuffer() : null).catch(() => null);
   let mbuf;
-  [state.news, state.outlets, mbuf] = await Promise.all([opt("data/stories.json"), opt("data/outlets.json"), optXlsx(CONFIG.meetingsUrl)]);
+  let osm;
+  [state.news, state.outlets, mbuf, osm] = await Promise.all([opt("data/stories.json"), opt("data/outlets.json"), optXlsx(CONFIG.meetingsUrl), opt(CONFIG.osmDataCenters)]);
+  // Data centers volunteers mapped in OpenStreetMap (made by scripts/fetch_osm_datacenters.py).
+  // Sites run by a company already in the team's list for that county are skipped so nothing is counted twice.
+  state.osmUpdated = osm?.updated || null;
+  state.osmSites = [];
+  for (const c of state.counties) {
+    const devs = c.cats.datacenters.campuses.map(cp => cp.developer.toLowerCase()).filter(Boolean);
+    c.cats.datacenters.osm = (osm?.sites || []).filter(s => norm(s.county) === norm(c.name) && !s.names.some(n => devs.some(d => n.toLowerCase().includes(d))));
+    state.osmSites.push(...c.cats.datacenters.osm);
+  }
   state.meetings = new Map();
   if (mbuf) {
     const mwb = XLSX.read(mbuf, { type: "array" });
@@ -517,6 +539,21 @@ function drawMap(el, { interactive = true, height = 0 } = {}) {
     .selectAll("g").data(CITIES).join("g").attr("transform", d => `translate(${proj([d[1], d[2]])})`);
   cities.append("circle").attr("r", 2.2);
   cities.append("text").attr("x", 5).attr("y", d => d[3] || 4).text(d => d[0]); }
+
+  // Small gray dots: data centers volunteers mapped in OpenStreetMap
+  svg.append("g").selectAll("circle").data(state.osmSites || []).join("circle")
+    .attr("class", "osm-dot").attr("cx", s => proj([s.lon, s.lat])[0]).attr("cy", s => proj([s.lon, s.lat])[1]).attr("r", s => s.buildings > 5 ? 4.5 : 3.2)
+    .on("mousemove", (e, s) => {
+      paths.classed("is-active", false);
+      tip.innerHTML = `<strong>${s.names.length ? esc(s.names.slice(0, 2).join(", ")) : "Unnamed data center"}</strong><div>${esc(s.county)} County</div><div style="margin-top:6px">${s.buildings} ${s.buildings === 1 ? "building" : "buildings"} on OpenStreetMap</div><div class="hint">Click to see the county report</div>`;
+      const r = box.getBoundingClientRect();
+      let x = e.clientX - r.left + 16, y = e.clientY - r.top + 16;
+      if (x + 240 > r.width) x = e.clientX - r.left - 240;
+      if (y + 130 > r.height) y = e.clientY - r.top - 130;
+      tip.style.left = Math.max(0, x) + "px"; tip.style.top = Math.max(0, y) + "px"; tip.classList.add("show");
+    })
+    .on("mouseleave", () => tip.classList.remove("show"))
+    .on("click", (e, s) => { const c = state.byName.get(norm(s.county)); if (c) location.hash = `#/county/${c.slug}`; });
 
   // Data center dots: one per campus, sized by power use. Filled = operating, hollow = not open yet.
   const camps = state.dcCampuses.filter(cp => cp.lat != null);
@@ -598,7 +635,7 @@ function pageHome() {
       ${searchHtml()}
       <p class="try">Or try <a href="#/county/travis">Travis</a>, <a href="#/county/harris">Harris</a>, <a href="#/county/andrews">Andrews</a> or <a href="#/county/el-paso">El Paso</a>.</p>
     </div>
-    <figure class="home-map" style="margin:0"><div id="home-map"></div><figcaption>Overall grade by county. <a href="#/map">Open the full map</a> to explore.</figcaption></figure>
+    <figure class="home-map" style="margin:0"><div id="home-map"></div></figure>
   </div>`;
 }
 function afterHome() { drawMap($("#home-map"), { interactive: false }); }
@@ -610,7 +647,7 @@ function pageMap() {
     <div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
     <p class="map-note" id="layer-note"></p>
     <div id="big-map"></div><div id="map-legend">${legendHtml()}</div>
-    ${state.dcCampuses.length ? `<ul class="legend"><li><span class="dot dot-operating"></span>Data center, operating</li><li><span class="dot dot-coming"></span>Data center, planned or being built</li><li style="color:var(--muted)">Bigger dot = more power. ${dcCoverage()}</li></ul>` : ""}
+    ${state.dcCampuses.length ? `<ul class="legend"><li><span class="dot dot-operating"></span>Data center, operating</li><li><span class="dot dot-coming"></span>Data center, planned or being built</li>${state.osmSites?.length ? `<li><span class="dot dot-osm"></span>Data center mapped by volunteers, ${OSM_CREDIT}</li>` : ""}<li style="color:var(--muted)">Bigger dot = more power. ${dcCoverage()}</li></ul>` : ""}
     <div style="margin-top:28px">${searchHtml("q2")}</div>`;
 }
 function afterMap() {
@@ -649,9 +686,23 @@ function statusLine(sites) {
     return `${b.n} ${esc(b.label.toLowerCase())}${when}`;
   });
 }
-function dcBody(campuses) {
-  if (!state.dcSites.length) return `<p class="pending">The team is still gathering data center data for this county.</p>`;
-  if (!campuses.length) return `<p class="dc-none">No data centers in our list yet.</p><p class="pending">${dcCoverage()}</p>`;
+const OSM_CREDIT = `<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>`;
+function osmHtml(sites) {
+  const nb = sites.reduce((a, s) => a + s.buildings, 0);
+  return `<div class="dc-osm"><h4>Mapped by volunteers</h4>
+    <p class="dc-status">${nb} data center ${nb === 1 ? "building" : "buildings"} at ${sites.length} ${sites.length === 1 ? "site" : "sites"} on OpenStreetMap:</p>
+    <ul class="dc-phases">${sites.map(s => `<li>${s.names.length ? esc(s.names.join(", ")) : "Unnamed data center"}${s.buildings > 1 ? ` (${s.buildings} buildings)` : ""}</li>`).join("")}</ul>
+    <p class="dc-src">${OSM_CREDIT}. A volunteer-made map, so it may be missing some sites.</p></div>`;
+}
+function dcBody(campuses, osm = []) {
+  let html = "";
+  if (campuses.length) html += teamDcHtml(campuses);
+  if (osm.length) html += osmHtml(osm);
+  if (!campuses.length && !osm.length) html += `<p class="dc-none">No data centers in our list yet.</p>
+    <p class="pending">We don't have data center information for this county yet. <a href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Look up data centers near you in the Texas Tribune's search tool</a>.</p>`;
+  return html;
+}
+function teamDcHtml(campuses) {
   const nb = campuses.reduce((a, cp) => a + cp.sites.length, 0), mw = campuses.reduce((a, cp) => a + cp.mw, 0);
   const inv = campuses.reduce((a, cp) => a + cp.investment, 0);
   // "Projected" when any building isn't open yet; plain labels when everything is already operating.
@@ -688,7 +739,6 @@ function droughtBody(d) {
     <ul class="dr-key">${share.map((v, i) => v >= 1 ? `<li><span class="swatch" style="background:${DROUGHT[i].color}"></span>${esc(DROUGHT[i].label)} <b>${Math.round(v)}%</b></li>` : "").join("")}</ul>
     <p class="dr-src">U.S. Drought Monitor, week of ${esc(droughtWeek())}. Not graded yet.</p></div>`;
 }
-
 function catHtml(cat, entry, c) {
   const g = entry.grade;
   const dr = cat.key === "drought" && c?.drought;
@@ -698,7 +748,7 @@ function catHtml(cat, entry, c) {
   const m = g && CONFIG.meaning[cat.key]?.[g];
   if (m) body += `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>`;
   if (dr) body += droughtBody(dr);
-  if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses);
+  if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses, entry.osm || []);
   else if (!g && !dr) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
   return `<section class="cat cat-${cat.key}"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
 }
@@ -900,7 +950,8 @@ function pageCompare(a, b) {
     const rows = [["Overall", A.overall, B.overall], ...CONFIG.categories.map(k => [k.label, A.cats[k.key].grade, B.cats[k.key].grade])];
     const dcCount = X => (X.cats.datacenters.campuses || []).reduce((a, cp) => a + cp.sites.length, 0);
     const facts = [["People", fmt(Math.round(A.population || 0)), fmt(Math.round(B.population || 0))],
-      ...(state.dcSites.length ? [["Data center buildings in our list", dcCount(A), dcCount(B)]] : []), ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
+      ...(state.dcSites.length ? [["Data center buildings in our list", dcCount(A), dcCount(B)]] : []),
+      ...(state.osmSites?.length ? [["Data center buildings on OpenStreetMap", (A.cats.datacenters.osm || []).reduce((a, s) => a + s.buildings, 0), (B.cats.datacenters.osm || []).reduce((a, s) => a + s.buildings, 0)]] : []), ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
     table = `<table class="cmp"><thead><tr><th scope="col"><span class="visually-hidden">Measure</span></th><th scope="col"><a href="#/county/${A.slug}">${esc(A.name)}</a></th><th scope="col"><a href="#/county/${B.slug}">${esc(B.name)}</a></th></tr></thead><tbody>
       ${rows.map(([l, x, y]) => l === "Drought" && !x && !y && state.droughtDate ? `<tr><th scope="row">Drought (week of ${esc(droughtWeek())})</th><td>${droughtTag(A.drought)}</td><td>${droughtTag(B.drought)}</td></tr>` : `<tr><th scope="row">${l}</th><td>${gradeEl(x)}</td><td>${gradeEl(y)}</td></tr>`).join("")}
       ${facts.map(([l, x, y]) => `<tr><th scope="row">${esc(l)}</th><td>${esc(fmt(x ?? "—"))}</td><td>${esc(fmt(y ?? "—"))}</td></tr>`).join("")}</tbody></table>`;
@@ -930,7 +981,7 @@ function pageAbout() {
     <p class="lede">A guide to what's happening with power, drought and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
     <h2 style="margin-top:32px">Sources</h2>
-    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. Neighboring states and Mexico on the map: U.S. Census Bureau and Natural Earth. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Drought: U.S. Drought Monitor county statistics (National Drought Mitigation Center, USDA and NOAA), updated weekly; a county's status is the worst drought level covering at least half of it. Drought isn't graded yet.</p>
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. Neighboring states and Mexico on the map: U.S. Census Bureau and Natural Earth. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Other data centers: mapped by volunteers in OpenStreetMap (© OpenStreetMap contributors, Open Database License), shown as small gray dots; this map isn't complete. Counties with no data center information link to the Texas Tribune's data center search. Drought: U.S. Drought Monitor county statistics (National Drought Mitigation Center, USDA and NOAA), updated weekly; a county's status is the worst drought level covering at least half of it. Drought isn't graded yet.</p>
     <h2 style="margin-top:32px">How we pick stories</h2>
     <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
 }

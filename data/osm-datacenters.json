@@ -1,0 +1,681 @@
+{
+ "updated": "2026-11-17",
+ "source": "OpenStreetMap contributors (ODbL)",
+ "sites": [
+  {
+   "county": "Angelina",
+   "lat": 31.28617,
+   "lon": -94.72158,
+   "buildings": 1,
+   "names": [
+    "Precision Prints Lufkin Datacenter"
+   ]
+  },
+  {
+   "county": "Angelina",
+   "lat": 31.19418,
+   "lon": -94.79677,
+   "buildings": 1,
+   "names": []
+  },
+  {
+   "county": "Bell",
+   "lat": 31.13191,
+   "lon": -97.37213,
+   "buildings": 2,
+   "names": []
+  },
+  {
+   "county": "Bell",
+   "lat": 31.05752,
+   "lon": -97.2983,
+   "buildings": 1,
+   "names": []
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.44666,
+   "lon": -98.64058,
+   "buildings": 24,
+   "names": [
+    "National Security Agency",
+    "Quality Technology Services",
+    "Amazon"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.47827,
+   "lon": -98.69069,
+   "buildings": 11,
+   "names": [
+    "Microsoft",
+    "Vantage Data Centers",
+    "Lowe's",
+    "CHRISTUS Health"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.4156,
+   "lon": -98.80379,
+   "buildings": 11,
+   "names": [
+    "Microsoft",
+    "Vantage Data Centers"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.472,
+   "lon": -98.67172,
+   "buildings": 4,
+   "names": [
+    "CyrusOne",
+    "Stream San Antonio II",
+    "CyrusOne San Antonio IV"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.419,
+   "lon": -98.78748,
+   "buildings": 3,
+   "names": [
+    "CyrusOne"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.44968,
+   "lon": -98.7144,
+   "buildings": 3,
+   "names": []
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.42937,
+   "lon": -98.48691,
+   "buildings": 1,
+   "names": [
+    "H5 Data Centers"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.43828,
+   "lon": -98.50652,
+   "buildings": 1,
+   "names": [
+    "Lumen Technologies"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.6864,
+   "lon": -98.46265,
+   "buildings": 1,
+   "names": [
+    "GVTC"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.58015,
+   "lon": -98.5413,
+   "buildings": 1,
+   "names": [
+    "HEB"
+   ]
+  },
+  {
+   "county": "Bexar",
+   "lat": 29.29301,
+   "lon": -98.3916,
+   "buildings": 1,
+   "names": [
+    "Amazon Web Services"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 33.13596,
+   "lon": -96.66099,
+   "buildings": 5,
+   "names": [
+    "CyrusOne",
+    "Cisco Allen",
+    "TierPoint",
+    "ScaleMatrix"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 33.00931,
+   "lon": -96.67656,
+   "buildings": 3,
+   "names": [
+    "Aligned",
+    "Flexential"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 33.09602,
+   "lon": -96.68154,
+   "buildings": 2,
+   "names": [
+    "Centersquare"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 33.00014,
+   "lon": -96.66165,
+   "buildings": 2,
+   "names": [
+    "Stream",
+    "Aligned Data Centers"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 32.99481,
+   "lon": -96.7525,
+   "buildings": 1,
+   "names": [
+    "Flexential"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 33.1718,
+   "lon": -96.7255,
+   "buildings": 1,
+   "names": [
+    "Experian McKinney Data Center"
+   ]
+  },
+  {
+   "county": "Collin",
+   "lat": 33.08725,
+   "lon": -96.81568,
+   "buildings": 1,
+   "names": [
+    "DataBank"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.96478,
+   "lon": -96.71586,
+   "buildings": 8,
+   "names": [
+    "Digital Realty",
+    "Rackspace"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.98104,
+   "lon": -96.65638,
+   "buildings": 7,
+   "names": [
+    "NTT",
+    "Digital Realty",
+    "Stream Data Centers"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.81755,
+   "lon": -96.87307,
+   "buildings": 3,
+   "names": [
+    "CoreSpace",
+    "Lumen Technologies",
+    "DataBank"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.83796,
+   "lon": -96.8784,
+   "buildings": 3,
+   "names": [
+    "Prime",
+    "Lumen Technologies"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.78255,
+   "lon": -96.78281,
+   "buildings": 2,
+   "names": [
+    "VIRTBIZ",
+    "Live Oak Data Center"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.80041,
+   "lon": -96.81937,
+   "buildings": 2,
+   "names": [
+    "Flexential",
+    "Equinix"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.77845,
+   "lon": -96.7985,
+   "buildings": 2,
+   "names": [
+    "Rad Web Hosting",
+    "DataBank"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.89725,
+   "lon": -96.98265,
+   "buildings": 2,
+   "names": [
+    "Quality Technology Services"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.80798,
+   "lon": -96.85739,
+   "buildings": 1,
+   "names": [
+    "TierPoint"
+   ]
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.58068,
+   "lon": -96.73357,
+   "buildings": 1,
+   "names": []
+  },
+  {
+   "county": "Dallas",
+   "lat": 32.5822,
+   "lon": -96.69559,
+   "buildings": 1,
+   "names": [
+    "DFW2-DC1 Project"
+   ]
+  },
+  {
+   "county": "Denton",
+   "lat": 33.00638,
+   "lon": -97.24529,
+   "buildings": 2,
+   "names": [
+    "CITIGROUP TECHNOLOGY INC",
+    "Charles Schwab Data Center"
+   ]
+  },
+  {
+   "county": "Denton",
+   "lat": 32.98891,
+   "lon": -97.25927,
+   "buildings": 2,
+   "names": [
+    "Quality Technology Services",
+    "Meta"
+   ]
+  },
+  {
+   "county": "Dickens",
+   "lat": 33.77726,
+   "lon": -100.8689,
+   "buildings": 1,
+   "names": [
+    "Argo Data Center"
+   ]
+  },
+  {
+   "county": "El Paso",
+   "lat": 31.75001,
+   "lon": -106.30993,
+   "buildings": 1,
+   "names": [
+    "MDC"
+   ]
+  },
+  {
+   "county": "Ellis",
+   "lat": 32.53877,
+   "lon": -96.80446,
+   "buildings": 10,
+   "names": [
+    "Compass Data Center",
+    "Google"
+   ]
+  },
+  {
+   "county": "Ellis",
+   "lat": 32.44214,
+   "lon": -97.06246,
+   "buildings": 3,
+   "names": [
+    "Google"
+   ]
+  },
+  {
+   "county": "Ellis",
+   "lat": 32.54396,
+   "lon": -96.7884,
+   "buildings": 2,
+   "names": [
+    "Compass Data Center"
+   ]
+  },
+  {
+   "county": "Harris",
+   "lat": 29.9952,
+   "lon": -95.56333,
+   "buildings": 2,
+   "names": [
+    "DXC Technology"
+   ]
+  },
+  {
+   "county": "Harris",
+   "lat": 30.0187,
+   "lon": -95.86375,
+   "buildings": 1,
+   "names": [
+    "DXC Technology"
+   ]
+  },
+  {
+   "county": "Harris",
+   "lat": 29.82158,
+   "lon": -95.5708,
+   "buildings": 1,
+   "names": []
+  },
+  {
+   "county": "Harris",
+   "lat": 29.65815,
+   "lon": -95.44331,
+   "buildings": 1,
+   "names": [
+    "Rice Data Center"
+   ]
+  },
+  {
+   "county": "Harris",
+   "lat": 29.80289,
+   "lon": -95.75534,
+   "buildings": 1,
+   "names": [
+    "Skybox"
+   ]
+  },
+  {
+   "county": "Harris",
+   "lat": 29.94513,
+   "lon": -95.4242,
+   "buildings": 1,
+   "names": [
+    "Data Foundry"
+   ]
+  },
+  {
+   "county": "Hood",
+   "lat": 32.34134,
+   "lon": -97.73169,
+   "buildings": 1,
+   "names": [
+    "Marathon Digital Holdings"
+   ]
+  },
+  {
+   "county": "Medina",
+   "lat": 29.42919,
+   "lon": -98.87665,
+   "buildings": 3,
+   "names": [
+    "Microsoft"
+   ]
+  },
+  {
+   "county": "Medina",
+   "lat": 29.41298,
+   "lon": -98.80637,
+   "buildings": 1,
+   "names": [
+    "Microsoft"
+   ]
+  },
+  {
+   "county": "Milam",
+   "lat": 30.57323,
+   "lon": -97.0801,
+   "buildings": 1,
+   "names": [
+    "Riot Rockdale"
+   ]
+  },
+  {
+   "county": "Montgomery",
+   "lat": 30.17814,
+   "lon": -95.48605,
+   "buildings": 2,
+   "names": [
+    "Stream Data Centers Houston"
+   ]
+  },
+  {
+   "county": "Navarro",
+   "lat": 31.96935,
+   "lon": -96.51472,
+   "buildings": 1,
+   "names": [
+    "Riot Corsicana"
+   ]
+  },
+  {
+   "county": "Pecos",
+   "lat": 31.10347,
+   "lon": -103.23855,
+   "buildings": 2,
+   "names": []
+  },
+  {
+   "county": "Reeves",
+   "lat": 31.53275,
+   "lon": -103.80627,
+   "buildings": 4,
+   "names": []
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.98378,
+   "lon": -97.25933,
+   "buildings": 2,
+   "names": [
+    "Meta"
+   ]
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.83271,
+   "lon": -97.04103,
+   "buildings": 1,
+   "names": [
+    "Cyxtera"
+   ]
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.85048,
+   "lon": -97.0703,
+   "buildings": 1,
+   "names": [
+    "Amazon Web Services"
+   ]
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.97204,
+   "lon": -97.15671,
+   "buildings": 1,
+   "names": [
+    "Verizon Wireless Mew Building"
+   ]
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.6512,
+   "lon": -97.31967,
+   "buildings": 1,
+   "names": [
+    "Novartis"
+   ]
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.54982,
+   "lon": -97.07486,
+   "buildings": 1,
+   "names": [
+    "Aligned Data Centers, LLC"
+   ]
+  },
+  {
+   "county": "Tarrant",
+   "lat": 32.89912,
+   "lon": -97.38895,
+   "buildings": 1,
+   "names": [
+    "CyrusOne"
+   ]
+  },
+  {
+   "county": "Taylor",
+   "lat": 32.50419,
+   "lon": -99.77772,
+   "buildings": 31,
+   "names": []
+  },
+  {
+   "county": "Taylor",
+   "lat": 32.49845,
+   "lon": -99.79227,
+   "buildings": 9,
+   "names": []
+  },
+  {
+   "county": "Travis",
+   "lat": 30.21216,
+   "lon": -97.69576,
+   "buildings": 4,
+   "names": [
+    "CyrusOne",
+    "Digital Realty Austin AUS11",
+    "Data Foundry Austin 1 Data Center"
+   ]
+  },
+  {
+   "county": "Travis",
+   "lat": 30.20068,
+   "lon": -97.70705,
+   "buildings": 4,
+   "names": [
+    "LightEdge Austin II",
+    "Lumen Austin 1",
+    "Data Foundry - Texas 1",
+    "Data Foundry - Texas 2"
+   ]
+  },
+  {
+   "county": "Travis",
+   "lat": 30.2614,
+   "lon": -97.7236,
+   "buildings": 2,
+   "names": [
+    "Lumen Technologies",
+    "Alpheus"
+   ]
+  },
+  {
+   "county": "Travis",
+   "lat": 30.2143,
+   "lon": -97.71267,
+   "buildings": 1,
+   "names": [
+    "LightEdge Austin I"
+   ]
+  },
+  {
+   "county": "Travis",
+   "lat": 30.3428,
+   "lon": -97.69617,
+   "buildings": 1,
+   "names": [
+    "Element Critical"
+   ]
+  },
+  {
+   "county": "Travis",
+   "lat": 30.42114,
+   "lon": -97.5916,
+   "buildings": 1,
+   "names": [
+    "Thin-nology"
+   ]
+  },
+  {
+   "county": "Travis",
+   "lat": 30.21562,
+   "lon": -97.61894,
+   "buildings": 1,
+   "names": [
+    "Cortex supercomputer"
+   ]
+  },
+  {
+   "county": "Ward",
+   "lat": 31.51343,
+   "lon": -103.44912,
+   "buildings": 3,
+   "names": [
+    "IONIC Digital"
+   ]
+  },
+  {
+   "county": "Wichita",
+   "lat": 33.95337,
+   "lon": -98.52479,
+   "buildings": 1,
+   "names": []
+  },
+  {
+   "county": "Williamson",
+   "lat": 30.48802,
+   "lon": -97.67253,
+   "buildings": 1,
+   "names": [
+    "Switch"
+   ]
+  },
+  {
+   "county": "Winkler",
+   "lat": 31.68955,
+   "lon": -103.06853,
+   "buildings": 1,
+   "names": [
+    "Cipher Digital Inc."
+   ]
+  }
+ ]
+}
