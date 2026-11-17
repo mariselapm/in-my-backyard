@@ -9,8 +9,8 @@ It writes:
 How it works
   1. Local outlets: the Texas newspaper list on Wikipedia (from the Texas Press Association's
      2023 directory) gives each paper's city; the Census place-by-county file gives each city's county.
-  2. Stories: one Google News search per county for the last 30 days, using the county name and
-     its newspaper towns plus topic words. Only headlines that name a topic AND either the place
+  2. Stories: Google News searches per county for the last 30 days: one with the county name and
+     its newspaper towns, and one with its biggest cities (Census population estimates), plus topic words. Only headlines that name a topic AND either the place
      or a local outlet are kept, so unrelated stories are filtered out.
 Uses only the Python standard library.
 """
@@ -38,9 +38,9 @@ CAT_RE = [(c, re.compile(p, re.I)) for c, p in CATEGORIES]
 # Headlines about elections use "power" as a figure of speech; skip them unless a stronger topic matches.
 OFF_TOPIC = re.compile(r"election|ballot|polling|voter|campaign|victory|candidate|arrest|chase|shooting|senators?\b|\bGOP\b|Lt\. Gov|committee|speaker|\bwins?\b|\bvictory\b|\bbank|tech outage|internet|cellular|\bapp\b|router|\bFAA\b|flights?\b|ground stop", re.I)
 MAX_AGE_DAYS = 31
-CRIME = re.compile(r"\bpolice\b|shooting|\bshot\b|arrest|murder|homicide|stabbing|\bchase\b|\bgun\b", re.I)
+CRIME = re.compile(r"\bpolice\b|shoot|\bshot\b|arrest|murder|homicide|stabbing|\bchase\b|\bgun\b|\bkill(s|ed|ing)?\b|\bdead\b|\bdies\b", re.I)
 # Sports and game listings ("Irion County vs Water Valley") are never what we want.
-SPORTS = re.compile(r"\bvs\.?\b|basketball|football|volleyball|baseball|softball|soccer|varsity|playoffs?|\btournament\b|scoreboard|\bNo\. \d+|\bupset\b|\bseason\b|\bcoach|\bAstros\b|\bTexans\b|\bRockets\b|\bCowboys\b|\bSpurs\b|\bMavericks\b|Longhorns|Aggies|Cougars|Red Raiders|Bears\b|Mustangs|Horned Frogs", re.I)
+SPORTS = re.compile(r"\bvs\.?\b|golf|winless|championship|\bPGA\b|\bF1\b|grand prix|basketball|football|volleyball|baseball|softball|soccer|varsity|playoffs?|\btournament\b|scoreboard|\bNo\. \d+|\bupset\b|\bseason\b|\bcoach|\bAstros\b|\bTexans\b|\bRockets\b|\bCowboys\b|\bSpurs\b|\bMavericks\b|Longhorns|Aggies|Cougars|Red Raiders|Bears\b|Mustangs|Horned Frogs", re.I)
 # Many Texas county names exist in other states (Leon, Floyd, Harris...). Drop stories that name another state.
 OTHER_STATES = re.compile(r"\b(Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|Tallahassee|Atlanta|Rome News)\b")
 # Sources to leave out (finance tickers, aggregators, clickbait). Add names here as you spot them.
@@ -104,6 +104,42 @@ def build_outlets(county_names):
     return {c: sorted(outlets.get(c, []), key=lambda o: o["name"]) for c in county_names}, incorporated
 
 
+def biggest_towns(limit=6, min_pop=500):
+    """Each county's largest cities and towns (Census 2024 estimates), so stories that only name a city count too."""
+    rows = get("https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/cities/totals/sub-est2024.csv").decode("latin-1").splitlines()
+    head = rows[0].split(",")
+    i = {k: head.index(k) for k in ("SUMLEV", "STATE", "COUNTY", "NAME", "POPESTIMATE2024")}
+    names, towns = {}, collections.defaultdict(list)
+    elsewhere = collections.defaultdict(int)  # biggest same-named place outside Texas
+    whole_tx = collections.defaultdict(int)
+    for line in rows[1:]:
+        p = line.split(",")
+        if len(p) < len(head):
+            continue
+        if p[i["SUMLEV"]] == "162":  # whole places, to compare same-named towns
+            t = re.sub(r"\s+(city|town|village|borough)$", "", p[i["NAME"]].replace('"', ""))
+            bucket = whole_tx if p[i["STATE"]] == "48" else elsewhere
+            bucket[t] = max(bucket[t], int(p[i["POPESTIMATE2024"]] or 0))
+        if p[i["STATE"]] != "48":
+            continue
+        if p[i["SUMLEV"]] == "050":
+            names[p[i["COUNTY"]]] = p[i["NAME"]].replace(" County", "")
+        elif p[i["SUMLEV"]] == "157":  # the part of a city that lies in one county
+            town = re.sub(r"\s+(city|town|village)( \(pt\.\))?$", "", p[i["NAME"]].replace('"', ""))
+            towns[p[i["COUNTY"]]].append((int(p[i["POPESTIMATE2024"]] or 0), town))
+    primary = {}
+    for code, lst in towns.items():
+        for pop, t in lst:
+            if pop > primary.get(t, (0, ""))[0]:
+                primary[t] = (pop, names.get(code, code))
+    out, ambiguous = {}, set(FOREIGN_NAMES)
+    for code, lst in towns.items():
+        good = [(pop, t) for pop, t in sorted(lst, reverse=True) if pop >= min_pop and t not in COMMON_WORDS and len(t) > 3 and not t.startswith("Balance of")]
+        out[names.get(code, code)] = [t for _, t in good[:limit]]
+        ambiguous |= {t for _, t in lst if elsewhere.get(t, 0) > whole_tx.get(t, 0)}  # e.g. Charlotte, TX vs Charlotte, NC
+    return out, ambiguous, {t: c for t, (_, c) in primary.items()}
+
+
 def shared_county_names():
     """Texas county names that other states also use (e.g. Floyd, Leon, Harris)."""
     txt = get("https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt").decode("utf-8", "ignore")
@@ -146,6 +182,8 @@ def categorize(title):
     return None
 
 
+# Texas towns named after countries or famous cities: only count them when the headline also says Texas.
+FOREIGN_NAMES = {"Palestine", "Athens", "Italy", "Moscow", "Canton", "Dublin", "London", "Berlin", "Rome", "Turkey", "China", "Cuba", "Jordan", "Lebanon", "Egypt", "Denmark", "Holland", "Ireland", "Scotland", "Germany", "Iraan", "Detroit", "Miami", "Memphis", "Orange", "Florence", "Naples", "Troy", "Sparta", "Carthage", "Ladonia"}
 COMMON_WORDS = {"Center", "Mission", "Commerce", "Industry", "Sunset", "Union", "Liberty", "Victoria", "Garden", "Point", "Grove", "Valley", "Lake", "Rose", "Cross", "Plains", "Energy", "Power", "Data", "Water", "Spring", "Springs", "Hope", "Paris", "Moody", "Price", "Early", "Converse", "Content", "Electra", "Novice", "Edge"}
 
 
@@ -161,7 +199,8 @@ def texas_context(it, place_words):
     return bool(re.search(r"texas|\btx\b", it["source"], re.I) or (src_towns and re.search("|".join(re.escape(w) for w in src_towns), it["source"])))
 
 
-def pick(items, place_words, local_names, limit, per_category=None, strict=False):
+def pick(items, place_words, local_names, limit, per_category=None, strict=False, weak_words=()):
+    weak_rx = re.compile(r"\b(" + "|".join(re.escape(w) for w in weak_words) + r")\b") if weak_words else None
     place_rx = re.compile(r"\b(" + "|".join(re.escape(w) for w in place_words) + r")\b") if place_words else None
     cutoff = (datetime.now(timezone.utc).date().toordinal()) - MAX_AGE_DAYS
     seen, keep = set(), []
@@ -180,7 +219,8 @@ def pick(items, place_words, local_names, limit, per_category=None, strict=False
             continue
         ns = norm_source(it["source"])
         local = any(ns and (ns in ln or ln in ns) for ln in local_names)
-        names_place = bool(place_rx and place_rx.search(it["title"]))
+        names_place = bool(place_rx and place_rx.search(it["title"])) or bool(
+            weak_rx and weak_rx.search(it["title"]) and re.search(r"Texas|\bTX\b", it["title"]))
         if not (local or names_place):
             continue
         if strict and not local and not texas_context(it, place_words):
@@ -239,6 +279,7 @@ def main():
     print(f"  {sum(len(v) for v in outlets.values())} newspapers in {sum(1 for v in outlets.values() if v)} counties")
 
     shared = shared_county_names()
+    big, ambiguous, home_county = biggest_towns()
     out_path = DATA / "stories.json"
     result = json.loads(out_path.read_text()) if (only and out_path.exists()) else {"counties": {}}
 
@@ -246,19 +287,31 @@ def main():
 
     todo = [c for c in counties if not only or c in only]
     for n, county in enumerate(todo, 1):
-        paper_towns = sorted({o["city"] for o in outlets[county]})[:3]
+        # A paper counts as local only in the county where most of its town's people live
+        # (a sliver of Austin is in Bastrop County, but the Statesman isn't Bastrop's local paper).
+        mine = [o for o in outlets[county] if home_county.get(o["city"], county) == county]
+        paper_towns = sorted({o["city"] for o in mine})[:3]
         place_terms = [f'"{county} County"'] + [f'"{t}, Texas"' for t in paper_towns]
         q = f'({" OR ".join(place_terms)}) {QUERY_TOPICS} when:30d'
+        # A second search for the county's biggest cities, since many stories name the city, not the county.
+        cities = big.get(county, [])
         try:
             items = search(q)
+            if cities:
+                time.sleep(PAUSE)
+                city_terms = " OR ".join('"%s"' % t for t in cities)
+                items += search(f"({city_terms}) Texas {QUERY_TOPICS} when:30d")
         except Exception as e:
             print(f"  {county}: search failed ({e}); keeping old stories")
             continue
-        place_words = [f"{county} County"] + sorted(towns.get(county, set()) | set(paper_towns), key=len, reverse=True)
+        all_towns = towns.get(county, set()) | set(paper_towns) | set(cities)
+        place_words = [f"{county} County"] + sorted((t for t in all_towns if t not in ambiguous), key=len, reverse=True)
         place_words = [w for w in place_words if len(w) > 3]
-        local_names = [norm_source(o["name"]) for o in outlets[county]]
-        result["counties"][county] = pick(items, place_words, local_names, PER_COUNTY, per_category=3, strict=county in shared)
-        print(f"  [{n}/{len(todo)}] {county}: {len(result['counties'][county])} stories")
+        # Towns that share a name with a bigger place elsewhere only count when the headline also says Texas.
+        weak_words = [t for t in all_towns if t in ambiguous and len(t) > 3]
+        local_names = [norm_source(o["name"]) for o in mine]
+        result["counties"][county] = pick(items, place_words, local_names, PER_COUNTY, per_category=3, strict=county in shared, weak_words=weak_words)
+        print(f"  [{n}/{len(todo)}] {county}: {len(result['counties'][county])} stories (from {len(items)} search results)")
         time.sleep(PAUSE)
 
     result["updated"] = datetime.now(timezone.utc).date().isoformat()
