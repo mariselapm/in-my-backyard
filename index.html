@@ -248,6 +248,8 @@ table.cmp{width:100%;border-collapse:collapse;margin-top:24px;background:var(--s
 .cmp td .grade{font-size:2.4rem}
 
 /* faq/about */
+.faq-list{margin:6px 0 12px;padding-left:20px}
+.faq-list li{margin:4px 0}
 .prose{max-width:44em}
 .prose p{margin:12px 0}
 details{border-top:1px solid var(--line);padding:16px 0}
@@ -310,7 +312,10 @@ const CONFIG = {
   },
   // Drought status: any tab whose name contains "drought" (U.S. Drought Monitor county statistics).
   // One row per county with the percent of land in D0 or worse, D1 or worse, ... D4.
-  drought: { tabMatch: "drought", columns: { county: "County", date: "MapDate", levels: ["D0", "D1", "D2", "D3", "D4"] } },
+  drought: { tabMatch: "drought", columns: { county: "County", date: "MapDate", levels: ["D0", "D1", "D2", "D3", "D4"] },
+    // Grade from the drought level covering at least half the county: none, D0, D1, D2, D3, D4.
+    // A "Drought Grade" column in the sheet, if the team adds one, takes priority.
+    grades: ["A", "B", "C", "D", "F", "F"] },
   // Where to send readers in counties with no data center information yet
   moreDataCentersUrl: "https://www.texastribune.org/2026/09/02/texas-data-center-information-lookups/",
   // Optional tab named "Stories" with columns: County, Title, Outlet, Link, Date, Topic. Use "Statewide" as the county for stories that apply everywhere.
@@ -326,6 +331,13 @@ const CONFIG = {
   },
   // DRAFT plain-language text for each grade. The team should rewrite these.
   meaning: {
+    drought: {
+      A: ["This county is not in drought right now.", "Conditions can change fast in Texas. Check your water utility's rules before the summer."],
+      B: ["This county is abnormally dry, an early warning that drought could set in.", "Watch for burn bans and water-saving rules from your city or water district."],
+      C: ["This county is in moderate drought.", "Expect watering limits and burn bans. Fix leaks and water lawns less often."],
+      D: ["This county is in severe drought.", "Water restrictions and burn bans are likely. Follow your utility's rules and ask how full your local lakes and aquifers are."],
+      F: ["This county is in extreme drought, among the worst in Texas.", "Expect strict water limits, high wildfire risk and stress on crops and livestock. Ask your county and water district about their drought plans."],
+    },
     power: {
       A: ["Power here has been among the most reliable in Texas.", "Keep a basic outage kit anyway: flashlights, charged batteries, water."],
       B: ["Power here is more reliable than most of Texas.", "Outages happen but are less common. Sign up for your utility's outage alerts."],
@@ -398,9 +410,7 @@ async function load() {
       }
       c.cats[cat.key] = entry;
     }
-    const graded = CONFIG.categories.filter(k => c.cats[k.key].grade);
-    c.gradedLabels = graded.map(k => k.label);
-    c.overall = graded.length ? toLetterPlusMinus(graded.reduce((a, k) => a + POINTS[c.cats[k.key].grade], 0) / graded.length) : null;
+    setOverall(c);
     state.counties.push(c); state.byName.set(norm(c.name), c); if (c.fips) state.byFips.set(c.fips, c);
   }
   state.counties.sort((a, b) => a.name.localeCompare(b.name));
@@ -451,6 +461,7 @@ async function load() {
       const c = state.byName.get(norm(r[dcol(K.county)])); if (!c) continue;
       const cum = [100, ...K.levels.map(l => Math.max(0, Math.min(100, +r[dcol(l)] || 0)))];
       c.drought = { cum, level: Math.max(...cum.map((v, i) => v >= 50 ? i : 0)), worst: Math.max(...cum.map((v, i) => v >= 1 ? i : 0)) };
+      if (!c.cats.drought.grade) { c.cats.drought.grade = CONFIG.drought.grades[c.drought.level]; setOverall(c); }
       const m = /^(\d{4})(\d{2})(\d{2})$/.exec(String(Math.round(+r[dcol(K.date)] || 0)));
       if (m && !state.droughtDate) state.droughtDate = new Date(+m[1], m[2] - 1, +m[3]);
     }
@@ -635,7 +646,7 @@ function afterMap() {
   const m = drawMap($("#big-map"));
   const note = () => {
     $("#map-legend").innerHTML = legendHtml();
-    if (state.layer === "drought") { $("#layer-note").textContent = `Drought level that covers at least half of each county. U.S. Drought Monitor, week of ${droughtWeek()}. Not graded yet.`; return; }
+    if (state.layer === "drought") { $("#layer-note").textContent = `Drought level that covers at least half of each county, which sets its grade: none A, abnormally dry B, moderate C, severe D, extreme or exceptional F. U.S. Drought Monitor, week of ${droughtWeek()}.`; return; }
     const graded = state.counties.filter(c => layerGrade(c, state.layer)).length;
     $("#layer-note").textContent = graded ? `${graded} of ${state.counties.length} counties have a grade for this.` : "No county has a grade for this yet. The team is still adding this data.";
   };
@@ -701,6 +712,12 @@ const DROUGHT = [
 const droughtWeek = () => state.droughtDate ? state.droughtDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : "";
 const pctText = v => v >= 99.5 ? "All" : v < 1 ? "Less than 1%" : `${Math.round(v)}%`;
 function droughtTag(d) { return d ? `<span class="dr-tag" style="--dc:${DROUGHT[d.level].color}">${esc(DROUGHT[d.level].label)}</span>` : gradeEl(null); }
+// Overall grade: the average of the categories this county has grades for.
+function setOverall(c) {
+  const graded = CONFIG.categories.filter(k => c.cats[k.key].grade);
+  c.gradedLabels = graded.map(k => k.label);
+  c.overall = graded.length ? toLetterPlusMinus(graded.reduce((a, k) => a + POINTS[c.cats[k.key].grade], 0) / graded.length) : null;
+}
 function droughtBody(d) {
   const share = d.cum.map((v, i) => Math.max(0, v - (d.cum[i + 1] ?? 0)));
   const lvl = DROUGHT[d.level].label.toLowerCase();
@@ -711,7 +728,7 @@ function droughtBody(d) {
   return `<div class="drought"><p class="dr-now">${droughtTag(d)}</p><p>${esc(say)}</p>
     <div class="dr-bar" role="img" aria-label="Share of the county at each drought level">${share.map((v, i) => v > 0 ? `<span style="width:${v}%;background:${DROUGHT[i].color}"></span>` : "").join("")}</div>
     <ul class="dr-key">${share.map((v, i) => v >= 1 ? `<li><span class="swatch" style="background:${DROUGHT[i].color}"></span>${esc(DROUGHT[i].label)} <b>${Math.round(v)}%</b></li>` : "").join("")}</ul>
-    <p class="dr-src">U.S. Drought Monitor, week of ${esc(droughtWeek())}. Not graded yet.</p></div>`;
+    <p class="dr-src">U.S. Drought Monitor, week of ${esc(droughtWeek())}. Graded by the level that covers at least half the county.</p></div>`;
 }
 
 function catHtml(cat, entry, c) {
@@ -721,8 +738,9 @@ function catHtml(cat, entry, c) {
   if (entry.facts.length) body += `<dl>${entry.facts.map(([l, v]) => `<dt>${esc(l)}</dt><dd>${esc(fmt(v))}</dd>`).join("")}</dl>`;
   if (cat.parts) body += `<ul class="parts">${entry.parts.map(([l, pg]) => `<li><span>${esc(l)}</span>${dr && !pg && l === "Drought" ? droughtTag(dr) : gradeEl(pg)}</li>`).join("")}</ul>`;
   const m = g && CONFIG.meaning[cat.key]?.[g];
-  if (m) body += `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>`;
-  if (dr) body += droughtBody(dr);
+  const means = m ? `<div class="means" style="--gc:${GRADE_COLORS[g]}"><h4>What this means for you</h4><p>${esc(m[0])} ${esc(m[1])}</p></div>` : "";
+  // Drought: show the conditions first, then what the grade means.
+  body += dr ? droughtBody(dr) + means : means;
   if (cat.key === "datacenters" && entry.campuses) body += dcBody(entry.campuses, c);
   else if (!g && !dr) body += `<p class="pending">The team is still gathering ${esc(cat.label.toLowerCase())} data for this county.</p>`;
   return `<section class="cat cat-${cat.key}"><div class="cat-top"><h3>${esc(cat.label)}</h3>${gradeEl(g)}</div>${body}</section>`;
@@ -958,14 +976,22 @@ function afterCompare() {
 
 function faqItems() {
   const q = [
-    ["How are the grades decided?", "Each county gets a letter grade from A to F for power, drought and data centers, based on the data the team has gathered. The overall grade averages the categories a county has grades for. Right now only power is graded, so the overall grade matches the power grade."],
-    ["Why does my county say “Not graded yet”?", "The team is still deciding how to grade drought and data centers. Until then, each county page shows its current drought status and the data centers in our list. Grades appear as soon as they are added."],
+    ["How are the grades decided?", ["Each county gets a letter grade from A to F in each category.",
+      ["<b>Power:</b> the team grades how reliable power has been in the county, based on outage events.",
+       "<b>Drought:</b> the grade follows the U.S. Drought Monitor level that covers at least half of the county that week, so it changes as the weekly map changes.",
+       "<b>Data centers:</b> not graded yet, because our list only covers some companies so far.",
+       "<b>Overall:</b> the average of the power and drought grades."],
+      "How drought levels become grades:",
+      ["No drought: <b>A</b>", "Abnormally dry (D0): <b>B</b>", "Moderate drought (D1): <b>C</b>", "Severe drought (D2): <b>D</b>", "Extreme or exceptional drought (D3 or D4): <b>F</b>"]]],
+    ["Why does my county say “Not graded yet”?", "Data centers aren't graded yet. Our list only covers some companies so far, so a grade would make counties look better than they are. Until then, each county page shows the data centers in our list and a link to the Texas Tribune's search tool. A few counties are also missing a power grade while the team checks their data."],
     ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. Each county page shows its current drought level, one of the things that can push rates up."],
     ["What does the power grade measure?", "It reflects how reliable electricity has been in the county, based on outage events. It also shows how much electricity is generated in the county and how many power plants it has."],
     ["What can I do about what I see here?", "Go to a public meeting. Each county page has a \u201cSpeak to Your Representatives\u201d button listing your commissioners court, your county seat\u2019s city council and any groundwater district, with when they meet and where to find agendas. Texas law lets anyone speak about an item on the agenda."],
     ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet. Every source will be listed on the About page as the team adds data."],
   ];
-  return q.map(([s, a]) => `<details><summary>${esc(s)}</summary><p>${esc(a)}</p></details>`);
+  // An answer can be plain text, or a list of paragraphs and bullet lists (written here, so the bold tags are safe).
+  const body = a => typeof a === "string" ? `<p>${esc(a)}</p>` : a.map(x => Array.isArray(x) ? `<ul class="faq-list">${x.map(li => `<li>${li}</li>`).join("")}</ul>` : `<p>${x}</p>`).join("");
+  return q.map(([s, a]) => `<details><summary>${esc(s)}</summary>${body(a)}</details>`);
 }
 function pageFaq() { return `<div class="prose"><h1>Questions</h1><p class="lede">Plain answers about the grades and what they mean for you.</p></div><div style="margin-top:24px">${faqItems().join("")}</div>`; }
 function pageAbout() {
