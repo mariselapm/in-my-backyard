@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>In My Backyard</title>
 <meta name="description" content="How your Texas county is doing on power, drought and data centers.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -26,7 +27,9 @@ a{color:var(--sky)}
 .site-header{border-bottom:1px solid var(--line);background:var(--paper)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
 .wordmark{font:800 1.35rem/1 var(--display);font-stretch:112%;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
-.wordmark span{color:var(--g-a)}
+.wordmark{display:inline-flex;align-items:flex-end;gap:10px}
+.wordmark .logo{width:46px;height:auto;flex:none;color:var(--ink)}
+.wordmark .wm-text span{color:var(--g-a)}
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
 nav a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
 nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
@@ -286,7 +289,16 @@ details p{margin:10px 0 0;max-width:42em}
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="wordmark" href="#/">In My <span>Backyard</span></a>
+    <a class="wordmark" href="#/"><svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 36" aria-hidden="true">
+  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1.5 33.5H62.5"/>
+    <path d="M2 33.5V22.5L4.25 19.5 6.5 22.5v11M12.5 33.5V22.5l2.25-3 2.25 3v11M23 33.5V22.5l2.25-3 2.25 3v11"/>
+    <path d="M6.5 25.5h6M6.5 29h6M17 25.5h6M17 29h6"/>
+    <path d="M24.5 16.5v-4l-3.5 2L35 2l17 8.5-3.5 1.5v21.5"/>
+  </g>
+  <path d="M14.75 3.2v7.6" fill="none" stroke="#B85A1E" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="14.75" cy="15" r="1.7" fill="#B85A1E"/>
+</svg><span class="wm-text">In My <span>Backyard</span></span></a>
     <nav aria-label="Main"><ul>
       <li><a href="#/" data-nav="home">Home</a></li>
       <li><a href="#/map" data-nav="map">Map</a></li>
