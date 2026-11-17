@@ -177,7 +177,8 @@ h3{font-weight:700;font-size:1.2rem}
 .story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin-top:8px}
 .story-grid li{padding:18px 0;border-bottom:1px solid var(--line)}
 .story-grid a{font:700 1.08rem/1.3 var(--display)}
-.news-side{border-top:3px solid var(--ink);padding-top:14px;align-self:start}
+.news-side{background:var(--surface);border-top:3px solid var(--ink);border-radius:0 0 12px 12px;padding:16px 20px 6px;align-self:start}
+.news-side li.last{border-bottom:0}
 .news-side h3{margin:0 0 4px;font:800 .82rem var(--display);letter-spacing:.08em;text-transform:uppercase}
 .tx-filter{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
 .tx-filter button{padding:5px 12px;border:1px solid var(--line);border-radius:999px;background:transparent;font:600 .82rem var(--body);color:var(--ink);cursor:pointer}
@@ -814,7 +815,15 @@ function acrossTexas(list, per = TX_PER_TOPIC, wide = false) {
     <div class="tx-filter" role="group" aria-label="Show stories about">${tabs.map(([k, l]) => `<button type="button" data-topic="${k}" aria-pressed="${k === "all"}">${l}</button>`).join("")}</div>
     <ol class="stories">${shown.map(s => storyLi(s, s === all[0] ? "first" : "").replace("<li", `<li data-topics="${tag(s).join(" ")}"${all.includes(s) ? "" : " hidden"}`)).join("")}</ol></aside>`;
 }
+// No divider under the last story showing in the Across Texas box.
+function markLast(root) {
+  root.querySelectorAll("#stories .news-side ol").forEach(ol => {
+    const shown = [...ol.children].filter(li => !li.hidden);
+    [...ol.children].forEach(li => li.classList.toggle("last", li === shown[shown.length - 1]));
+  });
+}
 function wireStoryFilter(root) {
+  markLast(root);
   root.querySelectorAll("#stories .tx-filter button").forEach((b, _, btns) => b.onclick = () => {
     btns.forEach(x => x.setAttribute("aria-pressed", x === b));
     let first = true;
@@ -822,6 +831,7 @@ function wireStoryFilter(root) {
       li.hidden = !li.dataset.topics.split(" ").includes(b.dataset.topic);
       li.classList.toggle("first", !li.hidden && first); if (!li.hidden) first = false;
     });
+    markLast(root);
   });
 }
 /* ---------- where to speak up: public meetings ---------- */
