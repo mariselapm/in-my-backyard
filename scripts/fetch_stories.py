@@ -44,7 +44,7 @@ SPORTS = re.compile(r"\bvs\.?\b|golf|winless|championship|\bPGA\b|\bF1\b|grand p
 # Many Texas county names exist in other states (Leon, Floyd, Harris...). Drop stories that name another state.
 OTHER_STATES = re.compile(r"\b(Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|Tallahassee|Atlanta|Rome News)\b")
 # Sources to leave out (finance tickers, aggregators, clickbait). Add names here as you spot them.
-SKIP_SOURCES = re.compile(r"tradingview|biggo|shattered\.io|the cool down|finance|stock|marketscreener|newswire|business wire|globe ?newswire|pr newswire|worldatlas|msn|aol|manila times|latham|eb-5", re.I)
+SKIP_SOURCES = re.compile(r"tradingview|biggo|shattered\.io|the cool down|finance|stock|marketscreener|newswire|business wire|globe ?newswire|pr newswire|worldatlas|msn|aol|manila times|latham|eb-5|iqair", re.I)
 
 
 def same_story(a, b):
