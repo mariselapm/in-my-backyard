@@ -36,7 +36,7 @@ CATEGORIES = [
 ]
 CAT_RE = [(c, re.compile(p, re.I)) for c, p in CATEGORIES]
 # Headlines about elections use "power" as a figure of speech; skip them unless a stronger topic matches.
-OFF_TOPIC = re.compile(r"election|ballot|polling|voter|campaign|victory|candidate|arrest|chase|shooting|senators?\b|\bGOP\b|Lt\. Gov|committee|speaker|\bwins?\b|\bvictory\b", re.I)
+OFF_TOPIC = re.compile(r"election|ballot|polling|voter|campaign|victory|candidate|arrest|chase|shooting|senators?\b|\bGOP\b|Lt\. Gov|committee|speaker|\bwins?\b|\bvictory\b|\bbank|tech outage|internet|cellular|\bapp\b|router|\bFAA\b|flights?\b|ground stop", re.I)
 MAX_AGE_DAYS = 31
 CRIME = re.compile(r"\bpolice\b|shooting|\bshot\b|arrest|murder|homicide|stabbing|\bchase\b|\bgun\b", re.I)
 # Sports and game listings ("Irion County vs Water Valley") are never what we want.
@@ -203,10 +203,35 @@ def pick(items, place_words, local_names, limit, per_category=None, strict=False
     return keep[:limit]
 
 
+def statewide_stories():
+    """Up to 5 recent stories per topic from across Texas, for the site's topic filters."""
+    print("Statewide stories…")
+    state_items = []
+    for q in ['Texas "data center" when:30d', 'Texas "data centers" (power OR water OR county OR city) when:30d',
+              'Texas (ERCOT OR "power grid" OR outage) when:30d', 'Texas (electricity OR "power plant" OR "electric bills" OR solar) when:30d',
+              'Texas (drought OR "burn ban" OR wildfire) when:30d', 'Texas (water supply OR aquifer OR reservoir OR "water plan") when:30d',
+              'Texas (groundwater OR "water rights" OR "water rates" OR "Water Development Board") when:30d',
+              'Texas (pollution OR TCEQ OR "air quality" OR emissions) when:30d']:
+        state_items += search(q)
+        time.sleep(PAUSE)
+    return pick(state_items, ["Texas", "Texans", "ERCOT"], [], 25, per_category=5)
+
+
 def main():
     topo = json.loads((DATA / "tx-counties.json").read_text())
     counties = sorted(g["properties"]["name"].replace(" County", "") for g in topo["objects"]["counties"]["geometries"])
-    only = sys.argv[1:]  # optional: run for just some counties, e.g. python3 scripts/fetch_stories.py Travis Hood
+    # Optional: run for just some counties, e.g.  python3 scripts/fetch_stories.py Travis Hood
+    # or refresh only the "Across Texas" stories:  python3 scripts/fetch_stories.py --statewide
+    statewide_only = "--statewide" in sys.argv
+    only = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if statewide_only:
+        out_path = DATA / "stories.json"
+        result = json.loads(out_path.read_text())
+        result["statewide"] = statewide_stories()
+        result["updated"] = datetime.now().date().isoformat()
+        out_path.write_text(json.dumps(result, indent=1, ensure_ascii=False))
+        print(collections.Counter(s["category"] for s in result["statewide"]))
+        return
 
     print("Building local outlet list…")
     outlets, towns = build_outlets(set(counties))
@@ -217,14 +242,7 @@ def main():
     out_path = DATA / "stories.json"
     result = json.loads(out_path.read_text()) if (only and out_path.exists()) else {"counties": {}}
 
-    print("Statewide stories…")
-    state_items = []
-    for q in ['Texas "data center" when:30d', 'Texas (ERCOT OR "power grid" OR outage) when:30d',
-              'Texas (drought OR "burn ban" OR wildfire) when:30d', 'Texas (water supply OR aquifer OR reservoir OR "water plan") when:30d',
-              'Texas (pollution OR TCEQ OR "air quality" OR emissions) when:30d']:
-        state_items += search(q)
-        time.sleep(PAUSE)
-    result["statewide"] = pick(state_items, ["Texas", "Texans", "ERCOT"], [], 10, per_category=2)
+    result["statewide"] = statewide_stories()
 
     todo = [c for c in counties if not only or c in only]
     for n, county in enumerate(todo, 1):

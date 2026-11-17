@@ -1795,6 +1795,14 @@
  },
  "statewide": [
   {
+   "title": "Texas local governments giving up more than $1 billion to data centers",
+   "source": "The Texas Tribune",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdlM3VldFUm5UdFR6U1YxR1haTm5CY1NMd2J1OEpwQmk3LTQ2R0Nfa2JZZnFDblNCQ2FqWG5IdzlQelhrT3FQcHF5WjVYQTNhOWd4Q1RGYlRRRmVaTzJ3cC1mYnFlaXdLZEE0UEFDbC1tMGdTTVpEVHJXM1FiazZfZ3pKOWpRRF9JdzgyNUxn?oc=5",
+   "date": "2026-11-17",
+   "category": "Data centers",
+   "local": false
+  },
+  {
    "title": "Texas Data Center Developers, End Users Find Creative Ways To Increase Sites’ Power Capacities",
    "source": "REBusinessOnline",
    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTUpRVUxHcEE0b09xRlZJTHd3SFVYeUNYWU5wR0daN3puVUJDYVpyRGp5VDNwN0xaMDhqZHE2ZVBUemFpMXJVNVIxM2htaGlES1NJVXg3UWF3eEptVFFxTEdnRVlYYzNTTW80RUlBSlRlbDBvandKOVRPT3pveUJ5STR1aTZsUlBUZDFUdkdqWWktUU5EUnAwQ3NTMnpOa2FsM3hWcmlpVW1sTlZqUEVqM0tWRE1CaFc4TThwOGNyTQ?oc=5",
@@ -1803,11 +1811,43 @@
    "local": false
   },
   {
-   "title": "Texas local governments giving up more than $1 billion to data centers",
-   "source": "The Texas Tribune",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOdlM3VldFUm5UdFR6U1YxR1haTm5CY1NMd2J1OEpwQmk3LTQ2R0Nfa2JZZnFDblNCQ2FqWG5IdzlQelhrT3FQcHF5WjVYQTNhOWd4Q1RGYlRRRmVaTzJ3cC1mYnFlaXdLZEE0UEFDbC1tMGdTTVpEVHJXM1FiazZfZ3pKOWpRRF9JdzgyNUxn?oc=5",
+   "title": "Texas cities and counties forgo $1 billion in local taxes to data centers in exchange for minimal job guarantees",
+   "source": "www.kera.org",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZmd4aHBpU3BjdFV1S29SS0dpWERYS3ZNa25fSjJ1NmtCQU5Nc1QwZFhqYmpjSTc4RVhlTWJQWG10YzZxcFZlSnpZV3Z6NkJWRzYtSFpyZlRQRkk4V3JXMTFjdnNDbkp5cjdaM1dHaDFleHBZYkUyblBpQ29QLVlVVWZLb3E1aHRlMDUwWEhQaVB4ckxSc3J1UWxPWU11NkVFdEhtVHFiNzJpRy1CdmJMUjlHTFdGN2NfRnFaS2ItSHpRY2NobTE4YWFZLWJlaUZESnVuZFZZWG1jT3Fa?oc=5",
    "date": "2026-11-17",
    "category": "Data centers",
+   "local": false
+  },
+  {
+   "title": "Giga Energy signs $1 billion lease for Texas AI data center with cloud provider",
+   "source": "Reuters",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUXJVZ2hsSFRHcWk0UzI0VUJkVGx2QjRna3I1R0kwU2pnbDVkWlA1SzhxLXZKTElCdWczQjc5VUhzd214OG51Zm9kaFFRbmU3VTItUTJkZ0d2bkVsOWtwaUFraXRLOERhNUNLVHE1MG0xMkFVTTVWNDFsNWhZQkJ5aDhlLWZNc01TamVhVnNlbDZmbmlLV05pRFV3X0g5OHdkZGs2blNEQ2REMDVoS29hbHpFZlRYaHRUdnZxMTN5RTBxSHdD?oc=5",
+   "date": "2026-11-17",
+   "category": "Data centers",
+   "local": false
+  },
+  {
+   "title": "Another North Texas city is set to pause data center development",
+   "source": "CBS News",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdmtxWGZfNktHTHF1LXJXR2FXN0w3U295MnhDNUFVUHFVMnFsOHcxZ3lTT0w2cTNxc2hXaWJEUERCMXByTVZ4X3k3TjVlanptaS1BLXVTVlRTVjhOQ0lhYjkxY29rZ0xzOGFsWS15VUNMYXdTenVhelh6clN2RnZKaG5SVlpjb0FUM1lqRjVJRXVhT1I1TUU4b2tYYVplSDE1cDVV?oc=5",
+   "date": "2026-11-17",
+   "category": "Data centers",
+   "local": false
+  },
+  {
+   "title": "Tesla has started clearing land for its proposed $10.1 billion solar manufacturing complex near Richmond, Texas",
+   "source": "Latin Times",
+   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVlVSTllvbkphLWt1SVYzVkZoVGVteGJRb01NQXljaHJLUXlfOTlVLWVYcE1ERVJmOHVrM0trcTRtWjlSa2dHT0R3N2E4c2VVR3RCRXl3b3A5Uko5OWFscHE4Y215WWNaMVVWS050bDZEQXF5WjF0cU9QNDkxNGMwaV8xOA?oc=5",
+   "date": "2026-11-17",
+   "category": "Power",
+   "local": false
+  },
+  {
+   "title": "Texas Resolve: A Regional Action Roadmap for Extreme Heat, Wildfire, and Flooding",
+   "source": "Center for Climate and Energy Solutions",
+   "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9sWFc5bEZiMVM4T0NRdktVZm9WVkg0bzh0ekE3TTRYQjc1MUZWcTU1T0doaENmWjhNM0F2OFVLOTdxb2NhN3dxaVhkT1NWTnhnYm1Zc2JtWWtXMHdMWlE?oc=5",
+   "date": "2026-11-17",
+   "category": "Drought",
    "local": false
   },
   {
@@ -1819,9 +1859,25 @@
    "local": false
   },
   {
-   "title": "North Texas bank customers frustrated by latest tech outage",
-   "source": "FOX 4 News Dallas-Fort Worth",
-   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdFlLaTgwTm1fTHRMVzBEUTRpUC1YR21YejUxOTE3M1ZqRXZFRFBPNS0tdzRsRHdhNmQtd0xoUDd2VXFUVnVEMWo0N0pUMHg1OTRNUDZidEdrT25jT1JhX2hIb2oxMVJacUtTV0JoS0xvYUhsZmJYMGpGMDR3RGkyRGdLdWl3d0pEQWR6b2dwRQ?oc=5",
+   "title": "Charge Power to manage 580MWh of Texas BESS through commercial operation",
+   "source": "www.bestmag.co.uk",
+   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9jQkFyQ1hWR0VHOXIxZGc5NU4yWEIxN19LTGpLeXQwdGNlM1kxMm5NNkpaVWUwMjczOWRLdlBicXVqM2lDeG1ZanNtQTJDN2wyNWtQQXZ2Ri14YzJGUW1BVnkzUWktZ2N6RnB3T1N3?oc=5",
+   "date": "2026-11-16",
+   "category": "Power",
+   "local": false
+  },
+  {
+   "title": "Panamint Secures Loans for Phase 1 of 958-MW Texas Solar Project",
+   "source": "Industrial Info Resources",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRDJGQjFVWnRIOS13RUxnWENfZnkydlhBeW52UmxRNmJtWXpRb3czOFNzZzdFZTM4M2FSUEd2Rm1HYkdsVndES28zRG41dkRFaGxxb3hoLXNvTGhWdUZ5UWE1X054Qkd3TzcwdURKVlBvd2F6MXB2RWhkWVhzN0tkTDk0a3d2SHV4Um1peFQyVWtMZG96UFUwNUcwOFpSNnU1VFFEXzlUdnA4cDEzWXZhVXVNY1VlM1E?oc=5",
+   "date": "2026-11-16",
+   "category": "Power",
+   "local": false
+  },
+  {
+   "title": "Two Texas Battery Projects Totaling 290 Megawatts Target 2027 Grid Launch",
+   "source": "Dallas Express",
+   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUEJFWHNWdFAxbmFMMTBvcDhpbmdrQzJnSl9XZUVqMzhGYlpyS0tfYThIbjJUQzlUWEJHT3N3VjlTZi1vYjZUTWJQV1JpcU9kWHpmZk5OaTZjVUZwanNkcUJlVm9sTjFpcXBIU2l0ZVdJMjVtWmJ1LXpaRTRodmYyR0wzbENSSkFMXzFhSkRuS0NvS3pEdTVqY2NQT3B4ODllbFR4SWZEbzZNWHFqQTkwY21vVTBOd3pk?oc=5",
    "date": "2026-11-16",
    "category": "Power",
    "local": false
@@ -1835,10 +1891,10 @@
    "local": false
   },
   {
-   "title": "FAA ground stop: Routers in Texas, Arkansas being tested after outage",
-   "source": "FOX 4 News Dallas-Fort Worth",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSEoyWVU3MDBIWG8wV0NUSnhVWS1PRnBmWTdEdU5Ob1NiOFR5bG9aX1VaVXNZRERzMG5FTUhmRFVUOGI2dnBtRUlrOFhZQ2xFamlJeHFDMGRwb1ptSmZfTXFqVmVVRjB5bmtMcDZrWlJvSWZmUU5FTWFxQmxxUE8zSDNnZVVaUE9IYjhoUVg0MF9VS2tlWERrWWln?oc=5",
-   "date": "2026-11-15",
+   "title": "HDF Energy to use hydrogen to run West Texas power plant",
+   "source": "Midland Reporter-Telegram",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbE5LVzJCU2hSVWM5SUJ3bjI4b2ZWOVpJUlp1UVRvQ29pbHhMa1dKS1IwbDh3SWdwYkt6Mk9RQ0htalBTTEZUc0tQLTJpWVBlLV9Ub2xxZkJ5NFNjaGtXX21rLVcxYTl1Q3ZyUlpIM0EwZTVuRkZQbm9aRVZ2SnNER3VaSFJ4Y001bm5YMnFkVTNMNWRaaGJERHU4UkVwSnRfcHlvX2JBMA?oc=5",
+   "date": "2026-11-14",
    "category": "Power",
    "local": false
   },
@@ -1851,6 +1907,14 @@
    "local": false
   },
   {
+   "title": "Southwest Arkansas locals raise questions about proposal to pipe lake water to Texas",
+   "source": "El Dorado News-Times",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWjBJWlYzbVAtb3ZoX1lBQ1EtMFFxYXBEVEd3ZFRjaHhqbWt4TVZQVnlGWmg1UFFna0EyU0JOZ0RlcjZ6ZG1qRkNkUTZzaHM4eWFmY1BlX2NwUVhSNTVCLWVfWUxYZFBRWjNHQ0FzRUhHYlpvb2VWQmVsZW9FYnhWYm0wRnFZanZWUnNzX0tWZDFjeDNTTVpxOS1n?oc=5",
+   "date": "2026-11-14",
+   "category": "Water",
+   "local": false
+  },
+  {
    "title": "Recent rain brings drought relief to South Central Texas",
    "source": "kens5.com",
    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPOUJCX3pSeE9UYUd0OVNNenNPeW41eGNFaGVZaDJ2V05qSzJSYVpjUUxVLVRQLThtZTB2YjVUb3R1eUdKcWRCdWpIVElWcmxLWWVNLTVTZXVPV3BNaDFidjBkZnFmM3V6aVBTYTlZZ0FqNWRrZVBWcmhMZ3prM0VHTHl1ODN4dkRGaWtOMGhYeFpaVjZYa1hUMHBDT21ZMlhSTFVOUEdfZUVpcTFsb1MyLXF0YUJNYVVhUDUxMGZINW1TTEVS?oc=5",
@@ -1859,10 +1923,50 @@
    "local": false
   },
   {
+   "title": "Texas Water Board Approves $3M for San Angelo Water System Inventory",
+   "source": "San Angelo LIVE!",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTUZ1R09LTktHbEYxcG4zYU5XRGlYQnlycEl5ZVhmRkg1REdqRVFKZVpKWVJ5TlkzSGtpQlNUZnhyM1M4Y2dfdWQ4Y2hBMXA3UUdFbk1GVG5tdXVTcjgwNGYwdVhWeW5CdjRZdllsMF92dG5JcVNaT21HMVNqR1htWWdCSDhQU1djVmozM1oxY2ZHNTA1Q0ltVTdCbmJBNXpEY3VwcVJMUTNCNnA0S0l2a2lJZ0MzTEE?oc=5",
+   "date": "2026-11-13",
+   "category": "Water",
+   "local": false
+  },
+  {
+   "title": "Drought status low across North Texas and Southern Oklahoma areas",
+   "source": "News Channel 6 | Wichita Falls, TX",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUmtDYWtSSVl2UmJjUFBtQlc2VjJRbW91LWRuQ1EtXzFrUnVzZU9ySjM4bnRWVloyVWRrWDZKVlNKZDJaaEt4LUJwR1VVeFk5MWdMWDV1cGlIMnR0MG1feEZJRU5DSTU0RWo2eHRBa291LU0yWHZIdXRlSG8yWHJiTU4yMW1TWXotTU94cVJMMlFYWVZ1OGZtaFpySlc3enpSUXAxaU8wYWk?oc=5",
+   "date": "2026-11-12",
+   "category": "Drought",
+   "local": false
+  },
+  {
+   "title": "Regents Approve New Water Supply for Growing Texas A&M-RELLIS Campus",
+   "source": "Texas A&M University System",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNcTJyTWU3cXZsRFdERXdva1pyNVJSTWFJRTVFVGYzbHZrdHlBZlF2WEE3TXlRSnZoLTlfVEExd3lKdXhJdWJsWFZ6cThJNDBJUTdEVGhWNldQVDlXbnJ5SkZVa0Z3ZkFkWHZ5aU1qNWxRclFsYnBfa0dsbERiSTR1cUF2TVp6VnFGOVE1UUVJVHdNZjhDbi1DUHZJZzd2OTg4OVFCdA?oc=5",
+   "date": "2026-11-12",
+   "category": "Water",
+   "local": false
+  },
+  {
+   "title": "Will 'super El Niño' be a Texas drought killer? Forecasts waiver",
+   "source": "MySA",
+   "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOVTRhVVRueWZzMmNLWWVPNWV1SmduNllsRGdnOEtBNmx5SnNuSjFMSHhKcmVUeWRFN1kyRzFFenB2aUJaMGNma0hWVjVYVWU4NTJVckRBNEZNN0xFVU40NGRaOTNoamVtZzRvNTk5VWdkTEx2TkVZbU9Yd2NQV012OEJJOG5CbXZMRFE?oc=5",
+   "date": "2026-11-10",
+   "category": "Drought",
+   "local": false
+  },
+  {
    "title": "Can you renew your Texas registration without an emissions test? What to know",
    "source": "MySA",
    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOY0JrNnN0RHBUWEJhbGV1djNGdnk1STUxWlF2Znl6NGpfb2NVX3pzS1ZGMmdhMnh6ckw1ZkRkSXF5QnpsOEhQdjhmZC0yTGYzcldfVG14QnFQY2FaM216dDVHMzZ3dTl4aTQ4Ry1hd0tiVThIZG1ydTRCb2lJalFhRzZ5dEtxLVEyemYzalFRbWR0azZfTy1tMGktSlVVUQ?oc=5",
    "date": "2026-10-27",
+   "category": "Environment",
+   "local": false
+  },
+  {
+   "title": "New Manual Equips Texas Communities to Reduce Flood Risk Using Nature",
+   "source": "The Nature Conservancy",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBtMm00cnlfVlNraFlUN2dSYWZic2xRTk5mS1NybEswMXI1bGZreXRqM0tNS2NCT0hULXpfY1doaG9TRWliZHRCeERFMktBNVYtUUZDUVFVX1g3UHlkQnZvTWlfTzVpS1dYNTlXSWpMTUNnUVdaSVZ3?oc=5",
+   "date": "2026-10-19",
    "category": "Environment",
    "local": false
   }
