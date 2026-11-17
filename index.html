@@ -63,6 +63,7 @@ h3{font-weight:700;font-size:1.2rem}
 /* map */
 .map-box{position:relative}
 .map-box svg{width:100%;height:auto;display:block}
+.around path{fill:#E1E5E2;stroke:#F7F8F6;stroke-width:1.2}
 .county{stroke:#fff;stroke-width:.5;cursor:pointer;transition:opacity .12s}
 .county:hover,.county.is-active{stroke:var(--ink);stroke-width:1.6}
 .tip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;box-shadow:0 6px 18px rgba(29,43,42,.16);font-size:.9rem;min-width:190px;opacity:0;transform:translateY(4px);transition:opacity .1s,transform .1s;z-index:5}
@@ -348,6 +349,8 @@ async function load() {
     fetch("data/tx-zips.json").then(r => r.json()),
   ]);
   state.topo = topo; state.zips = zips;
+  // Gray background of neighboring states and Mexico (optional; the map works without it)
+  state.around = await fetch("data/surroundings.json").then(r => r.ok ? r.json() : null).catch(() => null);
   const wb = XLSX.read(buf, { type: "array" });
   const rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { defval: null });
   const headers = rows.length ? Object.keys(rows[0]) : [];
@@ -467,11 +470,19 @@ function layerGrade(c, layer) {
 /* ---------- map ---------- */
 function drawMap(el, { interactive = true, height = 0 } = {}) {
   const geo = topojson.feature(state.topo, state.topo.objects.counties);
-  const W = 800, H = height || 760;
-  const proj = d3.geoConicEqualArea().parallels([27.5, 35]).rotate([100, 0]).fitSize([W, H], geo);
+  const W = interactive ? 1000 : 800, H = height || 760, pad = interactive ? 28 : 12;
+  const proj = d3.geoConicEqualArea().parallels([27.5, 35]).rotate([100, 0]).fitExtent([[pad, pad], [W - pad, H - pad]], geo);
   const path = d3.geoPath(proj);
   el.innerHTML = `<div class="map-box"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Map of Texas counties colored by grade"></svg><div class="tip" role="status"></div></div>`;
   const svg = d3.select(el).select("svg"), tip = $(".tip", el), box = $(".map-box", el);
+  if (state.around) {
+    // Fade the neighbors out toward the edges so the map has no hard box around it
+    const mid = `fade-${Math.random().toString(36).slice(2, 8)}`;
+    svg.append("defs").html(`<radialGradient id="${mid}-g" cx="50%" cy="50%" r="58%"><stop offset="70%" stop-color="#fff"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <mask id="${mid}"><rect width="${W}" height="${H}" fill="url(#${mid}-g)"/></mask>`);
+    svg.append("g").attr("class", "around").attr("aria-hidden", "true").attr("mask", `url(#${mid})`)
+      .selectAll("path").data(state.around.features).join("path").attr("d", path);
+  }
   const paths = svg.append("g").selectAll("path").data(geo.features).join("path")
     .attr("class", "county").attr("d", path);
   const paint = () => paths.attr("fill", f => {
@@ -906,7 +917,7 @@ function pageAbout() {
     <p class="lede">A guide to what's happening with power, drought and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
     <h2 style="margin-top:32px">Sources</h2>
-    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Drought: U.S. Drought Monitor county statistics (National Drought Mitigation Center, USDA and NOAA), updated weekly; a county's status is the worst drought level covering at least half of it. Drought isn't graded yet.</p>
+    <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. Neighboring states and Mexico on the map: U.S. Census Bureau and Natural Earth. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Drought: U.S. Drought Monitor county statistics (National Drought Mitigation Center, USDA and NOAA), updated weekly; a county's status is the worst drought level covering at least half of it. Drought isn't graded yet.</p>
     <h2 style="margin-top:32px">How we pick stories</h2>
     <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
 }
