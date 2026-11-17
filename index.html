@@ -167,6 +167,8 @@ h3{font-weight:700;font-size:1.2rem}
 [data-cat="Water"],[data-cat="Drought"],[data-cat="Environment"]{--k:var(--g-a);--k-bg:#E7F1EC}
 [data-cat="Data centers"]{--k:#B85A1E;--k-bg:#FCEDE3}
 #stories h2.ruled{padding-bottom:12px;border-bottom:1px dotted var(--ink)}
+/* Top stories on a white band that runs the full width of the window */
+#stories{background:var(--surface);box-shadow:0 0 0 100vmax var(--surface);clip-path:inset(0 -100vmax);padding-top:40px;padding-bottom:48px}
 .news{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:40px;margin-top:22px}
 .news-main{min-width:0}
 .lead-story{padding:28px 28px 26px;border-radius:12px;background:var(--k-bg,var(--surface));border-left:6px solid var(--k,var(--g-a))}
