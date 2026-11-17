@@ -140,6 +140,7 @@ h3{font-weight:700;font-size:1.2rem}
 [data-cat="Power"]{--k:#A77E12;--k-bg:#FBF3DC}
 [data-cat="Water"],[data-cat="Drought"],[data-cat="Environment"]{--k:var(--g-a);--k-bg:#E7F1EC}
 [data-cat="Data centers"]{--k:#B85A1E;--k-bg:#FCEDE3}
+#stories h2.ruled{padding-bottom:12px;border-bottom:1px dotted var(--ink)}
 .news{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:40px;margin-top:22px}
 .news-main{min-width:0}
 .lead-story{padding:28px 28px 26px;border-radius:12px;background:var(--k-bg,var(--surface));border-left:6px solid var(--k,var(--g-a))}
@@ -652,14 +653,11 @@ function storyLi(s, cls = "") {
 }
 function storiesSection(c) {
   const { mine, local, statewide } = storiesFor(c);
-  const used = new Set([...local, ...statewide].map(s => s.category).filter(Boolean));
-  const chips = STORY_CATS.filter(k => used.has(k));
   const outlets = state.outlets?.[c.name] || [];
   const [lead, ...rest] = local;
   const note = !mine.length ? `<div class="empty">We didn't find stories about these topics in ${esc(c.name)} County this month.${local.length ? " Here's what's happening in nearby counties." : ""}</div>` : "";
-  return `<section class="section" id="stories"><h2>Top stories this month</h2>
+  return `<section class="section" id="stories"><h2 class="ruled">Top stories this month</h2>
     <p class="lede" style="font-size:1rem">News about power, water, drought, data centers and the environment in and around ${esc(c.name)} County.${state.news?.updated ? ` Updated ${esc(niceDate(state.news.updated))}.` : ""}</p>
-    ${chips.length > 1 ? `<div class="layer-pick" role="group" aria-label="Show stories about"><button type="button" data-cat="all" aria-pressed="true">All</button>${chips.map(k => `<button type="button" data-cat="${esc(k)}" aria-pressed="false">${esc(k)}</button>`).join("")}</div>` : ""}
     <div class="news">
       <div class="news-main">${note}
         ${lead ? `<ul class="stories">${storyLi(lead, "lead-story")}</ul>` : ""}
