@@ -123,8 +123,9 @@ h3{font-weight:700;font-size:1.2rem}
 .pending{color:var(--muted);font-size:.95rem;margin:14px 0 0}
 .dc-none{margin:18px 0 0;font-weight:700}
 .dc-lookup{margin:10px 0 0;color:var(--ink)}
-.dc-lookup a{color:#B85A1E;font-weight:700;text-decoration:none}
-.dc-lookup a:hover{text-decoration:underline}
+.dc-lookup a{color:var(--g-a);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:color-mix(in srgb,var(--g-a) 35%,transparent);text-underline-offset:4px;transition:text-decoration-color .15s}
+.dc-lookup a:hover{text-decoration-color:var(--g-a)}
+.dc-lookup .ext{display:inline-block;margin-left:2px;font-size:.8em;text-decoration:none}
 .tt-hint{color:var(--muted);font-size:.85rem;margin:8px 0 0}
 .dc-list{list-style:none;margin:16px 0 0;padding:0}
 .dc-list li{padding:12px 0;border-top:1px solid var(--line)}
@@ -660,7 +661,7 @@ function dcBody(campuses, c) {
   if (!campuses.length) {
     const q = c ? `${c.name} County, TX` : "";
     return `<p class="dc-none">No data centers in our list yet.</p>
-    <p class="dc-lookup">Look up data centers near you in the <a class="tt-search"${q ? ` data-q="${esc(q)}"` : ""} href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Texas Tribune's search tool</a>.</p>
+    <p class="dc-lookup">Look up data centers near you in the <a class="tt-search"${q ? ` data-q="${esc(q)}"` : ""} href="${esc(CONFIG.moreDataCentersUrl)}" target="_blank" rel="noopener">Texas Tribune's search tool<span class="ext" aria-hidden="true">↗</span></a> instead.</p>
     ${q ? `<p class="tt-hint" role="status" hidden></p>` : ""}`;
   }
   const nb = campuses.reduce((a, cp) => a + cp.sites.length, 0), mw = campuses.reduce((a, cp) => a + cp.mw, 0);
