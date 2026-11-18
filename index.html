@@ -24,16 +24,16 @@ a{color:var(--sky)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 
 /* header */
-.site-header{border-bottom:1px solid var(--line);background:var(--paper)}
+.site-header{background:var(--ink)}
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
 .wordmark{font:700 1.45rem/1 "Outfit",var(--display);color:var(--ink);text-decoration:none;letter-spacing:-.01em}
 .wordmark{display:inline-flex;align-items:flex-end;gap:10px}
-.wordmark .logo{width:46px;height:auto;flex:none;color:var(--ink)}
-.wordmark .wm-text span{color:var(--g-a)}
+.site-header .wordmark,.site-header .wordmark .wm-text span{color:#fff}
+.wordmark .logo{width:46px;height:auto;flex:none;color:#fff}
 nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
-nav a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
-nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
-nav a:hover:not([aria-current="page"]){background:#E3E9E6}
+.site-header nav a{display:block;padding:8px 12px;border-radius:6px;text-decoration:none;color:#fff;font-weight:600;font-size:.95rem}
+.site-header nav a[aria-current="page"]{background:#fff;color:var(--ink)}
+.site-header nav a:hover:not([aria-current="page"]){background:rgba(255,255,255,.14)}
 
 main.wrap{padding-top:28px;padding-bottom:72px}
 main:focus{outline:none}
@@ -296,8 +296,8 @@ details p{margin:10px 0 0;max-width:42em}
     <path d="M6.5 25.5h6M6.5 29h6M17 25.5h6M17 29h6"/>
     <path d="M24.5 16.5v-4l-3.5 2L35 2l17 8.5-3.5 1.5v21.5"/>
   </g>
-  <path d="M14.75 3.2v7.6" fill="none" stroke="#B85A1E" stroke-width="3.4" stroke-linecap="round"/>
-  <circle cx="14.75" cy="15" r="1.7" fill="#B85A1E"/>
+  <path d="M14.75 3.2v7.6" fill="none" stroke="#E8834A" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="14.75" cy="15" r="1.7" fill="#E8834A"/>
 </svg><span class="wm-text">In My <span>Backyard</span></span></a>
     <nav aria-label="Main"><ul>
       <li><a href="#/" data-nav="home">Home</a></li>
