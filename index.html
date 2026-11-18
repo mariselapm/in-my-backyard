@@ -265,6 +265,23 @@ h1:has(.scribble){margin-bottom:.5em}
 .scribble path+path{stroke-width:3.8;animation-delay:.75s;animation-duration:.55s}
 @keyframes pen{to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){.scribble path{animation:none;stroke-dashoffset:0}}
+/* phones */
+.menu-btn{display:none}
+@media (max-width:700px){
+  .menu-btn{display:block;margin-left:auto;padding:8px 14px;border:1px solid rgba(255,255,255,.5);border-radius:8px;background:transparent;color:#fff;font:600 .95rem var(--body);cursor:pointer}
+  .menu-btn[aria-expanded="true"]{background:#fff;color:var(--ink)}
+  .site-header nav{display:none;flex-basis:100%}
+  .site-header nav.open{display:block}
+  .site-header nav ul{flex-direction:column;gap:2px;padding:6px 0 4px}
+  .site-header nav a{padding:12px}
+  .layer-row .map-note{border-left:0;padding-left:0;flex-basis:100%}
+}
+@media (max-width:480px){
+  .search-row{flex-direction:column}
+  .search-row .btn{width:100%}
+  table .grade-none{font-size:.78rem;line-height:1.25}
+  table th,table td{padding-left:8px;padding-right:8px}
+}
 /* data centers 101 */
 .guides h2.ruled{padding-bottom:12px;border-bottom:1px dotted var(--ink)}
 .guide-list{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
@@ -308,7 +325,8 @@ details p{margin:10px 0 0;max-width:42em}
   <path d="M14.75 3.2v7.6" fill="none" stroke="#E8834A" stroke-width="3.4" stroke-linecap="round"/>
   <circle cx="14.75" cy="15" r="1.7" fill="#E8834A"/>
 </svg><span class="wm-text">In My <span>Backyard</span></span></a>
-    <nav aria-label="Main"><ul>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav aria-label="Main" id="main-nav"><ul>
       <li><a href="#/" data-nav="home">Home</a></li>
       <li><a href="#/map" data-nav="map">Map</a></li>
       <li><a href="#/compare" data-nav="compare">Compare</a></li>
@@ -714,7 +732,7 @@ function afterHome() { drawMap($("#home-map"), { interactive: false }); }
 function pageMap() {
   const layers = [["overall", "Overall"], ...CONFIG.categories.map(k => [k.key, k.label])];
   return `<h1>Texas, county by county</h1>
-    <p class="lede">Move your cursor over a county to see its grades. Click a county for the full report.</p>
+    <p class="lede">${matchMedia("(hover: none)").matches ? "Tap a county for its full report." : "Move your cursor over a county to see its grades. Click a county for the full report."}</p>
     <div class="layer-row"><div class="layer-pick" role="group" aria-label="Color the map by">${layers.map(([k, l]) => `<button type="button" data-layer="${k}" aria-pressed="${state.layer === k}">${l}</button>`).join("")}</div>
     <p class="map-note" id="layer-note"></p></div>
     <div id="big-map"></div><div id="map-legend">${legendHtml()}</div>
@@ -1052,7 +1070,7 @@ function pageCompare(a, b) {
       ...(state.dcSites.length ? [["Data center buildings in our list", dcCount(A), dcCount(B)]] : []), ...CONFIG.categories.flatMap(k => (k.facts || []).map(([l]) => [l, (A.cats[k.key].facts.find(f => f[0] === l) || [])[1], (B.cats[k.key].facts.find(f => f[0] === l) || [])[1]]))];
     table = `<table class="cmp"><thead><tr><th scope="col"><span class="visually-hidden">Measure</span></th><th scope="col"><a href="#/county/${A.slug}">${esc(A.name)}</a></th><th scope="col"><a href="#/county/${B.slug}">${esc(B.name)}</a></th></tr></thead><tbody>
       ${rows.map(([l, x, y]) => l === "Drought" && !x && !y && state.droughtDate ? `<tr><th scope="row">Drought (week of ${esc(droughtWeek())})</th><td>${droughtTag(A.drought)}</td><td>${droughtTag(B.drought)}</td></tr>` : `<tr><th scope="row">${l}</th><td>${gradeEl(x)}</td><td>${gradeEl(y)}</td></tr>`).join("")}
-      ${facts.map(([l, x, y]) => `<tr><th scope="row">${esc(l)}</th><td>${esc(fmt(x ?? "—"))}</td><td>${esc(fmt(y ?? "—"))}</td></tr>`).join("")}</tbody></table>`;
+      ${facts.filter(([, x, y]) => x != null || y != null).map(([l, x, y]) => `<tr><th scope="row">${esc(l)}</th><td>${esc(fmt(x ?? "—"))}</td><td>${esc(fmt(y ?? "—"))}</td></tr>`).join("")}</tbody></table>`;
   }
   return `<h1>Compare two counties</h1><p class="lede">Put your county next to a neighbor, or next to anywhere in Texas.</p>
     <div class="compare-pick"><label>First county<select id="ca">${opts(a)}</select></label><label>Second county<select id="cb">${opts(b)}</select></label></div>${table}`;
@@ -1104,6 +1122,13 @@ function pageAbout() {
 }
 
 /* ---------- router ---------- */
+// Phone menu: the "Menu" button shows and hides the page links.
+function setMenu(open) {
+  const b = document.querySelector(".menu-btn"); if (!b) return;
+  b.setAttribute("aria-expanded", open); b.textContent = open ? "Close" : "Menu";
+  $("#main-nav").classList.toggle("open", open);
+}
+document.querySelector(".menu-btn")?.addEventListener("click", e => setMenu(e.currentTarget.getAttribute("aria-expanded") !== "true"));
 function route() {
   const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
   const page = parts[0] || "home";
@@ -1121,6 +1146,7 @@ function route() {
   const c = page === "county" && state.counties.find(x => x.slug === parts[1]);
   document.title = c ? `${c.name} County | In My Backyard` : "In My Backyard";
   document.body.classList.remove("drawer-open");
+  setMenu(false);
   window.scrollTo(0, 0);
 }
 window.addEventListener("hashchange", () => { route(); $("#app").focus({ preventScroll: true }); });
