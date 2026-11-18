@@ -256,6 +256,14 @@ table.cmp{width:100%;border-collapse:collapse;margin-top:24px;background:var(--s
 .cmp thead th{font:750 1.15rem var(--display)}
 .cmp td .grade{font-size:2.4rem}
 
+/* hand-drawn pen underline under "your backyard" on the home page */
+.scribble{position:relative;white-space:nowrap}
+h1:has(.scribble){margin-bottom:.5em}
+.scribble svg{position:absolute;left:-2%;bottom:-.3em;width:104%;height:.38em;overflow:visible}
+.scribble path{fill:none;stroke:#E8834A;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dasharray:400;stroke-dashoffset:400;animation:pen .7s .3s ease-out forwards}
+.scribble path+path{stroke-width:3.8;animation-delay:.75s;animation-duration:.55s}
+@keyframes pen{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.scribble path{animation:none;stroke-dashoffset:0}}
 /* data centers 101 */
 .guides h2.ruled{padding-bottom:12px;border-bottom:1px dotted var(--ink)}
 .guide-list{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
@@ -692,7 +700,7 @@ function wireSearch(root) {
 function pageHome() {
   return `<div class="home-grid">
     <div>
-      <h1>What's happening in your backyard?</h1>
+      <h1>What's happening in <span class="scribble">your backyard<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13C30 9 58 14 95 10.5S162 6.5 202 9 268 12 297 5"/><path d="M42 23C92 17.5 150 18.5 204 19.5S254 21.5 272 17"/></svg></span>?</h1>
       <p class="lede">See how your Texas county is doing on power, drought and data centers, what it means for you, and where to speak up.</p>
       ${searchHtml()}
       <p class="try">Or try <a href="#/county/travis">Travis</a>, <a href="#/county/harris">Harris</a>, <a href="#/county/andrews">Andrews</a> or <a href="#/county/el-paso">El Paso</a>.</p>
