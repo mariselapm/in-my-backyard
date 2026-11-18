@@ -304,7 +304,6 @@ details p{margin:10px 0 0;max-width:42em}
       <li><a href="#/map" data-nav="map">Map</a></li>
       <li><a href="#/compare" data-nav="compare">Compare</a></li>
       <li><a href="#/learn" data-nav="learn">Data centers 101</a></li>
-      <li><a href="#/faq" data-nav="faq">FAQ</a></li>
       <li><a href="#/about" data-nav="about">About</a></li>
     </ul></nav>
   </div>
@@ -1030,7 +1029,7 @@ function pageCounty(slugv) {
     <div class="cats">${CONFIG.categories.map(k => catHtml(k, c.cats[k.key], c)).join("")}</div>
     ${speakUpPanel(c)}
     ${storiesSection(c)}
-    <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p class="see-all"><a href="#/faq">See all questions</a></p></section>`;
+    <section class="section"><h2>Questions people ask</h2>${faqItems().slice(0, 3).join("")}<p class="see-all"><a href="#/faq">See all questions on the About page</a></p></section>`;
 }
 
 function pageCompare(a, b) {
@@ -1067,13 +1066,12 @@ function faqItems() {
     ["Will my water bill increase?", "We can't answer that for your home yet. Water rates are set by your local water utility, and drought, repairs and new demand can all push them up. Your utility's website or your most recent bill lists who to ask. Each county page shows its current drought level, one of the things that can push rates up."],
     ["What does the power grade measure?", "It reflects how reliable electricity has been in the county, based on outage events. It also shows how much electricity is generated in the county and how many power plants it has."],
     ["What can I do about what I see here?", "Go to a public meeting. Each county page has a \u201cSpeak to Your Representatives\u201d button listing your commissioners court, your county seat\u2019s city council and any groundwater district, with when they meet and where to find agendas. Texas law lets anyone speak about an item on the agenda."],
-    ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet. Every source will be listed on the About page as the team adds data."],
+    ["Where does the information come from?", "Population figures are U.S. Census Bureau 2025 estimates. Power data comes from the team's research spreadsheet, and drought levels from the U.S. Drought Monitor. Every source is listed under Sources below."],
   ];
   // An answer can be plain text, or a list of paragraphs and bullet lists (written here, so the bold tags are safe).
   const body = a => typeof a === "string" ? `<p>${esc(a)}</p>` : a.map(x => Array.isArray(x) ? `<ul class="faq-list">${x.map(li => `<li>${li}</li>`).join("")}</ul>` : `<p>${x}</p>`).join("");
   return q.map(([s, a]) => `<details><summary>${esc(s)}</summary>${body(a)}</details>`);
 }
-function pageFaq() { return `<div class="prose"><h1>Questions</h1><p class="lede">Plain answers about the grades and what they mean for you.</p></div><div style="margin-top:24px">${faqItems().join("")}</div>`; }
 function pageLearn() {
   return `<div class="prose"><h1>Data centers 101</h1>
     <p class="lede">What data centers are, why they need so much power and water, and what they can mean for the people who live near them. These are guides from newsrooms, researchers and government that we found useful.</p></div>
@@ -1088,7 +1086,9 @@ function pageAbout() {
   return `<div class="prose"><h1>About In My Backyard</h1>
     <p class="lede">A guide to what's happening with power, drought and data centers in every Texas county, and what it means for the people who live there.</p>
     <p>Texas is growing fast. New data centers, a strained power grid and long droughts affect bills, water and daily life, but the information is scattered across dozens of agencies. In My Backyard brings it together by county, grades it, and explains what you can do about it.</p>
-    <h2 style="margin-top:32px">Sources</h2>
+    <h2 style="margin-top:32px" id="questions">Questions people ask</h2></div>
+    <div class="faq-all">${faqItems().join("")}</div>
+    <div class="prose"><h2 style="margin-top:32px">Sources</h2>
     <p>Population: U.S. Census Bureau, 2025 estimates. Power: the team's research spreadsheet. County shapes: Texas Water Development Board. Neighboring states and Mexico on the map: U.S. Census Bureau and Natural Earth. ZIP codes: U.S. Census Bureau 2020 ZIP code to county relationship file. Public meetings: county and city websites (found through Wikidata) and the Texas Water Development Board's list and map of groundwater districts. Meeting schedules were read from those websites in November 2026; the team checks them by hand. Data centers: the team's list, starting with Meta's Texas sites, built from company announcements, builders' project pages and Texas Department of Licensing and Regulation construction filings; each site on a county page links to its sources. Data centers aren't graded yet. Counties with no data center information link to the Texas Tribune's data center search. Drought: U.S. Drought Monitor county statistics (National Drought Mitigation Center, USDA and NOAA), updated weekly; a county's status is the worst drought level covering at least half of it. Drought isn't graded yet.</p>
     <h2 style="margin-top:32px">How we pick stories</h2>
     <p>Each month we search Google News for stories from the last 30 days that mention a county or its towns along with power, water, drought, data centers or the environment. We keep a story only if its headline names one of those topics and either the place or a local outlet. Stories from the county's own newspapers come first. Local newspapers come from the Texas Press Association's 2023 directory. The team can also hand-pick stories, which appear at the top.</p></div>`;
@@ -1102,11 +1102,12 @@ function route() {
   const pages = {
     home: [pageHome, afterHome], map: [pageMap, afterMap],
     county: [() => pageCounty(parts[1]), () => { wireStoryFilter($("#app")); wirePanel($("#app")); }], compare: [() => pageCompare(parts[1], parts[2]), afterCompare],
-    faq: [pageFaq], about: [pageAbout], learn: [pageLearn],
+    // The FAQ now lives on the About page; old #/faq links open About at the questions.
+    faq: [pageAbout, () => requestAnimationFrame(() => $("#questions")?.scrollIntoView())], about: [pageAbout], learn: [pageLearn],
   };
   const [render, after] = pages[page] || pages.home;
   app.innerHTML = render(); if (after) after(); wireSearch(app);
-  const nav = page === "county" ? "map" : page;
+  const nav = page === "county" ? "map" : page === "faq" ? "about" : page;
   document.querySelectorAll("[data-nav]").forEach(a => a.dataset.nav === nav ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
   const c = page === "county" && state.counties.find(x => x.slug === parts[1]);
   document.title = c ? `${c.name} County | In My Backyard` : "In My Backyard";
